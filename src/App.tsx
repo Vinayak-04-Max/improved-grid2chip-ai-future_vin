@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import Industries from "./pages/Industries";
 import Demo from "./pages/Demo";
 import NotFound from "./pages/NotFound";
+// Trigger rebuild
 
 const queryClient = new QueryClient();
 
