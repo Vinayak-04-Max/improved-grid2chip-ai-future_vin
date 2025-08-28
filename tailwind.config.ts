@@ -57,6 +57,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				g2c: {
+					blue: 'hsl(var(--g2c-blue))',
+					'blue-dark': 'hsl(var(--g2c-blue-dark))',
+					'blue-light': 'hsl(var(--g2c-blue-light))',
+					green: 'hsl(var(--g2c-green))',
+					'green-dark': 'hsl(var(--g2c-green-dark))',
+					'green-light': 'hsl(var(--g2c-green-light))'
+				},
 				navy: {
 					deep: 'hsl(var(--navy-deep))',
 					primary: 'hsl(var(--navy-primary))',
