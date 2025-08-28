@@ -7,8 +7,8 @@
 @layer base {
   :root {
     /* Core Brand Colors */
-    --background: 222 47% 11%;
-    --foreground: 210 100% 98%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
     
     /* Navy Base */
     --navy-deep: 220 50% 8%;
@@ -21,35 +21,35 @@
     --neon-cyan: 180 100% 50%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 50% 8%), hsl(222 47% 11%), hsl(200 100% 20%));
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 100% 98%), hsl(200 100% 95%));
     --gradient-ai: linear-gradient(45deg, hsl(200 100% 50%), hsl(180 100% 50%), hsl(220 100% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 50% 8%) 0%, hsl(200 100% 15%) 50%, hsl(222 47% 11%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(220 40% 18% / 0.8), hsl(222 47% 11% / 0.9));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(200 100% 95%) 50%, hsl(0 0% 100%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 98% / 0.8), hsl(220 100% 99% / 0.9));
     
     /* Component Colors */
-    --card: 220 40% 18%;
-    --card-foreground: 210 100% 98%;
-    --popover: 220 40% 18%;
-    --popover-foreground: 210 100% 98%;
+    --card: 0 0% 98%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
     
     --primary: 200 100% 50%;
-    --primary-foreground: 222 47% 11%;
+    --primary-foreground: 0 0% 100%;
     --primary-glow: 200 100% 60%;
     
-    --secondary: 220 40% 18%;
-    --secondary-foreground: 210 100% 98%;
+    --secondary: 220 20% 95%;
+    --secondary-foreground: 222 47% 11%;
     
-    --muted: 220 30% 25%;
-    --muted-foreground: 210 20% 70%;
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 8% 46%;
     
     --accent: 180 100% 50%;
-    --accent-foreground: 222 47% 11%;
+    --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 100% 98%;
+    --destructive-foreground: 0 0% 100%;
     
-    --border: 220 30% 25%;
-    --input: 220 40% 18%;
+    --border: 220 13% 91%;
+    --input: 0 0% 100%;
     --ring: 200 100% 50%;
     
     /* Effects */
