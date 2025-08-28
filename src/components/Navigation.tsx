@@ -42,10 +42,12 @@ const Navigation = () => {
             </Link>
 
             {/* Solutions Dropdown */}
-            <div className="relative">
+            <div 
+              className="relative"
+              onMouseEnter={() => setSolutionsOpen(true)}
+              onMouseLeave={() => setSolutionsOpen(false)}
+            >
               <button
-                onMouseEnter={() => setSolutionsOpen(true)}
-                onMouseLeave={() => setSolutionsOpen(false)}
                 className={cn(
                   "flex items-center text-sm font-medium transition-colors hover:text-primary",
                   location.pathname.startsWith("/solutions") ? "text-primary" : "text-muted-foreground"
@@ -56,21 +58,19 @@ const Navigation = () => {
               </button>
               
               {solutionsOpen && (
-                <div
-                  onMouseEnter={() => setSolutionsOpen(true)}
-                  onMouseLeave={() => setSolutionsOpen(false)}
-                  className="absolute top-full left-0 mt-2 w-64 bg-card border border-primary/20 rounded-lg shadow-lg ai-glow z-50"
-                >
-                  <div className="p-2">
-                    {solutionItems.map((item) => (
-                      <Link
-                        key={item.path}
-                        to={item.path}
-                        className="block px-3 py-2 text-sm text-foreground hover:bg-primary/10 rounded-md transition-colors"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+                <div className="absolute top-full left-0 pt-2 z-50">
+                  <div className="w-64 bg-card border border-primary/20 rounded-lg shadow-lg ai-glow">
+                    <div className="p-2">
+                      {solutionItems.map((item) => (
+                        <Link
+                          key={item.path}
+                          to={item.path}
+                          className="block px-3 py-2 text-sm text-foreground hover:bg-primary/10 rounded-md transition-colors"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
