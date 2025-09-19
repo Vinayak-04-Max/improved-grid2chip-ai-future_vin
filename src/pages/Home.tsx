@@ -27,28 +27,28 @@ const Home = () => {
       description: "Purpose-built for machine learning and AI workloads",
       icon: Cpu,
       path: "/solutions/ai-ready",
-      color: "from-neon-blue to-neon-cyan"
+      color: "bg-primary"
     },
     {
       title: "Edge Data Centers",
       description: "Ultra-low latency computing at the network edge",
       icon: Zap,
       path: "/solutions/edge",
-      color: "from-primary to-accent"
+      color: "bg-accent"
     },
     {
       title: "HPC Solutions",
       description: "High-performance computing for research and analysis",
       icon: Shield,
       path: "/solutions/hpc",
-      color: "from-accent to-primary"
+      color: "bg-primary"
     },
     {
       title: "Container Solutions",
       description: "Rapid deployment modular data center infrastructure",
       icon: Globe,
       path: "/solutions/container",
-      color: "from-neon-cyan to-neon-blue"
+      color: "bg-accent"
     }
   ];
 
@@ -96,7 +96,7 @@ const Home = () => {
         }}
       >
         {/* Dark Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-navy-deep/70 bg-gradient-to-r from-navy-deep/80 to-navy-deep/60"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         
         {/* Animated Background Elements */}
         <div className="absolute inset-0 tech-grid opacity-10"></div>
@@ -123,7 +123,7 @@ const Home = () => {
             <defs>
               <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" style={{stopColor: 'hsl(var(--primary))', stopOpacity: 0.3}} />
-                <stop offset="100%" style={{stopColor: 'hsl(var(--accent))', stopOpacity: 0.1}} />
+                <stop offset="100%" style={{stopColor: 'hsl(var(--primary))', stopOpacity: 0.1}} />
               </linearGradient>
             </defs>
             <g className="animate-ai-pulse">
@@ -135,9 +135,9 @@ const Home = () => {
         </div>
 
         {/* Glowing Orbs */}
-        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gradient-ai opacity-20 blur-xl animate-ai-pulse"></div>
-        <div className="absolute bottom-32 right-20 w-24 h-24 rounded-full bg-gradient-to-r from-accent to-primary opacity-30 blur-lg animate-ai-float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-primary/20 blur-md animate-glow-pulse"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary/20 blur-xl animate-ai-pulse"></div>
+        <div className="absolute bottom-32 right-20 w-24 h-24 rounded-full bg-accent/30 blur-lg animate-ai-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-primary/20 blur-md animate-ai-pulse"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 z-10 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
@@ -154,7 +154,7 @@ const Home = () => {
               <span className="inline-block animate-fade-in" style={{animationDelay: '0.2s'}}>
                 AI-Enhanced 
               </span>{' '}
-              <span className="text-gradient-ai inline-block animate-scale-in" style={{animationDelay: '0.4s'}}>
+              <span className="text-g2c-blue inline-block animate-scale-in" style={{animationDelay: '0.4s'}}>
                 Critical Facility
               </span>{' '}
               <span className="inline-block animate-fade-in" style={{animationDelay: '0.6s'}}>
@@ -190,7 +190,6 @@ const Home = () => {
                 <Link to="/demo">
                   <span className="relative z-10">Experience AI Infrastructure</span>
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-accent opacity-0 group-hover:opacity-20 transition-opacity"></div>
                 </Link>
               </Button>
               <Button variant="glass" size="lg" className="group hover-scale bg-white/10 border-white/20 text-white hover:bg-white/20" asChild>
@@ -238,10 +237,10 @@ const Home = () => {
             {solutions.map((solution, index) => {
               const Icon = solution.icon;
               return (
-                <Card key={index} className="group bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow hover:shadow-xl">
+                <Card key={index} className="group bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 g2c-hover hover:shadow-xl">
                   <CardHeader className="text-center">
-                    <div className={`mx-auto w-16 h-16 rounded-xl bg-gradient-to-br ${solution.color} p-4 mb-4 ai-pulse`}>
-                      <Icon className="w-full h-full text-navy-deep" />
+                    <div className={`mx-auto w-16 h-16 rounded-xl ${solution.color} p-4 mb-4 ai-pulse`}>
+                      <Icon className="w-full h-full text-white" />
                     </div>
                     <CardTitle className="text-xl font-semibold">{solution.title}</CardTitle>
                     <CardDescription className="text-muted-foreground">
@@ -264,12 +263,12 @@ const Home = () => {
       </section>
 
       {/* AI Technology Showcase */}
-      <section className="py-20 lg:py-32 bg-gradient-card">
+      <section className="py-20 lg:py-32 bg-secondary/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h2 className="text-3xl lg:text-5xl font-display font-bold">
-                Powered by <span className="text-gradient-ai">Artificial Intelligence</span>
+                Powered by <span className="text-g2c-green">Artificial Intelligence</span>
               </h2>
               
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -279,21 +278,21 @@ const Home = () => {
 
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 rounded-full bg-gradient-ai mt-1"></div>
+                  <div className="w-6 h-6 rounded-full bg-accent mt-1"></div>
                   <div>
                     <h3 className="font-semibold text-foreground">Predictive Analytics</h3>
                     <p className="text-muted-foreground">AI-driven insights prevent issues before they occur</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 rounded-full bg-gradient-ai mt-1"></div>
+                  <div className="w-6 h-6 rounded-full bg-accent mt-1"></div>
                   <div>
                     <h3 className="font-semibold text-foreground">Dynamic Scaling</h3>
                     <p className="text-muted-foreground">Automatically adjust capacity based on demand</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 rounded-full bg-gradient-ai mt-1"></div>
+                  <div className="w-6 h-6 rounded-full bg-accent mt-1"></div>
                   <div>
                     <h3 className="font-semibold text-foreground">Intelligent Cooling</h3>
                     <p className="text-muted-foreground">AI-optimized thermal management systems</p>
@@ -315,7 +314,7 @@ const Home = () => {
                 alt="AI Neural Network Technology"
                 className="rounded-2xl ai-float"
               />
-              <div className="absolute inset-0 bg-gradient-ai opacity-10 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-accent/10 rounded-2xl"></div>
             </div>
           </div>
         </div>
@@ -326,7 +325,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Industries We <span className="text-gradient-ai">Empower</span>
+              Industries We <span className="text-g2c-green">Empower</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Trusted by leading organizations across diverse sectors for mission-critical infrastructure.
@@ -337,7 +336,7 @@ const Home = () => {
             {industries.map((industry, index) => {
               const Icon = industry.icon;
               return (
-                <Card key={index} className="text-center bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 group">
+                <Card key={index} className="text-center bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 group">
                   <CardContent className="p-6">
                     <Icon className="w-12 h-12 mx-auto mb-4 text-primary group-hover:text-accent transition-colors" />
                     <h3 className="font-semibold text-foreground mb-2">{industry.name}</h3>
@@ -360,11 +359,11 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 lg:py-32 bg-gradient-card">
+      <section className="py-20 lg:py-32 bg-secondary/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Trusted by <span className="text-gradient-ai">Industry Leaders</span>
+              Trusted by <span className="text-g2c-blue">Industry Leaders</span>
             </h2>
           </div>
 
@@ -376,7 +375,7 @@ const Home = () => {
                     "{testimonial.text}"
                   </blockquote>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-ai"></div>
+                    <div className="w-12 h-12 rounded-full bg-primary"></div>
                     <div>
                       <div className="font-semibold text-foreground">{testimonial.author}</div>
                       <div className="text-sm text-muted-foreground">{testimonial.role}</div>

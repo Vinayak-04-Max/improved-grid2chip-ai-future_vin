@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 ai-glow",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 g2c-hover",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-primary/30 bg-card/50 text-foreground hover:bg-primary/10 hover:border-primary",
+        outline: "border border-primary/30 bg-card text-foreground hover:bg-primary/10 hover:border-primary",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-to-r from-primary to-accent text-primary-foreground hover:from-primary/90 hover:to-accent/90 ai-glow shadow-lg hover:shadow-xl font-semibold",
-        ai: "bg-gradient-to-r from-neon-blue to-neon-cyan text-navy-deep hover:from-neon-blue/90 hover:to-neon-cyan/90 ai-pulse font-semibold",
-        glass: "bg-card/20 backdrop-blur-md border border-primary/20 text-foreground hover:bg-card/30 hover:border-primary/40",
+        hero: "bg-primary text-primary-foreground hover:bg-primary/90 g2c-hover shadow-lg hover:shadow-xl font-semibold",
+        ai: "bg-accent text-accent-foreground hover:bg-accent/90 font-semibold",
+        glass: "bg-card/80 border border-primary/20 text-foreground hover:bg-card hover:border-primary/40",
       },
       size: {
         default: "h-10 px-4 py-2",
