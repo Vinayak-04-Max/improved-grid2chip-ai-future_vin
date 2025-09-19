@@ -86,7 +86,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero min-h-screen flex items-center">
+      <section className="relative overflow-hidden bg-gradient-hero h-screen flex items-center">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 tech-grid opacity-20"></div>
         
@@ -142,20 +142,20 @@ const Home = () => {
               {/* Animated Title */}
               <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight">
                 <span className="inline-block animate-fade-in" style={{animationDelay: '0.2s'}}>
-                  Crafting 
+                  AI-Enhanced 
                 </span>{' '}
                 <span className="text-gradient-ai inline-block animate-scale-in" style={{animationDelay: '0.4s'}}>
-                  AI-Ready
+                  Critical Facility
                 </span>{' '}
                 <span className="inline-block animate-fade-in" style={{animationDelay: '0.6s'}}>
-                  Data Centers for the Future
+                  Infrastructure Solutions
                 </span>
               </h1>
               
               {/* Typewriter Effect Text */}
               <p className="text-xl text-muted-foreground leading-relaxed animate-fade-in" style={{animationDelay: '0.8s'}}>
-                Sustainable, scalable, and optimized infrastructure designed specifically for AI workloads, 
-                edge computing, and next-generation applications.
+                Leading player in the critical facility industry with cutting-edge AI-ready infrastructure solutions. 
+                We're not just connecting systems; we're shaping the future of integrated AI-powered solutions.
               </p>
               
               {/* Animated Stats */}
@@ -178,14 +178,14 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{animationDelay: '1.2s'}}>
                 <Button variant="hero" size="lg" className="group relative overflow-hidden" asChild>
                   <Link to="/demo">
-                    <span className="relative z-10">Book a Demo</span>
+                    <span className="relative z-10">Experience AI Infrastructure</span>
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-accent opacity-0 group-hover:opacity-20 transition-opacity"></div>
                   </Link>
                 </Button>
                 <Button variant="glass" size="lg" className="group hover-scale" asChild>
-                  <Link to="/solutions/ai-ready">
-                    <span>Explore Solutions</span>
+                  <Link to="/data-center/ai-ready">
+                    <span>Book AI Demo</span>
                     <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-ai-pulse"></div>
                   </Link>
                 </Button>

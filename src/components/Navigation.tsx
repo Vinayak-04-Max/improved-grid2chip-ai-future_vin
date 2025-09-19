@@ -1,67 +1,195 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [dataCenterOpen, setDataCenterOpen] = useState(false);
+  const [bmsOpen, setBmsOpen] = useState(false);
 
-  const isActive = (path: string) => location.pathname === path;
+  const aboutItems = [
+    { name: "About Us", path: "/about/us" },
+    { name: "Partners", path: "/about/partners" },
+    { name: "Testimonials & Awards", path: "/about/testimonials" },
+    { name: "Our Leadership", path: "/about/leadership" },
+    { name: "Our Clients", path: "/about/clients" },
+    { name: "Careers", path: "/about/careers" }
+  ];
 
-  const solutionItems = [
-    { name: "AI-Ready Data Centers", path: "/solutions/ai-ready" },
-    { name: "Container Data Centers", path: "/solutions/container" },
-    { name: "Edge Data Centers", path: "/solutions/edge" },
-    { name: "Prefabricated Data Centers", path: "/solutions/prefab" },
-    { name: "HPC Data Centers", path: "/solutions/hpc" },
+  const productItems = [
+    { name: "IMS", path: "/products/ims" },
+    { name: "Prefab Container Data Center", path: "/products/prefab-container" }
+  ];
+
+  const dataCenterItems = [
+    { name: "Edge Data Center", path: "/data-center/edge" },
+    { name: "Custom Build Data Center", path: "/data-center/custom" },
+    { name: "AI Ready Data Centers", path: "/data-center/ai-ready" }
+  ];
+
+  const bmsItems = [
+    { name: "Building Management System", path: "/bms/building-management" },
+    { name: "ELV Systems", path: "/bms/elv-systems" },
+    { name: "Fire Safety Systems", path: "/bms/fire-safety" },
+    { name: "Control Panel Services", path: "/bms/control-panels" }
   ];
 
   return (
     <nav className="bg-card/80 backdrop-blur-md border-b border-primary/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-ai rounded-lg ai-glow"></div>
-            <span className="text-xl font-display font-bold text-gradient-ai">Grid2Chip</span>
-          </Link>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center space-x-2">
+              <div className="w-10 h-10 bg-gradient-ai rounded-lg flex items-center justify-center">
+                <span className="text-navy-deep font-bold text-lg">G2C</span>
+              </div>
+              <span className="text-xl font-display font-bold text-foreground">Grid2Chip</span>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             <Link
               to="/"
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isActive("/") ? "text-primary" : "text-muted-foreground"
+                location.pathname === "/" ? "text-primary" : "text-muted-foreground"
               )}
             >
               Home
             </Link>
 
-            {/* Solutions Dropdown */}
+            {/* About G2C Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setSolutionsOpen(true)}
-              onMouseLeave={() => setSolutionsOpen(false)}
+              onMouseEnter={() => setAboutOpen(true)}
+              onMouseLeave={() => setAboutOpen(false)}
             >
               <button
                 className={cn(
                   "flex items-center text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname.startsWith("/solutions") ? "text-primary" : "text-muted-foreground"
+                  location.pathname.startsWith("/about") ? "text-primary" : "text-muted-foreground"
                 )}
               >
-                Solutions
+                About G2C
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               
-              {solutionsOpen && (
+              {aboutOpen && (
                 <div className="absolute top-full left-0 pt-2 z-50">
                   <div className="w-64 bg-card border border-primary/20 rounded-lg shadow-lg ai-glow">
                     <div className="p-2">
-                      {solutionItems.map((item) => (
+                      {aboutItems.map((item) => (
+                        <Link
+                          key={item.path}
+                          to={item.path}
+                          className="block px-3 py-2 text-sm text-foreground hover:bg-primary/10 rounded-md transition-colors"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Products Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setProductsOpen(true)}
+              onMouseLeave={() => setProductsOpen(false)}
+            >
+              <button
+                className={cn(
+                  "flex items-center text-sm font-medium transition-colors hover:text-primary",
+                  location.pathname.startsWith("/products") ? "text-primary" : "text-muted-foreground"
+                )}
+              >
+                Products
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              
+              {productsOpen && (
+                <div className="absolute top-full left-0 pt-2 z-50">
+                  <div className="w-64 bg-card border border-primary/20 rounded-lg shadow-lg ai-glow">
+                    <div className="p-2">
+                      {productItems.map((item) => (
+                        <Link
+                          key={item.path}
+                          to={item.path}
+                          className="block px-3 py-2 text-sm text-foreground hover:bg-primary/10 rounded-md transition-colors"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Data Center Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setDataCenterOpen(true)}
+              onMouseLeave={() => setDataCenterOpen(false)}
+            >
+              <button
+                className={cn(
+                  "flex items-center text-sm font-medium transition-colors hover:text-primary",
+                  location.pathname.startsWith("/data-center") ? "text-primary" : "text-muted-foreground"
+                )}
+              >
+                Data Center
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              
+              {dataCenterOpen && (
+                <div className="absolute top-full left-0 pt-2 z-50">
+                  <div className="w-64 bg-card border border-primary/20 rounded-lg shadow-lg ai-glow">
+                    <div className="p-2">
+                      {dataCenterItems.map((item) => (
+                        <Link
+                          key={item.path}
+                          to={item.path}
+                          className="block px-3 py-2 text-sm text-foreground hover:bg-primary/10 rounded-md transition-colors"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* BMS Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setBmsOpen(true)}
+              onMouseLeave={() => setBmsOpen(false)}
+            >
+              <button
+                className={cn(
+                  "flex items-center text-sm font-medium transition-colors hover:text-primary",
+                  location.pathname.startsWith("/bms") ? "text-primary" : "text-muted-foreground"
+                )}
+              >
+                BMS
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              
+              {bmsOpen && (
+                <div className="absolute top-full left-0 pt-2 z-50">
+                  <div className="w-64 bg-card border border-primary/20 rounded-lg shadow-lg ai-glow">
+                    <div className="p-2">
+                      {bmsItems.map((item) => (
                         <Link
                           key={item.path}
                           to={item.path}
@@ -77,36 +205,26 @@ const Navigation = () => {
             </div>
 
             <Link
-              to="/industries"
+              to="/blog"
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isActive("/industries") ? "text-primary" : "text-muted-foreground"
+                location.pathname === "/blog" ? "text-primary" : "text-muted-foreground"
               )}
             >
-              Industries
-            </Link>
-
-            <Link
-              to="/about"
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                isActive("/about") ? "text-primary" : "text-muted-foreground"
-              )}
-            >
-              About
+              Blog
             </Link>
 
             <Link
               to="/contact"
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isActive("/contact") ? "text-primary" : "text-muted-foreground"
+                location.pathname === "/contact" ? "text-primary" : "text-muted-foreground"
               )}
             >
-              Contact
+              Contact Us
             </Link>
 
-            <Button variant="hero" size="sm" asChild>
+            <Button variant="ai" size="sm" asChild>
               <Link to="/demo">Book a Demo</Link>
             </Button>
           </div>
@@ -114,7 +232,7 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-foreground hover:bg-primary/10"
+            className="lg:hidden p-2 rounded-md text-foreground hover:bg-primary/10"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -122,63 +240,160 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4">
-            <div className="space-y-2">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-card border-t border-primary/20 ai-glow max-h-96 overflow-y-auto">
+            <div className="px-4 py-4 space-y-4">
               <Link
                 to="/"
-                className="block px-3 py-2 text-base font-medium text-foreground hover:bg-primary/10 rounded-md"
+                className={cn(
+                  "block text-sm font-medium transition-colors hover:text-primary",
+                  location.pathname === "/" ? "text-primary" : "text-muted-foreground"
+                )}
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
-              
-              <div className="px-3 py-2">
-                <div className="text-sm font-medium text-muted-foreground mb-2">Solutions</div>
-                <div className="space-y-1 ml-4">
-                  {solutionItems.map((item) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      className="block py-1 text-sm text-foreground hover:text-primary"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
+
+              {/* About G2C Mobile */}
+              <div className="space-y-2">
+                <button
+                  onClick={() => setAboutOpen(!aboutOpen)}
+                  className={cn(
+                    "flex items-center w-full text-sm font-medium transition-colors hover:text-primary text-left",
+                    location.pathname.startsWith("/about") ? "text-primary" : "text-muted-foreground"
+                  )}
+                >
+                  About G2C
+                  <ChevronDown className={cn("ml-1 h-4 w-4 transition-transform", aboutOpen ? "rotate-180" : "")} />
+                </button>
+                
+                {aboutOpen && (
+                  <div className="pl-4 space-y-2">
+                    {aboutItems.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Products Mobile */}
+              <div className="space-y-2">
+                <button
+                  onClick={() => setProductsOpen(!productsOpen)}
+                  className={cn(
+                    "flex items-center w-full text-sm font-medium transition-colors hover:text-primary text-left",
+                    location.pathname.startsWith("/products") ? "text-primary" : "text-muted-foreground"
+                  )}
+                >
+                  Products
+                  <ChevronDown className={cn("ml-1 h-4 w-4 transition-transform", productsOpen ? "rotate-180" : "")} />
+                </button>
+                
+                {productsOpen && (
+                  <div className="pl-4 space-y-2">
+                    {productItems.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Data Center Mobile */}
+              <div className="space-y-2">
+                <button
+                  onClick={() => setDataCenterOpen(!dataCenterOpen)}
+                  className={cn(
+                    "flex items-center w-full text-sm font-medium transition-colors hover:text-primary text-left",
+                    location.pathname.startsWith("/data-center") ? "text-primary" : "text-muted-foreground"
+                  )}
+                >
+                  Data Center
+                  <ChevronDown className={cn("ml-1 h-4 w-4 transition-transform", dataCenterOpen ? "rotate-180" : "")} />
+                </button>
+                
+                {dataCenterOpen && (
+                  <div className="pl-4 space-y-2">
+                    {dataCenterItems.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* BMS Mobile */}
+              <div className="space-y-2">
+                <button
+                  onClick={() => setBmsOpen(!bmsOpen)}
+                  className={cn(
+                    "flex items-center w-full text-sm font-medium transition-colors hover:text-primary text-left",
+                    location.pathname.startsWith("/bms") ? "text-primary" : "text-muted-foreground"
+                  )}
+                >
+                  BMS
+                  <ChevronDown className={cn("ml-1 h-4 w-4 transition-transform", bmsOpen ? "rotate-180" : "")} />
+                </button>
+                
+                {bmsOpen && (
+                  <div className="pl-4 space-y-2">
+                    {bmsItems.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <Link
-                to="/industries"
-                className="block px-3 py-2 text-base font-medium text-foreground hover:bg-primary/10 rounded-md"
+                to="/blog"
+                className={cn(
+                  "block text-sm font-medium transition-colors hover:text-primary",
+                  location.pathname === "/blog" ? "text-primary" : "text-muted-foreground"
+                )}
                 onClick={() => setIsOpen(false)}
               >
-                Industries
-              </Link>
-
-              <Link
-                to="/about"
-                className="block px-3 py-2 text-base font-medium text-foreground hover:bg-primary/10 rounded-md"
-                onClick={() => setIsOpen(false)}
-              >
-                About
+                Blog
               </Link>
 
               <Link
                 to="/contact"
-                className="block px-3 py-2 text-base font-medium text-foreground hover:bg-primary/10 rounded-md"
+                className={cn(
+                  "block text-sm font-medium transition-colors hover:text-primary",
+                  location.pathname === "/contact" ? "text-primary" : "text-muted-foreground"
+                )}
                 onClick={() => setIsOpen(false)}
               >
-                Contact
+                Contact Us
               </Link>
 
-              <div className="px-3 pt-2">
-                <Button variant="hero" size="sm" className="w-full" asChild>
-                  <Link to="/demo" onClick={() => setIsOpen(false)}>
-                    Book a Demo
-                  </Link>
-                </Button>
-              </div>
+              <Button variant="ai" size="sm" className="w-full" asChild>
+                <Link to="/demo" onClick={() => setIsOpen(false)}>Book a Demo</Link>
+              </Button>
             </div>
           </div>
         )}
