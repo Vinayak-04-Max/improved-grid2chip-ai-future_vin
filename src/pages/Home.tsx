@@ -86,9 +86,20 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero h-screen flex items-center">
+      <section 
+        className="relative overflow-hidden h-screen flex items-center"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Dark Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-navy-deep/70 bg-gradient-to-r from-navy-deep/80 to-navy-deep/60"></div>
+        
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 tech-grid opacity-20"></div>
+        <div className="absolute inset-0 tech-grid opacity-10"></div>
         
         {/* Floating Particles */}
         <div className="absolute inset-0">
@@ -128,117 +139,84 @@ const Home = () => {
         <div className="absolute bottom-32 right-20 w-24 h-24 rounded-full bg-gradient-to-r from-accent to-primary opacity-30 blur-lg animate-ai-float" style={{animationDelay: '1s'}}></div>
         <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-primary/20 blur-md animate-glow-pulse"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-slide-up">
-              {/* Animated Badge */}
-              <Badge variant="outline" className="w-fit border-primary/30 text-primary animate-fade-in hover:border-primary/60 transition-colors duration-300">
-                <span className="relative">
-                  Next-Generation Infrastructure
-                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ai-pulse"></span>
-                </span>
-              </Badge>
-              
-              {/* Animated Title */}
-              <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight">
-                <span className="inline-block animate-fade-in" style={{animationDelay: '0.2s'}}>
-                  AI-Enhanced 
-                </span>{' '}
-                <span className="text-gradient-ai inline-block animate-scale-in" style={{animationDelay: '0.4s'}}>
-                  Critical Facility
-                </span>{' '}
-                <span className="inline-block animate-fade-in" style={{animationDelay: '0.6s'}}>
-                  Infrastructure Solutions
-                </span>
-              </h1>
-              
-              {/* Typewriter Effect Text */}
-              <p className="text-xl text-muted-foreground leading-relaxed animate-fade-in" style={{animationDelay: '0.8s'}}>
-                Leading player in the critical facility industry with cutting-edge AI-ready infrastructure solutions. 
-                We're not just connecting systems; we're shaping the future of integrated AI-powered solutions.
-              </p>
-              
-              {/* Animated Stats */}
-              <div className="grid grid-cols-3 gap-4 py-4 animate-fade-in" style={{animationDelay: '1s'}}>
-                <div className="text-center group hover-scale">
-                  <div className="text-2xl font-bold text-primary group-hover:text-accent transition-colors">99.99%</div>
-                  <div className="text-sm text-muted-foreground">Uptime</div>
-                </div>
-                <div className="text-center group hover-scale">
-                  <div className="text-2xl font-bold text-primary group-hover:text-accent transition-colors">50+</div>
-                  <div className="text-sm text-muted-foreground">Deployments</div>
-                </div>
-                <div className="text-center group hover-scale">
-                  <div className="text-2xl font-bold text-primary group-hover:text-accent transition-colors">24/7</div>
-                  <div className="text-sm text-muted-foreground">Support</div>
-                </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 z-10 text-center">
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Animated Badge */}
+            <Badge variant="outline" className="border-white/30 text-white animate-fade-in hover:border-white/60 transition-colors duration-300">
+              <span className="relative">
+                Next-Generation Infrastructure
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ai-pulse"></span>
+              </span>
+            </Badge>
+            
+            {/* Animated Title */}
+            <h1 className="text-5xl lg:text-7xl font-display font-bold leading-tight text-white">
+              <span className="inline-block animate-fade-in" style={{animationDelay: '0.2s'}}>
+                AI-Enhanced 
+              </span>{' '}
+              <span className="text-gradient-ai inline-block animate-scale-in" style={{animationDelay: '0.4s'}}>
+                Critical Facility
+              </span>{' '}
+              <span className="inline-block animate-fade-in" style={{animationDelay: '0.6s'}}>
+                Infrastructure Solutions
+              </span>
+            </h1>
+            
+            {/* Typewriter Effect Text */}
+            <p className="text-xl lg:text-2xl text-white/90 leading-relaxed animate-fade-in max-w-3xl mx-auto" style={{animationDelay: '0.8s'}}>
+              Leading player in the critical facility industry with cutting-edge AI-ready infrastructure solutions. 
+              We're not just connecting systems; we're shaping the future of integrated AI-powered solutions.
+            </p>
+            
+            {/* Animated Stats */}
+            <div className="grid grid-cols-3 gap-8 py-8 animate-fade-in max-w-2xl mx-auto" style={{animationDelay: '1s'}}>
+              <div className="text-center group hover-scale">
+                <div className="text-3xl lg:text-4xl font-bold text-primary group-hover:text-accent transition-colors">99.99%</div>
+                <div className="text-sm text-white/80">Uptime</div>
               </div>
-              
-              {/* Enhanced CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{animationDelay: '1.2s'}}>
-                <Button variant="hero" size="lg" className="group relative overflow-hidden" asChild>
-                  <Link to="/demo">
-                    <span className="relative z-10">Experience AI Infrastructure</span>
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-accent opacity-0 group-hover:opacity-20 transition-opacity"></div>
-                  </Link>
-                </Button>
-                <Button variant="glass" size="lg" className="group hover-scale" asChild>
-                  <Link to="/data-center/ai-ready">
-                    <span>Book AI Demo</span>
-                    <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-ai-pulse"></div>
-                  </Link>
-                </Button>
+              <div className="text-center group hover-scale">
+                <div className="text-3xl lg:text-4xl font-bold text-primary group-hover:text-accent transition-colors">50+</div>
+                <div className="text-sm text-white/80">Deployments</div>
               </div>
-
-              {/* Enhanced Features with Animation */}
-              <div className="grid grid-cols-2 gap-4 pt-8 animate-fade-in" style={{animationDelay: '1.4s'}}>
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-2 group hover-scale">
-                    <CheckCircle className="h-5 w-5 text-primary group-hover:text-accent transition-colors animate-ai-pulse" style={{animationDelay: `${index * 0.2}s`}} />
-                    <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">{feature}</span>
-                  </div>
-                ))}
+              <div className="text-center group hover-scale">
+                <div className="text-3xl lg:text-4xl font-bold text-primary group-hover:text-accent transition-colors">24/7</div>
+                <div className="text-sm text-white/80">Support</div>
               </div>
             </div>
+            
+            {/* Enhanced CTAs */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{animationDelay: '1.2s'}}>
+              <Button variant="hero" size="lg" className="group relative overflow-hidden" asChild>
+                <Link to="/demo">
+                  <span className="relative z-10">Experience AI Infrastructure</span>
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-accent opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                </Link>
+              </Button>
+              <Button variant="glass" size="lg" className="group hover-scale bg-white/10 border-white/20 text-white hover:bg-white/20" asChild>
+                <Link to="/data-center/ai-ready">
+                  <span>Book AI Demo</span>
+                  <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-ai-pulse"></div>
+                </Link>
+              </Button>
+            </div>
 
-            {/* Enhanced Image Section */}
-            <div className="relative animate-fade-in" style={{animationDelay: '0.5s'}}>
-              {/* Multiple Floating Elements */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary/20 rounded-full animate-ai-float blur-sm" style={{animationDelay: '0s'}}></div>
-              <div className="absolute -top-2 -right-6 w-6 h-6 bg-accent/30 rounded-full animate-ai-float blur-sm" style={{animationDelay: '1s'}}></div>
-              <div className="absolute -bottom-6 -left-2 w-10 h-10 bg-gradient-ai opacity-20 rounded-full animate-glow-pulse" style={{animationDelay: '2s'}}></div>
-              
-              {/* Main Image with Enhanced Effects */}
-              <div className="relative z-10 group">
-                <img
-                  src={heroImage}
-                  alt="AI-Ready Data Center Infrastructure"
-                  className="rounded-2xl shadow-hero ai-float group-hover:scale-105 transition-transform duration-700"
-                />
-                {/* Animated Border */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-ai opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-              </div>
-              
-              {/* Multiple Glow Layers */}
-              <div className="absolute inset-0 bg-gradient-ai opacity-20 rounded-2xl ai-pulse"></div>
-              <div className="absolute inset-2 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl animate-glow-pulse" style={{animationDelay: '1s'}}></div>
-              
-              {/* Tech Elements */}
-              <div className="absolute top-4 right-4 w-12 h-12 border border-primary/30 rounded-lg bg-card/50 backdrop-blur-sm flex items-center justify-center animate-ai-pulse">
-                <Cpu className="w-6 h-6 text-primary" />
-              </div>
-              <div className="absolute bottom-4 left-4 w-12 h-12 border border-accent/30 rounded-lg bg-card/50 backdrop-blur-sm flex items-center justify-center animate-ai-pulse" style={{animationDelay: '0.5s'}}>
-                <Zap className="w-6 h-6 text-accent" />
-              </div>
+            {/* Enhanced Features with Animation */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-12 animate-fade-in max-w-3xl mx-auto" style={{animationDelay: '1.4s'}}>
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-center space-x-3 group hover-scale justify-center md:justify-start">
+                  <CheckCircle className="h-6 w-6 text-primary group-hover:text-accent transition-colors animate-ai-pulse flex-shrink-0" style={{animationDelay: `${index * 0.2}s`}} />
+                  <span className="text-lg text-white/90 group-hover:text-white transition-colors">{feature}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-ai-pulse"></div>
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-ai-pulse"></div>
           </div>
         </div>
       </section>

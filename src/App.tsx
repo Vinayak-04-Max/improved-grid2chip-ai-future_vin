@@ -17,8 +17,22 @@ import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/AboutUs";
 import Partners from "./pages/Partners";
 import Blog from "./pages/Blog";
+import Testimonials from "./pages/Testimonials";
+import Leadership from "./pages/Leadership";
+import Clients from "./pages/Clients";
+import Careers from "./pages/Careers";
 // Products Pages
 import IMS from "./pages/IMS";
+import PrefabContainer from "./pages/PrefabContainer";
+// Data Center Pages
+import EdgeDataCenter from "./pages/EdgeDataCenter";
+import CustomDataCenter from "./pages/CustomDataCenter";
+import AIReadyDataCenter from "./pages/AIReadyDataCenter";
+// BMS Pages
+import BuildingManagement from "./pages/BuildingManagement";
+import ELVSystems from "./pages/ELVSystems";
+import FireSafety from "./pages/FireSafety";
+import ControlPanels from "./pages/ControlPanels";
 // Trigger rebuild
 
 const queryClient = new QueryClient();
@@ -38,25 +52,25 @@ const App = () => (
               {/* About G2C Routes */}
               <Route path="/about/us" element={<AboutUs />} />
               <Route path="/about/partners" element={<Partners />} />
-              <Route path="/about/testimonials" element={<About />} />
-              <Route path="/about/leadership" element={<About />} />
-              <Route path="/about/clients" element={<About />} />
-              <Route path="/about/careers" element={<About />} />
+              <Route path="/about/testimonials" element={<Testimonials />} />
+              <Route path="/about/leadership" element={<Leadership />} />
+              <Route path="/about/clients" element={<Clients />} />
+              <Route path="/about/careers" element={<Careers />} />
               
               {/* Products Routes */}
               <Route path="/products/ims" element={<IMS />} />
-              <Route path="/products/prefab-container" element={<Solutions />} />
+              <Route path="/products/prefab-container" element={<PrefabContainer />} />
               
               {/* Data Center Routes */}
-              <Route path="/data-center/edge" element={<Solutions />} />
-              <Route path="/data-center/custom" element={<Solutions />} />
-              <Route path="/data-center/ai-ready" element={<Solutions />} />
+              <Route path="/data-center/edge" element={<EdgeDataCenter />} />
+              <Route path="/data-center/custom" element={<CustomDataCenter />} />
+              <Route path="/data-center/ai-ready" element={<AIReadyDataCenter />} />
               
               {/* BMS Routes */}
-              <Route path="/bms/building-management" element={<Solutions />} />
-              <Route path="/bms/elv-systems" element={<Solutions />} />
-              <Route path="/bms/fire-safety" element={<Solutions />} />
-              <Route path="/bms/control-panels" element={<Solutions />} />
+              <Route path="/bms/building-management" element={<BuildingManagement />} />
+              <Route path="/bms/elv-systems" element={<ELVSystems />} />
+              <Route path="/bms/fire-safety" element={<FireSafety />} />
+              <Route path="/bms/control-panels" element={<ControlPanels />} />
               
               {/* Other Routes */}
               <Route path="/blog" element={<Blog />} />
