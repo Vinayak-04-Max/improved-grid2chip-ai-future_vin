@@ -98,7 +98,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero py-20 lg:py-32">
+      <section className="relative overflow-hidden bg-card py-20 lg:py-32">
         <div className="absolute inset-0 tech-grid opacity-20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
@@ -106,7 +106,7 @@ const Contact = () => {
           </Badge>
           
           <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            Let's Build Your <span className="text-gradient-ai">AI Infrastructure</span>
+            Let's Build Your <span className="text-primary">AI Infrastructure</span>
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
@@ -123,7 +123,7 @@ const Contact = () => {
             {contactMethods.map((method, index) => {
               const Icon = method.icon;
               return (
-                <Card key={index} className="text-center bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow group">
+                <Card key={index} className="text-center bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 group">
                   <CardContent className="p-8">
                     <Icon className="w-12 h-12 mx-auto mb-4 text-primary" />
                     <h3 className="text-xl font-semibold text-foreground mb-2">{method.title}</h3>

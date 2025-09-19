@@ -45,8 +45,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-ai rounded-lg flex items-center justify-center">
-                <span className="text-navy-deep font-bold text-lg">G2C</span>
+              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">G2C</span>
               </div>
               <span className="text-xl font-display font-bold text-foreground">Grid2Chip</span>
             </Link>
@@ -82,7 +82,7 @@ const Navigation = () => {
               
               {aboutOpen && (
                 <div className="absolute top-full left-0 pt-2 z-50">
-                  <div className="w-64 bg-card border border-primary/20 rounded-lg shadow-lg ai-glow">
+                  <div className="w-64 bg-card border border-primary/20 rounded-lg shadow-lg hover:border-primary/40 transition-all duration-300">
                     <div className="p-2">
                       {aboutItems.map((item) => (
                         <Link

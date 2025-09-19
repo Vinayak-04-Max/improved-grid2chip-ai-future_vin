@@ -70,7 +70,7 @@ const Solutions = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero py-20 lg:py-32">
+      <section className="relative overflow-hidden bg-card py-20 lg:py-32">
         <div className="absolute inset-0 tech-grid opacity-20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -80,7 +80,7 @@ const Solutions = () => {
               </Badge>
               
               <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight">
-                <span className="text-gradient-ai">Next-Generation</span> Data Center Solutions
+                <span className="text-primary">Next-Generation</span> Data Center Solutions
               </h1>
               
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -118,7 +118,7 @@ const Solutions = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Complete <span className="text-gradient-ai">Solution Portfolio</span>
+              Complete <span className="text-primary">Solution Portfolio</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Each solution is designed with cutting-edge technology and optimized for specific use cases and deployment scenarios.

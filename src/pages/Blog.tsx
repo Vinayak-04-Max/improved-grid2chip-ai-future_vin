@@ -70,7 +70,7 @@ const Blog = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero py-20 lg:py-32">
+      <section className="relative overflow-hidden bg-card py-20 lg:py-32">
         <div className="absolute inset-0 tech-grid opacity-20"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
@@ -83,7 +83,7 @@ const Blog = () => {
             </Badge>
             
             <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight">
-              AI Infrastructure <span className="text-gradient-ai">Blog</span>
+              AI Infrastructure <span className="text-primary">Blog</span>
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">

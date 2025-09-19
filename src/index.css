@@ -97,6 +97,27 @@
     background: hsl(var(--secondary));
   }
   
+  /* Background gradients using G2C colors only */
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--secondary)));
+  }
+  
+  .bg-gradient-card {
+    background: linear-gradient(180deg, hsl(var(--card)), hsl(var(--secondary)));
+  }
+  
+  .bg-gradient-ai {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  }
+  
+  /* Text gradients using G2C colors */
+  .text-gradient-ai {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
   /* Simple animations */
   .ai-pulse {
     animation: ai-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -106,11 +127,23 @@
     animation: ai-float 3s ease-in-out infinite;
   }
   
+  .ai-glow {
+    transition: all 0.3s ease;
+  }
+  
+  .ai-glow:hover {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+  }
+  
   .tech-grid {
     background-image: 
       linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
+  }
+  
+  .shadow-hero {
+    box-shadow: var(--shadow-hero);
   }
 }
 

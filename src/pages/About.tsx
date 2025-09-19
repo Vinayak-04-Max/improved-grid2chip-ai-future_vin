@@ -98,7 +98,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero py-20 lg:py-32">
+      <section className="relative overflow-hidden bg-card py-20 lg:py-32">
         <div className="absolute inset-0 tech-grid opacity-20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
@@ -106,7 +106,7 @@ const About = () => {
           </Badge>
           
           <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            Building the <span className="text-gradient-ai">Infrastructure</span> of Tomorrow
+            Building the <span className="text-primary">Infrastructure</span> of Tomorrow
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-8">
@@ -131,7 +131,7 @@ const About = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <Card className="bg-gradient-card border-primary/20 ai-glow">
+            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardContent className="p-8">
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-neon-blue to-neon-cyan p-4 mb-6 ai-pulse">
                   <Target className="w-full h-full text-navy-deep" />
@@ -145,7 +145,7 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-card border-primary/20 ai-glow">
+            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardContent className="p-8">
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-accent to-primary p-4 mb-6 ai-pulse">
                   <Lightbulb className="w-full h-full text-navy-deep" />
