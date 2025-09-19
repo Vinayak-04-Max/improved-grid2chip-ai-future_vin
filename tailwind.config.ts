@@ -79,11 +79,11 @@ export default {
 				'ai-pulse': {
 					'0%, 100%': { 
 						opacity: '1',
-						boxShadow: '0 0 20px hsl(200 100% 50% / 0.5)'
+						boxShadow: '0 0 20px hsl(220 57% 41% / 0.5)'
 					},
 					'50%': { 
 						opacity: '0.8',
-						boxShadow: '0 0 40px hsl(200 100% 50% / 0.8)'
+						boxShadow: '0 0 40px hsl(220 57% 41% / 0.8)'
 					}
 				},
 				'ai-float': {
@@ -95,8 +95,8 @@ export default {
 					'100%': { transform: 'translateY(0)', opacity: '1' }
 				},
 				'glow-pulse': {
-					'0%, 100%': { boxShadow: '0 0 20px hsl(200 100% 50% / 0.3)' },
-					'50%': { boxShadow: '0 0 40px hsl(200 100% 50% / 0.6)' }
+					'0%, 100%': { boxShadow: '0 0 20px hsl(220 57% 41% / 0.3)' },
+					'50%': { boxShadow: '0 0 40px hsl(220 57% 41% / 0.6)' }
 				}
 			},
 			animation: {

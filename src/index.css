@@ -11,8 +11,8 @@
     --foreground: 222 47% 11%;
     
     /* G2C Brand Colors from Logo - Exact Colors Only */
-    --g2c-blue: 210 100% 50%;
-    --g2c-green: 142 69% 58%;
+    --g2c-blue: 220 57% 41%;
+    --g2c-green: 146 100% 32%;
     
     /* Component Colors using G2C Brand Colors */
     --card: 0 0% 98%;
@@ -20,7 +20,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 210 100% 50%;
+    --primary: 220 57% 41%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 10% 95%;
@@ -29,7 +29,7 @@
     --muted: 210 10% 91%;
     --muted-foreground: 210 5% 46%;
 
-    --accent: 142 69% 58%;
+    --accent: 146 100% 32%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -37,7 +37,7 @@
 
     --border: 210 10% 91%;
     --input: 0 0% 100%;
-    --ring: 210 100% 50%;
+    --ring: 220 57% 41%;
 
     /* Clean shadows using G2C colors */
     --shadow-card: 0 4px 12px hsl(210 100% 50% / 0.1);
