@@ -154,7 +154,7 @@ const Home = () => {
               <span className="inline-block animate-fade-in" style={{animationDelay: '0.2s'}}>
                 AI-Enhanced 
               </span>{' '}
-              <span className="text-g2c-blue inline-block animate-scale-in" style={{animationDelay: '0.4s'}}>
+              <span className="text-accent inline-block animate-scale-in" style={{animationDelay: '0.4s'}}>
                 Critical Facility
               </span>{' '}
               <span className="inline-block animate-fade-in" style={{animationDelay: '0.6s'}}>
@@ -171,15 +171,15 @@ const Home = () => {
             {/* Animated Stats */}
             <div className="grid grid-cols-3 gap-8 py-8 animate-fade-in max-w-2xl mx-auto" style={{animationDelay: '1s'}}>
               <div className="text-center group hover-scale">
-                <div className="text-3xl lg:text-4xl font-bold text-primary group-hover:text-accent transition-colors">99.99%</div>
+                <div className="text-3xl lg:text-4xl font-bold text-accent group-hover:text-primary transition-colors">99.99%</div>
                 <div className="text-sm text-white/80">Uptime</div>
               </div>
               <div className="text-center group hover-scale">
-                <div className="text-3xl lg:text-4xl font-bold text-primary group-hover:text-accent transition-colors">50+</div>
+                <div className="text-3xl lg:text-4xl font-bold text-accent group-hover:text-primary transition-colors">50+</div>
                 <div className="text-sm text-white/80">Deployments</div>
               </div>
               <div className="text-center group hover-scale">
-                <div className="text-3xl lg:text-4xl font-bold text-primary group-hover:text-accent transition-colors">24/7</div>
+                <div className="text-3xl lg:text-4xl font-bold text-accent group-hover:text-primary transition-colors">24/7</div>
                 <div className="text-sm text-white/80">Support</div>
               </div>
             </div>
@@ -195,7 +195,7 @@ const Home = () => {
               <Button variant="glass" size="lg" className="group hover-scale bg-white/10 border-white/20 text-white hover:bg-white/20" asChild>
                 <Link to="/data-center/ai-ready">
                   <span>Book AI Demo</span>
-                  <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-ai-pulse"></div>
+                  <div className="ml-2 w-2 h-2 bg-accent rounded-full animate-ai-pulse"></div>
                 </Link>
               </Button>
             </div>
