@@ -23,40 +23,40 @@ import aiNetworkImage from "@/assets/ai-neural-network.jpg";
 const Home = () => {
   const solutions = [
     {
-      title: "AI-Ready Data Centers",
-      description: "Purpose-built for machine learning and AI workloads",
+      title: "HPC Data Centers",
+      description: "High-Performance Computing at scale, built to support complex simulations, scientific research, and data-intensive workloads.",
       icon: Cpu,
-      path: "/solutions/ai-ready",
-      color: "bg-primary"
-    },
-    {
-      title: "Edge Data Centers",
-      description: "Ultra-low latency computing at the network edge",
-      icon: Zap,
-      path: "/solutions/edge",
-      color: "bg-accent"
-    },
-    {
-      title: "HPC Solutions",
-      description: "High-performance computing for research and analysis",
-      icon: Shield,
       path: "/solutions/hpc",
       color: "bg-primary"
     },
     {
-      title: "Container Solutions",
-      description: "Rapid deployment modular data center infrastructure",
+      title: "AI-Ready Data Centers",
+      description: "Purpose-built for intelligent workloads with GPU-accelerated infrastructure optimized for AI/ML tasks like deep learning and edge inference.",
+      icon: Cpu,
+      path: "/solutions/ai-ready",
+      color: "bg-accent"
+    },
+    {
+      title: "Edge Data Centers",
+      description: "Bringing processing power closer to users and data sources for ultra-low latency, enabling real-time insights for IoT and 5G applications.",
+      icon: Zap,
+      path: "/solutions/edge",
+      color: "bg-primary"
+    },
+    {
+      title: "Prefabricated Data Centers",
+      description: "Factory-engineered and pre-tested modules that deliver fully integrated IT infrastructure with up to 50% faster deployment times.",
+      icon: Building2,
+      path: "/solutions/prefabricated",
+      color: "bg-accent"
+    },
+    {
+      title: "Container-Based Data Centers",
+      description: "Portable, scalable, and rugged solutions housed in ISO containers for rapid deployment in remote, temporary, or mission-critical environments.",
       icon: Globe,
       path: "/solutions/container",
-      color: "bg-accent"
+      color: "bg-primary"
     }
-  ];
-
-  const features = [
-    "AI-optimized cooling systems",
-    "Modular scalable architecture",
-    "99.99% uptime guarantee",
-    "Sustainable green technology"
   ];
 
   const industries = [
@@ -70,13 +70,13 @@ const Home = () => {
 
   const testimonials = [
     {
-      text: "Grid2Chip's AI-ready infrastructure accelerated our drug discovery pipeline by 300%.",
+      text: "Grid2Chip's infrastructure provides the reliability and uptime our mission-critical pharmaceutical research demands. Their support is second to none.",
       author: "Dr. Sarah Chen",
       company: "BioTech Research Inc.",
       role: "Chief Technology Officer"
     },
     {
-      text: "The modular design allowed us to scale our computing capacity seamlessly as our needs grew.",
+      text: "The modular design allowed us to scale our city's computing capacity seamlessly as our needs grew. Grid2Chip delivered on time and on budget.",
       author: "Michael Rodriguez",
       company: "SmartCity Solutions",
       role: "Infrastructure Director"
@@ -141,10 +141,10 @@ const Home = () => {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 z-10 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Animated Badge */}
+          {/* Animated Badge */}
             <Badge variant="outline" className="border-white/30 text-white animate-fade-in hover:border-white/60 transition-colors duration-300">
               <span className="relative">
-                Next-Generation Infrastructure
+                Complete Data Center Solutions
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ai-pulse"></span>
               </span>
             </Badge>
@@ -152,20 +152,19 @@ const Home = () => {
             {/* Animated Title */}
             <h1 className="text-5xl lg:text-7xl font-display font-bold leading-tight text-white">
               <span className="inline-block animate-fade-in" style={{animationDelay: '0.2s'}}>
-                AI-Enhanced 
+                Your Complete 
               </span>{' '}
               <span className="text-accent inline-block animate-scale-in" style={{animationDelay: '0.4s'}}>
-                Critical Facility
+                Data Center
               </span>{' '}
               <span className="inline-block animate-fade-in" style={{animationDelay: '0.6s'}}>
-                Infrastructure Solutions
+                Partner
               </span>
             </h1>
             
             {/* Typewriter Effect Text */}
             <p className="text-xl lg:text-2xl text-white/90 leading-relaxed animate-fade-in max-w-3xl mx-auto" style={{animationDelay: '0.8s'}}>
-              Leading player in the critical facility industry with cutting-edge AI-ready infrastructure solutions. 
-              We're not just connecting systems; we're shaping the future of integrated AI-powered solutions.
+              From concept to commissioning and beyond, we manage every phase of your critical infrastructure lifecycle.
             </p>
             
             {/* Animated Stats */}
@@ -187,28 +186,19 @@ const Home = () => {
             {/* Enhanced CTAs */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{animationDelay: '1.2s'}}>
               <Button variant="hero" size="lg" className="group relative overflow-hidden" asChild>
-                <Link to="/demo">
-                  <span className="relative z-10">Experience AI Infrastructure</span>
+                <Link to="/solutions">
+                  <span className="relative z-10">Explore Our Solutions</span>
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
               <Button variant="glass" size="lg" className="group hover-scale bg-white/10 border-white/20 text-white hover:bg-white/20" asChild>
-                <Link to="/data-center/ai-ready">
-                  <span>Book AI Demo</span>
-                  <div className="ml-2 w-2 h-2 bg-accent rounded-full animate-ai-pulse"></div>
+                <Link to="/contact">
+                  <span>Schedule a Consultation</span>
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>
 
-            {/* Enhanced Features with Animation */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-12 animate-fade-in max-w-3xl mx-auto" style={{animationDelay: '1.4s'}}>
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-center space-x-3 group hover-scale justify-center md:justify-start">
-                  <CheckCircle className="h-6 w-6 text-primary group-hover:text-accent transition-colors animate-ai-pulse flex-shrink-0" style={{animationDelay: `${index * 0.2}s`}} />
-                  <span className="text-lg text-white/90 group-hover:text-white transition-colors">{feature}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
 
@@ -225,15 +215,14 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Advanced <span className="text-gradient-ai">Infrastructure Solutions</span>
+              Advanced <span className="text-g2c-blue">Data Center Solutions</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From AI-optimized data centers to edge computing solutions, we build the infrastructure 
-              that powers tomorrow's innovations.
+              From high-performance computing clusters to agile containerized units, we build the resilient infrastructure that powers tomorrow's innovations.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {solutions.map((solution, index) => {
               const Icon = solution.icon;
               return (
@@ -262,60 +251,99 @@ const Home = () => {
         </div>
       </section>
 
-      {/* AI Technology Showcase */}
+      {/* Integrated Facility & Management Services */}
       <section className="py-20 lg:py-32 bg-secondary/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h2 className="text-3xl lg:text-5xl font-display font-bold">
-                Powered by <span className="text-g2c-green">Artificial Intelligence</span>
-              </h2>
-              
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Our infrastructure leverages AI for predictive maintenance, optimal resource allocation, 
-                and autonomous operations, ensuring maximum efficiency and minimal downtime.
-              </p>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+              Integrated Facility & <span className="text-g2c-green">Management Services</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Beyond the data center, we provide comprehensive building management and support services to ensure your entire critical facility operates at peak performance.
+            </p>
+          </div>
 
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 rounded-full bg-accent mt-1"></div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">Predictive Analytics</h3>
-                    <p className="text-muted-foreground">AI-driven insights prevent issues before they occur</p>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-xl flex items-center justify-center">
+                  <Building2 className="w-8 h-8 text-white" />
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 rounded-full bg-accent mt-1"></div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">Dynamic Scaling</h3>
-                    <p className="text-muted-foreground">Automatically adjust capacity based on demand</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 rounded-full bg-accent mt-1"></div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">Intelligent Cooling</h3>
-                    <p className="text-muted-foreground">AI-optimized thermal management systems</p>
-                  </div>
-                </div>
-              </div>
+                <CardTitle className="text-xl text-center">Building Management Systems (BMS)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-center">Centralized control and automation for your facility's mechanical and electrical equipment.</p>
+                <Button variant="ghost" className="w-full mt-4" asChild>
+                  <Link to="/services/bms">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
 
-              <Button variant="ai" size="lg" asChild>
-                <Link to="/solutions/ai-ready">
-                  Explore AI Features
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
+            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 mx-auto mb-4 bg-accent rounded-xl flex items-center justify-center">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-xl text-center">ELV & Fire Safety Systems</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-center">Integrated Extra-Low Voltage systems and robust fire detection and suppression for maximum safety and security.</p>
+                <Button variant="ghost" className="w-full mt-4" asChild>
+                  <Link to="/services/elv">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
 
-            <div className="relative">
-              <img
-                src={aiNetworkImage}
-                alt="AI Neural Network Technology"
-                className="rounded-2xl ai-float"
-              />
-              <div className="absolute inset-0 bg-accent/10 rounded-2xl"></div>
-            </div>
+            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-xl flex items-center justify-center">
+                  <Zap className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-xl text-center">Operations & Maintenance (O&M)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-center">Proactive AMC services for critical power, cooling, and facility infrastructure to guarantee uptime and reliability.</p>
+                <Button variant="ghost" className="w-full mt-4" asChild>
+                  <Link to="/services/ims">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 mx-auto mb-4 bg-accent rounded-xl flex items-center justify-center">
+                  <Cpu className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-xl text-center">Control Panel Services</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-center">Custom design and implementation of control panels for seamless system integration.</p>
+                <Button variant="ghost" className="w-full mt-4" asChild>
+                  <Link to="/services/control-panels">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button variant="hero" size="lg" asChild>
+              <Link to="/solutions">
+                Explore Our Services
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -393,20 +421,20 @@ const Home = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Build the <span className="text-gradient-ai">Future?</span>
+            Ready to Build Your <span className="text-g2c-blue">Next-Generation Infrastructure?</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Let's discuss how Grid2Chip can design and deploy the perfect AI-ready infrastructure for your organization.
+          <p className="text-xl text-muted-foreground mb-8">
+            Let's discuss how Grid2Chip can design, deploy, and manage the perfect critical infrastructure for your organization's needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button variant="hero" size="lg" asChild>
-              <Link to="/demo">
-                Schedule Consultation
+              <Link to="/contact">
+                Get in Touch
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button variant="glass" size="lg" asChild>
-              <Link to="/contact">Contact Sales</Link>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/solutions">View Solutions</Link>
             </Button>
           </div>
         </div>

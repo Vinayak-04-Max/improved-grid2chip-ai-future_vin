@@ -28,6 +28,7 @@ import PrefabContainer from "./pages/PrefabContainer";
 import EdgeDataCenter from "./pages/EdgeDataCenter";
 import CustomDataCenter from "./pages/CustomDataCenter";
 import AIReadyDataCenter from "./pages/AIReadyDataCenter";
+import HPC from "./pages/HPC";
 // BMS Pages
 import BuildingManagement from "./pages/BuildingManagement";
 import ELVSystems from "./pages/ELVSystems";
@@ -62,11 +63,21 @@ const App = () => (
               <Route path="/products/prefab-container" element={<PrefabContainer />} />
               
               {/* Data Center Routes */}
+              <Route path="/solutions/hpc" element={<HPC />} />
+              <Route path="/solutions/ai-ready" element={<AIReadyDataCenter />} />
+              <Route path="/solutions/edge" element={<EdgeDataCenter />} />
+              <Route path="/solutions/prefabricated" element={<PrefabContainer />} />
+              <Route path="/solutions/container" element={<PrefabContainer />} />
               <Route path="/data-center/edge" element={<EdgeDataCenter />} />
               <Route path="/data-center/custom" element={<CustomDataCenter />} />
               <Route path="/data-center/ai-ready" element={<AIReadyDataCenter />} />
               
-              {/* BMS Routes */}
+              {/* BMS/Service Routes */}
+              <Route path="/services/bms" element={<BuildingManagement />} />
+              <Route path="/services/elv" element={<ELVSystems />} />
+              <Route path="/services/fire-safety" element={<FireSafety />} />
+              <Route path="/services/control-panels" element={<ControlPanels />} />
+              <Route path="/services/ims" element={<IMS />} />
               <Route path="/bms/building-management" element={<BuildingManagement />} />
               <Route path="/bms/elv-systems" element={<ELVSystems />} />
               <Route path="/bms/fire-safety" element={<FireSafety />} />
