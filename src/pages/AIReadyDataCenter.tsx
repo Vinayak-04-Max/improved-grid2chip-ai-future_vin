@@ -90,7 +90,7 @@ const AIReadyDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Core <span className="text-gradient-ai">Infrastructure</span>
+              Core <span className="text-primary">Infrastructure</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Essential components that power high-performance AI and machine learning.
@@ -100,10 +100,11 @@ const AIReadyDataCenter = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {coreInfrastructure.map((item, index) => {
               const Icon = item.icon;
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
                 <Card key={index} className="bg-gradient-card border-primary/20">
                   <CardHeader>
-                    <div className="w-16 h-16 mb-4 bg-gradient-ai rounded-xl flex items-center justify-center">
+                    <div className={`w-16 h-16 mb-4 ${bgColor} rounded-xl flex items-center justify-center`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle>{item.title}</CardTitle>
@@ -123,7 +124,7 @@ const AIReadyDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Performance <span className="text-gradient-ai">Specifications</span>
+              Performance <span className="text-primary">Specifications</span>
             </h2>
           </div>
 

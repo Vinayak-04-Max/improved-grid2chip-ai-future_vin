@@ -147,7 +147,7 @@ const EdgeDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              The Advantages of <span className="text-gradient-ai">Edge Data Centers</span>
+              The Advantages of <span className="text-primary">Edge Data Centers</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Discover the revolutionary capabilities of edge infrastructure for next-generation applications.
@@ -157,10 +157,11 @@ const EdgeDataCenter = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {edgeFeatures.map((feature, index) => {
               const Icon = feature.icon;
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
                 <Card key={index} className="bg-gradient-card border-primary/20">
                   <CardHeader>
-                    <div className="w-16 h-16 mb-4 bg-gradient-ai rounded-xl flex items-center justify-center">
+                    <div className={`w-16 h-16 mb-4 ${bgColor} rounded-xl flex items-center justify-center`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle className="text-lg font-semibold">{feature.title}</CardTitle>

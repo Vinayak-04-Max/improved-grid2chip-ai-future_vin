@@ -26,7 +26,7 @@ const ControlPanels = () => {
         <div className="absolute inset-0 tech-grid opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="outline" className="mb-6 border-primary/30 text-primary">Control Systems</Badge>
-          <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">Control Panel <span className="text-gradient-ai">Services</span></h1>
+          <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">Control Panel <span className="text-primary">Services</span></h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Gain precision control over your facility's critical systems with our custom-designed and expertly fabricated control panels.
           </p>
@@ -39,7 +39,7 @@ const ControlPanels = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">Custom Control Panel <span className="text-gradient-ai">Solutions</span></h2>
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">Custom Control Panel <span className="text-primary">Solutions</span></h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {solutions.map((solution, index) => (
@@ -55,7 +55,7 @@ const ControlPanels = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready for <span className="text-gradient-ai">Precision Control?</span>
+            Ready for <span className="text-primary">Precision Control?</span>
           </h2>
           <Button variant="hero" size="lg" asChild>
             <Link to="/contact">Get Custom Quote<ArrowRight className="ml-2 h-5 w-5" /></Link>

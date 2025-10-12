@@ -106,7 +106,7 @@ const Contact = () => {
           </Badge>
           
           <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            Let's Build Your <span className="text-primary">AI Infrastructure</span>
+            Let's Build Your <span className="text-primary">Infrastructure</span>
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
@@ -275,7 +275,7 @@ const Contact = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-3xl font-display font-bold mb-6">
-                  Our <span className="text-gradient-ai">Global Offices</span>
+                  Our <span className="text-primary">Global Offices</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   With offices across three continents, we're positioned to serve clients globally 
@@ -288,8 +288,8 @@ const Contact = () => {
                   <Card key={index} className="bg-card/50 border-primary/20">
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-ai p-3 flex-shrink-0">
-                          <MapPin className="w-full h-full text-navy-deep" />
+                        <div className="w-12 h-12 rounded-lg bg-primary p-3 flex-shrink-0">
+                          <MapPin className="w-full h-full text-white" />
                         </div>
                         <div className="flex-1">
                           <h3 className="font-semibold text-foreground mb-2">{office.location}</h3>

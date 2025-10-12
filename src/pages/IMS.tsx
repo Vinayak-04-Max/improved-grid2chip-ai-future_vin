@@ -144,10 +144,11 @@ const IMS = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
                 <Card key={index} className="bg-gradient-card border-primary/20 ai-glow group hover:border-primary/40 transition-all duration-300">
                   <CardHeader>
-                    <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-4">
+                    <div className={`w-12 h-12 ${bgColor} rounded-xl flex items-center justify-center mb-4`}>
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <CardTitle className="text-xl group-hover:text-primary transition-colors">

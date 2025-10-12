@@ -253,7 +253,7 @@ const Blog = () => {
       <section className="py-20 lg:py-32 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Stay Updated with <span className="text-gradient-ai">AI Infrastructure Insights</span>
+            Stay Updated with <span className="text-primary">Infrastructure Insights</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Get the latest articles, insights, and trends in AI-ready critical facility infrastructure 

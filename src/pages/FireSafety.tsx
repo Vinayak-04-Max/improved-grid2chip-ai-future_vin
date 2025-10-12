@@ -14,7 +14,7 @@ const FireSafety = () => {
             Fire Safety
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Fire Safety <span className="text-gradient-ai">Systems</span>
+            Fire Safety <span className="text-primary">Systems</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Advanced fire detection, suppression, and safety systems for critical facilities.

@@ -111,7 +111,7 @@ const CustomDataCenter = () => {
             Custom Solutions
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Custom-Build <span className="text-gradient-ai">Data Centers</span>
+            Custom-Build <span className="text-primary">Data Centers</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Engineered from the ground up to meet your unique operational, performance, and scalability requirements. We transform your vision into a state-of-the-art, mission-critical facility.
@@ -135,7 +135,7 @@ const CustomDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              The Advantages of a <span className="text-gradient-ai">Custom-Build</span>
+              The Advantages of a <span className="text-primary">Custom-Build</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Discover the unparalleled benefits of a data center designed exclusively for your business needs.
@@ -145,10 +145,11 @@ const CustomDataCenter = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {advantages.map((advantage, index) => {
               const Icon = advantage.icon;
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
                 <Card key={index} className="bg-gradient-card border-primary/20">
                   <CardHeader>
-                    <div className="w-16 h-16 mb-4 bg-gradient-ai rounded-xl flex items-center justify-center">
+                    <div className={`w-16 h-16 mb-4 ${bgColor} rounded-xl flex items-center justify-center`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle>{advantage.title}</CardTitle>
@@ -168,7 +169,7 @@ const CustomDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-gradient-ai">Custom-Build Process</span>
+              Our <span className="text-primary">Custom-Build Process</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               A structured, transparent approach to delivering your data center on time and on budget.
@@ -181,7 +182,7 @@ const CustomDataCenter = () => {
                 <CardContent className="p-6">
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-ai rounded-xl flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                         <span className="text-white text-xl font-bold">{item.step}</span>
                       </div>
                       <h3 className="text-xl font-semibold">{item.title}</h3>
@@ -207,7 +208,7 @@ const CustomDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Key Infrastructure <span className="text-gradient-ai">Customizations</span>
+              Key Infrastructure <span className="text-primary">Customizations</span>
             </h2>
           </div>
 
@@ -229,7 +230,7 @@ const CustomDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Ideal <span className="text-gradient-ai">For</span>
+              Ideal <span className="text-primary">For</span>
             </h2>
           </div>
 
@@ -255,7 +256,7 @@ const CustomDataCenter = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Build Your <span className="text-gradient-ai">Data Center?</span>
+            Ready to Build Your <span className="text-primary">Data Center?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Let's partner to engineer a custom data center that serves as the foundation for your future success. Contact our experts today.

@@ -120,11 +120,12 @@ const HPC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
                 <Card key={index} className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
                   <CardHeader>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center">
+                      <div className={`w-16 h-16 ${bgColor} rounded-xl flex items-center justify-center`}>
                         <Icon className="w-8 h-8 text-white" />
                       </div>
                       <Badge variant="secondary" className="text-primary font-bold">{feature.metric}</Badge>

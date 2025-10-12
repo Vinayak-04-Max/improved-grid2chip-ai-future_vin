@@ -72,14 +72,16 @@ const Leadership = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {leaders.map((leader, index) => (
-              <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow group">
-                <CardHeader className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-primary p-1">
-                    <div className="w-full h-full rounded-full bg-card flex items-center justify-center text-6xl font-bold text-primary">
-                      {leader.name.split(' ').map(n => n[0]).join('')}
+            {leaders.map((leader, index) => {
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
+              return (
+                <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow group">
+                  <CardHeader className="text-center">
+                    <div className={`w-32 h-32 mx-auto mb-6 rounded-full ${bgColor} p-1`}>
+                      <div className="w-full h-full rounded-full bg-card flex items-center justify-center text-6xl font-bold text-primary">
+                        {leader.name.split(' ').map(n => n[0]).join('')}
+                      </div>
                     </div>
-                  </div>
                   <CardTitle className="text-xl font-semibold">{leader.name}</CardTitle>
                   <p className="text-primary font-medium">{leader.role}</p>
                   <Badge variant="secondary" className="w-fit mx-auto">{leader.experience}</Badge>
@@ -120,7 +122,8 @@ const Leadership = () => {
                   </div>
                 </CardContent>
               </Card>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -141,10 +144,11 @@ const Leadership = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {companyValues.map((value, index) => {
               const Icon = value.icon;
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
                 <Card key={index} className="text-center bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
                   <CardHeader>
-                    <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                    <div className={`w-16 h-16 mx-auto mb-4 ${bgColor} rounded-full flex items-center justify-center`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle className="text-lg font-semibold">{value.title}</CardTitle>

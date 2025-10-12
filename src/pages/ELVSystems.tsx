@@ -14,7 +14,7 @@ const ELVSystems = () => {
             ELV Systems
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Extra Low Voltage <span className="text-gradient-ai">Systems</span>
+            Extra Low Voltage <span className="text-primary">Systems</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Comprehensive ELV solutions including security, communications, and monitoring systems.

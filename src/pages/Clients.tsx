@@ -148,10 +148,11 @@ const Clients = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => {
               const Icon = industry.icon;
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
                 <Card key={index} className="bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 text-center">
                   <CardHeader>
-                    <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                    <div className={`w-16 h-16 mx-auto mb-4 ${bgColor} rounded-full flex items-center justify-center`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle className="text-xl font-semibold">{industry.name}</CardTitle>

@@ -133,7 +133,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardContent className="p-8">
-                <div className="w-16 h-16 rounded-xl bg-primary p-4 mb-6 ai-pulse">
+                <div className="w-16 h-16 rounded-xl bg-primary p-4 mb-6">
                   <Target className="w-full h-full text-white" />
                 </div>
                 <h2 className="text-2xl font-display font-bold mb-4">Our Mission</h2>
@@ -145,7 +145,7 @@ const About = () => {
 
             <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardContent className="p-8">
-                <div className="w-16 h-16 rounded-xl bg-accent p-4 mb-6 ai-pulse">
+                <div className="w-16 h-16 rounded-xl bg-accent p-4 mb-6">
                   <Lightbulb className="w-full h-full text-white" />
                 </div>
                 <h2 className="text-2xl font-display font-bold mb-4">Our Vision</h2>
@@ -173,10 +173,11 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => {
               const Icon = value.icon;
+              const iconColor = index % 2 === 0 ? "text-primary" : "text-accent";
               return (
                 <Card key={index} className="text-center bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
                   <CardContent className="p-6">
-                    <Icon className="w-12 h-12 mx-auto mb-4 text-primary" />
+                    <Icon className={`w-12 h-12 mx-auto mb-4 ${iconColor}`} />
                     <h3 className="font-semibold text-foreground mb-3">{value.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
                   </CardContent>
@@ -217,7 +218,7 @@ const About = () => {
                     </Card>
                   </div>
                   <div className="relative flex items-center justify-center w-12 h-12">
-                    <div className="w-8 h-8 rounded-full bg-primary ai-pulse"></div>
+                    <div className="w-8 h-8 rounded-full bg-primary"></div>
                   </div>
                   <div className="w-1/2"></div>
                 </div>
@@ -240,16 +241,19 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <Card key={index} className="text-center bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="w-20 h-20 rounded-full bg-primary mx-auto mb-4"></div>
-                  <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
-                  <p className="text-sm text-primary mb-3">{member.role}</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{member.background}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {team.map((member, index) => {
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
+              return (
+                <Card key={index} className="text-center bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className={`w-20 h-20 rounded-full ${bgColor} mx-auto mb-4`}></div>
+                    <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
+                    <p className="text-sm text-primary mb-3">{member.role}</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{member.background}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -95,7 +95,7 @@ const PrefabContainer = () => {
                 Prefabricated Solutions
               </Badge>
               <h1 className="text-4xl lg:text-6xl font-display font-bold">
-                Prefabricated <span className="text-gradient-ai">Data Centers</span>
+                Prefabricated <span className="text-primary">Data Centers</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Rapidly deployable, factory-built modular data centers, perfect for edge computing, disaster recovery, and remote operations.
@@ -128,7 +128,7 @@ const PrefabContainer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Advanced <span className="text-gradient-ai">Features</span>
+              Advanced <span className="text-primary">Features</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Every container is engineered with cutting-edge technology for superior performance and reliability.
@@ -138,10 +138,11 @@ const PrefabContainer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
                 <Card key={index} className="bg-gradient-card border-primary/20">
                   <CardHeader>
-                    <div className="w-16 h-16 mb-4 bg-gradient-ai rounded-xl flex items-center justify-center">
+                    <div className={`w-16 h-16 mb-4 ${bgColor} rounded-xl flex items-center justify-center`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle className="text-xl font-semibold">{feature.title}</CardTitle>
@@ -161,7 +162,7 @@ const PrefabContainer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Technical <span className="text-gradient-ai">Specifications</span>
+              Technical <span className="text-primary">Specifications</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Engineered to enterprise standards for the most demanding mission-critical applications.
@@ -186,7 +187,7 @@ const PrefabContainer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Common <span className="text-gradient-ai">Use Cases</span>
+              Common <span className="text-primary">Use Cases</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Versatile solutions designed for a wide range of industries and deployment scenarios.
@@ -222,7 +223,7 @@ const PrefabContainer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Why Choose <span className="text-gradient-ai">Prefabricated Containers?</span>
+              Why Choose <span className="text-primary">Prefabricated Containers?</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Factory-built quality, speed-to-market, and high-performance make our containers the ideal solution for modern infrastructure challenges.
@@ -243,7 +244,7 @@ const PrefabContainer = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready for <span className="text-gradient-ai">Rapid Deployment?</span>
+            Ready for <span className="text-primary">Rapid Deployment?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Get your prefabricated container data center deployed in weeks, not months. Contact us today for a custom quote and deployment timeline.

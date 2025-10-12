@@ -193,11 +193,11 @@ const Industries = () => {
           </Badge>
           
           <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            <span className="text-gradient-ai">Transforming Industries</span> with AI Infrastructure
+            <span className="text-primary">Transforming Industries</span> with Data Center Infrastructure
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-8">
-            From pharmaceutical research to smart cities, our AI-ready infrastructure solutions 
+            From pharmaceutical research to smart cities, our infrastructure solutions 
             are driving innovation across diverse industries and use cases.
           </p>
 
@@ -228,8 +228,8 @@ const Industries = () => {
                 <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
                   <div className={`space-y-8 ${!isEven ? 'lg:col-start-2' : ''}`}>
                     <div className="space-y-4">
-                      <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${industry.color} p-4 ai-pulse`}>
-                        <Icon className="w-full h-full text-navy-deep" />
+                      <div className={`w-16 h-16 rounded-xl ${index % 2 === 0 ? 'bg-primary' : 'bg-accent'} p-4`}>
+                        <Icon className="w-full h-full text-white" />
                       </div>
                       <h2 className="text-3xl font-display font-bold">{industry.title}</h2>
                       <p className="text-xl text-muted-foreground leading-relaxed">

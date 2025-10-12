@@ -82,7 +82,7 @@ const BuildingManagement = () => {
             BMS Solutions
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Building Management <span className="text-gradient-ai">Systems</span>
+            Building Management <span className="text-primary">Systems</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Centralize the monitoring and control of your facility's critical infrastructure with our advanced Building Management Systems (BMS). Gain unparalleled visibility, automate operations, and drive significant gains in efficiency and reliability.
@@ -106,7 +106,7 @@ const BuildingManagement = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Key Features of Our <span className="text-gradient-ai">BMS Solutions</span>
+              Key Features of Our <span className="text-primary">BMS Solutions</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Discover the core components of a truly intelligent and integrated facility management platform.
@@ -116,10 +116,11 @@ const BuildingManagement = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
                 <Card key={index} className="bg-gradient-card border-primary/20">
                   <CardHeader>
-                    <div className="w-16 h-16 mb-4 bg-gradient-ai rounded-xl flex items-center justify-center">
+                    <div className={`w-16 h-16 mb-4 ${bgColor} rounded-xl flex items-center justify-center`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle>{feature.title}</CardTitle>
@@ -139,7 +140,7 @@ const BuildingManagement = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Integrated Systems & <span className="text-gradient-ai">Protocols</span>
+              Integrated Systems & <span className="text-primary">Protocols</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We integrate a wide array of critical facility systems for holistic control.
@@ -187,7 +188,7 @@ const BuildingManagement = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Core <span className="text-gradient-ai">Benefits</span>
+              Core <span className="text-primary">Benefits</span>
             </h2>
           </div>
 

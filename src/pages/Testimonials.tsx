@@ -115,9 +115,10 @@ const Testimonials = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
                 <div key={index} className="text-center group">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                  <div className={`w-16 h-16 mx-auto mb-4 ${bgColor} rounded-full flex items-center justify-center`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>
@@ -179,21 +180,24 @@ const Testimonials = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {awards.map((award, index) => (
-              <Card key={index} className="text-center bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
-                <CardHeader>
-                  <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
-                    <Trophy className="w-8 h-8 text-white" />
-                  </div>
-                  <CardTitle className="text-lg font-semibold">{award.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-2">{award.organization}</p>
-                  <Badge variant="outline" className="mb-2">{award.category}</Badge>
-                  <p className="text-sm text-primary font-semibold">{award.year}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {awards.map((award, index) => {
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
+              return (
+                <Card key={index} className="text-center bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
+                  <CardHeader>
+                    <div className={`w-16 h-16 mx-auto mb-4 ${bgColor} rounded-full flex items-center justify-center`}>
+                      <Trophy className="w-8 h-8 text-white" />
+                    </div>
+                    <CardTitle className="text-lg font-semibold">{award.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-2">{award.organization}</p>
+                    <Badge variant="outline" className="mb-2">{award.category}</Badge>
+                    <p className="text-sm text-primary font-semibold">{award.year}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
