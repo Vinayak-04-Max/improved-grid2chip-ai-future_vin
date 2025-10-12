@@ -6,56 +6,56 @@ import { Building2, Microscope, Car, Phone, Landmark, Factory, Zap, Shield, Arro
 
 const Clients = () => {
   const clientLogos = [
-    { name: "BioTech Research Inc.", industry: "Pharmaceutical", logo: "BTR", color: "from-blue-500 to-blue-600" },
-    { name: "SmartCity Solutions", industry: "Smart Cities", logo: "SCS", color: "from-green-500 to-green-600" },
-    { name: "AutoTech Innovations", industry: "Automotive", logo: "ATI", color: "from-red-500 to-red-600" },
-    { name: "QuantumLab Research", industry: "Research", logo: "QLR", color: "from-purple-500 to-purple-600" },
-    { name: "MedDevice Corp", industry: "Healthcare", logo: "MDC", color: "from-teal-500 to-teal-600" },
-    { name: "TelecomEdge", industry: "Telecommunications", logo: "TEL", color: "from-orange-500 to-orange-600" },
-    { name: "DataFlow Systems", industry: "Technology", logo: "DFS", color: "from-indigo-500 to-indigo-600" },
-    { name: "EnergyGrid Solutions", industry: "Energy", logo: "EGS", color: "from-yellow-500 to-yellow-600" },
-    { name: "SecureNet Global", industry: "Security", logo: "SNG", color: "from-gray-500 to-gray-600" },
-    { name: "CloudFirst Technologies", industry: "Cloud Services", logo: "CFT", color: "from-cyan-500 to-cyan-600" },
-    { name: "AI Research Institute", industry: "AI Research", logo: "ARI", color: "from-pink-500 to-pink-600" },
-    { name: "FinTech Dynamics", industry: "Financial", logo: "FTD", color: "from-emerald-500 to-emerald-600" }
+    { name: "Global Pharma Research", industry: "Pharmaceutical", logo: "GPR", color: "bg-primary" },
+    { name: "Smart Cities International", industry: "Smart Cities", logo: "SCI", color: "bg-accent" },
+    { name: "Automotive Tech Group", industry: "Automotive", logo: "ATG", color: "bg-primary" },
+    { name: "Research Institute", industry: "Research", logo: "RI", color: "bg-accent" },
+    { name: "Medical Devices Inc", industry: "Healthcare", logo: "MDI", color: "bg-primary" },
+    { name: "Telecom Solutions", industry: "Telecommunications", logo: "TS", color: "bg-accent" },
+    { name: "Data Systems Corp", industry: "Technology", logo: "DSC", color: "bg-primary" },
+    { name: "Energy Solutions", industry: "Energy", logo: "ES", color: "bg-accent" },
+    { name: "Security Systems Global", industry: "Security", logo: "SSG", color: "bg-primary" },
+    { name: "Cloud Technologies", industry: "Cloud Services", logo: "CT", color: "bg-accent" },
+    { name: "Research Labs", industry: "Research", logo: "RL", color: "bg-primary" },
+    { name: "Financial Systems", industry: "Financial", logo: "FS", color: "bg-accent" }
   ];
 
   const caseStudies = [
     {
-      client: "BioTech Research Inc.",
+      client: "Pharmaceutical Research",
       industry: "Pharmaceutical",
-      challenge: "Needed AI-ready infrastructure for drug discovery algorithms requiring massive computational power",
-      solution: "Custom AI data center with specialized cooling and 99.99% uptime guarantee",
-      results: ["300% faster drug discovery", "40% energy cost reduction", "Zero unplanned downtime"],
+      challenge: "Needed high-performance infrastructure for drug discovery research requiring massive computational power",
+      solution: "Custom data center with specialized cooling and 99.99% uptime guarantee",
+      results: ["300% faster processing", "40% energy cost reduction", "Zero unplanned downtime"],
       icon: Microscope,
-      color: "from-blue-500 to-blue-600"
+      color: "bg-primary"
     },
     {
-      client: "SmartCity Solutions", 
+      client: "Smart City Infrastructure", 
       industry: "Smart Cities",
       challenge: "Required edge computing infrastructure for real-time city management and IoT sensors",
-      solution: "Distributed edge data centers with AI-powered predictive maintenance",
+      solution: "Distributed edge data centers with predictive maintenance systems",
       results: ["50% improved response time", "Seamless scalability", "30% operational efficiency gain"],
       icon: Building2,
-      color: "from-green-500 to-green-600"
+      color: "bg-accent"
     },
     {
-      client: "AutoTech Innovations",
+      client: "Automotive Testing",
       industry: "Automotive", 
       challenge: "Ultra-low latency computing needed for autonomous vehicle testing and development",
-      solution: "Edge data center with specialized AI processors and real-time analytics",
+      solution: "Edge data center with specialized processors and real-time analytics",
       results: ["<1ms latency achieved", "100% reliability", "Accelerated testing cycles"],
       icon: Car,
-      color: "from-red-500 to-red-600"
+      color: "bg-primary"
     },
     {
-      client: "TelecomEdge",
+      client: "Telecommunications Provider",
       industry: "Telecommunications",
-      challenge: "Rapid deployment needed for 5G infrastructure rollout across multiple locations",
+      challenge: "Rapid deployment needed for infrastructure rollout across multiple locations",
       solution: "Prefab container data centers with integrated BMS and fire safety",
-      results: ["6-week deployment", "Nationwide coverage", "AI-powered optimization"],
+      results: ["6-week deployment", "Nationwide coverage", "Optimized operations"],
       icon: Phone,
-      color: "from-orange-500 to-orange-600"
+      color: "bg-accent"
     }
   ];
 
@@ -70,19 +70,19 @@ const Clients = () => {
 
   const testimonials = [
     {
-      text: "Grid2Chip's expertise in AI infrastructure is unmatched. They delivered exactly what we needed.",
+      text: "Grid2Chip's expertise in critical infrastructure is unmatched. They delivered exactly what we needed.",
       author: "Dr. Sarah Chen, CTO",
-      company: "BioTech Research Inc."
+      company: "Research Institute"
     },
     {
       text: "The modular approach allowed us to scale seamlessly. Exceptional service and support.",
       author: "Michael Rodriguez",
-      company: "SmartCity Solutions"
+      company: "Smart Cities International"
     },
     {
       text: "Outstanding reliability and performance. Grid2Chip exceeded our expectations.",
       author: "Emma Thompson, VP Engineering",
-      company: "AutoTech Innovations"
+      company: "Automotive Tech Group"
     }
   ];
 
@@ -96,10 +96,10 @@ const Clients = () => {
             Trusted by Industry Leaders
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Our <span className="text-gradient-ai">Clients</span>
+            Our <span className="text-primary">Clients</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover the organizations that trust Grid2Chip for their critical AI infrastructure needs. 
+            Discover the organizations that trust Grid2Chip for their critical infrastructure needs. 
             From pharmaceutical research to smart cities, we power innovation across industries.
           </p>
         </div>
@@ -110,7 +110,7 @@ const Clients = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Trusted by <span className="text-gradient-ai">Leading Organizations</span>
+              Trusted by <span className="text-primary">Leading Organizations</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Over 500 successful projects delivered for clients across diverse industries.
@@ -121,7 +121,7 @@ const Clients = () => {
             {clientLogos.map((client, index) => (
               <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 group text-center">
                 <CardContent className="p-6">
-                  <div className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br ${client.color} rounded-full flex items-center justify-center text-white font-bold text-lg`}>
+                  <div className={`w-16 h-16 mx-auto mb-4 ${client.color} rounded-full flex items-center justify-center text-white font-bold text-lg`}>
                     {client.logo}
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">{client.name}</h3>
@@ -138,10 +138,10 @@ const Clients = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Industries We <span className="text-gradient-ai">Serve</span>
+              Industries We <span className="text-primary">Serve</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Specialized AI infrastructure solutions tailored to the unique needs of each industry.
+              Specialized infrastructure solutions tailored to the unique needs of each industry.
             </p>
           </div>
 
@@ -151,8 +151,8 @@ const Clients = () => {
               return (
                 <Card key={index} className="bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 text-center">
                   <CardHeader>
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-ai rounded-full flex items-center justify-center">
-                      <Icon className="w-8 h-8 text-navy-deep" />
+                    <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                      <Icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle className="text-xl font-semibold">{industry.name}</CardTitle>
                   </CardHeader>
@@ -180,10 +180,10 @@ const Clients = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Success <span className="text-gradient-ai">Stories</span>
+              Success <span className="text-primary">Stories</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Real client challenges solved with innovative AI-enhanced infrastructure solutions.
+              Real client challenges solved with innovative infrastructure solutions.
             </p>
           </div>
 
@@ -194,7 +194,7 @@ const Clients = () => {
                 <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow">
                   <CardHeader>
                     <div className="flex items-center gap-4 mb-4">
-                      <div className={`w-12 h-12 bg-gradient-to-br ${study.color} rounded-full flex items-center justify-center`}>
+                      <div className={`w-12 h-12 ${study.color} rounded-full flex items-center justify-center`}>
                         <Icon className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -236,7 +236,7 @@ const Clients = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Client <span className="text-gradient-ai">Testimonials</span>
+              Client <span className="text-primary">Testimonials</span>
             </h2>
           </div>
 
@@ -260,10 +260,10 @@ const Clients = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Join Our <span className="text-gradient-ai">Client Family?</span>
+            Ready to Join Our <span className="text-primary">Client Family?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Discover how Grid2Chip can transform your critical infrastructure with AI-enhanced solutions.
+            Discover how Grid2Chip can transform your critical infrastructure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" asChild>

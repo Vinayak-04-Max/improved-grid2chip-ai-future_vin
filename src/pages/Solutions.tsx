@@ -17,20 +17,20 @@ import solutionsImage from "@/assets/solutions-containers.jpg";
 const Solutions = () => {
   const mainSolutions = [
     {
+      title: "HPC Data Centers",
+      description: "High-performance computing infrastructure designed for research, simulation, and complex computational workloads.",
+      icon: BarChart3,
+      path: "/solutions/hpc",
+      features: ["Parallel processing", "High-speed interconnects", "Advanced cooling", "Research optimization"],
+      color: "bg-primary"
+    },
+    {
       title: "AI-Ready Data Centers",
       description: "Purpose-built infrastructure optimized for machine learning, deep learning, and AI workloads with specialized cooling and power systems.",
       icon: Cpu,
       path: "/solutions/ai-ready",
       features: ["GPU-optimized cooling", "High-density compute", "AI workflow orchestration", "Predictive maintenance"],
-      color: "from-neon-blue to-neon-cyan"
-    },
-    {
-      title: "Custom Container Data Centers",
-      description: "Rapid deployment modular solutions in standardized containers, perfect for remote locations and quick scaling.",
-      icon: Globe,
-      path: "/solutions/container",
-      features: ["Portable deployment", "Standardized modules", "Quick installation", "Remote monitoring"],
-      color: "from-neon-cyan to-neon-blue"
+      color: "bg-accent"
     },
     {
       title: "Edge Data Centers",
@@ -38,7 +38,7 @@ const Solutions = () => {
       icon: Zap,
       path: "/solutions/edge",
       features: ["Sub-millisecond latency", "Distributed architecture", "5G integration", "IoT optimization"],
-      color: "from-primary to-accent"
+      color: "bg-primary"
     },
     {
       title: "Prefabricated Data Centers",
@@ -46,15 +46,15 @@ const Solutions = () => {
       icon: Settings,
       path: "/solutions/prefab",
       features: ["Factory quality control", "Reduced construction time", "Scalable design", "Cost optimization"],
-      color: "from-accent to-primary"
+      color: "bg-accent"
     },
     {
-      title: "HPC Data Centers",
-      description: "High-performance computing infrastructure designed for research, simulation, and complex computational workloads.",
-      icon: BarChart3,
-      path: "/solutions/hpc",
-      features: ["Parallel processing", "High-speed interconnects", "Advanced cooling", "Research optimization"],
-      color: "from-neon-blue to-primary"
+      title: "Custom Container Data Centers",
+      description: "Rapid deployment modular solutions in standardized containers, perfect for remote locations and quick scaling.",
+      icon: Globe,
+      path: "/solutions/container",
+      features: ["Portable deployment", "Standardized modules", "Quick installation", "Remote monitoring"],
+      color: "bg-primary"
     }
   ];
 
@@ -107,7 +107,7 @@ const Solutions = () => {
                 alt="Modular Data Center Solutions"
                 className="rounded-2xl shadow-hero ai-float"
               />
-              <div className="absolute inset-0 bg-gradient-ai opacity-20 rounded-2xl ai-pulse"></div>
+              <div className="absolute inset-0 bg-primary opacity-20 rounded-2xl ai-pulse"></div>
             </div>
           </div>
         </div>
@@ -131,9 +131,9 @@ const Solutions = () => {
               return (
                 <Card key={index} className="group bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow">
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
-                    <div className="space-y-6">
-                      <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${solution.color} p-4 ai-pulse`}>
-                        <Icon className="w-full h-full text-navy-deep" />
+                  <div className="space-y-6">
+                    <div className={`w-16 h-16 rounded-xl ${solution.color} p-4 ai-pulse`}>
+                      <Icon className="w-full h-full text-white" />
                       </div>
                       <div>
                         <h3 className="text-2xl font-display font-bold mb-4">{solution.title}</h3>
@@ -173,7 +173,7 @@ const Solutions = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              End-to-End <span className="text-gradient-ai">Capabilities</span>
+              End-to-End <span className="text-primary">Capabilities</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               From initial consultation to ongoing support, we provide comprehensive services 
@@ -196,7 +196,7 @@ const Solutions = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Transform Your <span className="text-gradient-ai">Infrastructure?</span>
+            Ready to Transform Your <span className="text-primary">Infrastructure?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Our experts are ready to design a custom solution that meets your specific requirements and budget.

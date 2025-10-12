@@ -7,13 +7,13 @@ import { MapPin, Clock, Users, Heart, Award, TrendingUp, ArrowRight, Briefcase }
 const Careers = () => {
   const openPositions = [
     {
-      title: "Senior AI Infrastructure Engineer",
+      title: "Senior Data Center Infrastructure Engineer",
       department: "Engineering",
       location: "Bangalore, India",
       type: "Full-time",
       experience: "5+ years",
-      description: "Lead the development of AI-optimized data center solutions and intelligent infrastructure systems.",
-      requirements: ["AI/ML expertise", "Data center design", "Python/TensorFlow", "Cloud platforms"],
+      description: "Lead the development of enterprise-grade data center solutions and intelligent infrastructure systems.",
+      requirements: ["Infrastructure expertise", "Data center design", "System optimization", "Cloud platforms"],
       urgent: true
     },
     {
@@ -47,13 +47,13 @@ const Careers = () => {
       urgent: false
     },
     {
-      title: "AI Research Scientist",
+      title: "Research Scientist - Infrastructure",
       department: "R&D",
       location: "Pune, India",
       type: "Full-time",
       experience: "3+ years", 
-      description: "Research and develop next-generation AI algorithms for predictive maintenance and optimization.",
-      requirements: ["PhD/MS in AI", "Research experience", "Publications", "Algorithm development"],
+      description: "Research and develop next-generation systems for predictive maintenance and infrastructure optimization.",
+      requirements: ["PhD/MS in Engineering", "Research experience", "Publications", "System development"],
       urgent: false
     },
     {
@@ -62,7 +62,7 @@ const Careers = () => {
       location: "Hyderabad, India",
       type: "Full-time",
       experience: "5+ years",
-      description: "Drive sales of AI-enhanced infrastructure solutions to enterprise and government clients.",
+      description: "Drive sales of critical infrastructure solutions to enterprise and government clients.",
       requirements: ["Technical sales", "Data center knowledge", "Client presentations", "B2B experience"],
       urgent: true
     }
@@ -124,10 +124,10 @@ const Careers = () => {
             Join Our Team
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Build the Future with <span className="text-gradient-ai">Grid2Chip</span>
+            Build the Future with <span className="text-primary">Grid2Chip</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Join a team of innovators creating next-generation AI-enhanced critical facility infrastructure. 
+            Join a team of innovators creating next-generation critical facility infrastructure. 
             Shape the future of technology while advancing your career with industry leaders.
           </p>
         </div>
@@ -138,7 +138,7 @@ const Careers = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Teams & <span className="text-gradient-ai">Opportunities</span>
+              Teams & <span className="text-primary">Opportunities</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Explore career opportunities across our diverse teams and departments.
@@ -149,8 +149,8 @@ const Careers = () => {
             {departments.map((dept, index) => (
               <Card key={index} className="text-center bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300">
                 <CardHeader>
-                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-ai rounded-full flex items-center justify-center">
-                    <Briefcase className="w-6 h-6 text-navy-deep" />
+                  <div className="w-12 h-12 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                    <Briefcase className="w-6 h-6 text-white" />
                   </div>
                   <CardTitle className="text-lg font-semibold">{dept.name}</CardTitle>
                 </CardHeader>
@@ -170,10 +170,10 @@ const Careers = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Open <span className="text-gradient-ai">Positions</span>
+              Open <span className="text-primary">Positions</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover exciting opportunities to join our growing team of AI infrastructure experts.
+              Discover exciting opportunities to join our growing team of infrastructure experts.
             </p>
           </div>
 
@@ -234,7 +234,7 @@ const Careers = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Benefits & <span className="text-gradient-ai">Perks</span>
+              Benefits & <span className="text-primary">Perks</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We believe in taking care of our team with comprehensive benefits and a supportive work environment.
@@ -247,8 +247,8 @@ const Careers = () => {
               return (
                 <Card key={index} className="text-center bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300">
                   <CardHeader>
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-ai rounded-full flex items-center justify-center">
-                      <Icon className="w-8 h-8 text-navy-deep" />
+                    <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                      <Icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle className="text-lg font-semibold">{benefit.title}</CardTitle>
                   </CardHeader>
@@ -282,11 +282,11 @@ const Careers = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to <span className="text-gradient-ai">Join Us?</span>
+            Ready to <span className="text-primary">Join Us?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Don't see the perfect role? Send us your resume and let us know how you'd like to contribute 
-            to the future of AI-enhanced infrastructure.
+            to the future of critical infrastructure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" asChild>

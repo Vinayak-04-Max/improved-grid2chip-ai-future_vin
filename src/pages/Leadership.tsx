@@ -2,71 +2,35 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, Award, Users, ArrowRight } from "lucide-react";
+import { Linkedin, Mail, Award, Users, ArrowRight, Target, Shield, Lightbulb } from "lucide-react";
 
 const Leadership = () => {
   const leaders = [
     {
-      name: "Rajesh Kumar",
-      role: "Chief Executive Officer & Founder",
-      experience: "20+ years",
-      bio: "Visionary leader with extensive experience in critical facility infrastructure. Pioneer in AI-enhanced data center solutions and sustainable technology integration.",
-      expertise: ["Strategic Leadership", "AI Infrastructure", "Business Development", "Sustainable Technology"],
-      achievements: ["Founded Grid2Chip in 2008", "Led 500+ successful projects", "Industry AI Innovation Award 2024"],
-      image: "/api/placeholder/300/300"
+      name: "Seetharam Mannava",
+      role: "Founder & CEO",
+      experience: "24+ years",
+      bio: "With over 24 years of cross-functional experience, Seetharam is the visionary founder and CEO of Grid2Chip. Specializing in designing and executing critical infrastructure services for data centers.",
+      expertise: ["Critical Infrastructure Services", "Data Center Design", "Strategic Planning", "Turnkey Solutions"],
+      achievements: ["Founder of Grid2Chip", "24+ years industry experience", "Critical facility engagement expert"],
+      image: "/images/Seetharam.jpg"
     },
     {
-      name: "Dr. Priya Sharma",
-      role: "Chief Technology Officer",
-      experience: "15+ years",
-      bio: "Technology innovator specializing in AI-driven infrastructure solutions. Expert in predictive maintenance systems and intelligent facility management.",
-      expertise: ["AI & Machine Learning", "Predictive Analytics", "IoT Integration", "System Architecture"],
-      achievements: ["PhD in Computer Science", "50+ published research papers", "AI Excellence Award 2023"],
-      image: "/api/placeholder/300/300"
-    },
-    {
-      name: "Michael Chen",
-      role: "Chief Operating Officer",
-      experience: "18+ years",
-      bio: "Operations expert ensuring flawless project execution and delivery. Specialist in scaling infrastructure solutions and operational excellence.",
-      expertise: ["Operations Management", "Project Delivery", "Quality Assurance", "Team Leadership"],
-      achievements: ["99.8% project success rate", "Led international expansion", "Operations Excellence Award"],
-      image: "/api/placeholder/300/300"
-    },
-    {
-      name: "Sarah Williams",
-      role: "Chief Financial Officer",
-      experience: "12+ years",
-      bio: "Financial strategist driving sustainable growth and innovation investments. Expert in infrastructure financing and risk management.",
-      expertise: ["Financial Strategy", "Risk Management", "Investment Planning", "Corporate Finance"],
-      achievements: ["CPA & MBA", "Led $50M+ funding rounds", "Financial Leadership Award"],
-      image: "/api/placeholder/300/300"
-    },
-    {
-      name: "David Rodriguez",
-      role: "VP of Engineering",
-      experience: "16+ years",
-      bio: "Engineering leader focusing on cutting-edge facility design and AI integration. Expert in thermal management and energy efficiency.",
-      expertise: ["Facility Engineering", "Thermal Design", "AI Integration", "Energy Systems"],
-      achievements: ["PE License", "100+ facility designs", "Green Engineering Award"],
-      image: "/api/placeholder/300/300"
-    },
-    {
-      name: "Dr. Lisa Zhang",
-      role: "Head of AI Research",
-      experience: "10+ years",
-      bio: "AI research leader developing next-generation intelligent infrastructure solutions. Pioneer in autonomous facility management systems.",
-      expertise: ["AI Research", "Machine Learning", "Autonomous Systems", "Innovation"],
-      achievements: ["PhD in AI", "30+ patents", "Research Excellence Award"],
-      image: "/api/placeholder/300/300"
+      name: "M V Surya Ganesh",
+      role: "Head of Research & Development",
+      experience: "26+ years",
+      bio: "With over 26 years of distinguished experience in designing and executing mechanical and electrical requirements for Indian Aviation projects, Surya Ganesh leads our Research & Development division with visionary expertise.",
+      expertise: ["Mechanical & Electrical Design", "Embedded Computing Systems", "Critical Infrastructure", "Aviation Projects"],
+      achievements: ["26+ years industry experience", "Pioneered embedded computing systems", "Aviation project specialist"],
+      image: "/images/Surya.jpg"
     }
   ];
 
   const companyValues = [
     {
       title: "Innovation Excellence",
-      description: "Continuously pushing the boundaries of AI-enhanced infrastructure technology",
-      icon: Award
+      description: "Continuously pushing the boundaries of critical infrastructure technology",
+      icon: Lightbulb
     },
     {
       title: "Client Success", 
@@ -74,14 +38,14 @@ const Leadership = () => {
       icon: Users
     },
     {
-      title: "Sustainable Future",
-      description: "Building environmentally responsible solutions for tomorrow's world",
-      icon: Award
+      title: "Reliability",
+      description: "Building dependable solutions with uncompromising quality standards",
+      icon: Shield
     },
     {
-      title: "Team Excellence",
-      description: "Fostering a culture of collaboration, growth, and professional development",
-      icon: Users
+      title: "Strategic Vision",
+      description: "Fostering a culture of strategic planning and long-term excellence",
+      icon: Target
     }
   ];
 
@@ -95,11 +59,11 @@ const Leadership = () => {
             Executive Leadership
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Our <span className="text-gradient-ai">Leadership Team</span>
+            Our <span className="text-primary">Leadership Team</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Meet the visionary leaders driving innovation in AI-enhanced critical facility infrastructure. 
-            Our diverse team brings decades of expertise in technology, operations, and strategic growth.
+            Meet the visionary leaders driving innovation in critical facility infrastructure. 
+            Our team brings decades of expertise in technology, operations, and strategic growth.
           </p>
         </div>
       </section>
@@ -107,11 +71,11 @@ const Leadership = () => {
       {/* Leadership Grid */}
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {leaders.map((leader, index) => (
               <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow group">
                 <CardHeader className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-ai p-1">
+                  <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-primary p-1">
                     <div className="w-full h-full rounded-full bg-card flex items-center justify-center text-6xl font-bold text-primary">
                       {leader.name.split(' ').map(n => n[0]).join('')}
                     </div>
@@ -124,7 +88,7 @@ const Leadership = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed">{leader.bio}</p>
                   
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">Expertise</h4>
+                    <h4 className="font-semibold text-foreground mb-2">Key Expertise</h4>
                     <div className="flex flex-wrap gap-2">
                       {leader.expertise.map((skill, i) => (
                         <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
@@ -166,11 +130,11 @@ const Leadership = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-gradient-ai">Core Values</span>
+              Our <span className="text-primary">Core Values</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               The principles that guide our leadership and drive our success in delivering 
-              world-class AI-enhanced infrastructure solutions.
+              world-class infrastructure solutions.
             </p>
           </div>
 
@@ -180,8 +144,8 @@ const Leadership = () => {
               return (
                 <Card key={index} className="text-center bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
                   <CardHeader>
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-ai rounded-full flex items-center justify-center">
-                      <Icon className="w-8 h-8 text-navy-deep" />
+                    <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                      <Icon className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle className="text-lg font-semibold">{value.title}</CardTitle>
                   </CardHeader>
@@ -199,10 +163,10 @@ const Leadership = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Work with <span className="text-gradient-ai">Our Team?</span>
+            Ready to Work with <span className="text-primary">Our Team?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Connect with our leadership team to discuss your AI-enhanced infrastructure needs 
+            Connect with our leadership team to discuss your infrastructure needs 
             and discover how we can help achieve your goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

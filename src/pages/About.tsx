@@ -110,14 +110,14 @@ const About = () => {
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-8">
-            We are pioneers in AI-ready data center infrastructure, combining cutting-edge technology 
+            We are pioneers in data center infrastructure, combining cutting-edge technology 
             with sustainable practices to create the foundation for next-generation computing.
           </p>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {achievements.map((achievement, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-display font-bold text-gradient-ai mb-2">
+              <div className="text-3xl lg:text-4xl font-display font-bold text-primary mb-2">
                   {achievement.number}
                 </div>
                 <div className="text-sm text-muted-foreground">{achievement.label}</div>
@@ -133,28 +133,24 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardContent className="p-8">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-neon-blue to-neon-cyan p-4 mb-6 ai-pulse">
-                  <Target className="w-full h-full text-navy-deep" />
+                <div className="w-16 h-16 rounded-xl bg-primary p-4 mb-6 ai-pulse">
+                  <Target className="w-full h-full text-white" />
                 </div>
                 <h2 className="text-2xl font-display font-bold mb-4">Our Mission</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  To democratize access to AI-ready infrastructure by designing and deploying sustainable, 
-                  scalable data centers that empower organizations to harness the full potential of 
-                  artificial intelligence and advanced computing.
+                  To deliver customized, innovative solutions that guarantee the security and peak performance of your critical infrastructure, ensuring uninterrupted operations and future-ready scalability.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardContent className="p-8">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-accent to-primary p-4 mb-6 ai-pulse">
-                  <Lightbulb className="w-full h-full text-navy-deep" />
+                <div className="w-16 h-16 rounded-xl bg-accent p-4 mb-6 ai-pulse">
+                  <Lightbulb className="w-full h-full text-white" />
                 </div>
                 <h2 className="text-2xl font-display font-bold mb-4">Our Vision</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  A world where every organization has access to intelligent, sustainable infrastructure 
-                  that adapts to their needs, scales with their growth, and contributes to a more 
-                  sustainable future through innovative technology.
+                  To be the industry's most trusted partner in developing the data center infrastructure that powers the future, driving innovation, reliability, and sustainability at every level.
                 </p>
               </CardContent>
             </Card>
@@ -167,7 +163,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-gradient-ai">Core Values</span>
+              Our <span className="text-primary">Core Values</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               These principles guide everything we do, from initial design to ongoing support.
@@ -196,7 +192,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-gradient-ai">Journey</span>
+              Our <span className="text-primary">Journey</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               From startup vision to industry leader, see how we've evolved to meet the growing demands of AI infrastructure.
@@ -204,7 +200,7 @@ const About = () => {
           </div>
 
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-ai opacity-50"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary opacity-50"></div>
             <div className="space-y-12">
               {timeline.map((item, index) => (
                 <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
@@ -213,7 +209,7 @@ const About = () => {
                       <CardContent className="p-6">
                         <div className="flex items-center space-x-2 mb-3">
                           <Calendar className="w-5 h-5 text-primary" />
-                          <span className="text-2xl font-display font-bold text-gradient-ai">{item.year}</span>
+                          <span className="text-2xl font-display font-bold text-primary">{item.year}</span>
                         </div>
                         <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
                         <p className="text-muted-foreground leading-relaxed">{item.description}</p>
@@ -221,7 +217,7 @@ const About = () => {
                     </Card>
                   </div>
                   <div className="relative flex items-center justify-center w-12 h-12">
-                    <div className="w-8 h-8 rounded-full bg-gradient-ai ai-pulse"></div>
+                    <div className="w-8 h-8 rounded-full bg-primary ai-pulse"></div>
                   </div>
                   <div className="w-1/2"></div>
                 </div>
@@ -236,7 +232,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Leadership <span className="text-gradient-ai">Team</span>
+              Leadership <span className="text-primary">Team</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Industry veterans with decades of combined experience in AI, data centers, and sustainable technology.
@@ -247,7 +243,7 @@ const About = () => {
             {team.map((member, index) => (
               <Card key={index} className="text-center bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
                 <CardContent className="p-6">
-                  <div className="w-20 h-20 rounded-full bg-gradient-ai mx-auto mb-4"></div>
+                  <div className="w-20 h-20 rounded-full bg-primary mx-auto mb-4"></div>
                   <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
                   <p className="text-sm text-primary mb-3">{member.role}</p>
                   <p className="text-xs text-muted-foreground leading-relaxed">{member.background}</p>
@@ -262,7 +258,7 @@ const About = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Join Us in Building the <span className="text-gradient-ai">Future</span>
+            Join Us in Building the <span className="text-primary">Future</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Whether you're looking for infrastructure solutions or want to be part of our team, 

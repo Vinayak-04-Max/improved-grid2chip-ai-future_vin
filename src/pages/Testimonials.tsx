@@ -7,17 +7,17 @@ import { Star, Trophy, Award, Users, ArrowRight } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      text: "Grid2Chip's AI-ready infrastructure accelerated our drug discovery pipeline by 300%. Their predictive maintenance capabilities have eliminated unexpected downtime completely.",
+      text: "Grid2Chip's infrastructure accelerated our drug discovery pipeline by 300%. Their predictive maintenance capabilities have eliminated unexpected downtime completely.",
       author: "Dr. Sarah Chen",
-      company: "BioTech Research Inc.",
+      company: "Pharmaceutical Research",
       role: "Chief Technology Officer",
       rating: 5,
       industry: "Pharmaceutical"
     },
     {
-      text: "The modular design allowed us to scale our computing capacity seamlessly as our needs grew. The AI optimization reduced our energy costs by 40%.",
+      text: "The modular design allowed us to scale our computing capacity seamlessly as our needs grew. System optimization reduced our energy costs by 40%.",
       author: "Michael Rodriguez",
-      company: "SmartCity Solutions",
+      company: "Smart City Solutions",
       role: "Infrastructure Director", 
       rating: 5,
       industry: "Smart Cities"
@@ -31,9 +31,9 @@ const Testimonials = () => {
       industry: "Automotive"
     },
     {
-      text: "Grid2Chip delivered our custom data center 30% faster than projected. The AI-enhanced cooling system maintains perfect temperatures automatically.",
+      text: "Grid2Chip delivered our custom data center 30% faster than projected. The intelligent cooling system maintains perfect temperatures automatically.",
       author: "David Park",
-      company: "QuantumLab Research",
+      company: "Research Laboratory",
       role: "Facilities Manager",
       rating: 5,
       industry: "Research"
@@ -47,9 +47,9 @@ const Testimonials = () => {
       industry: "Healthcare"
     },
     {
-      text: "The prefab container solution was perfect for our rapid deployment needs. Fully operational in just 6 weeks with AI monitoring built-in.",
+      text: "The prefab container solution was perfect for our rapid deployment needs. Fully operational in just 6 weeks with integrated monitoring built-in.",
       author: "James Wilson",
-      company: "TelecomEdge",
+      company: "Telecom Provider",
       role: "Network Operations",
       rating: 5,
       industry: "Telecommunications"
@@ -60,7 +60,7 @@ const Testimonials = () => {
     {
       title: "Data Center Excellence Award 2024",
       organization: "Data Center Institute",
-      category: "AI Innovation",
+      category: "Innovation",
       year: "2024"
     },
     {
@@ -76,9 +76,9 @@ const Testimonials = () => {
       year: "2023"
     },
     {
-      title: "Best AI Integration in Infrastructure",
+      title: "Best Technology Integration",
       organization: "TechInnovate Awards",
-      category: "AI Excellence",
+      category: "Excellence",
       year: "2023"
     }
   ];
@@ -100,11 +100,11 @@ const Testimonials = () => {
             Client Success Stories
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Testimonials & <span className="text-gradient-ai">Awards</span>
+            Testimonials & <span className="text-primary">Awards</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Hear from our clients and see the recognition we've earned for delivering 
-            exceptional AI-enhanced critical facility infrastructure solutions.
+            exceptional critical facility infrastructure solutions.
           </p>
         </div>
       </section>
@@ -117,8 +117,8 @@ const Testimonials = () => {
               const Icon = stat.icon;
               return (
                 <div key={index} className="text-center group">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-ai rounded-full flex items-center justify-center">
-                    <Icon className="w-8 h-8 text-navy-deep" />
+                  <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>
                   <div className="text-muted-foreground">{stat.label}</div>
@@ -134,7 +134,7 @@ const Testimonials = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              What Our <span className="text-gradient-ai">Clients Say</span>
+              What Our <span className="text-primary">Clients Say</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Real feedback from organizations that trust Grid2Chip for their critical infrastructure needs.
@@ -171,10 +171,10 @@ const Testimonials = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Awards & <span className="text-gradient-ai">Recognition</span>
+              Awards & <span className="text-primary">Recognition</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Industry recognition for our innovation in AI-enhanced critical facility infrastructure.
+              Industry recognition for our innovation in critical facility infrastructure.
             </p>
           </div>
 
@@ -182,8 +182,8 @@ const Testimonials = () => {
             {awards.map((award, index) => (
               <Card key={index} className="text-center bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
                 <CardHeader>
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-ai rounded-full flex items-center justify-center">
-                    <Trophy className="w-8 h-8 text-navy-deep" />
+                  <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                    <Trophy className="w-8 h-8 text-white" />
                   </div>
                   <CardTitle className="text-lg font-semibold">{award.title}</CardTitle>
                 </CardHeader>
@@ -202,10 +202,10 @@ const Testimonials = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Join Our <span className="text-gradient-ai">Success Stories?</span>
+            Ready to Join Our <span className="text-primary">Success Stories?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Let us design and build AI-enhanced critical facility infrastructure that exceeds your expectations.
+            Let us design and build critical facility infrastructure that exceeds your expectations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" asChild>
