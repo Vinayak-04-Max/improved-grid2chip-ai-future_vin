@@ -304,7 +304,7 @@ const Industries = () => {
       <section className="py-20 lg:py-32 bg-gradient-card">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Transform Your <span className="text-gradient-ai">Industry?</span>
+            Ready to Transform Your <span className="text-accent">Industry?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Let's discuss how Grid2Chip can design a custom infrastructure solution 

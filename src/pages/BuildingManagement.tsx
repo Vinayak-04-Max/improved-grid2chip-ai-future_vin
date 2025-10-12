@@ -212,7 +212,7 @@ const BuildingManagement = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Ideal <span className="text-gradient-ai">Applications</span>
+              Ideal <span className="text-accent">Applications</span>
             </h2>
           </div>
 
@@ -238,7 +238,7 @@ const BuildingManagement = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Optimize Your <span className="text-gradient-ai">Facility Management?</span>
+            Ready to Optimize Your <span className="text-accent">Facility Management?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Take control of your building's performance with a powerful, centralized Building Management System. Contact us to learn how.

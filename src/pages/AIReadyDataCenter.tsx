@@ -146,7 +146,7 @@ const AIReadyDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Ideal <span className="text-gradient-ai">Use Cases</span>
+              Ideal <span className="text-accent">Use Cases</span>
             </h2>
           </div>
 
@@ -169,7 +169,7 @@ const AIReadyDataCenter = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Power Your <span className="text-gradient-ai">AI Vision?</span>
+            Ready to Power Your <span className="text-accent">Infrastructure?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Build the foundation for your artificial intelligence strategy with a data center engineered for the future of computing.
