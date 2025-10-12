@@ -2,33 +2,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Target, Eye, Award } from "lucide-react";
+import { Target, Lightbulb, Award, Shield, Cpu, Users, TrendingUp, ArrowRight } from "lucide-react";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero py-20 lg:py-32">
-        <div className="absolute inset-0 tech-grid opacity-20"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          <div className="text-center space-y-8">
-            <Badge variant="outline" className="w-fit mx-auto border-primary/30 text-primary">
-              <span className="relative">
-                AI Infrastructure Innovators
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ai-pulse"></span>
-              </span>
-            </Badge>
-            
-            <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight">
-              About <span className="text-gradient-ai">Grid2Chip</span>
-            </h1>
-            
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Leading player in the critical facility industry, where seamless connections 
-              and integrated AI-enhanced solutions redefine the landscape of cutting-edge system integration.
-            </p>
-          </div>
+      <section className="relative py-20 lg:py-32 bg-gradient-hero">
+        <div className="absolute inset-0 tech-grid opacity-10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
+            About Grid2Chip
+          </Badge>
+          <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
+            Leading Expert in <span className="text-primary">Data Center Solutions</span>
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            We are a leading expert in the data center industry, specializing in the design, construction, and lifecycle management of high-performance data centers. Our integrated approach ensures that every project, from concept to completion, is engineered for maximum reliability, efficiency, and scalability.
+          </p>
         </div>
       </section>
 
@@ -36,40 +27,30 @@ const AboutUs = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Vision */}
-            <Card className="bg-gradient-card border-primary/20 ai-glow">
+            <Card className="bg-gradient-card border-primary/20">
               <CardHeader>
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-ai rounded-xl flex items-center justify-center">
-                    <Eye className="w-6 h-6 text-navy-deep" />
-                  </div>
-                  <CardTitle className="text-2xl">AI-Enhanced Vision</CardTitle>
+                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                  <Target className="w-8 h-8 text-primary" />
                 </div>
+                <CardTitle className="text-3xl font-display font-bold mb-4">Our Vision</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  G2C vision is to be the leader in ensuring the seamless, secure, and optimal performance of 
-                  critical facilities powered by AI. We aspire to set new benchmarks in reliability, efficiency, 
-                  and sustainability, contributing to the resilience of our clients' mission-critical AI operations.
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  To be the industry's most trusted partner in developing the data center infrastructure that powers the future. We are committed to setting new benchmarks in performance and sustainability, ensuring our clients' mission-critical operations are resilient and future-proof.
                 </p>
               </CardContent>
             </Card>
 
-            {/* Mission */}
-            <Card className="bg-gradient-card border-primary/20 ai-glow">
+            <Card className="bg-gradient-card border-primary/20">
               <CardHeader>
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-ai rounded-xl flex items-center justify-center">
-                    <Target className="w-6 h-6 text-navy-deep" />
-                  </div>
-                  <CardTitle className="text-2xl">AI-Powered Mission</CardTitle>
+                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                  <Lightbulb className="w-8 h-8 text-primary" />
                 </div>
+                <CardTitle className="text-3xl font-display font-bold mb-4">Our Mission</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Our mission is to provide clients with customized, AI-enhanced innovative solutions that guarantee 
-                  the reliability, security, and smooth operation of critical facilities. Through collaboration and 
-                  ongoing AI advancement, we empower clients with intelligent, future-ready systems.
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  To deliver customized, innovative solutions that guarantee the security and peak performance of our clients' data center facilities. Through expert engineering, collaborative partnership, and a commitment to technological advancement, we empower organizations with robust, intelligent, and scalable infrastructure.
                 </p>
               </CardContent>
             </Card>
@@ -77,57 +58,66 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Key Aspects */}
+      {/* Key Strengths */}
       <section className="py-20 lg:py-32 bg-gradient-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Key Aspects of Our <span className="text-gradient-ai">AI-Enhanced Profile</span>
+              Key Strengths of <span className="text-primary">Our Approach</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Explore the key aspects that make us leaders in AI-ready critical facility solutions.
+              Discover the core principles that make us a leader in data center solutions.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Cutting-Edge AI Technologies",
-                description: "Advanced AI-powered systems for intelligent facility management and predictive analytics."
+                icon: Cpu,
+                title: "Advanced Engineering",
+                description: "We leverage cutting-edge technologies, including advanced analytics and smart systems, for predictive maintenance and optimized data center management."
               },
               {
-                title: "Client-Centric AI Approach",
-                description: "Customized AI solutions tailored to each client's specific critical facility requirements."
+                icon: Users,
+                title: "Client-Centric Solutions",
+                description: "Our process is built around your unique requirements. We design and build tailored data center infrastructure that aligns perfectly with your operational and business goals."
               },
               {
-                title: "Time-Bound AI Services",
-                description: "Rapid deployment of AI-enhanced systems with guaranteed timelines and performance metrics."
+                icon: Award,
+                title: "Guaranteed Performance & Delivery",
+                description: "We are committed to rapid, on-time deployment. Our projects are managed with precision to meet guaranteed timelines and performance metrics."
               },
               {
-                title: "AI Innovation Hub",
-                description: "Continuous research and development in AI technologies for next-generation facility solutions."
+                icon: Lightbulb,
+                title: "A Culture of Innovation",
+                description: "Through continuous research and development, we stay at the forefront of data center technology to deliver next-generation solutions for our clients."
               },
               {
-                title: "Cross-Sectoral AI Impact",
-                description: "AI solutions spanning pharmaceuticals, research, smart cities, and industrial automation."
+                icon: TrendingUp,
+                title: "Cross-Sector Expertise",
+                description: "We have a proven track record of success across diverse industries, including pharmaceuticals, research, smart cities, and industrial automation."
               },
               {
-                title: "AI-Driven Reliability",
-                description: "Enhanced system reliability and efficiency through artificial intelligence and machine learning."
+                icon: Shield,
+                title: "Uncompromising Reliability",
+                description: "Our core focus is on maximizing data center uptime and operational efficiency through superior design, intelligent monitoring, and proactive maintenance."
               }
-            ].map((aspect, index) => (
-              <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 group">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-primary mt-1 group-hover:text-accent transition-colors" />
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-2">{aspect.title}</h3>
-                      <p className="text-sm text-muted-foreground">{aspect.description}</p>
+            ].map((aspect, index) => {
+              const Icon = aspect.icon;
+              return (
+                <Card key={index} className="bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
+                  <CardHeader>
+                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                      <Icon className="w-8 h-8 text-primary" />
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    <CardTitle className="text-xl font-semibold">{aspect.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{aspect.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -137,71 +127,84 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              AI-Enhanced <span className="text-gradient-ai">Certifications</span>
+              Our <span className="text-primary">Certifications</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our certifications ensure the highest standards in AI-ready critical facility design and implementation.
+              Our certifications reflect our commitment to the highest standards in data center design, implementation, and management.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "ATD - AI-Ready Tier Designer",
-                subtitle: "Seetharam Mannava",
+                title: "ATD - Accredited Tier Designer",
+                description: "Seetharam Mannava",
                 date: "06 July 2017",
-                organization: "2020 UPTIME INSTITUTE"
+                organization: "UPTIME INSTITUTE",
+                icon: Award,
+                status: "Certified"
               },
               {
                 title: "ISO 9001:2015",
-                subtitle: "Quality Management",
+                description: "Quality Management System",
                 date: "Current",
-                organization: "International Standard"
+                organization: "ISO",
+                icon: Shield,
+                status: "Current"
               },
               {
                 title: "ISO 27001:2022",
-                subtitle: "Information Security",
+                description: "Information Security Management",
                 date: "Current",
-                organization: "International Standard"
+                organization: "ISO",
+                icon: Shield,
+                status: "Current"
               }
-            ].map((cert, index) => (
-              <Card key={index} className="text-center bg-gradient-card border-primary/20 ai-glow">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-ai rounded-xl flex items-center justify-center">
-                    <Award className="w-8 h-8 text-navy-deep" />
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2">{cert.title}</h3>
-                  <p className="text-sm text-primary mb-1">{cert.subtitle}</p>
-                  <p className="text-xs text-muted-foreground mb-2">{cert.date}</p>
-                  <p className="text-xs text-muted-foreground">{cert.organization}</p>
-                </CardContent>
-              </Card>
-            ))}
+            ].map((cert, index) => {
+              const Icon = cert.icon;
+              return (
+                <Card key={index} className="bg-gradient-card border-primary/20">
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
+                        <Icon className="w-8 h-8 text-primary" />
+                      </div>
+                      <Badge variant="secondary">{cert.status}</Badge>
+                    </div>
+                    <CardTitle className="text-xl font-semibold mb-2">{cert.title}</CardTitle>
+                    <p className="text-sm text-muted-foreground">{cert.description}</p>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-1">
+                      <p className="text-sm text-muted-foreground"><span className="font-semibold">Date:</span> {cert.date}</p>
+                      <p className="text-sm text-muted-foreground"><span className="font-semibold">By:</span> {cert.organization}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-hero">
+      <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Transform Your <span className="text-gradient-ai">Critical Facilities</span>?
+            Ready to Build Your <span className="text-primary">Next Data Center?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Experience unparalleled efficiency, innovation, and connectivity with our expert AI-enhanced team.
+            Partner with our expert team to experience unparalleled reliability and innovation.
           </p>
-          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" className="group" asChild>
+            <Button variant="hero" size="lg" asChild>
               <Link to="/contact">
-                Get AI Consultation
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                Get a Consultation
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button variant="glass" size="lg" asChild>
-              <Link to="/products/ims">
-                Explore AI Solutions
-              </Link>
+              <Link to="/solutions">Explore Our Solutions</Link>
             </Button>
           </div>
         </div>
