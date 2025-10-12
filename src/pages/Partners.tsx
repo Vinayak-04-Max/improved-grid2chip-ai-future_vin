@@ -53,7 +53,7 @@ const Partners = () => {
             </Badge>
             
             <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight">
-              Strategic <span className="text-primary">Technology</span> Partners
+              Strategic <span className="text-g2c-blue">Technology</span> Partners
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -69,7 +69,7 @@ const Partners = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-primary">Technology Partners</span>
+              Our <span className="text-g2c-green">Technology Partners</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Working with global leaders in technology to provide comprehensive infrastructure solutions.
@@ -130,7 +130,7 @@ const Partners = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Partnership <span className="text-primary">Advantages</span>
+              Partnership <span className="text-g2c-blue">Advantages</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Our strategic partnerships enable us to deliver comprehensive solutions.
@@ -186,7 +186,7 @@ const Partners = () => {
       <section className="py-20 lg:py-32 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Experience <span className="text-primary">Partner-Grade Solutions</span>?
+            Ready to Experience <span className="text-g2c-green">Partner-Grade Solutions</span>?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Leverage our strategic partnerships to access the most advanced infrastructure solutions available today.

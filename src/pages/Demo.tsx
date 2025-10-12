@@ -124,7 +124,7 @@ const Demo = () => {
           </Badge>
           
           <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            Experience <span className="text-primary">Infrastructure</span> in Action
+            Experience <span className="text-g2c-blue">Infrastructure</span> in Action
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-8">
@@ -154,7 +154,7 @@ const Demo = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Choose Your <span className="text-primary">Demo Format</span>
+              Choose Your <span className="text-g2c-green">Demo Format</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Select the format that works best for your team and requirements.
@@ -395,7 +395,7 @@ const Demo = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              What to <span className="text-primary">Expect</span>
+              What to <span className="text-g2c-blue">Expect</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Here's what you'll gain from your demo session with our AI infrastructure experts.

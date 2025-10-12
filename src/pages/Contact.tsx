@@ -106,7 +106,7 @@ const Contact = () => {
           </Badge>
           
           <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            Let's Build Your <span className="text-primary">Infrastructure</span>
+            Let's Build Your <span className="text-g2c-blue">Infrastructure</span>
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
@@ -275,7 +275,7 @@ const Contact = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-3xl font-display font-bold mb-6">
-                  Our <span className="text-primary">Global Offices</span>
+                  Our <span className="text-g2c-green">Global Offices</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   With offices across three continents, we're positioned to serve clients globally 

@@ -59,7 +59,7 @@ const Leadership = () => {
             Executive Leadership
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Our <span className="text-primary">Leadership Team</span>
+            Our <span className="text-g2c-blue">Leadership Team</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Meet the visionary leaders driving innovation in critical facility infrastructure. 
@@ -133,7 +133,7 @@ const Leadership = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-primary">Core Values</span>
+              Our <span className="text-g2c-green">Core Values</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               The principles that guide our leadership and drive our success in delivering 
@@ -167,7 +167,7 @@ const Leadership = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Work with <span className="text-primary">Our Team?</span>
+            Ready to Work with <span className="text-g2c-blue">Our Team?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Connect with our leadership team to discuss your infrastructure needs 

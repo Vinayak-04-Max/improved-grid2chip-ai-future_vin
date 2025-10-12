@@ -106,7 +106,7 @@ const About = () => {
           </Badge>
           
           <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            Building the <span className="text-primary">Infrastructure</span> of Tomorrow
+            Building the <span className="text-g2c-blue">Infrastructure</span> of Tomorrow
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-8">
@@ -163,7 +163,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-primary">Core Values</span>
+              Our <span className="text-g2c-green">Core Values</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               These principles guide everything we do, from initial design to ongoing support.
@@ -193,7 +193,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-primary">Journey</span>
+              Our <span className="text-g2c-blue">Journey</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               From startup vision to industry leader, see how we've evolved to meet the growing demands of AI infrastructure.
@@ -233,7 +233,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Leadership <span className="text-primary">Team</span>
+              Leadership <span className="text-g2c-green">Team</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Industry veterans with decades of combined experience in AI, data centers, and sustainable technology.
@@ -262,7 +262,7 @@ const About = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Join Us in Building the <span className="text-primary">Future</span>
+            Join Us in Building the <span className="text-g2c-blue">Future</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Whether you're looking for infrastructure solutions or want to be part of our team, 

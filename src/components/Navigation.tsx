@@ -22,14 +22,14 @@ const Navigation = () => {
   ];
 
   const productItems = [
-    { name: "IMS", path: "/products/ims" },
-    { name: "Prefab Container Data Center", path: "/products/prefab-container" }
+    { name: "IMS", path: "/products/ims" }
   ];
 
   const dataCenterItems = [
     { name: "Edge Data Center", path: "/data-center/edge" },
     { name: "Custom Build Data Center", path: "/data-center/custom" },
-    { name: "AI Ready Data Centers", path: "/data-center/ai-ready" }
+    { name: "AI Ready Data Centers", path: "/data-center/ai-ready" },
+    { name: "Prefabricated Data Centers", path: "/products/prefab-container" }
   ];
 
   const bmsItems = [

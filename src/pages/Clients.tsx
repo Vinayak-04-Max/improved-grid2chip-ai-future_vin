@@ -96,7 +96,7 @@ const Clients = () => {
             Trusted by Industry Leaders
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Our <span className="text-primary">Clients</span>
+            Our <span className="text-g2c-blue">Clients</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Discover the organizations that trust Grid2Chip for their critical infrastructure needs. 
@@ -110,7 +110,7 @@ const Clients = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Trusted by <span className="text-primary">Leading Organizations</span>
+              Trusted by <span className="text-g2c-green">Leading Organizations</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Over 500 successful projects delivered for clients across diverse industries.
@@ -138,7 +138,7 @@ const Clients = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Industries We <span className="text-primary">Serve</span>
+              Industries We <span className="text-g2c-blue">Serve</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Specialized infrastructure solutions tailored to the unique needs of each industry.
@@ -181,7 +181,7 @@ const Clients = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Success <span className="text-primary">Stories</span>
+              Success <span className="text-g2c-green">Stories</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Real client challenges solved with innovative infrastructure solutions.
@@ -237,7 +237,7 @@ const Clients = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Client <span className="text-primary">Testimonials</span>
+              Client <span className="text-g2c-blue">Testimonials</span>
             </h2>
           </div>
 
@@ -261,7 +261,7 @@ const Clients = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Join Our <span className="text-primary">Client Family?</span>
+            Ready to Join Our <span className="text-g2c-green">Client Family?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Discover how Grid2Chip can transform your critical infrastructure.

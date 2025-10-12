@@ -61,7 +61,7 @@ const Careers = () => {
             Careers at Grid2Chip
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Stay Connected with <span className="text-primary">Grid2Chip</span>
+            Stay Connected with <span className="text-g2c-blue">Grid2Chip</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             While we don't have current openings, we're always interested in connecting with 
@@ -99,7 +99,7 @@ const Careers = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-primary">Teams</span>
+              Our <span className="text-g2c-green">Teams</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Learn about the diverse teams that make Grid2Chip an industry leader.
@@ -130,7 +130,7 @@ const Careers = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Why <span className="text-primary">Grid2Chip?</span>
+              Why <span className="text-g2c-blue">Grid2Chip?</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               When opportunities arise, here's what makes Grid2Chip an exceptional place to work.
@@ -164,7 +164,7 @@ const Careers = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Company <span className="text-primary">Perks</span>
+              Company <span className="text-g2c-green">Perks</span>
             </h2>
           </div>
 
@@ -183,7 +183,7 @@ const Careers = () => {
       <section className="py-20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Join Us in the <span className="text-primary">Future</span>
+            Join Us in the <span className="text-g2c-blue">Future</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
             Submit your resume today to be considered for future opportunities at Grid2Chip.

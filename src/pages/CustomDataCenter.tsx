@@ -111,7 +111,7 @@ const CustomDataCenter = () => {
             Custom Solutions
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Custom-Build <span className="text-primary">Data Centers</span>
+            Custom-Build <span className="text-g2c-blue">Data Centers</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Engineered from the ground up to meet your unique operational, performance, and scalability requirements. We transform your vision into a state-of-the-art, mission-critical facility.
@@ -135,7 +135,7 @@ const CustomDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              The Advantages of a <span className="text-primary">Custom-Build</span>
+              The Advantages of a <span className="text-g2c-green">Custom-Build</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Discover the unparalleled benefits of a data center designed exclusively for your business needs.
@@ -169,7 +169,7 @@ const CustomDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-primary">Custom-Build Process</span>
+              Our <span className="text-g2c-blue">Custom-Build Process</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               A structured, transparent approach to delivering your data center on time and on budget.
@@ -208,7 +208,7 @@ const CustomDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Key Infrastructure <span className="text-primary">Customizations</span>
+              Key Infrastructure <span className="text-g2c-green">Customizations</span>
             </h2>
           </div>
 
@@ -230,7 +230,7 @@ const CustomDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Ideal <span className="text-primary">For</span>
+              Ideal <span className="text-g2c-blue">For</span>
             </h2>
           </div>
 
@@ -256,7 +256,7 @@ const CustomDataCenter = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Build Your <span className="text-primary">Data Center?</span>
+            Ready to Build Your <span className="text-g2c-green">Data Center?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Let's partner to engineer a custom data center that serves as the foundation for your future success. Contact our experts today.

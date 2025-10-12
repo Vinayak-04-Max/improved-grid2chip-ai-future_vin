@@ -80,7 +80,7 @@ const Solutions = () => {
               </Badge>
               
               <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight">
-                <span className="text-primary">Next-Generation</span> Data Center Solutions
+                <span className="text-g2c-blue">Next-Generation</span> Data Center Solutions
               </h1>
               
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -118,7 +118,7 @@ const Solutions = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Complete <span className="text-primary">Solution Portfolio</span>
+              Complete <span className="text-g2c-green">Solution Portfolio</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Each solution is designed with cutting-edge technology and optimized for specific use cases and deployment scenarios.
@@ -173,7 +173,7 @@ const Solutions = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              End-to-End <span className="text-primary">Capabilities</span>
+              End-to-End <span className="text-g2c-blue">Capabilities</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               From initial consultation to ongoing support, we provide comprehensive services 
@@ -196,7 +196,7 @@ const Solutions = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Transform Your <span className="text-primary">Infrastructure?</span>
+            Ready to Transform Your <span className="text-g2c-green">Infrastructure?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Our experts are ready to design a custom solution that meets your specific requirements and budget.

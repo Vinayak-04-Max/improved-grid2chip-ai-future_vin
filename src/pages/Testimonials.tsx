@@ -100,7 +100,7 @@ const Testimonials = () => {
             Client Success Stories
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Testimonials & <span className="text-primary">Awards</span>
+            Testimonials & <span className="text-g2c-blue">Awards</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Hear from our clients and see the recognition we've earned for delivering 
@@ -135,7 +135,7 @@ const Testimonials = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              What Our <span className="text-primary">Clients Say</span>
+              What Our <span className="text-g2c-green">Clients Say</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Real feedback from organizations that trust Grid2Chip for their critical infrastructure needs.
@@ -172,7 +172,7 @@ const Testimonials = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Awards & <span className="text-primary">Recognition</span>
+              Awards & <span className="text-g2c-blue">Recognition</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Industry recognition for our innovation in critical facility infrastructure.
@@ -206,7 +206,7 @@ const Testimonials = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Join Our <span className="text-primary">Success Stories?</span>
+            Ready to Join Our <span className="text-g2c-green">Success Stories?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Let us design and build critical facility infrastructure that exceeds your expectations.
