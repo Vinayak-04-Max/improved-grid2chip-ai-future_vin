@@ -8,8 +8,8 @@ const IMS = () => {
   const features = [
     {
       icon: Brain,
-      title: "AI-Powered Analytics",
-      description: "Advanced machine learning algorithms for predictive maintenance and anomaly detection."
+      title: "Predictive Analytics",
+      description: "Advanced algorithms for predictive maintenance and anomaly detection."
     },
     {
       icon: Monitor,
@@ -18,22 +18,22 @@ const IMS = () => {
     },
     {
       icon: BarChart3,
-      title: "Intelligent Reporting",
-      description: "Comprehensive dashboards and automated reports with AI-driven insights and trends."
+      title: "Centralized Reporting",
+      description: "Comprehensive dashboards and automated reports with insights and trends."
     },
     {
       icon: Shield,
       title: "Security Integration",
-      description: "Advanced cybersecurity monitoring with AI threat detection and response capabilities."
+      description: "Advanced cybersecurity monitoring with threat detection and response capabilities."
     },
     {
       icon: Zap,
       title: "Energy Optimization",
-      description: "AI-driven energy management for maximum efficiency and cost reduction."
+      description: "Data-driven energy management for maximum efficiency and cost reduction."
     },
     {
       icon: AlertTriangle,
-      title: "Predictive Alerts",
+      title: "Proactive Alerting",
       description: "Smart alerting system that predicts issues before they become critical problems."
     }
   ];
@@ -53,22 +53,22 @@ const IMS = () => {
     {
       metric: "99.99%",
       label: "System Uptime",
-      description: "Guaranteed availability with AI-powered redundancy"
+      description: "Guaranteed availability through automated redundancy"
     },
     {
       metric: "30%",
-      label: "Energy Savings",
-      description: "Reduced operational costs through AI optimization"
+      label: "Potential Energy Savings",
+      description: "Reduced operational costs through optimization"
     },
     {
       metric: "24/7",
-      label: "AI Monitoring", 
-      description: "Continuous intelligent oversight and analysis"
+      label: "Centralized Monitoring", 
+      description: "Continuous oversight and analysis"
     },
     {
       metric: "Real-time",
       label: "Threat Detection",
-      description: "Instant AI-powered security threat identification"
+      description: "Instant security threat identification"
     }
   ];
 
@@ -82,31 +82,28 @@ const IMS = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <Badge variant="outline" className="w-fit border-primary/30 text-primary">
-                <span className="relative">
-                  AI-Enhanced Monitoring
-                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ai-pulse"></span>
-                </span>
+                Integrated Monitoring System
               </Badge>
               
               <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight">
-                <span className="text-gradient-ai">Intelligent</span> Monitoring System
+                <span className="text-primary">Integrated</span> Monitoring System (IMS)
               </h1>
               
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Revolutionary AI-Enhanced Integrated Monitoring System (IMS) that transforms critical facility 
-                management with intelligent automation, predictive analytics, and comprehensive oversight.
+                Comprehensive Integrated Monitoring System (IMS) that transforms critical facility 
+                management with automation, predictive analytics, and centralized oversight.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="lg" className="group" asChild>
                   <Link to="/demo">
-                    Experience AI IMS Demo
+                    Experience IMS Demo
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
                 <Button variant="glass" size="lg" asChild>
                   <Link to="/contact">
-                    Get AI Consultation
+                    Get Consultation
                   </Link>
                 </Button>
               </div>
@@ -137,10 +134,10 @@ const IMS = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              AI-Enhanced <span className="text-gradient-ai">IMS Features</span>
+              <span className="text-primary">IMS Features</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive monitoring capabilities powered by artificial intelligence for superior facility management.
+              Comprehensive monitoring capabilities for superior facility management.
             </p>
           </div>
 
@@ -150,8 +147,8 @@ const IMS = () => {
               return (
                 <Card key={index} className="bg-gradient-card border-primary/20 ai-glow group hover:border-primary/40 transition-all duration-300">
                   <CardHeader>
-                    <div className="w-12 h-12 bg-gradient-ai rounded-xl flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-navy-deep" />
+                    <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-white" />
                     </div>
                     <CardTitle className="text-xl group-hover:text-primary transition-colors">
                       {feature.title}
@@ -175,12 +172,12 @@ const IMS = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h2 className="text-3xl lg:text-5xl font-display font-bold">
-                <span className="text-gradient-ai">Comprehensive</span> System Coverage
+                <span className="text-primary">Comprehensive</span> System Coverage
               </h2>
               
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Our AI-Enhanced IMS monitors every critical aspect of your facility infrastructure, 
-                providing complete visibility and intelligent control over all systems.
+                Our IMS monitors every critical aspect of your facility infrastructure, 
+                providing complete visibility and control over all systems.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -192,7 +189,7 @@ const IMS = () => {
                 ))}
               </div>
 
-              <Button variant="ai" size="lg" asChild>
+              <Button variant="hero" size="lg" asChild>
                 <Link to="/contact">
                   Request IMS Assessment
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -209,25 +206,25 @@ const IMS = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg">
                       <span className="text-sm">Power Systems</span>
-                      <Badge variant="outline" className="bg-green-500/20 text-green-400 border-green-500/30">
+                      <Badge variant="outline" className="bg-accent/20 text-foreground border-accent/30">
                         Optimal
                       </Badge>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg">
                       <span className="text-sm">Cooling Systems</span>
-                      <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30">
+                      <Badge variant="outline" className="bg-primary/20 text-foreground border-primary/30">
                         Efficient
                       </Badge>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg">
                       <span className="text-sm">Security Systems</span>
                       <Badge variant="outline" className="bg-primary/20 text-primary border-primary/30">
-                        AI Active
+                        Active
                       </Badge>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg">
                       <span className="text-sm">Fire Safety</span>
-                      <Badge variant="outline" className="bg-green-500/20 text-green-400 border-green-500/30">
+                      <Badge variant="outline" className="bg-accent/20 text-foreground border-accent/30">
                         Protected
                       </Badge>
                     </div>
@@ -243,17 +240,16 @@ const IMS = () => {
       <section className="py-20 lg:py-32 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Deploy <span className="text-gradient-ai">AI-Enhanced IMS</span>?
+            Ready to Deploy <span className="text-primary">IMS</span>?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Transform your critical facility management with our intelligent monitoring system 
-            powered by cutting-edge artificial intelligence.
+            Transform your critical facility management with our integrated monitoring system.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" className="group" asChild>
               <Link to="/demo">
-                Schedule AI Demo
+                Schedule Demo
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
