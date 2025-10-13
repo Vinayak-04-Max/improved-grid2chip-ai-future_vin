@@ -30,6 +30,7 @@ const Navigation = () => {
     { name: "Edge Data Center", path: "/data-center/edge" },
     { name: "Custom Build Data Center", path: "/data-center/custom" },
     { name: "AI Ready Data Centers", path: "/data-center/ai-ready" },
+    { name: "HPC Data Center", path: "/data-center/hpc" },
     { name: "Prefabricated Data Centers", path: "/products/prefab-container" }
   ];
 
