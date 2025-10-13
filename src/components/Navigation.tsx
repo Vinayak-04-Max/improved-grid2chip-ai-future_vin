@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/g2c-logo-new.png";
 
 const Navigation = () => {
   const location = useLocation();
@@ -44,11 +45,8 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">G2C</span>
-              </div>
-              <span className="text-xl font-display font-bold text-foreground">Grid2Chip</span>
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="Grid2Chip Logo" className="h-12" />
             </Link>
           </div>
 

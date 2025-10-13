@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/g2c-logo-new.png";
 
 const Footer = () => {
   return (
@@ -8,10 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-ai rounded-lg ai-glow"></div>
-              <span className="text-xl font-display font-bold text-gradient-ai">Grid2Chip</span>
-            </div>
+            <img src={logo} alt="Grid2Chip Logo" className="h-10" />
             <p className="text-muted-foreground text-sm leading-relaxed">
               Crafting AI-ready data centers for the future. Sustainable, scalable, and optimized for next-generation computing.
             </p>
