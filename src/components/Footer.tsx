@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, MapPin } from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/g2c-logo-new.png";
 
 const Footer = () => {
@@ -65,11 +65,25 @@ const Footer = () => {
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                 <div className="text-sm text-muted-foreground">
-                  Innovation Hub<br />
-                  Tech District, Silicon Valley
+                  #306, Downtown mall<br />
+                  Beside Lotus Hospital<br />
+                  Lakdikapool, Hyderabad - 500004
                 </div>
               </div>
-              <div className="space-y-2">
+              <div className="flex items-start space-x-2">
+                <Mail className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                <a href="mailto:info@grid2chip.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  info@grid2chip.com
+                </a>
+              </div>
+              <div className="flex items-start space-x-2">
+                <Phone className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                <div className="text-sm text-muted-foreground">
+                  +91-40-23302112<br />
+                  7032808049
+                </div>
+              </div>
+              <div className="space-y-2 pt-2">
                 <Link to="/demo" className="block text-sm text-primary hover:text-primary/80 transition-colors">
                   Book a Demo
                 </Link>

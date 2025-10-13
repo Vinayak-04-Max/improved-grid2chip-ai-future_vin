@@ -65,7 +65,7 @@ const Contact = () => {
       icon: Phone,
       title: "Call Us",
       description: "Speak directly with our experts",
-      contact: "+1 (555) 123-4567",
+      contact: "+91-40-23302112 / 7032808049",
       action: "Call Now"
     },
     {
@@ -79,19 +79,29 @@ const Contact = () => {
 
   const offices = [
     {
-      location: "Silicon Valley HQ",
-      address: "Innovation Hub, Tech District\nSilicon Valley, CA 94301",
-      hours: "Mon-Fri: 8:00 AM - 6:00 PM PST"
+      location: "Corporate Office - Hyderabad",
+      address: "#306, 3rd Floor, Downtown mall\nLakdikapool, Hyderabad - 500 004",
+      hours: "Mon-Fri: 9:00 AM - 6:00 PM IST"
     },
     {
-      location: "Austin Office",
-      address: "Research Center, Austin\nTexas, TX 78701",
-      hours: "Mon-Fri: 9:00 AM - 5:00 PM CST"
+      location: "Visakhapatnam Office",
+      address: "#102, Likitha Heights\nKurmannapalem, Visakhapatnam – 530 046",
+      hours: "Mon-Fri: 9:00 AM - 6:00 PM IST"
     },
     {
-      location: "European HQ",
-      address: "Tech Campus, London\nUnited Kingdom, EC2A 4NE",
-      hours: "Mon-Fri: 9:00 AM - 5:00 PM GMT"
+      location: "Chennai Office",
+      address: "#207/146, 2nd Floor, Ramana Towers\nRK Mutt Road, Mandavelli, Chennai – 500 028",
+      hours: "Mon-Fri: 9:00 AM - 6:00 PM IST"
+    },
+    {
+      location: "R&D Office and Manufacturing Unit",
+      address: "Plot No. 196, Road No. 1, near Sri Vijaya Ganapati Temple\nEC Nagar Colony, Cherlapalli, Hyderabad - 500051",
+      hours: "Mon-Fri: 9:00 AM - 6:00 PM IST"
+    },
+    {
+      location: "GRID 2 CHIP - Bengaluru",
+      address: "Second Floor No. 72, Forum Neighborhood Mall Brightfield\n12, Nallurahalli Main Rd, Whitefield, Bengaluru - 560066",
+      hours: "Mon-Fri: 9:00 AM - 6:00 PM IST"
     }
   ];
 
@@ -275,10 +285,10 @@ const Contact = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-3xl font-display font-bold mb-6">
-                  Our <span className="text-g2c-green">Global Offices</span>
+                  Our <span className="text-g2c-green">Office Locations</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  With offices across three continents, we're positioned to serve clients globally 
+                  With offices across India, we're positioned to serve clients nationwide 
                   while providing local expertise and support.
                 </p>
               </div>
