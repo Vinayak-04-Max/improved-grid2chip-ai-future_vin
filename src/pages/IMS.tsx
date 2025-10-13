@@ -86,7 +86,7 @@ const IMS = () => {
               </Badge>
               
               <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight">
-                <span className="text-primary">Integrated</span> Monitoring System (IMS)
+                <span className="text-g2c-blue">Integrated</span> Monitoring System (IMS)
               </h1>
               
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -134,7 +134,7 @@ const IMS = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              <span className="text-primary">IMS Features</span>
+              <span className="text-g2c-green">IMS Features</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Comprehensive monitoring capabilities for superior facility management.
@@ -173,7 +173,7 @@ const IMS = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h2 className="text-3xl lg:text-5xl font-display font-bold">
-                <span className="text-primary">Comprehensive</span> System Coverage
+                <span className="text-g2c-blue">Comprehensive</span> System Coverage
               </h2>
               
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -241,7 +241,7 @@ const IMS = () => {
       <section className="py-20 lg:py-32 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Deploy <span className="text-primary">IMS</span>?
+            Ready to Deploy <span className="text-g2c-green">IMS</span>?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Transform your critical facility management with our integrated monitoring system.

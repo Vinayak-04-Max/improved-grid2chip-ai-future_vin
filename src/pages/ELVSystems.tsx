@@ -82,7 +82,7 @@ const ELVSystems = () => {
             ELV Systems
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Extra Low Voltage <span className="text-accent">Systems</span>
+            Extra Low Voltage <span className="text-g2c-blue">Systems</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Comprehensive ELV solutions including security, communications, and monitoring systems for modern critical facilities.
@@ -106,7 +106,7 @@ const ELVSystems = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-primary">ELV Solutions</span>
+              Our <span className="text-g2c-green">ELV Solutions</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Complete extra low voltage systems for security, communication, and building automation.
@@ -148,7 +148,7 @@ const ELVSystems = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Key <span className="text-accent">Benefits</span>
+              Key <span className="text-g2c-blue">Benefits</span>
             </h2>
           </div>
 
@@ -172,7 +172,7 @@ const ELVSystems = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Ideal <span className="text-primary">Applications</span>
+              Ideal <span className="text-g2c-green">Applications</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Our ELV systems are perfect for a wide range of facilities and industries.
@@ -194,7 +194,7 @@ const ELVSystems = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Upgrade Your <span className="text-accent">ELV Systems?</span>
+            Ready to Upgrade Your <span className="text-g2c-blue">ELV Systems?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Get a comprehensive ELV solution tailored to your facility's specific needs.

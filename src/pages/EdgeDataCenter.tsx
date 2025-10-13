@@ -147,7 +147,7 @@ const EdgeDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              The Advantages of <span className="text-primary">Edge Data Centers</span>
+              The Advantages of <span className="text-g2c-green">Edge Data Centers</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Discover the revolutionary capabilities of edge infrastructure for next-generation applications.
@@ -181,7 +181,7 @@ const EdgeDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Edge Infrastructure <span className="text-accent">Architectures</span>
+              Edge Infrastructure <span className="text-g2c-blue">Architectures</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We offer scalable edge solutions from micro deployments to large-scale metro facilities.
@@ -228,7 +228,7 @@ const EdgeDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Performance <span className="text-primary">Specifications</span>
+              Performance <span className="text-g2c-green">Specifications</span>
             </h2>
           </div>
 
@@ -250,7 +250,7 @@ const EdgeDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Real-World <span className="text-accent">Applications</span>
+              Real-World <span className="text-g2c-blue">Applications</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               See how our edge data center solutions are transforming industries.
@@ -292,7 +292,7 @@ const EdgeDataCenter = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Build Your <span className="text-primary">Edge Network?</span>
+            Ready to Build Your <span className="text-g2c-green">Edge Network?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Transform your applications with ultra-low latency edge data center infrastructure. Contact us to design your custom edge network today.

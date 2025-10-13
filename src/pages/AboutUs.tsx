@@ -15,7 +15,7 @@ const AboutUs = () => {
             About Grid2Chip
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Leading Expert in <span className="text-primary">Data Center Solutions</span>
+            Leading Expert in <span className="text-g2c-blue">Data Center Solutions</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             We are a leading expert in the data center industry, specializing in the design, construction, and lifecycle management of high-performance data centers. Our integrated approach ensures that every project, from concept to completion, is engineered for maximum reliability, efficiency, and scalability.
@@ -63,7 +63,7 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Key Strengths of <span className="text-primary">Our Approach</span>
+              Key Strengths of <span className="text-g2c-green">Our Approach</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Discover the core principles that make us a leader in data center solutions.
@@ -127,7 +127,7 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-primary">Certifications</span>
+              Our <span className="text-g2c-blue">Certifications</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Our certifications reflect our commitment to the highest standards in data center design, implementation, and management.
@@ -191,7 +191,7 @@ const AboutUs = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Build Your <span className="text-primary">Next Data Center?</span>
+            Ready to Build Your <span className="text-g2c-green">Next Data Center?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Partner with our expert team to experience unparalleled reliability and innovation.

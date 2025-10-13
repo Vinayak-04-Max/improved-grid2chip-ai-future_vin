@@ -101,7 +101,7 @@ const FireSafety = () => {
             Fire Safety
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Fire Safety <span className="text-primary">Systems</span>
+            Fire Safety <span className="text-g2c-blue">Systems</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Advanced fire detection, suppression, and safety systems for critical facilities. Protect lives, assets, and ensure business continuity.
@@ -125,7 +125,7 @@ const FireSafety = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Comprehensive Fire <span className="text-accent">Safety Solutions</span>
+              Comprehensive Fire <span className="text-g2c-green">Safety Solutions</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Complete fire protection systems designed for mission-critical facilities.
@@ -167,7 +167,7 @@ const FireSafety = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Critical <span className="text-primary">Facility Protection</span>
+              Critical <span className="text-g2c-blue">Facility Protection</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Specialized fire safety solutions for different facility types.
@@ -194,7 +194,7 @@ const FireSafety = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Compliance & <span className="text-accent">Standards</span>
+              Compliance & <span className="text-g2c-green">Standards</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               All our systems comply with international and local fire safety standards.
@@ -217,7 +217,7 @@ const FireSafety = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Key <span className="text-primary">Benefits</span>
+              Key <span className="text-g2c-blue">Benefits</span>
             </h2>
           </div>
 
@@ -246,7 +246,7 @@ const FireSafety = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Protect Your Facility with <span className="text-accent">Advanced Fire Safety</span>
+            Protect Your Facility with <span className="text-g2c-green">Advanced Fire Safety</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Get a comprehensive fire safety assessment and customized protection plan.

@@ -90,7 +90,7 @@ const AIReadyDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Core <span className="text-primary">Infrastructure</span>
+              Core <span className="text-g2c-green">Infrastructure</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Essential components that power high-performance AI and machine learning.
@@ -124,7 +124,7 @@ const AIReadyDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Performance <span className="text-primary">Specifications</span>
+              Performance <span className="text-g2c-blue">Specifications</span>
             </h2>
           </div>
 
@@ -146,7 +146,7 @@ const AIReadyDataCenter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Ideal <span className="text-accent">Use Cases</span>
+              Ideal <span className="text-g2c-green">Use Cases</span>
             </h2>
           </div>
 
@@ -169,7 +169,7 @@ const AIReadyDataCenter = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Power Your <span className="text-accent">Infrastructure?</span>
+            Ready to Power Your <span className="text-g2c-blue">Infrastructure?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Build the foundation for your artificial intelligence strategy with a data center engineered for the future of computing.
