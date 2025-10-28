@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Building2, Microscope, Car, Phone, Landmark, Factory, Zap, Shield, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Clients = () => {
   const clientLogos = [
@@ -20,53 +20,6 @@ const Clients = () => {
     { name: "Financial Systems", industry: "Financial", logo: "FS", color: "bg-accent" }
   ];
 
-  const caseStudies = [
-    {
-      client: "Pharmaceutical Research",
-      industry: "Pharmaceutical",
-      challenge: "Needed high-performance infrastructure for drug discovery research requiring massive computational power",
-      solution: "Custom data center with specialized cooling and 99.99% uptime guarantee",
-      results: ["300% faster processing", "40% energy cost reduction", "Zero unplanned downtime"],
-      icon: Microscope,
-      color: "bg-primary"
-    },
-    {
-      client: "Smart City Infrastructure", 
-      industry: "Smart Cities",
-      challenge: "Required edge computing infrastructure for real-time city management and IoT sensors",
-      solution: "Distributed edge data centers with predictive maintenance systems",
-      results: ["50% improved response time", "Seamless scalability", "30% operational efficiency gain"],
-      icon: Building2,
-      color: "bg-accent"
-    },
-    {
-      client: "Automotive Testing",
-      industry: "Automotive", 
-      challenge: "Ultra-low latency computing needed for autonomous vehicle testing and development",
-      solution: "Edge data center with specialized processors and real-time analytics",
-      results: ["<1ms latency achieved", "100% reliability", "Accelerated testing cycles"],
-      icon: Car,
-      color: "bg-primary"
-    },
-    {
-      client: "Telecommunications Provider",
-      industry: "Telecommunications",
-      challenge: "Rapid deployment needed for infrastructure rollout across multiple locations",
-      solution: "Prefab container data centers with integrated BMS and fire safety",
-      results: ["6-week deployment", "Nationwide coverage", "Optimized operations"],
-      icon: Phone,
-      color: "bg-accent"
-    }
-  ];
-
-  const industries = [
-    { name: "Pharmaceutical", icon: Microscope, clients: 25, projects: 78 },
-    { name: "Research Labs", icon: Building2, clients: 18, projects: 65 },
-    { name: "Smart Cities", icon: Landmark, clients: 12, projects: 45 },
-    { name: "Automotive", icon: Car, clients: 15, projects: 52 },
-    { name: "Telecommunications", icon: Phone, clients: 22, projects: 89 },
-    { name: "Manufacturing", icon: Factory, clients: 30, projects: 95 }
-  ];
 
   const testimonials = [
     {
@@ -96,7 +49,7 @@ const Clients = () => {
             Trusted by Industry Leaders
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Our <span className="text-g2c-blue">Clients</span>
+            Our <span className="text-g2c-blue">Clientele</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Discover the organizations that trust Grid2Chip for their critical infrastructure needs. 
@@ -129,105 +82,6 @@ const Clients = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industry Breakdown */}
-      <section className="py-20 lg:py-32 bg-gradient-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Industries We <span className="text-g2c-blue">Serve</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Specialized infrastructure solutions tailored to the unique needs of each industry.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, index) => {
-              const Icon = industry.icon;
-              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
-              return (
-                <Card key={index} className="bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 text-center">
-                  <CardHeader>
-                    <div className={`w-16 h-16 mx-auto mb-4 ${bgColor} rounded-full flex items-center justify-center`}>
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
-                    <CardTitle className="text-xl font-semibold">{industry.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <div className="text-2xl font-bold text-primary">{industry.clients}</div>
-                        <div className="text-sm text-muted-foreground">Clients</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-primary">{industry.projects}</div>
-                        <div className="text-sm text-muted-foreground">Projects</div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Success <span className="text-g2c-green">Stories</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Real client challenges solved with innovative infrastructure solutions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => {
-              const Icon = study.icon;
-              return (
-                <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow">
-                  <CardHeader>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className={`w-12 h-12 ${study.color} rounded-full flex items-center justify-center`}>
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-lg font-semibold">{study.client}</CardTitle>
-                        <Badge variant="secondary">{study.industry}</Badge>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Challenge</h4>
-                      <p className="text-muted-foreground text-sm">{study.challenge}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Solution</h4>
-                      <p className="text-muted-foreground text-sm">{study.solution}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Results</h4>
-                      <ul className="space-y-1">
-                        {study.results.map((result, i) => (
-                          <li key={i} className="flex items-center text-sm">
-                            <Zap className="w-4 h-4 text-primary mr-2" />
-                            <span className="text-muted-foreground">{result}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
           </div>
         </div>
       </section>

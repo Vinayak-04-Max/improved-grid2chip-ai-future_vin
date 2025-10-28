@@ -125,62 +125,6 @@ const Partners = () => {
         </div>
       </section>
 
-      {/* Partnership Benefits */}
-      <section className="py-20 lg:py-32 bg-gradient-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Partnership <span className="text-g2c-blue">Advantages</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our strategic partnerships enable us to deliver comprehensive solutions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Access to Leading Technology",
-                description: "Latest products and innovative solutions from global technology leaders."
-              },
-              {
-                title: "Certified Technical Expertise",
-                description: "Factory-trained engineers with specialized knowledge in critical infrastructure."
-              },
-              {
-                title: "Dedicated 24/7 Support",
-                description: "Round-the-clock technical support and monitoring capabilities."
-              },
-              {
-                title: "Compliance with Global Standards",
-                description: "Adherence to international standards for critical facility infrastructure."
-              },
-              {
-                title: "Early Access to Innovation",
-                description: "Early access to emerging technologies and next-generation solutions."
-              },
-              {
-                title: "Seamlessly Integrated Systems",
-                description: "Fully integrated systems that work together for optimal performance."
-              }
-            ].map((benefit, index) => (
-              <Card key={index} className="text-center bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 group">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-primary rounded-xl flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {benefit.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 lg:py-32 bg-gradient-hero">
