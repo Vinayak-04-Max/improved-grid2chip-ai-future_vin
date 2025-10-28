@@ -10,7 +10,7 @@ const Leadership = () => {
       name: "Seetharam Mannava",
       role: "Founder & CEO",
       experience: "24+ years",
-      bio: "With over 24 years of cross-functional experience, Seetharam is the visionary founder and CEO of Grid2Chip. Specializing in designing and executing critical infrastructure services for data centers.",
+      bio: "With over 24+ years of cross-functional experience, Seetharam is the visionary founder and CEO of Grid2Chip. Specializing in designing and executing critical infrastructure services for data centers.",
       expertise: ["Critical Infrastructure Services", "Data Center Design", "Strategic Planning", "Turnkey Solutions"],
       achievements: ["Founder of Grid2Chip", "24+ years industry experience", "Critical facility engagement expert"],
       image: "/images/Seetharam.jpg"
@@ -19,7 +19,7 @@ const Leadership = () => {
       name: "M V Surya Ganesh",
       role: "Head of Research & Development",
       experience: "26+ years",
-      bio: "With over 26 years of distinguished experience in designing and executing mechanical and electrical requirements for Indian Aviation projects, Surya Ganesh leads our Research & Development division with visionary expertise.",
+      bio: "With over 26+ years of distinguished experience in designing and executing mechanical and electrical requirements for Indian Aviation projects, Surya Ganesh leads our Research & Development division with visionary expertise.",
       expertise: ["Mechanical & Electrical Design", "Embedded Computing Systems", "Critical Infrastructure", "Aviation Projects"],
       achievements: ["26+ years industry experience", "Pioneered embedded computing systems", "Aviation project specialist"],
       image: "/images/Surya.jpg"
