@@ -11,10 +11,10 @@ import {
   CheckCircle,
   Building2,
   Microscope,
-  Car,
-  Phone,
-  Landmark,
-  Factory
+  Factory,
+  Fuel,
+  Server,
+  Ship
 } from "lucide-react";
 import heroImage from "@/assets/hero-ai-datacenter.jpg";
 import solutionsImage from "@/assets/solutions-containers.jpg";
@@ -23,48 +23,41 @@ import aiNetworkImage from "@/assets/ai-neural-network.jpg";
 const Home = () => {
   const solutions = [
     {
-      title: "HPC Data Centers",
-      description: "High-Performance Computing at scale, built to support complex simulations, scientific research, and data-intensive workloads.",
+      title: "HPC/AI-Ready Data Centers",
+      description: "High-Performance Computing infrastructure optimized for AI/ML workloads, complex simulations, scientific research, and GPU-accelerated deep learning tasks.",
       icon: Cpu,
       path: "/solutions/hpc",
       color: "bg-primary"
-    },
-    {
-      title: "AI-Ready Data Centers",
-      description: "Purpose-built for intelligent workloads with GPU-accelerated infrastructure optimized for AI/ML tasks like deep learning and edge inference.",
-      icon: Cpu,
-      path: "/solutions/ai-ready",
-      color: "bg-accent"
     },
     {
       title: "Edge Data Centers",
       description: "Bringing processing power closer to users and data sources for ultra-low latency, enabling real-time insights for IoT and 5G applications.",
       icon: Zap,
       path: "/solutions/edge",
-      color: "bg-primary"
+      color: "bg-accent"
     },
     {
       title: "Prefabricated Data Centers",
       description: "Factory-engineered and pre-tested modules that deliver fully integrated IT infrastructure with up to 50% faster deployment times.",
       icon: Building2,
       path: "/solutions/prefabricated",
-      color: "bg-accent"
+      color: "bg-primary"
     },
     {
-      title: "Container-Based Data Centers",
-      description: "Portable, scalable, and rugged solutions housed in ISO containers for rapid deployment in remote, temporary, or mission-critical environments.",
+      title: "Custom Build Data Center",
+      description: "Tailored, purpose-built solutions engineered to your exact specifications for maximum performance, scalability, and operational efficiency.",
       icon: Globe,
-      path: "/solutions/container",
-      color: "bg-primary"
+      path: "/solutions/custom",
+      color: "bg-accent"
     }
   ];
 
   const industries = [
     { name: "Pharmaceutical", icon: Microscope, desc: "Drug discovery & research" },
-    { name: "Research Labs", icon: Building2, desc: "Scientific computing" },
-    { name: "Smart Cities", icon: Landmark, desc: "Urban infrastructure" },
-    { name: "Automotive", icon: Car, desc: "Autonomous systems" },
-    { name: "Telecom", icon: Phone, desc: "5G & edge computing" },
+    { name: "Oil & Gas/Energy", icon: Fuel, desc: "Energy infrastructure" },
+    { name: "IT/ITES", icon: Server, desc: "Digital services" },
+    { name: "Ports and Logistics", icon: Ship, desc: "Supply chain operations" },
+    { name: "Semi Conductors", icon: Cpu, desc: "Chip manufacturing" },
     { name: "Manufacturing", icon: Factory, desc: "Industrial automation" }
   ];
 
@@ -170,11 +163,11 @@ const Home = () => {
             {/* Animated Stats */}
             <div className="grid grid-cols-3 gap-8 py-8 animate-fade-in max-w-2xl mx-auto" style={{animationDelay: '1s'}}>
               <div className="text-center group hover-scale">
-                <div className="text-3xl lg:text-4xl font-bold text-accent group-hover:text-primary transition-colors">99.99%</div>
+                <div className="text-3xl lg:text-4xl font-bold text-accent group-hover:text-primary transition-colors">99.998%</div>
                 <div className="text-sm text-white/80">Uptime</div>
               </div>
               <div className="text-center group hover-scale">
-                <div className="text-3xl lg:text-4xl font-bold text-accent group-hover:text-primary transition-colors">50+</div>
+                <div className="text-3xl lg:text-4xl font-bold text-accent group-hover:text-primary transition-colors">100+</div>
                 <div className="text-sm text-white/80">Deployments</div>
               </div>
               <div className="text-center group hover-scale">
@@ -211,7 +204,7 @@ const Home = () => {
       </section>
 
       {/* Solutions Preview */}
-      <section className="py-20 lg:py-32">
+      <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
@@ -222,7 +215,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {solutions.map((solution, index) => {
               const Icon = solution.icon;
               return (
@@ -252,7 +245,7 @@ const Home = () => {
       </section>
 
       {/* Integrated Facility & Management Services */}
-      <section className="py-20 lg:py-32 bg-secondary/50">
+      <section className="py-16 lg:py-24 bg-secondary/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
@@ -263,7 +256,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardHeader>
                 <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-xl flex items-center justify-center">
@@ -275,6 +268,42 @@ const Home = () => {
                 <p className="text-muted-foreground text-center">Centralized control and automation for your facility's mechanical and electrical equipment.</p>
                 <Button variant="ghost" className="w-full mt-4" asChild>
                   <Link to="/services/bms">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 mx-auto mb-4 bg-accent rounded-xl flex items-center justify-center">
+                  <Globe className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-xl text-center">Data Center Infrastructure Management (DCIM)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-center">Real-time monitoring and management of data center assets, capacity, and environmental conditions.</p>
+                <Button variant="ghost" className="w-full mt-4" asChild>
+                  <Link to="/services/ims">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <CardHeader>
+                <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-xl flex items-center justify-center">
+                  <CheckCircle className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-xl text-center">Integrated Monitoring System</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-center">Unified dashboard for comprehensive oversight of all critical systems and infrastructure components.</p>
+                <Button variant="ghost" className="w-full mt-4" asChild>
+                  <Link to="/services/ims">
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -303,14 +332,14 @@ const Home = () => {
             <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardHeader>
                 <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-xl flex items-center justify-center">
-                  <Zap className="w-8 h-8 text-white" />
+                  <Cpu className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-center">Operations & Maintenance (O&M)</CardTitle>
+                <CardTitle className="text-xl text-center">Control & Automation Panel Services</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-center">Proactive AMC services for critical power, cooling, and facility infrastructure to guarantee uptime and reliability.</p>
+                <p className="text-muted-foreground text-center">Custom design and implementation of control and automation panels for seamless system integration.</p>
                 <Button variant="ghost" className="w-full mt-4" asChild>
-                  <Link to="/services/ims">
+                  <Link to="/services/control-panels">
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -321,14 +350,14 @@ const Home = () => {
             <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardHeader>
                 <div className="w-16 h-16 mx-auto mb-4 bg-accent rounded-xl flex items-center justify-center">
-                  <Cpu className="w-8 h-8 text-white" />
+                  <Zap className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-center">Control Panel Services</CardTitle>
+                <CardTitle className="text-xl text-center">Operations & Maintenance (O&M)</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-center">Custom design and implementation of control panels for seamless system integration.</p>
+                <p className="text-muted-foreground text-center">Proactive AMC services for critical power, cooling, and facility infrastructure to guarantee uptime and reliability.</p>
                 <Button variant="ghost" className="w-full mt-4" asChild>
-                  <Link to="/services/control-panels">
+                  <Link to="/services/ims">
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -349,7 +378,7 @@ const Home = () => {
       </section>
 
       {/* Industries Served */}
-      <section className="py-20 lg:py-32">
+      <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
@@ -375,19 +404,11 @@ const Home = () => {
             })}
           </div>
 
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/industries">
-                View All Case Studies
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 lg:py-32 bg-secondary/50">
+      <section className="py-16 lg:py-24 bg-secondary/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
@@ -418,7 +439,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32">
+      <section className="py-16 lg:py-24">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
             Ready to Build Your <span className="text-g2c-blue">Next-Generation Infrastructure?</span>
