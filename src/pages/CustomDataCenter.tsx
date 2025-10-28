@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Building2, Cpu, Shield, Zap, ArrowRight, CheckCircle, ClipboardCheck, Layers, Settings, HardHat } from "lucide-react";
+import { Building2, Cpu, Shield, Zap, ArrowRight, CheckCircle, ClipboardCheck, Layers, Settings, HardHat, MapPin } from "lucide-react";
 
 const CustomDataCenter = () => {
   const advantages = [
@@ -43,31 +43,36 @@ const CustomDataCenter = () => {
       step: "1",
       title: "Consultation & Design",
       activities: "Needs analysis, feasibility studies, conceptual design, and technology roadmap planning.",
-      outcome: "A detailed blueprint and project plan tailored to your requirements."
+      outcome: "A detailed blueprint and project plan tailored to your requirements.",
+      icon: ClipboardCheck
     },
     {
       step: "2",
       title: "Site Selection & Preparation",
       activities: "Site evaluation, acquisition support, permitting, and ground preparation.",
-      outcome: "A fully prepared site ready for construction."
+      outcome: "A fully prepared site ready for construction.",
+      icon: MapPin
     },
     {
       step: "3",
       title: "Construction & Engineering",
       activities: "Structural build-out, installation of core mechanical and electrical systems.",
-      outcome: "The physical data center structure and core infrastructure."
+      outcome: "The physical data center structure and core infrastructure.",
+      icon: HardHat
     },
     {
       step: "4",
       title: "Systems Integration",
       activities: "Installation of racks, cabling, fire suppression, security, and monitoring systems.",
-      outcome: "A fully integrated, functional data center environment."
+      outcome: "A fully integrated, functional data center environment.",
+      icon: Layers
     },
     {
       step: "5",
       title: "Commissioning & Handover",
       activities: "Rigorous testing of all systems (Level 1-5 commissioning), staff training, and official handover.",
-      outcome: "A certified, operationally-ready data center."
+      outcome: "A certified, operationally-ready data center.",
+      icon: CheckCircle
     }
   ];
 
@@ -165,9 +170,15 @@ const CustomDataCenter = () => {
       </section>
 
       {/* Custom-Build Process */}
-      <section className="py-20 lg:py-32 bg-gradient-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+      <section className="relative py-20 lg:py-32 bg-gradient-card overflow-hidden">
+        {/* Decorative Background */}
+        <div className="absolute inset-0 tech-grid opacity-5" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-g2c-blue/5 rounded-full blur-3xl" />
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Title Section */}
+          <div className="text-center mb-20">
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
               Our <span className="text-g2c-blue">Custom-Build Process</span>
             </h2>
@@ -175,30 +186,95 @@ const CustomDataCenter = () => {
               A structured, transparent approach to delivering your data center on time and on budget.
             </p>
           </div>
-
-          <div className="space-y-6">
-            {processSteps.map((item, index) => (
-              <Card key={index} className="bg-card border-primary/20">
-                <CardContent className="p-6">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-xl font-bold">{item.step}</span>
+          
+          {/* Timeline Infographic */}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Central Timeline Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-g2c-blue to-g2c-green transform -translate-x-1/2 hidden lg:block" />
+            
+            {/* Process Steps */}
+            <div className="space-y-16 lg:space-y-24">
+              {processSteps.map((item, index) => {
+                const Icon = item.icon;
+                const isEven = index % 2 === 0;
+                
+                return (
+                  <div key={index} className="relative">
+                    {/* Step Number Circle (Center) */}
+                    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:flex">
+                      <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center border-4 border-background shadow-xl z-10">
+                        <span className="text-white text-2xl font-bold">{item.step}</span>
                       </div>
-                      <h3 className="text-xl font-semibold">{item.title}</h3>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Activities:</h4>
-                      <p className="text-sm text-muted-foreground">{item.activities}</p>
+                    
+                    {/* Content (Alternates Left/Right on Desktop) */}
+                    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
+                      isEven ? '' : 'lg:flex-row-reverse'
+                    }`}>
+                      {/* Left/Right Content Block */}
+                      <div className={`${isEven ? 'lg:text-right lg:pr-16' : 'lg:pl-16 lg:col-start-2'}`}>
+                        <div className={`inline-flex items-center gap-3 mb-4 ${isEven ? 'lg:flex-row-reverse' : ''}`}>
+                          <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-g2c-blue/20 rounded-xl flex items-center justify-center">
+                            <Icon className="w-8 h-8 text-primary" />
+                          </div>
+                          <div className="lg:hidden w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <span className="text-white text-lg font-bold">{item.step}</span>
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-foreground">
+                          {item.title}
+                        </h3>
+                        
+                        <div className="space-y-4">
+                          <div className="p-4 rounded-xl bg-card/50 border border-primary/10">
+                            <h4 className="font-semibold text-primary mb-2 flex items-center gap-2">
+                              <Settings className="w-4 h-4" />
+                              Activities
+                            </h4>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              {item.activities}
+                            </p>
+                          </div>
+                          
+                          <div className="p-4 rounded-xl bg-g2c-green/5 border border-g2c-green/20">
+                            <h4 className="font-semibold text-g2c-green mb-2 flex items-center gap-2">
+                              <CheckCircle className="w-4 h-4" />
+                              Outcome
+                            </h4>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              {item.outcome}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Spacer for alternating layout */}
+                      <div className={`hidden lg:block ${isEven ? 'lg:col-start-2' : 'lg:col-start-1'}`} />
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Outcome:</h4>
-                      <p className="text-sm text-muted-foreground">{item.outcome}</p>
-                    </div>
+                    
+                    {/* Connector Dots (between steps) */}
+                    {index < processSteps.length - 1 && (
+                      <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-12 hidden lg:flex flex-col items-center gap-2">
+                        <div className="w-2 h-2 bg-primary/40 rounded-full animate-pulse" />
+                        <div className="w-2 h-2 bg-primary/30 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+                        <div className="w-2 h-2 bg-primary/20 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
+                      </div>
+                    )}
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                );
+              })}
+            </div>
+            
+            {/* Final Badge */}
+            <div className="mt-16 flex justify-center">
+              <div className="px-8 py-4 bg-gradient-to-r from-primary to-g2c-green rounded-full shadow-lg">
+                <div className="flex items-center gap-3 text-white">
+                  <CheckCircle className="w-6 h-6" />
+                  <span className="font-semibold text-lg">Operational Data Center Ready</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
