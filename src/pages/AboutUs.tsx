@@ -3,6 +3,23 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Target, Lightbulb, Award, Shield, Cpu, Users, TrendingUp, ArrowRight } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
+import { 
+  RadialBarChart, 
+  RadialBar, 
+  BarChart, 
+  Bar, 
+  PieChart, 
+  Pie, 
+  Cell,
+  LineChart,
+  Line,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip as RechartsTooltip
+} from "recharts";
 
 const AboutUs = () => {
   return (
@@ -32,7 +49,7 @@ const AboutUs = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <Target className="w-8 h-8 text-primary" />
                 </div>
-                <CardTitle className="text-3xl font-display font-bold mb-4">Our Vision</CardTitle>
+                <CardTitle className="text-3xl font-display font-bold mb-4">Our Purpose</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-lg leading-relaxed">
@@ -46,11 +63,11 @@ const AboutUs = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <Lightbulb className="w-8 h-8 text-primary" />
                 </div>
-                <CardTitle className="text-3xl font-display font-bold mb-4">Our Mission</CardTitle>
+                <CardTitle className="text-3xl font-display font-bold mb-4">Our Culture</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  To deliver customized, innovative solutions that guarantee the security and peak performance of our clients' data center facilities. Through expert engineering, collaborative partnership, and a commitment to technological advancement, we empower organizations with robust, intelligent, and scalable infrastructure.
+                  We foster a culture of excellence, collaboration, and continuous innovation. Our team is driven by integrity, accountability, and a passion for pushing technological boundaries. We believe in empowering our people to think creatively, work collaboratively, and deliver exceptional results that exceed client expectations.
                 </p>
               </CardContent>
             </Card>
@@ -71,53 +88,264 @@ const AboutUs = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Cpu,
-                title: "Advanced Engineering",
-                description: "We leverage cutting-edge technologies, including advanced analytics and smart systems, for predictive maintenance and optimized data center management."
-              },
-              {
-                icon: Users,
-                title: "Client-Centric Solutions",
-                description: "Our process is built around your unique requirements. We design and build tailored data center infrastructure that aligns perfectly with your operational and business goals."
-              },
-              {
-                icon: Award,
-                title: "Guaranteed Performance & Delivery",
-                description: "We are committed to rapid, on-time deployment. Our projects are managed with precision to meet guaranteed timelines and performance metrics."
-              },
-              {
-                icon: Lightbulb,
-                title: "A Culture of Innovation",
-                description: "Through continuous research and development, we stay at the forefront of data center technology to deliver next-generation solutions for our clients."
-              },
-              {
-                icon: TrendingUp,
-                title: "Cross-Sector Expertise",
-                description: "We have a proven track record of success across diverse industries, including pharmaceuticals, research, smart cities, and industrial automation."
-              },
-              {
-                icon: Shield,
-                title: "Uncompromising Reliability",
-                description: "Our core focus is on maximizing data center uptime and operational efficiency through superior design, intelligent monitoring, and proactive maintenance."
-              }
-            ].map((aspect, index) => {
-              const Icon = aspect.icon;
-              return (
-                <Card key={index} className="bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
-                  <CardHeader>
-                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                      <Icon className="w-8 h-8 text-primary" />
+            {/* Advanced Engineering - Radial Chart */}
+            <Card className="bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <Cpu className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+                <CardTitle className="text-xl font-semibold mb-4">Advanced Engineering</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-48 mb-4">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <RadialBarChart 
+                      cx="50%" 
+                      cy="50%" 
+                      innerRadius="60%" 
+                      outerRadius="90%" 
+                      barSize={15} 
+                      data={[{ name: 'Tech Adoption', value: 95, fill: 'hsl(var(--primary))' }]}
+                      startAngle={90}
+                      endAngle={-270}
+                    >
+                      <RadialBar
+                        background
+                        dataKey="value"
+                        cornerRadius={10}
+                      />
+                      <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" className="fill-primary text-3xl font-bold">
+                        95%
+                      </text>
+                    </RadialBarChart>
+                  </ResponsiveContainer>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  We leverage cutting-edge technologies, including advanced analytics and smart systems, for predictive maintenance and optimized data center management.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Client-Centric Solutions - Bar Chart */}
+            <Card className="bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+                <CardTitle className="text-xl font-semibold mb-4">Client-Centric Solutions</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-48 mb-4">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={[
+                      { name: 'Satisfaction', value: 98 },
+                      { name: 'Retention', value: 96 },
+                      { name: 'NPS Score', value: 92 }
+                    ]}>
+                      <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+                      <XAxis dataKey="name" className="text-xs" />
+                      <YAxis domain={[0, 100]} className="text-xs" />
+                      <RechartsTooltip 
+                        contentStyle={{ 
+                          backgroundColor: 'hsl(var(--card))', 
+                          border: '1px solid hsl(var(--border))',
+                          borderRadius: '8px'
+                        }}
+                      />
+                      <Bar dataKey="value" fill="hsl(var(--primary))" radius={[8, 8, 0, 0]} />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Our process is built around your unique requirements. We design and build tailored data center infrastructure that aligns perfectly with your operational and business goals.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Guaranteed Performance - Progress Bars */}
+            <Card className="bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <Award className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+                <CardTitle className="text-xl font-semibold mb-4">Guaranteed Performance</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-6 mb-4">
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium">On-Time Delivery</span>
+                      <span className="text-sm font-bold text-primary">99.998%</span>
                     </div>
-                    <CardTitle className="text-xl font-semibold">{aspect.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{aspect.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
+                    <Progress value={99.998} className="h-3" />
+                  </div>
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium">Quality Standards</span>
+                      <span className="text-sm font-bold text-primary">100%</span>
+                    </div>
+                    <Progress value={100} className="h-3" />
+                  </div>
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium">Client Satisfaction</span>
+                      <span className="text-sm font-bold text-primary">98%</span>
+                    </div>
+                    <Progress value={98} className="h-3" />
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  We are committed to rapid, on-time deployment. Our projects are managed with precision to meet guaranteed timelines and performance metrics.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Culture of Innovation - Line Chart */}
+            <Card className="bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <Lightbulb className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+                <CardTitle className="text-xl font-semibold mb-4">Culture of Innovation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-48 mb-4">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={[
+                      { year: '2021', investment: 65 },
+                      { year: '2022', investment: 78 },
+                      { year: '2023', investment: 85 },
+                      { year: '2024', investment: 92 }
+                    ]}>
+                      <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+                      <XAxis dataKey="year" className="text-xs" />
+                      <YAxis domain={[0, 100]} className="text-xs" />
+                      <RechartsTooltip 
+                        contentStyle={{ 
+                          backgroundColor: 'hsl(var(--card))', 
+                          border: '1px solid hsl(var(--border))',
+                          borderRadius: '8px'
+                        }}
+                      />
+                      <Line 
+                        type="monotone" 
+                        dataKey="investment" 
+                        stroke="hsl(var(--primary))" 
+                        strokeWidth={3}
+                        dot={{ fill: 'hsl(var(--primary))', r: 5 }}
+                      />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Through continuous research and development, we stay at the forefront of data center technology to deliver next-generation solutions for our clients.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Cross-Sector Expertise - Pie Chart */}
+            <Card className="bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+                <CardTitle className="text-xl font-semibold mb-4">Cross-Sector Expertise</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-48 mb-4">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
+                      <Pie
+                        data={[
+                          { name: 'Pharma', value: 25 },
+                          { name: 'IT/ITES', value: 30 },
+                          { name: 'Smart Cities', value: 20 },
+                          { name: 'Industrial', value: 25 }
+                        ]}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={40}
+                        outerRadius={70}
+                        paddingAngle={5}
+                        dataKey="value"
+                      >
+                        {[
+                          'hsl(var(--primary))',
+                          'hsl(var(--chart-2))',
+                          'hsl(var(--chart-3))',
+                          'hsl(var(--chart-4))'
+                        ].map((color, index) => (
+                          <Cell key={`cell-${index}`} fill={color} />
+                        ))}
+                      </Pie>
+                      <RechartsTooltip 
+                        contentStyle={{ 
+                          backgroundColor: 'hsl(var(--card))', 
+                          border: '1px solid hsl(var(--border))',
+                          borderRadius: '8px'
+                        }}
+                      />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  We have a proven track record of success across diverse industries, including pharmaceuticals, research, smart cities, and industrial automation.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Uncompromising Reliability - Radial Gauge */}
+            <Card className="bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+                <CardTitle className="text-xl font-semibold mb-4">Uncompromising Reliability</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-48 mb-4">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <RadialBarChart 
+                      cx="50%" 
+                      cy="50%" 
+                      innerRadius="50%" 
+                      outerRadius="100%" 
+                      barSize={20} 
+                      data={[{ name: 'Uptime', value: 99.998, fill: 'hsl(var(--primary))' }]}
+                      startAngle={180}
+                      endAngle={0}
+                    >
+                      <RadialBar
+                        background
+                        dataKey="value"
+                        cornerRadius={10}
+                      />
+                      <text x="50%" y="60%" textAnchor="middle" dominantBaseline="middle" className="fill-primary text-2xl font-bold">
+                        99.998%
+                      </text>
+                      <text x="50%" y="70%" textAnchor="middle" dominantBaseline="middle" className="fill-muted-foreground text-xs">
+                        Uptime
+                      </text>
+                    </RadialBarChart>
+                  </ResponsiveContainer>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Our core focus is on maximizing data center uptime and operational efficiency through superior design, intelligent monitoring, and proactive maintenance.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
