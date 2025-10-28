@@ -42,36 +42,31 @@ const CustomDataCenter = () => {
     {
       step: "1",
       title: "Consultation & Design",
-      activities: "Needs analysis, feasibility studies, conceptual design, and technology roadmap planning.",
-      outcome: "A detailed blueprint and project plan tailored to your requirements.",
+      description: "Comprehensive needs analysis and blueprint creation tailored to your requirements.",
       icon: ClipboardCheck
     },
     {
       step: "2",
-      title: "Site Selection & Preparation",
-      activities: "Site evaluation, acquisition support, permitting, and ground preparation.",
-      outcome: "A fully prepared site ready for construction.",
+      title: "Site Preparation",
+      description: "Site evaluation, permitting, and ground preparation for construction readiness.",
       icon: MapPin
     },
     {
       step: "3",
-      title: "Construction & Engineering",
-      activities: "Structural build-out, installation of core mechanical and electrical systems.",
-      outcome: "The physical data center structure and core infrastructure.",
+      title: "Construction",
+      description: "Structural build-out with core mechanical and electrical systems installation.",
       icon: HardHat
     },
     {
       step: "4",
-      title: "Systems Integration",
-      activities: "Installation of racks, cabling, fire suppression, security, and monitoring systems.",
-      outcome: "A fully integrated, functional data center environment.",
+      title: "Integration",
+      description: "Complete installation of racks, cabling, security, and monitoring systems.",
       icon: Layers
     },
     {
       step: "5",
-      title: "Commissioning & Handover",
-      activities: "Rigorous testing of all systems (Level 1-5 commissioning), staff training, and official handover.",
-      outcome: "A certified, operationally-ready data center.",
+      title: "Commissioning",
+      description: "Rigorous testing, staff training, and certified operational handover.",
       icon: CheckCircle
     }
   ];
@@ -170,108 +165,81 @@ const CustomDataCenter = () => {
       </section>
 
       {/* Custom-Build Process */}
-      <section className="relative py-20 lg:py-32 bg-gradient-card overflow-hidden">
-        {/* Decorative Background */}
-        <div className="absolute inset-0 tech-grid opacity-5" />
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-g2c-blue/5 rounded-full blur-3xl" />
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 lg:py-24 bg-card">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Title Section */}
-          <div className="text-center mb-20">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-g2c-blue">Custom-Build Process</span>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Our <span className="text-primary">Custom-Build Process</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A structured, transparent approach to delivering your data center on time and on budget.
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Five proven steps to deliver your data center on time and on budget.
             </p>
           </div>
-          
-          {/* Timeline Infographic */}
-          <div className="relative max-w-5xl mx-auto">
-            {/* Central Timeline Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-g2c-blue to-g2c-green transform -translate-x-1/2 hidden lg:block" />
-            
-            {/* Process Steps */}
-            <div className="space-y-16 lg:space-y-24">
+
+          {/* Compact Timeline */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Solid Timeline Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary transform -translate-x-1/2 hidden lg:block" />
+
+            {/* Steps */}
+            <div className="space-y-12 lg:space-y-16">
               {processSteps.map((item, index) => {
                 const Icon = item.icon;
                 const isEven = index % 2 === 0;
-                
+                const iconBg = isEven ? 'bg-primary/10' : 'bg-accent/10';
+                const iconColor = isEven ? 'text-primary' : 'text-accent';
+
                 return (
                   <div key={index} className="relative">
-                    {/* Step Number Circle (Center) */}
-                    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:flex">
-                      <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center border-4 border-background shadow-xl z-10">
-                        <span className="text-white text-2xl font-bold">{item.step}</span>
+                    {/* Step Circle */}
+                    <div className="absolute left-1/2 top-8 transform -translate-x-1/2 -translate-y-1/2 hidden lg:flex">
+                      <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center border-4 border-background shadow-lg z-10">
+                        <span className="text-white text-xl font-bold">{item.step}</span>
                       </div>
                     </div>
-                    
-                    {/* Content (Alternates Left/Right on Desktop) */}
-                    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
-                      isEven ? '' : 'lg:flex-row-reverse'
-                    }`}>
-                      {/* Left/Right Content Block */}
-                      <div className={`${isEven ? 'lg:text-right lg:pr-16' : 'lg:pl-16 lg:col-start-2'}`}>
-                        <div className={`inline-flex items-center gap-3 mb-4 ${isEven ? 'lg:flex-row-reverse' : ''}`}>
-                          <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-g2c-blue/20 rounded-xl flex items-center justify-center">
-                            <Icon className="w-8 h-8 text-primary" />
+
+                    {/* Content */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+                      <div className={`${isEven ? 'lg:pr-12' : 'lg:pl-12 lg:col-start-2'}`}>
+                        {/* Mobile step number */}
+                        <div className="flex items-center gap-3 mb-3 lg:hidden">
+                          <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <span className="text-white font-bold">{item.step}</span>
                           </div>
-                          <div className="lg:hidden w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                            <span className="text-white text-lg font-bold">{item.step}</span>
-                          </div>
+                          <h3 className="text-xl font-bold">{item.title}</h3>
                         </div>
-                        
-                        <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-foreground">
-                          {item.title}
-                        </h3>
-                        
-                        <div className="space-y-4">
-                          <div className="p-4 rounded-xl bg-card/50 border border-primary/10">
-                            <h4 className="font-semibold text-primary mb-2 flex items-center gap-2">
-                              <Settings className="w-4 h-4" />
-                              Activities
-                            </h4>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                              {item.activities}
-                            </p>
+
+                        {/* Desktop title with icon */}
+                        <div className={`hidden lg:flex items-center gap-3 mb-4 ${isEven ? 'justify-end' : ''}`}>
+                          <div className={`w-12 h-12 ${iconBg} rounded-lg flex items-center justify-center ${isEven ? 'order-2' : ''}`}>
+                            <Icon className={`w-6 h-6 ${iconColor}`} />
                           </div>
-                          
-                          <div className="p-4 rounded-xl bg-g2c-green/5 border border-g2c-green/20">
-                            <h4 className="font-semibold text-g2c-green mb-2 flex items-center gap-2">
-                              <CheckCircle className="w-4 h-4" />
-                              Outcome
-                            </h4>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                              {item.outcome}
-                            </p>
-                          </div>
+                          <h3 className="text-2xl font-bold">{item.title}</h3>
+                        </div>
+
+                        {/* Description */}
+                        <div className={`flex gap-3 p-4 rounded-xl bg-card border border-primary/20 ${isEven ? 'lg:flex-row-reverse lg:text-right' : ''}`}>
+                          <Icon className={`w-5 h-5 ${iconColor} mt-0.5 flex-shrink-0 lg:hidden`} />
+                          <p className="text-muted-foreground leading-relaxed">
+                            {item.description}
+                          </p>
                         </div>
                       </div>
-                      
-                      {/* Spacer for alternating layout */}
-                      <div className={`hidden lg:block ${isEven ? 'lg:col-start-2' : 'lg:col-start-1'}`} />
+
+                      <div className="hidden lg:block" />
                     </div>
-                    
-                    {/* Connector Dots (between steps) */}
-                    {index < processSteps.length - 1 && (
-                      <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-12 hidden lg:flex flex-col items-center gap-2">
-                        <div className="w-2 h-2 bg-primary/40 rounded-full animate-pulse" />
-                        <div className="w-2 h-2 bg-primary/30 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
-                        <div className="w-2 h-2 bg-primary/20 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
-                      </div>
-                    )}
                   </div>
                 );
               })}
             </div>
-            
+
             {/* Final Badge */}
-            <div className="mt-16 flex justify-center">
-              <div className="px-8 py-4 bg-gradient-to-r from-primary to-g2c-green rounded-full shadow-lg">
-                <div className="flex items-center gap-3 text-white">
-                  <CheckCircle className="w-6 h-6" />
-                  <span className="font-semibold text-lg">Operational Data Center Ready</span>
+            <div className="mt-12 flex justify-center">
+              <div className="px-6 py-3 bg-accent rounded-full shadow-lg">
+                <div className="flex items-center gap-2 text-white">
+                  <CheckCircle className="w-5 h-5" />
+                  <span className="font-semibold">Data Center Ready</span>
                 </div>
               </div>
             </div>
