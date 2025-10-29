@@ -9,9 +9,8 @@ const Navigation = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
   const [dataCenterOpen, setDataCenterOpen] = useState(false);
-  const [bmsOpen, setBmsOpen] = useState(false);
+  const [ibmsOpen, setIbmsOpen] = useState(false);
 
   const aboutItems = [
     { name: "About Us", path: "/about/us" },
@@ -22,19 +21,15 @@ const Navigation = () => {
     { name: "Careers", path: "/about/careers" }
   ];
 
-  const productItems = [
-    { name: "IMS", path: "/products/ims" }
-  ];
-
   const dataCenterItems = [
     { name: "Edge Data Center", path: "/data-center/edge" },
     { name: "Custom Build Data Center", path: "/data-center/custom" },
-    { name: "AI Ready Data Centers", path: "/data-center/ai-ready" },
-    { name: "HPC Data Center", path: "/data-center/hpc" },
+    { name: "HPC/AI-Ready Data Centers", path: "/data-center/hpc" },
     { name: "Prefabricated Data Centers", path: "/products/prefab-container" }
   ];
 
-  const bmsItems = [
+  const ibmsItems = [
+    { name: "IMS", path: "/products/ims" },
     { name: "Building Management System", path: "/bms/building-management" },
     { name: "ELV Systems", path: "/bms/elv-systems" },
     { name: "Fire Safety Systems", path: "/bms/fire-safety" },
@@ -98,41 +93,6 @@ const Navigation = () => {
               )}
             </div>
 
-            {/* Products Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setProductsOpen(true)}
-              onMouseLeave={() => setProductsOpen(false)}
-            >
-              <button
-                className={cn(
-                  "flex items-center text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname.startsWith("/products") ? "text-primary" : "text-muted-foreground"
-                )}
-              >
-                Products
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              
-              {productsOpen && (
-                <div className="absolute top-full left-0 pt-2 z-50">
-                  <div className="w-64 bg-card border border-primary/20 rounded-lg shadow-lg ai-glow">
-                    <div className="p-2">
-                      {productItems.map((item) => (
-                        <Link
-                          key={item.path}
-                          to={item.path}
-                          className="block px-3 py-2 text-sm text-foreground hover:bg-primary/10 rounded-md transition-colors"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
             {/* Data Center Dropdown */}
             <div 
               className="relative"
@@ -168,27 +128,27 @@ const Navigation = () => {
               )}
             </div>
 
-            {/* BMS Dropdown */}
+            {/* IBMS Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setBmsOpen(true)}
-              onMouseLeave={() => setBmsOpen(false)}
+              onMouseEnter={() => setIbmsOpen(true)}
+              onMouseLeave={() => setIbmsOpen(false)}
             >
               <button
                 className={cn(
                   "flex items-center text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname.startsWith("/bms") ? "text-primary" : "text-muted-foreground"
+                  location.pathname.startsWith("/bms") || location.pathname.startsWith("/products/ims") ? "text-primary" : "text-muted-foreground"
                 )}
               >
-                BMS
+                IBMS
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               
-              {bmsOpen && (
+              {ibmsOpen && (
                 <div className="absolute top-full left-0 pt-2 z-50">
                   <div className="w-64 bg-card border border-primary/20 rounded-lg shadow-lg ai-glow">
                     <div className="p-2">
-                      {bmsItems.map((item) => (
+                      {ibmsItems.map((item) => (
                         <Link
                           key={item.path}
                           to={item.path}
@@ -281,35 +241,6 @@ const Navigation = () => {
                 )}
               </div>
 
-              {/* Products Mobile */}
-              <div className="space-y-2">
-                <button
-                  onClick={() => setProductsOpen(!productsOpen)}
-                  className={cn(
-                    "flex items-center w-full text-sm font-medium transition-colors hover:text-primary text-left",
-                    location.pathname.startsWith("/products") ? "text-primary" : "text-muted-foreground"
-                  )}
-                >
-                  Products
-                  <ChevronDown className={cn("ml-1 h-4 w-4 transition-transform", productsOpen ? "rotate-180" : "")} />
-                </button>
-                
-                {productsOpen && (
-                  <div className="pl-4 space-y-2">
-                    {productItems.map((item) => (
-                      <Link
-                        key={item.path}
-                        to={item.path}
-                        className="block text-sm text-muted-foreground hover:text-primary transition-colors"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
               {/* Data Center Mobile */}
               <div className="space-y-2">
                 <button
@@ -339,22 +270,22 @@ const Navigation = () => {
                 )}
               </div>
 
-              {/* BMS Mobile */}
+              {/* IBMS Mobile */}
               <div className="space-y-2">
                 <button
-                  onClick={() => setBmsOpen(!bmsOpen)}
+                  onClick={() => setIbmsOpen(!ibmsOpen)}
                   className={cn(
                     "flex items-center w-full text-sm font-medium transition-colors hover:text-primary text-left",
-                    location.pathname.startsWith("/bms") ? "text-primary" : "text-muted-foreground"
+                    location.pathname.startsWith("/bms") || location.pathname.startsWith("/products/ims") ? "text-primary" : "text-muted-foreground"
                   )}
                 >
-                  BMS
-                  <ChevronDown className={cn("ml-1 h-4 w-4 transition-transform", bmsOpen ? "rotate-180" : "")} />
+                  IBMS
+                  <ChevronDown className={cn("ml-1 h-4 w-4 transition-transform", ibmsOpen ? "rotate-180" : "")} />
                 </button>
                 
-                {bmsOpen && (
+                {ibmsOpen && (
                   <div className="pl-4 space-y-2">
-                    {bmsItems.map((item) => (
+                    {ibmsItems.map((item) => (
                       <Link
                         key={item.path}
                         to={item.path}

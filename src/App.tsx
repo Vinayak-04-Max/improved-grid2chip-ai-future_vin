@@ -71,6 +71,7 @@ const App = () => (
               <Route path="/data-center/edge" element={<EdgeDataCenter />} />
               <Route path="/data-center/custom" element={<CustomDataCenter />} />
               <Route path="/data-center/ai-ready" element={<AIReadyDataCenter />} />
+              <Route path="/data-center/hpc" element={<HPC />} />
               
               {/* BMS/Service Routes */}
               <Route path="/services/bms" element={<BuildingManagement />} />
