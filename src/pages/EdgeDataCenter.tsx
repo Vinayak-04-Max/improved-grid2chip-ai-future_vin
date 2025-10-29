@@ -93,7 +93,7 @@ const EdgeDataCenter = () => {
 
   const specifications = [
     { label: "Latency", value: "<1ms" },
-    { label: "Availability", value: "99.99%" },
+    { label: "Availability", value: "99.998%" },
     { label: "Locations", value: "1000+ Deployed" },
     { label: "Acceleration", value: "GPU/TPU Support" },
     { label: "Connectivity", value: "5G / Fiber" },
