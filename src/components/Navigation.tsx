@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import logo from "@/assets/g2c-logo-new.png";
 
 const Navigation = () => {
@@ -11,6 +12,15 @@ const Navigation = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [dataCenterOpen, setDataCenterOpen] = useState(false);
   const [ibmsOpen, setIbmsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const aboutItems = [
     { name: "About Us", path: "/about/us" },
@@ -36,275 +46,257 @@ const Navigation = () => {
     { name: "Control Panel Services", path: "/bms/control-panels" }
   ];
 
+  const NavLink = ({ to, children, isActive }: { to: string; children: React.ReactNode; isActive: boolean }) => (
+    <Link
+      to={to}
+      className={cn(
+        "relative text-sm font-medium transition-all duration-300",
+        "hover:text-primary link-underline",
+        isActive ? "text-primary" : "text-muted-foreground"
+      )}
+    >
+      {children}
+    </Link>
+  );
+
+  const DropdownMenu = ({
+    label,
+    items,
+    isOpen,
+    setIsOpen,
+    isActive,
+  }: {
+    label: string;
+    items: { name: string; path: string }[];
+    isOpen: boolean;
+    setIsOpen: (open: boolean) => void;
+    isActive: boolean;
+  }) => (
+    <div
+      className="relative"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <button
+        className={cn(
+          "flex items-center gap-1 text-sm font-medium transition-all duration-300",
+          "hover:text-primary",
+          isActive ? "text-primary" : "text-muted-foreground"
+        )}
+      >
+        {label}
+        <motion.span
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <ChevronDown className="h-4 w-4" />
+        </motion.span>
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
+            className="absolute top-full left-0 pt-2 z-50"
+          >
+            <div className="w-64 glass-frosted rounded-fib-lg overflow-hidden">
+              {/* Glowing border effect */}
+              <div className="absolute inset-0 rounded-fib-lg border border-primary/20" />
+              
+              <div className="relative p-2">
+                {items.map((item, index) => (
+                  <motion.div
+                    key={item.path}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <Link
+                      to={item.path}
+                      className={cn(
+                        "block px-4 py-3 text-sm rounded-fib",
+                        "text-foreground/80 hover:text-foreground",
+                        "hover:bg-primary/10 transition-all duration-200",
+                        "hover-glow-border"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+
   return (
-    <nav className="bg-card/80 backdrop-blur-md border-b border-primary/20 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center">
-              <img src={logo} alt="Grid2Chip Logo" className="h-12" />
-            </Link>
-          </div>
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        scrolled
+          ? "glass-frosted shadow-depth-2"
+          : "bg-transparent"
+      )}
+    >
+      {/* Top accent line */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
+
+      <div className="fib-container">
+        <div className="flex items-center justify-between h-[var(--fib-55)]">
+          {/* Logo */}
+          <Link to="/" className="flex items-center group">
+            <motion.img
+              src={logo}
+              alt="Grid2Chip Logo"
+              className="h-10"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            />
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            <Link
-              to="/"
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                location.pathname === "/" ? "text-primary" : "text-muted-foreground"
-              )}
-            >
+          <div className="hidden lg:flex items-center gap-fib-21">
+            <NavLink to="/" isActive={location.pathname === "/"}>
               Home
-            </Link>
+            </NavLink>
 
-            {/* About G2C Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setAboutOpen(true)}
-              onMouseLeave={() => setAboutOpen(false)}
-            >
-              <button
-                className={cn(
-                  "flex items-center text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname.startsWith("/about") ? "text-primary" : "text-muted-foreground"
-                )}
-              >
-                About G2C
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              
-              {aboutOpen && (
-                <div className="absolute top-full left-0 pt-2 z-50">
-                  <div className="w-64 bg-card border border-primary/20 rounded-lg shadow-lg hover:border-primary/40 transition-all duration-300">
-                    <div className="p-2">
-                      {aboutItems.map((item) => (
-                        <Link
-                          key={item.path}
-                          to={item.path}
-                          className="block px-3 py-2 text-sm text-foreground hover:bg-primary/10 rounded-md transition-colors"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+            <DropdownMenu
+              label="About G2C"
+              items={aboutItems}
+              isOpen={aboutOpen}
+              setIsOpen={setAboutOpen}
+              isActive={location.pathname.startsWith("/about")}
+            />
 
-            {/* Data Center Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setDataCenterOpen(true)}
-              onMouseLeave={() => setDataCenterOpen(false)}
-            >
-              <button
-                className={cn(
-                  "flex items-center text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname.startsWith("/data-center") ? "text-primary" : "text-muted-foreground"
-                )}
-              >
-                Data Center
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              
-              {dataCenterOpen && (
-                <div className="absolute top-full left-0 pt-2 z-50">
-                  <div className="w-64 bg-card border border-primary/20 rounded-lg shadow-lg ai-glow">
-                    <div className="p-2">
-                      {dataCenterItems.map((item) => (
-                        <Link
-                          key={item.path}
-                          to={item.path}
-                          className="block px-3 py-2 text-sm text-foreground hover:bg-primary/10 rounded-md transition-colors"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+            <DropdownMenu
+              label="Data Center"
+              items={dataCenterItems}
+              isOpen={dataCenterOpen}
+              setIsOpen={setDataCenterOpen}
+              isActive={location.pathname.startsWith("/data-center")}
+            />
 
-            {/* IBMS Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setIbmsOpen(true)}
-              onMouseLeave={() => setIbmsOpen(false)}
-            >
-              <button
-                className={cn(
-                  "flex items-center text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname.startsWith("/bms") || location.pathname.startsWith("/products/ims") ? "text-primary" : "text-muted-foreground"
-                )}
-              >
-                IBMS
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              
-              {ibmsOpen && (
-                <div className="absolute top-full left-0 pt-2 z-50">
-                  <div className="w-64 bg-card border border-primary/20 rounded-lg shadow-lg ai-glow">
-                    <div className="p-2">
-                      {ibmsItems.map((item) => (
-                        <Link
-                          key={item.path}
-                          to={item.path}
-                          className="block px-3 py-2 text-sm text-foreground hover:bg-primary/10 rounded-md transition-colors"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+            <DropdownMenu
+              label="IBMS"
+              items={ibmsItems}
+              isOpen={ibmsOpen}
+              setIsOpen={setIbmsOpen}
+              isActive={location.pathname.startsWith("/bms") || location.pathname.startsWith("/products/ims")}
+            />
 
-            <Link
-              to="/blog"
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                location.pathname === "/blog" ? "text-primary" : "text-muted-foreground"
-              )}
-            >
+            <NavLink to="/blog" isActive={location.pathname === "/blog"}>
               Blog
-            </Link>
+            </NavLink>
 
-            <Link
-              to="/contact"
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                location.pathname === "/contact" ? "text-primary" : "text-muted-foreground"
-              )}
-            >
+            <NavLink to="/contact" isActive={location.pathname === "/contact"}>
               Contact Us
-            </Link>
+            </NavLink>
 
-            <Button variant="ai" size="sm" asChild>
-              <Link to="/demo">Book a Demo</Link>
-            </Button>
+            <Link to="/demo">
+              <MagneticButton variant="cyber" size="sm">
+                Book a Demo
+              </MagneticButton>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
-          <button
+          <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md text-foreground hover:bg-primary/10"
+            className="lg:hidden p-2 rounded-fib text-foreground hover:bg-primary/10"
+            whileTap={{ scale: 0.95 }}
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+            <AnimatePresence mode="wait">
+              {isOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                >
+                  <X className="h-6 w-6" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                >
+                  <Menu className="h-6 w-6" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.button>
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
+      {/* Mobile Navigation */}
+      <AnimatePresence>
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-card border-t border-primary/20 ai-glow max-h-96 overflow-y-auto">
-            <div className="px-4 py-4 space-y-4">
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden glass-frosted border-t border-primary/20 overflow-hidden"
+          >
+            <div className="fib-container py-fib-21 space-y-fib-13">
               <Link
                 to="/"
-                className={cn(
-                  "block text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname === "/" ? "text-primary" : "text-muted-foreground"
-                )}
+                className="block text-sm font-medium text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
 
-              {/* About G2C Mobile */}
-              <div className="space-y-2">
-                <button
-                  onClick={() => setAboutOpen(!aboutOpen)}
-                  className={cn(
-                    "flex items-center w-full text-sm font-medium transition-colors hover:text-primary text-left",
-                    location.pathname.startsWith("/about") ? "text-primary" : "text-muted-foreground"
-                  )}
-                >
-                  About G2C
-                  <ChevronDown className={cn("ml-1 h-4 w-4 transition-transform", aboutOpen ? "rotate-180" : "")} />
-                </button>
-                
-                {aboutOpen && (
-                  <div className="pl-4 space-y-2">
-                    {aboutItems.map((item) => (
-                      <Link
-                        key={item.path}
-                        to={item.path}
-                        className="block text-sm text-muted-foreground hover:text-primary transition-colors"
-                        onClick={() => setIsOpen(false)}
+              {/* Mobile dropdowns */}
+              {[
+                { label: "About G2C", items: aboutItems, open: aboutOpen, setOpen: setAboutOpen },
+                { label: "Data Center", items: dataCenterItems, open: dataCenterOpen, setOpen: setDataCenterOpen },
+                { label: "IBMS", items: ibmsItems, open: ibmsOpen, setOpen: setIbmsOpen },
+              ].map((dropdown) => (
+                <div key={dropdown.label} className="space-y-fib-8">
+                  <button
+                    onClick={() => dropdown.setOpen(!dropdown.open)}
+                    className="flex items-center w-full text-sm font-medium text-foreground hover:text-primary"
+                  >
+                    {dropdown.label}
+                    <ChevronDown className={cn("ml-2 h-4 w-4 transition-transform", dropdown.open && "rotate-180")} />
+                  </button>
+                  <AnimatePresence>
+                    {dropdown.open && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="pl-fib-13 space-y-fib-8 overflow-hidden"
                       >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Data Center Mobile */}
-              <div className="space-y-2">
-                <button
-                  onClick={() => setDataCenterOpen(!dataCenterOpen)}
-                  className={cn(
-                    "flex items-center w-full text-sm font-medium transition-colors hover:text-primary text-left",
-                    location.pathname.startsWith("/data-center") ? "text-primary" : "text-muted-foreground"
-                  )}
-                >
-                  Data Center
-                  <ChevronDown className={cn("ml-1 h-4 w-4 transition-transform", dataCenterOpen ? "rotate-180" : "")} />
-                </button>
-                
-                {dataCenterOpen && (
-                  <div className="pl-4 space-y-2">
-                    {dataCenterItems.map((item) => (
-                      <Link
-                        key={item.path}
-                        to={item.path}
-                        className="block text-sm text-muted-foreground hover:text-primary transition-colors"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* IBMS Mobile */}
-              <div className="space-y-2">
-                <button
-                  onClick={() => setIbmsOpen(!ibmsOpen)}
-                  className={cn(
-                    "flex items-center w-full text-sm font-medium transition-colors hover:text-primary text-left",
-                    location.pathname.startsWith("/bms") || location.pathname.startsWith("/products/ims") ? "text-primary" : "text-muted-foreground"
-                  )}
-                >
-                  IBMS
-                  <ChevronDown className={cn("ml-1 h-4 w-4 transition-transform", ibmsOpen ? "rotate-180" : "")} />
-                </button>
-                
-                {ibmsOpen && (
-                  <div className="pl-4 space-y-2">
-                    {ibmsItems.map((item) => (
-                      <Link
-                        key={item.path}
-                        to={item.path}
-                        className="block text-sm text-muted-foreground hover:text-primary transition-colors"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+                        {dropdown.items.map((item) => (
+                          <Link
+                            key={item.path}
+                            to={item.path}
+                            className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
 
               <Link
                 to="/blog"
-                className={cn(
-                  "block text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname === "/blog" ? "text-primary" : "text-muted-foreground"
-                )}
+                className="block text-sm font-medium text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Blog
@@ -312,23 +304,30 @@ const Navigation = () => {
 
               <Link
                 to="/contact"
-                className={cn(
-                  "block text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname === "/contact" ? "text-primary" : "text-muted-foreground"
-                )}
+                className="block text-sm font-medium text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Contact Us
               </Link>
 
-              <Button variant="ai" size="sm" className="w-full" asChild>
-                <Link to="/demo" onClick={() => setIsOpen(false)}>Book a Demo</Link>
-              </Button>
+              <Link to="/demo" onClick={() => setIsOpen(false)} className="block">
+                <MagneticButton variant="cyber" size="sm" className="w-full">
+                  Book a Demo
+                </MagneticButton>
+              </Link>
             </div>
-          </div>
+          </motion.div>
         )}
-      </div>
-    </nav>
+      </AnimatePresence>
+
+      {/* Bottom accent line when scrolled */}
+      <motion.div
+        className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: scrolled ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      />
+    </motion.nav>
   );
 };
 
