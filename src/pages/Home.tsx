@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card3D } from "@/components/ui/Card3D";
+import { MagneticButton } from "@/components/ui/MagneticButton";
+import { FibonacciSection, ParallaxLayer, RevealText, GlowingNode } from "@/components/ui/FibonacciSection";
+import { HeroParticles, NeuralNetwork } from "@/components/HeroParticles";
 import { Badge } from "@/components/ui/badge";
 import { 
   Cpu, 
@@ -17,39 +22,47 @@ import {
   Ship
 } from "lucide-react";
 import heroImage from "@/assets/hero-ai-datacenter.jpg";
-import solutionsImage from "@/assets/solutions-containers.jpg";
-import aiNetworkImage from "@/assets/ai-neural-network.jpg";
 
 const Home = () => {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+
+  const heroY = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
+
   const solutions = [
     {
       title: "HPC/AI-Ready Data Centers",
-      description: "High-Performance Computing infrastructure optimized for AI/ML workloads, complex simulations, scientific research, and GPU-accelerated deep learning tasks.",
+      description: "High-Performance Computing infrastructure optimized for AI/ML workloads and GPU-accelerated deep learning.",
       icon: Cpu,
       path: "/solutions/hpc",
-      color: "bg-primary"
+      color: "primary" as const,
     },
     {
       title: "Edge Data Centers",
-      description: "Bringing processing power closer to users and data sources for ultra-low latency, enabling real-time insights for IoT and 5G applications.",
+      description: "Ultra-low latency processing power closer to users for real-time IoT and 5G applications.",
       icon: Zap,
       path: "/solutions/edge",
-      color: "bg-accent"
+      color: "accent" as const,
     },
     {
       title: "Prefabricated Data Centers",
-      description: "Factory-engineered and pre-tested modules that deliver fully integrated IT infrastructure with up to 50% faster deployment times.",
+      description: "Factory-engineered modules with up to 50% faster deployment times.",
       icon: Building2,
       path: "/solutions/prefabricated",
-      color: "bg-primary"
+      color: "primary" as const,
     },
     {
       title: "Custom Build Data Center",
-      description: "Tailored, purpose-built solutions engineered to your exact specifications for maximum performance, scalability, and operational efficiency.",
+      description: "Tailored solutions engineered to your exact specifications.",
       icon: Globe,
       path: "/solutions/custom",
-      color: "bg-accent"
-    }
+      color: "accent" as const,
+    },
   ];
 
   const industries = [
@@ -58,408 +71,388 @@ const Home = () => {
     { name: "IT/ITES", icon: Server, desc: "Digital services" },
     { name: "Ports and Logistics", icon: Ship, desc: "Supply chain operations" },
     { name: "Semi Conductors", icon: Cpu, desc: "Chip manufacturing" },
-    { name: "Manufacturing", icon: Factory, desc: "Industrial automation" }
+    { name: "Manufacturing", icon: Factory, desc: "Industrial automation" },
   ];
 
-  const testimonials = [
-    {
-      text: "Grid2Chip's infrastructure provides the reliability and uptime our mission-critical pharmaceutical research demands. Their support is second to none.",
-      author: "Dr. Sarah Chen",
-      company: "BioTech Research Inc.",
-      role: "Chief Technology Officer"
-    },
-    {
-      text: "The modular design allowed us to scale our city's computing capacity seamlessly as our needs grew. Grid2Chip delivered on time and on budget.",
-      author: "Michael Rodriguez",
-      company: "SmartCity Solutions",
-      role: "Infrastructure Director"
-    }
+  const services = [
+    { title: "Building Management Systems (BMS)", icon: Building2, path: "/services/bms", desc: "Centralized control and automation" },
+    { title: "DCIM", icon: Globe, path: "/services/ims", desc: "Real-time asset monitoring" },
+    { title: "Integrated Monitoring", icon: CheckCircle, path: "/services/ims", desc: "Unified oversight dashboard" },
+    { title: "ELV & Fire Safety", icon: Shield, path: "/services/elv", desc: "Maximum safety & security" },
+    { title: "Control Panels", icon: Cpu, path: "/services/control-panels", desc: "Custom automation panels" },
+    { title: "Operations & Maintenance", icon: Zap, path: "/services/ims", desc: "Proactive AMC services" },
+  ];
+
+  const stats = [
+    { value: "99.998%", label: "Uptime" },
+    { value: "100+", label: "Deployments" },
+    { value: "24/7", label: "Support" },
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section 
-        className="relative overflow-hidden h-screen flex items-center"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        {/* Dark Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-black/60"></div>
-        
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 tech-grid opacity-10"></div>
-        
-        {/* Floating Particles */}
-        <div className="absolute inset-0">
-          {[...Array(12)].map((_, i) => (
-            <div
-              key={i}
-              className={`absolute w-2 h-2 bg-primary/30 rounded-full animate-ai-float`}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${3 + Math.random() * 2}s`
-              }}
-            />
-          ))}
-        </div>
+    <div className="min-h-screen bg-void overflow-hidden">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          HERO SECTION - Immersive Cinematic Experience
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Parallax Background Image */}
+        <motion.div
+          style={{ y: heroY, scale: heroScale }}
+          className="absolute inset-0"
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${heroImage})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-void/80 via-void/60 to-void" />
+        </motion.div>
 
-        {/* Neural Network Lines */}
-        <div className="absolute inset-0 overflow-hidden">
-          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{stopColor: 'hsl(var(--primary))', stopOpacity: 0.3}} />
-                <stop offset="100%" style={{stopColor: 'hsl(var(--primary))', stopOpacity: 0.1}} />
-              </linearGradient>
-            </defs>
-            <g className="animate-ai-pulse">
-              <path d="M0,200 Q200,100 400,150 T800,120" stroke="url(#lineGradient)" strokeWidth="2" fill="none" />
-              <path d="M100,300 Q300,200 500,250 T900,220" stroke="url(#lineGradient)" strokeWidth="1.5" fill="none" />
-              <path d="M0,400 Q250,300 450,350 T850,320" stroke="url(#lineGradient)" strokeWidth="1" fill="none" />
-            </g>
-          </svg>
-        </div>
+        {/* Animated Background Elements */}
+        <HeroParticles count={40} color="mixed" />
+        <NeuralNetwork />
+
+        {/* Tech Grid Overlay */}
+        <div className="absolute inset-0 tech-grid-3d opacity-20" />
 
         {/* Glowing Orbs */}
-        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary/20 blur-xl animate-ai-pulse"></div>
-        <div className="absolute bottom-32 right-20 w-24 h-24 rounded-full bg-accent/30 blur-lg animate-ai-float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-primary/20 blur-md animate-ai-pulse"></div>
+        <motion.div
+          className="absolute top-[20%] left-[10%] w-[200px] h-[200px] rounded-full bg-primary/20 blur-[80px]"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-[30%] right-[15%] w-[150px] h-[150px] rounded-full bg-accent/30 blur-[60px]"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.4, 0.2, 0.4],
+          }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 z-10 text-center">
-          <div className="max-w-4xl mx-auto space-y-8">
-          {/* Animated Badge */}
-            <Badge variant="outline" className="border-white/30 text-white animate-fade-in hover:border-white/60 transition-colors duration-300">
-              <span className="relative">
-                Complete Data Center Solutions
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ai-pulse"></span>
-              </span>
-            </Badge>
-            
-            {/* Animated Title */}
-            <h1 className="text-5xl lg:text-7xl font-display font-bold leading-tight text-white">
-              <span className="inline-block animate-fade-in" style={{animationDelay: '0.2s'}}>
-                Your Complete 
-              </span>{' '}
-              <span className="text-accent inline-block animate-scale-in" style={{animationDelay: '0.4s'}}>
+        {/* Hero Content */}
+        <motion.div
+          style={{ opacity: heroOpacity }}
+          className="relative z-10 fib-container w-full"
+        >
+          <div className="max-w-4xl mx-auto text-center space-y-fib-34">
+            {/* Animated Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <Badge className="glass-panel border-primary/30 px-fib-21 py-fib-8 text-sm">
+                <span className="relative flex items-center gap-fib-8">
+                  <GlowingNode size="sm" color="primary" />
+                  Complete Data Center Solutions
+                </span>
+              </Badge>
+            </motion.div>
+
+            {/* Headline */}
+            <h1 className="text-phi-5xl md:text-phi-7xl font-display font-bold leading-none">
+              <motion.span
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="block text-foreground"
+              >
+                Your Complete
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5, duration: 0.6, type: "spring" }}
+                className="block text-gradient-holographic"
+              >
                 Data Center
-              </span>{' '}
-              <span className="inline-block animate-fade-in" style={{animationDelay: '0.6s'}}>
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+                className="block text-foreground"
+              >
                 Partner
-              </span>
+              </motion.span>
             </h1>
-            
-            {/* Typewriter Effect Text */}
-            <p className="text-xl lg:text-2xl text-white/90 leading-relaxed animate-fade-in max-w-3xl mx-auto" style={{animationDelay: '0.8s'}}>
-              From concept to commissioning and beyond, we manage every phase of your critical infrastructure lifecycle.
-            </p>
-            
-            {/* Animated Stats */}
-            <div className="grid grid-cols-3 gap-8 py-8 animate-fade-in max-w-2xl mx-auto" style={{animationDelay: '1s'}}>
-              <div className="text-center group hover-scale">
-                <div className="text-3xl lg:text-4xl font-bold text-accent group-hover:text-primary transition-colors">99.998%</div>
-                <div className="text-sm text-white/80">Uptime</div>
-              </div>
-              <div className="text-center group hover-scale">
-                <div className="text-3xl lg:text-4xl font-bold text-accent group-hover:text-primary transition-colors">100+</div>
-                <div className="text-sm text-white/80">Deployments</div>
-              </div>
-              <div className="text-center group hover-scale">
-                <div className="text-3xl lg:text-4xl font-bold text-accent group-hover:text-primary transition-colors">24/7</div>
-                <div className="text-sm text-white/80">Support</div>
-              </div>
-            </div>
-            
-            {/* Enhanced CTAs */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{animationDelay: '1.2s'}}>
-              <Button variant="hero" size="lg" className="group relative overflow-hidden" asChild>
-                <Link to="/solutions">
-                  <span className="relative z-10">Explore Our Solutions</span>
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button variant="glass" size="lg" className="group hover-scale bg-white/10 border-white/20 text-white hover:bg-white/20" asChild>
-                <Link to="/contact">
-                  <span>Schedule a Consultation</span>
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-            </div>
 
+            {/* Subheadline */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.9 }}
+              className="text-phi-lg md:text-phi-xl text-muted-foreground max-w-2xl mx-auto"
+            >
+              From concept to commissioning and beyond, we manage every phase of your critical infrastructure lifecycle.
+            </motion.p>
+
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.1 }}
+              className="grid grid-cols-3 gap-fib-34 max-w-xl mx-auto py-fib-34"
+            >
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  className="text-center group"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="text-phi-3xl md:text-phi-4xl font-display font-bold text-gradient-primary group-hover:text-glow transition-all">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground mt-fib-5">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.3 }}
+              className="flex flex-col sm:flex-row gap-fib-21 justify-center"
+            >
+              <Link to="/solutions">
+                <MagneticButton variant="glow" size="lg" className="flex items-center gap-fib-8">
+                  Explore Solutions
+                  <ArrowRight className="w-5 h-5" />
+                </MagneticButton>
+              </Link>
+              <Link to="/contact">
+                <MagneticButton variant="holographic" size="lg" className="flex items-center gap-fib-8">
+                  Schedule Consultation
+                  <ArrowRight className="w-5 h-5" />
+                </MagneticButton>
+              </Link>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-ai-pulse"></div>
-          </div>
-        </div>
+        <motion.div
+          className="absolute bottom-fib-34 left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+        >
+          <motion.div
+            className="w-fib-8 h-fib-34 rounded-full border-2 border-primary/50 flex justify-center pt-fib-8"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <motion.div
+              className="w-fib-3 h-fib-13 bg-primary rounded-full"
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+          </motion.div>
+        </motion.div>
       </section>
 
-      {/* Solutions Preview */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Advanced <span className="text-g2c-blue">Data Center Solutions</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          SOLUTIONS SECTION
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <FibonacciSection background="mesh" className="relative">
+        <div className="fib-container">
+          <div className="text-center mb-fib-55">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-phi-4xl md:text-phi-5xl font-display font-bold mb-fib-21"
+            >
+              Advanced{" "}
+              <span className="text-gradient-primary">Data Center Solutions</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-phi-lg text-muted-foreground max-w-3xl mx-auto"
+            >
               From high-performance computing clusters to agile containerized units, we build the resilient infrastructure that powers tomorrow's innovations.
-            </p>
+            </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-fib-21">
             {solutions.map((solution, index) => {
               const Icon = solution.icon;
               return (
-                <Card key={index} className="group bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 g2c-hover hover:shadow-xl">
-                  <CardHeader className="text-center">
-                    <div className={`mx-auto w-16 h-16 rounded-xl ${solution.color} p-4 mb-4 ai-pulse`}>
-                      <Icon className="w-full h-full text-white" />
-                    </div>
-                    <CardTitle className="text-xl font-semibold">{solution.title}</CardTitle>
-                    <CardDescription className="text-muted-foreground">
-                      {solution.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="ghost" className="w-full group-hover:bg-primary/10" asChild>
-                      <Link to={solution.path}>
+                <motion.div
+                  key={solution.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card3D glowColor={solution.color} className="h-full">
+                    <div className="p-fib-21 flex flex-col h-full">
+                      <div className={`w-fib-55 h-fib-55 rounded-fib-lg flex items-center justify-center mb-fib-21 ${solution.color === 'primary' ? 'bg-primary/20' : 'bg-accent/20'}`}>
+                        <Icon className={`w-fib-34 h-fib-34 ${solution.color === 'primary' ? 'text-primary' : 'text-accent'}`} />
+                      </div>
+                      <h3 className="text-phi-lg font-display font-semibold mb-fib-13 text-foreground">
+                        {solution.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground flex-grow mb-fib-21">
+                        {solution.description}
+                      </p>
+                      <Link
+                        to={solution.path}
+                        className="inline-flex items-center gap-fib-8 text-sm font-medium text-primary hover:text-primary-glow transition-colors group"
+                      >
                         Learn More
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
+                    </div>
+                  </Card3D>
+                </motion.div>
               );
             })}
           </div>
         </div>
-      </section>
+      </FibonacciSection>
 
-      {/* Integrated Facility & Management Services */}
-      <section className="py-16 lg:py-24 bg-secondary/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Integrated Facility & <span className="text-g2c-green">Management Services</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Beyond the data center, we provide comprehensive building management and support services to ensure your entire critical facility operates at peak performance.
-            </p>
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          SERVICES SECTION
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <FibonacciSection background="grid">
+        <div className="fib-container">
+          <div className="text-center mb-fib-55">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-phi-4xl md:text-phi-5xl font-display font-bold mb-fib-21"
+            >
+              Integrated Facility &{" "}
+              <span className="text-gradient-accent">Management Services</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-phi-lg text-muted-foreground max-w-3xl mx-auto"
+            >
+              Comprehensive building management and support services for peak performance.
+            </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-xl flex items-center justify-center">
-                  <Building2 className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl text-center">Building Management Systems (BMS)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">Centralized control and automation for your facility's mechanical and electrical equipment.</p>
-                <Button variant="ghost" className="w-full mt-4" asChild>
-                  <Link to="/services/bms">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-fib-21">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
+                >
+                  <Link to={service.path}>
+                    <Card3D glowColor={index % 2 === 0 ? "primary" : "accent"} className="group">
+                      <div className="p-fib-21">
+                        <div className={`w-fib-55 h-fib-55 rounded-fib-lg flex items-center justify-center mb-fib-21 ${index % 2 === 0 ? 'bg-primary/20' : 'bg-accent/20'} group-hover:scale-110 transition-transform`}>
+                          <Icon className={`w-fib-34 h-fib-34 ${index % 2 === 0 ? 'text-primary' : 'text-accent'}`} />
+                        </div>
+                        <h3 className="text-phi-lg font-display font-semibold mb-fib-8 text-foreground">
+                          {service.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          {service.desc}
+                        </p>
+                      </div>
+                    </Card3D>
                   </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 mx-auto mb-4 bg-accent rounded-xl flex items-center justify-center">
-                  <Globe className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl text-center">Data Center Infrastructure Management (DCIM)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">Real-time monitoring and management of data center assets, capacity, and environmental conditions.</p>
-                <Button variant="ghost" className="w-full mt-4" asChild>
-                  <Link to="/services/ims">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-xl flex items-center justify-center">
-                  <CheckCircle className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl text-center">Integrated Monitoring System</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">Unified dashboard for comprehensive oversight of all critical systems and infrastructure components.</p>
-                <Button variant="ghost" className="w-full mt-4" asChild>
-                  <Link to="/services/ims">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 mx-auto mb-4 bg-accent rounded-xl flex items-center justify-center">
-                  <Shield className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl text-center">ELV & Fire Safety Systems</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">Integrated Extra-Low Voltage systems and robust fire detection and suppression for maximum safety and security.</p>
-                <Button variant="ghost" className="w-full mt-4" asChild>
-                  <Link to="/services/elv">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-xl flex items-center justify-center">
-                  <Cpu className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl text-center">Control & Automation Panel Services</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">Custom design and implementation of control and automation panels for seamless system integration.</p>
-                <Button variant="ghost" className="w-full mt-4" asChild>
-                  <Link to="/services/control-panels">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 mx-auto mb-4 bg-accent rounded-xl flex items-center justify-center">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl text-center">Operations & Maintenance (O&M)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">Proactive AMC services for critical power, cooling, and facility infrastructure to guarantee uptime and reliability.</p>
-                <Button variant="ghost" className="w-full mt-4" asChild>
-                  <Link to="/services/ims">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-12">
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/solutions">
-                Explore Our Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
-      </section>
+      </FibonacciSection>
 
-      {/* Industries Served */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Industries We <span className="text-g2c-green">Empower</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Trusted by leading organizations across diverse sectors for mission-critical infrastructure.
-            </p>
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          INDUSTRIES SECTION
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <FibonacciSection background="holographic">
+        <div className="fib-container">
+          <div className="text-center mb-fib-55">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-phi-4xl md:text-phi-5xl font-display font-bold mb-fib-21"
+            >
+              Industries We{" "}
+              <span className="text-gradient-primary">Serve</span>
+            </motion.h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-fib-21">
             {industries.map((industry, index) => {
               const Icon = industry.icon;
               return (
-                <Card key={index} className="text-center bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 group">
-                  <CardContent className="p-6">
-                    <Icon className="w-12 h-12 mx-auto mb-4 text-primary group-hover:text-accent transition-colors" />
-                    <h3 className="font-semibold text-foreground mb-2">{industry.name}</h3>
-                    <p className="text-sm text-muted-foreground">{industry.desc}</p>
-                  </CardContent>
-                </Card>
+                <motion.div
+                  key={industry.name}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="glass-panel rounded-fib-lg p-fib-21 text-center group cursor-pointer"
+                >
+                  <div className="w-fib-55 h-fib-55 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-fib-13 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="w-fib-21 h-fib-21 text-primary" />
+                  </div>
+                  <h4 className="text-sm font-medium text-foreground mb-fib-5">
+                    {industry.name}
+                  </h4>
+                  <p className="text-xs text-muted-foreground">{industry.desc}</p>
+                </motion.div>
               );
             })}
           </div>
-
         </div>
-      </section>
+      </FibonacciSection>
 
-      {/* Testimonials */}
-      <section className="py-16 lg:py-24 bg-secondary/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Trusted by <span className="text-g2c-blue">Industry Leaders</span>
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          CTA SECTION
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <FibonacciSection className="relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/5 to-primary/10" />
+        <div className="fib-container relative">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-panel rounded-fib-xl p-fib-55 text-center"
+          >
+            <h2 className="text-phi-3xl md:text-phi-4xl font-display font-bold mb-fib-21">
+              Ready to Build Your{" "}
+              <span className="text-gradient-holographic">Future Infrastructure</span>?
             </h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-card/50 border-primary/20">
-                <CardContent className="p-8">
-                  <blockquote className="text-lg text-foreground mb-6 leading-relaxed">
-                    "{testimonial.text}"
-                  </blockquote>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 rounded-full bg-primary"></div>
-                    <div>
-                      <div className="font-semibold text-foreground">{testimonial.author}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                      <div className="text-sm text-primary">{testimonial.company}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Build Your <span className="text-g2c-blue">Next-Generation Infrastructure?</span>
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Let's discuss how Grid2Chip can design, deploy, and manage the perfect critical infrastructure for your organization's needs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button variant="hero" size="lg" asChild>
+            <p className="text-phi-lg text-muted-foreground max-w-2xl mx-auto mb-fib-34">
+              Let's discuss how our AI-ready data center solutions can transform your operations.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-fib-21 justify-center">
               <Link to="/contact">
-                Get in Touch
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <MagneticButton variant="glow" size="lg">Get Started Today</MagneticButton>
               </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/solutions">View Solutions</Link>
-            </Button>
-          </div>
+              <Link to="/demo">
+                <MagneticButton variant="holographic" size="lg">Book a Demo</MagneticButton>
+              </Link>
+            </div>
+          </motion.div>
         </div>
-      </section>
+      </FibonacciSection>
     </div>
   );
 };
