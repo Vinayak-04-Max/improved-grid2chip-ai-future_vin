@@ -358,17 +358,18 @@ const Home = () => {
           </ScrollRevealBlock>
 
           {/* Solution Cards with Stagger */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-fib-21">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-fib-21 items-stretch">
             {solutions.map((solution, index) => {
               const Icon = solution.icon;
               return (
-                <DepthLayer key={solution.title} depth={0.3 + index * 0.1}>
+                <DepthLayer key={solution.title} depth={0.3 + index * 0.1} className="h-full">
                   <ScrollRevealBlock
                     variant="scale"
                     delay={index * 0.1}
+                    className="h-full"
                   >
-                    <RefractiveCard className="h-full min-h-[280px] group">
-                      <div className="p-fib-21 flex flex-col h-full min-h-[280px] relative overflow-hidden">
+                    <RefractiveCard className="h-full group">
+                      <div className="p-fib-21 flex flex-col h-[320px] relative overflow-hidden">
                         {/* Animated gradient background */}
                         <motion.div
                           className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
@@ -376,7 +377,7 @@ const Home = () => {
                         
                         {/* Icon with pulse */}
                         <motion.div 
-                          className={`w-fib-55 h-fib-55 rounded-fib-lg flex items-center justify-center mb-fib-21 ${solution.color === 'primary' ? 'bg-primary/20' : 'bg-accent/20'} relative`}
+                          className={`w-fib-55 h-fib-55 rounded-fib-lg flex items-center justify-center mb-fib-21 flex-shrink-0 ${solution.color === 'primary' ? 'bg-primary/20' : 'bg-accent/20'} relative`}
                           whileHover={{ scale: 1.1, rotate: 5 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
@@ -388,15 +389,15 @@ const Home = () => {
                           />
                         </motion.div>
                         
-                        <h3 className="text-phi-lg font-display font-semibold mb-fib-13 text-foreground">
+                        <h3 className="text-phi-lg font-display font-semibold mb-fib-13 text-foreground flex-shrink-0">
                           {solution.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground flex-grow mb-fib-21">
+                        <p className="text-sm text-muted-foreground flex-grow mb-fib-21 line-clamp-4">
                           {solution.description}
                         </p>
                         <Link
                           to={solution.path}
-                          className="inline-flex items-center gap-fib-8 text-sm font-medium text-primary hover:text-primary-glow transition-colors group/link"
+                          className="inline-flex items-center gap-fib-8 text-sm font-medium text-primary hover:text-primary-glow transition-colors group/link mt-auto flex-shrink-0"
                         >
                           <span>Learn More</span>
                           <motion.span
@@ -441,21 +442,21 @@ const Home = () => {
             return (
               <Link key={service.title} to={service.path}>
                 <motion.div
-                  className="glass-panel rounded-fib-xl p-fib-34 min-w-[300px] group cursor-pointer"
+                  className="glass-panel rounded-fib-xl p-fib-34 w-[300px] h-[200px] group cursor-pointer flex flex-col"
                   whileHover={{ scale: 1.05, y: -10 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <motion.div 
-                    className={`w-fib-55 h-fib-55 rounded-fib-lg flex items-center justify-center mb-fib-21 ${index % 2 === 0 ? 'bg-primary/20' : 'bg-accent/20'}`}
+                    className={`w-fib-55 h-fib-55 rounded-fib-lg flex items-center justify-center mb-fib-21 flex-shrink-0 ${index % 2 === 0 ? 'bg-primary/20' : 'bg-accent/20'}`}
                     animate={{ rotate: [0, 5, 0, -5, 0] }}
                     transition={{ duration: 6, repeat: Infinity, delay: index * 0.5 }}
                   >
                     <Icon className={`w-fib-34 h-fib-34 ${index % 2 === 0 ? 'text-primary' : 'text-accent'}`} />
                   </motion.div>
-                  <h3 className="text-phi-lg font-display font-semibold mb-fib-8 text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-phi-lg font-display font-semibold mb-fib-8 text-foreground group-hover:text-primary transition-colors flex-shrink-0">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground flex-grow">
                     {service.desc}
                   </p>
                 </motion.div>
@@ -472,14 +473,14 @@ const Home = () => {
               return (
                 <Link key={`rev-${service.title}`} to={service.path}>
                   <motion.div
-                    className="glass-panel rounded-fib-xl p-fib-21 min-w-[250px] group cursor-pointer border border-primary/10"
+                    className="glass-panel rounded-fib-xl p-fib-21 w-[250px] h-[60px] group cursor-pointer border border-primary/10 flex items-center"
                     whileHover={{ scale: 1.05 }}
                   >
                     <div className="flex items-center gap-fib-13">
-                      <div className={`w-fib-34 h-fib-34 rounded-fib flex items-center justify-center ${index % 2 === 0 ? 'bg-accent/20' : 'bg-primary/20'}`}>
+                      <div className={`w-fib-34 h-fib-34 rounded-fib flex items-center justify-center flex-shrink-0 ${index % 2 === 0 ? 'bg-accent/20' : 'bg-primary/20'}`}>
                         <Icon className={`w-fib-21 h-fib-21 ${index % 2 === 0 ? 'text-accent' : 'text-primary'}`} />
                       </div>
-                      <span className="text-sm font-medium text-foreground">{service.title}</span>
+                      <span className="text-sm font-medium text-foreground truncate">{service.title}</span>
                     </div>
                   </motion.div>
                 </Link>
