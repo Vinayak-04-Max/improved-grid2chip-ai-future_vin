@@ -202,7 +202,7 @@ const Home = () => {
             {/* Headline with Character Animation */}
             <div className="space-y-fib-8">
               <motion.h1
-                className="text-phi-5xl md:text-phi-7xl lg:text-phi-8xl font-display font-bold leading-none"
+                className="text-phi-3xl md:text-phi-4xl lg:text-phi-5xl font-semibold leading-tight"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -329,7 +329,7 @@ const Home = () => {
           animate={{ opacity: [0.5, 0.8, 0.5] }}
           transition={{ duration: 4, repeat: Infinity }}
         />
-        <VelocityText baseVelocity={-50} className="text-phi-3xl font-display font-bold text-primary/20">
+        <VelocityText baseVelocity={-15} className="text-phi-2xl font-semibold text-primary/20">
           HPC • AI-READY • EDGE COMPUTING • PREFABRICATED • CUSTOM BUILD • SCALABLE INFRASTRUCTURE •
         </VelocityText>
       </section>
