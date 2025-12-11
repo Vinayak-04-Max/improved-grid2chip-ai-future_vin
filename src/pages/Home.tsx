@@ -329,7 +329,7 @@ const Home = () => {
           animate={{ opacity: [0.5, 0.8, 0.5] }}
           transition={{ duration: 4, repeat: Infinity }}
         />
-        <VelocityText baseVelocity={-15} className="text-phi-2xl font-semibold text-primary/20">
+        <VelocityText baseVelocity={-5} className="text-phi-2xl font-semibold text-primary/20">
           HPC • AI-READY • EDGE COMPUTING • PREFABRICATED • CUSTOM BUILD • SCALABLE INFRASTRUCTURE •
         </VelocityText>
       </section>
@@ -367,8 +367,8 @@ const Home = () => {
                     variant="scale"
                     delay={index * 0.1}
                   >
-                    <RefractiveCard className="h-full group">
-                      <div className="p-fib-21 flex flex-col h-full relative overflow-hidden">
+                    <RefractiveCard className="h-full min-h-[320px] group">
+                      <div className="p-fib-21 flex flex-col h-full min-h-[320px] relative overflow-hidden">
                         {/* Animated gradient background */}
                         <motion.div
                           className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
