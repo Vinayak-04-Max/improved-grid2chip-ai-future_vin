@@ -367,8 +367,8 @@ const Home = () => {
                     variant="scale"
                     delay={index * 0.1}
                   >
-                    <RefractiveCard className="h-full min-h-[320px] group">
-                      <div className="p-fib-21 flex flex-col h-full min-h-[320px] relative overflow-hidden">
+                    <RefractiveCard className="h-full min-h-[280px] group">
+                      <div className="p-fib-21 flex flex-col h-full min-h-[280px] relative overflow-hidden">
                         {/* Animated gradient background */}
                         <motion.div
                           className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
