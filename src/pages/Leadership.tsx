@@ -71,22 +71,27 @@ const Leadership = () => {
       {/* Leadership Grid */}
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             {leaders.map((leader, index) => {
               const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
+              // Get first and last name initials only (max 2 letters)
+              const nameParts = leader.name.split(' ');
+              const initials = nameParts.length >= 2 
+                ? `${nameParts[0][0]}${nameParts[nameParts.length - 1][0]}`
+                : nameParts[0].substring(0, 2);
               return (
-                <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow group">
-                  <CardHeader className="text-center">
+                <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow group h-full flex flex-col">
+                  <CardHeader className="text-center flex-shrink-0">
                     <div className={`w-32 h-32 mx-auto mb-6 rounded-full ${bgColor} p-1`}>
-                      <div className="w-full h-full rounded-full bg-card flex items-center justify-center text-6xl font-bold text-primary">
-                        {leader.name.split(' ').map(n => n[0]).join('')}
+                      <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden">
+                        <span className="text-4xl font-bold text-primary">{initials}</span>
                       </div>
                     </div>
                   <CardTitle className="text-xl font-semibold">{leader.name}</CardTitle>
                   <p className="text-primary font-medium">{leader.role}</p>
                   <Badge variant="secondary" className="w-fit mx-auto">{leader.experience}</Badge>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-6 flex-grow flex flex-col">
                   <p className="text-muted-foreground text-sm leading-relaxed">{leader.bio}</p>
                   
                   <div>
@@ -110,7 +115,7 @@ const Leadership = () => {
                     </ul>
                   </div>
 
-                  <div className="flex gap-2 pt-4 border-t border-primary/20">
+                  <div className="flex gap-2 pt-4 border-t border-primary/20 mt-auto">
                     <Button variant="ghost" size="sm" className="flex-1">
                       <Linkedin className="w-4 h-4 mr-2" />
                       LinkedIn
