@@ -1,75 +1,86 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Container, Zap, Shield, Clock, Thermometer, Cpu, ArrowRight, CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { 
+  Container, Zap, Shield, Clock, Thermometer, Cpu, ArrowRight, CheckCircle,
+  Truck, MapPin, Building2, Radio, Factory, Cloud, Landmark, ChevronRight
+} from "lucide-react";
 import solutionsImage from "@/assets/solutions-containers.jpg";
 
 const PrefabContainer = () => {
   const features = [
     {
       title: "Rapid Deployment",
-      description: "Become fully operational in as little as 4-6 weeks, a fraction of the time required for traditional builds.",
-      icon: Clock
+      description: "Fully operational in 4-6 weeks, a fraction of traditional build time.",
+      icon: Clock,
+      metric: "4-6 Weeks"
     },
     {
       title: "Quality Controlled",
-      description: "Factory-tested and certified for reliability, ensuring consistent quality standards.",
-      icon: Shield
+      description: "Factory-tested and certified for reliability and consistent standards.",
+      icon: Shield,
+      metric: "ISO Certified"
     },
     {
       title: "Modular Scalability",
-      description: "Our modular design allows you to seamlessly expand your capacity as your operational needs grow.",
-      icon: Container
+      description: "Seamlessly expand capacity as your operational needs grow.",
+      icon: Container,
+      metric: "Scalable"
     },
     {
       title: "Cost Effective",
-      description: "Significant reduction in total cost of ownership compared to traditional builds.",
-      icon: Zap
+      description: "Significant reduction in total cost of ownership vs traditional builds.",
+      icon: Zap,
+      metric: "40% Savings"
     },
     {
       title: "Reliable Performance",
-      description: "Redundant power and cooling systems, combined with predictive maintenance, ensure maximum availability.",
-      icon: Cpu
+      description: "Redundant power and cooling with predictive maintenance.",
+      icon: Cpu,
+      metric: "99.99% Uptime"
     },
     {
-      title: "Quick Installation",
-      description: "Simple plug-and-play installation with full remote monitoring and management capabilities.",
-      icon: Thermometer
+      title: "All-Weather Ready",
+      description: "Durable, weather-resistant design for any environment.",
+      icon: Thermometer,
+      metric: "-40°C to +50°C"
     }
   ];
 
   const specifications = [
-    { label: "IT Capacity", value: "100-500 kW" },
-    { label: "Deployment Time", value: "4-6 weeks" },
-    { label: "Dimensions", value: "40ft x 8ft x 9.5ft" },
-    { label: "Power Efficiency", value: "PUE < 1.3" },
-    { label: "Cooling", value: "Load-Adaptive" },
-    { label: "Monitoring", value: "24/7 Remote" },
-    { label: "Redundancy", value: "N+1 / 2N" },
-    { label: "Operating Temp", value: "-40°C to +50°C" }
+    { label: "IT Capacity", value: "100-500", unit: "kW" },
+    { label: "Deployment", value: "4-6", unit: "Weeks" },
+    { label: "Dimensions", value: "40ft", unit: "Container" },
+    { label: "PUE", value: "< 1.3", unit: "Efficiency" },
+    { label: "Redundancy", value: "N+1", unit: "/ 2N" },
+    { label: "Monitoring", value: "24/7", unit: "Remote" }
   ];
 
   const useCases = [
     {
       title: "Edge Computing",
-      description: "Deploy computing power closer to data sources for ultra-low latency applications like 5G, IoT, and real-time analytics.",
-      applications: ["5G base stations", "IoT processing", "Real-time analytics", "Autonomous vehicles"]
+      description: "Deploy computing power closer to data sources for ultra-low latency.",
+      icon: Radio,
+      applications: ["5G base stations", "IoT processing", "Real-time analytics"]
     },
     {
       title: "Disaster Recovery",
-      description: "Ensure business continuity with rapidly deployable IT infrastructure for emergency response and backup operations.",
-      applications: ["Emergency response", "Temporary facilities", "Backup sites", "Mobile command centers"]
+      description: "Rapidly deployable IT infrastructure for emergency response.",
+      icon: Shield,
+      applications: ["Emergency response", "Backup sites", "Mobile command"]
     },
     {
       title: "Remote Operations",
-      description: "Bring enterprise-grade infrastructure to challenging and remote environments, including mining, energy, and military sites.",
-      applications: ["Mining operations", "Oil & gas", "Military bases", "Research stations"]
+      description: "Enterprise-grade infrastructure for challenging environments.",
+      icon: MapPin,
+      applications: ["Mining operations", "Oil & gas", "Military bases"]
     },
     {
-      title: "Rapid Expansion", 
-      description: "Quickly add data center capacity to support business growth, handle peak loads, or create temporary testing environments.",
-      applications: ["Business growth", "Peak load handling", "Testing environments", "Temporary projects"]
+      title: "Rapid Expansion",
+      description: "Quick capacity addition to support business growth.",
+      icon: Factory,
+      applications: ["Peak load handling", "Testing environments", "Projects"]
     }
   ];
 
@@ -78,188 +89,496 @@ const PrefabContainer = () => {
     "Significant reduction in total cost of ownership",
     "Simple plug-and-play installation",
     "Factory-tested and certified for reliability",
-    "Durable, weather-resistant design for any environment",
-    "Full remote monitoring and management capabilities",
-    "Comprehensive warranty and 24/7 technical support"
+    "Durable, weather-resistant design",
+    "Full remote monitoring capabilities",
+    "24/7 technical support"
+  ];
+
+  const deploymentSteps = [
+    { step: "01", title: "Site Assessment", description: "Evaluate location requirements and infrastructure needs", duration: "3-5 Days" },
+    { step: "02", title: "Configuration", description: "Customize container specs to match your workload", duration: "1 Week" },
+    { step: "03", title: "Manufacturing", description: "Factory assembly with rigorous quality testing", duration: "3-4 Weeks" },
+    { step: "04", title: "Delivery", description: "Transport and position at your designated site", duration: "3-5 Days" },
+    { step: "05", title: "Activation", description: "Connect, commission, and go live", duration: "2-3 Days" }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-hero">
-        <div className="absolute inset-0 tech-grid opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <Badge variant="outline" className="border-primary/30 text-primary">
-                Prefabricated Solutions
-              </Badge>
-              <h1 className="text-4xl lg:text-6xl font-display font-bold">
-                Prefabricated <span className="text-g2c-blue">Data Centers</span>
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Rapidly deployable, factory-built modular data centers, perfect for edge computing, disaster recovery, and remote operations.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="lg" asChild>
-                  <Link to="/contact">
-                    Get Quote
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button variant="glass" size="lg" asChild>
-                  <Link to="/demo">Schedule Demo</Link>
-                </Button>
-              </div>
+    <div className="min-h-screen bg-background">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          HERO SECTION - Full Width Background Image with Overlay
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="relative min-h-[85vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={solutionsImage} 
+            alt="Prefabricated Data Center Container" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        </div>
+
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            <Badge variant="outline" className="mb-6 border-accent/50 bg-accent/10 text-accent">
+              Prefabricated Solutions
+            </Badge>
+            
+            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-display font-bold mb-6 leading-tight">
+              Prefabricated Data Centers
+            </h1>
+            
+            <p className="text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+              Rapidly deployable, factory-built modular data centers perfect for edge computing, disaster recovery, and remote operations.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact">
+                  Get Custom Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button variant="glass" size="lg" asChild>
+                <Link to="/demo">Schedule Demo</Link>
+              </Button>
             </div>
-            <div className="relative">
-              <img
-                src={solutionsImage}
-                alt="Prefabricated Data Center"
-                className="rounded-2xl"
-              />
-            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          CAROUSEL - Auto-Moving Feature Showcase
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-16 lg:py-20 border-y border-primary/10 bg-card/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-3">
+              Container <span className="text-gradient-accent">Features</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Enterprise-grade infrastructure in a rapidly deployable package
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Auto-scrolling carousel */}
+        <div className="relative overflow-hidden">
+          <motion.div
+            className="flex gap-6 pl-6"
+            animate={{ x: [0, -1800] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          >
+            {[...features, ...features].map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-80 p-6 rounded-2xl bg-gradient-to-br from-card/90 to-card/60 border border-accent/20 hover:border-accent/40 transition-all duration-300 group"
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/30 to-accent/10 border border-accent/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                      <Icon className="w-7 h-7 text-accent" />
+                    </div>
+                    <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/30">
+                      {feature.metric}
+                    </Badge>
+                  </div>
+                  <h3 className="text-lg font-display font-semibold text-white mb-2">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                </div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          STATISTICS INFOGRAPHIC - Key Specs
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--accent)/0.06)_0%,_transparent_60%)]" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Technical <span className="text-gradient-primary">Specifications</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Engineered to enterprise standards for mission-critical applications
+            </p>
+          </motion.div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {specifications.map((spec, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="relative group"
+              >
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-card/90 to-card/60 border border-accent/20 hover:border-accent/40 transition-all duration-300 text-center">
+                  <div className="text-3xl lg:text-4xl font-display font-bold text-accent mb-1">
+                    {spec.value}
+                  </div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
+                    {spec.unit}
+                  </div>
+                  <div className="text-sm font-medium text-white">
+                    {spec.label}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-20 lg:py-32">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          DEPLOYMENT TIMELINE - Horizontal Process Infographic
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-card/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Advanced <span className="text-g2c-green">Features</span>
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Deployment <span className="text-gradient-accent">Timeline</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Every container is engineered with cutting-edge technology for superior performance and reliability.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              From assessment to activation in weeks, not months
             </p>
+          </motion.div>
+
+          {/* Horizontal Timeline for Desktop */}
+          <div className="hidden lg:block relative">
+            {/* Progress Line */}
+            <div className="absolute top-16 left-0 right-0 h-1 bg-gradient-to-r from-accent via-primary to-accent/30 rounded-full" />
+            
+            <div className="grid grid-cols-5 gap-4">
+              {deploymentSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.15 }}
+                  className="relative"
+                >
+                  {/* Node */}
+                  <div className="relative z-10 flex justify-center mb-6">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-accent/30">
+                      {step.step}
+                    </div>
+                  </div>
+                  
+                  {/* Card */}
+                  <div className="p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border border-accent/20 hover:border-accent/40 transition-all duration-300 text-center">
+                    <Badge variant="outline" className="mb-3 bg-accent/10 border-accent/30 text-accent text-xs">
+                      {step.duration}
+                    </Badge>
+                    <h3 className="text-lg font-display font-bold text-white mb-2">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground">{step.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
-              return (
-                <Card key={index} className="bg-gradient-card border-primary/20">
-                  <CardHeader>
-                    <div className={`w-16 h-16 mb-4 ${bgColor} rounded-xl flex items-center justify-center`}>
-                      <Icon className="w-8 h-8 text-white" />
+          {/* Vertical Timeline for Mobile */}
+          <div className="lg:hidden space-y-6">
+            {deploymentSteps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex gap-4"
+              >
+                <div className="flex flex-col items-center">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-bold text-sm">
+                    {step.step}
+                  </div>
+                  {index < deploymentSteps.length - 1 && (
+                    <div className="w-0.5 flex-1 bg-gradient-to-b from-accent to-accent/30 mt-2" />
+                  )}
+                </div>
+                <div className="flex-1 pb-6">
+                  <div className="p-4 rounded-xl bg-gradient-to-br from-card/95 to-card/80 border border-accent/20">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h3 className="text-base font-display font-bold text-white">{step.title}</h3>
+                      <Badge variant="outline" className="bg-accent/10 border-accent/30 text-accent text-[10px]">
+                        {step.duration}
+                      </Badge>
                     </div>
-                    <CardTitle className="text-xl font-semibold">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{feature.description}</p>
-                  </CardContent>
-                </Card>
+                    <p className="text-sm text-muted-foreground">{step.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          USE CASES - 2x2 Grid Infographic
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.06)_0%,_transparent_60%)]" />
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div 
+            className="text-center mb-12 lg:mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Common <span className="text-gradient-primary">Use Cases</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Versatile solutions for a wide range of deployment scenarios
+            </p>
+          </motion.div>
+
+          {/* Central Hub + Cards */}
+          <div className="hidden lg:grid grid-cols-3 gap-8 items-center max-w-5xl mx-auto">
+            {/* Left Cards */}
+            <div className="space-y-6">
+              {useCases.slice(0, 2).map((useCase, index) => {
+                const Icon = useCase.icon;
+                const colors = index === 0 ? 'border-accent/40 hover:border-accent/60' : 'border-primary/40 hover:border-primary/60';
+                const iconColors = index === 0 ? 'from-accent/25 to-accent/10 text-accent' : 'from-primary/25 to-primary/10 text-primary';
+                
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <div className={`p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border ${colors} transition-all duration-300 group`}>
+                      <div className="flex items-start gap-4">
+                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${iconColors} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform`}>
+                          <Icon className="w-7 h-7" />
+                        </div>
+                        <div>
+                          <h3 className="text-base font-display font-bold text-white mb-1">{useCase.title}</h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed mb-2">{useCase.description}</p>
+                          <div className="flex flex-wrap gap-1">
+                            {useCase.applications.slice(0, 2).map((app, i) => (
+                              <span key={i} className="text-[10px] px-2 py-0.5 rounded-full bg-accent/10 text-accent/80">{app}</span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Central Hub */}
+            <motion.div 
+              className="relative w-36 h-36 mx-auto"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 blur-xl" />
+              <motion.div 
+                className="absolute inset-0 rounded-full border-[3px] border-dashed border-accent/40"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div 
+                className="absolute inset-3 rounded-full border-2 border-dashed border-primary/30"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+              />
+              <div className="absolute inset-5 rounded-full bg-gradient-to-br from-card to-card/90 border border-accent/30 flex items-center justify-center shadow-xl">
+                <div className="text-center">
+                  <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center">
+                    <Container className="w-5 h-5 text-accent" />
+                  </div>
+                  <span className="text-[10px] font-display font-bold text-white leading-tight">Prefab<br/>Solutions</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Cards */}
+            <div className="space-y-6">
+              {useCases.slice(2, 4).map((useCase, index) => {
+                const Icon = useCase.icon;
+                const colors = index === 0 ? 'border-neon-cyan/40 hover:border-neon-cyan/60' : 'border-neon-violet/40 hover:border-neon-violet/60';
+                const iconColors = index === 0 ? 'from-neon-cyan/25 to-neon-cyan/10 text-neon-cyan' : 'from-neon-violet/25 to-neon-violet/10 text-neon-violet';
+                
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <div className={`p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border ${colors} transition-all duration-300 group`}>
+                      <div className="flex items-start gap-4">
+                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${iconColors} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform`}>
+                          <Icon className="w-7 h-7" />
+                        </div>
+                        <div>
+                          <h3 className="text-base font-display font-bold text-white mb-1">{useCase.title}</h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed mb-2">{useCase.description}</p>
+                          <div className="flex flex-wrap gap-1">
+                            {useCase.applications.slice(0, 2).map((app, i) => (
+                              <span key={i} className="text-[10px] px-2 py-0.5 rounded-full bg-neon-cyan/10 text-neon-cyan/80">{app}</span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="lg:hidden space-y-4 max-w-md mx-auto">
+            {useCases.map((useCase, index) => {
+              const Icon = useCase.icon;
+              const styles = [
+                { border: 'border-accent/40', iconBg: 'from-accent/25 to-accent/10', iconColor: 'text-accent' },
+                { border: 'border-primary/40', iconBg: 'from-primary/25 to-primary/10', iconColor: 'text-primary' },
+                { border: 'border-neon-cyan/40', iconBg: 'from-neon-cyan/25 to-neon-cyan/10', iconColor: 'text-neon-cyan' },
+                { border: 'border-neon-violet/40', iconBg: 'from-neon-violet/25 to-neon-violet/10', iconColor: 'text-neon-violet' }
+              ];
+              const style = styles[index];
+              
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className={`p-4 rounded-xl bg-gradient-to-br from-card/95 to-card/80 border ${style.border}`}>
+                    <div className="flex items-center gap-4">
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${style.iconBg} flex items-center justify-center flex-shrink-0`}>
+                        <Icon className={`w-6 h-6 ${style.iconColor}`} />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-display font-bold text-white mb-0.5">{useCase.title}</h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{useCase.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* Specifications */}
-      <section className="py-20 lg:py-32 bg-gradient-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Technical <span className="text-g2c-blue">Specifications</span>
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          BENEFITS - Checklist Infographic
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-card/30">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Why Choose <span className="text-gradient-accent">Prefabricated?</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Engineered to enterprise standards for the most demanding mission-critical applications.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Factory-built quality with speed-to-market advantages
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {specifications.map((spec, index) => (
-              <Card key={index} className="text-center bg-card border-primary/20">
-                <CardContent className="p-6">
-                  <div className="text-2xl font-bold text-primary mb-2">{spec.value}</div>
-                  <div className="text-sm text-muted-foreground">{spec.label}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Common <span className="text-g2c-green">Use Cases</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Versatile solutions designed for a wide range of industries and deployment scenarios.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {useCases.map((useCase, index) => (
-              <Card key={index} className="bg-gradient-card border-primary/20">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-semibold">{useCase.title}</CardTitle>
-                  <p className="text-muted-foreground">{useCase.description}</p>
-                </CardHeader>
-                <CardContent>
-                  <h4 className="font-semibold text-foreground mb-3">Applications:</h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    {useCase.applications.map((app, i) => (
-                      <div key={i} className="flex items-center">
-                        <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                        <span className="text-sm text-muted-foreground">{app}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="py-20 lg:py-32 bg-gradient-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Why Choose <span className="text-g2c-blue">Prefabricated Containers?</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Factory-built quality, speed-to-market, and high-performance make our containers the ideal solution for modern infrastructure challenges.
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center">
-                <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="text-muted-foreground">{benefit}</span>
-              </div>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-card/80 to-card/50 border border-accent/10 hover:border-accent/30 transition-all duration-300 group">
+                  <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                    <CheckCircle className="w-5 h-5 text-accent" />
+                  </div>
+                  <span className="text-sm text-muted-foreground group-hover:text-white transition-colors">{benefit}</span>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready for <span className="text-g2c-green">Rapid Deployment?</span>
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Get your prefabricated container data center deployed in weeks, not months. Contact us today for a custom quote and deployment timeline.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">
-                Get Custom Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="glass" size="lg" asChild>
-              <Link to="/demo">View Demo</Link>
-            </Button>
-          </div>
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          CTA SECTION - Modern Gradient Design
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/10" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+              Ready for{" "}
+              <span className="text-gradient-accent">Rapid Deployment?</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
+              Get your prefabricated container data center deployed in weeks, not months. Contact us today for a custom quote.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact">
+                  Get Custom Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button variant="glass" size="lg" asChild>
+                <Link to="/demo">View Demo</Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
