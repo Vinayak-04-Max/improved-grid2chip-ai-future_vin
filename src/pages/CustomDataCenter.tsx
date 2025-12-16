@@ -461,48 +461,80 @@ const CustomDataCenter = () => {
             </p>
           </motion.div>
 
-          {/* Use Cases Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {idealFor.map((item, index) => {
-              const Icon = item.icon;
-              const isEven = index % 2 === 0;
+          {/* Circular Infographic */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Central Hub */}
+            <motion.div 
+              className="relative mx-auto w-40 h-40 lg:w-48 lg:h-48"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+            >
+              {/* Outer ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '30s' }} />
               
-              return (
-                <motion.div
-                  key={item.title}
-                  className="relative"
-                  initial={{ opacity: 0, x: isEven ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.15 }}
-                >
-                  <div className="p-8 rounded-3xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 group h-full">
-                    <div className="flex items-start gap-6">
-                      {/* Icon */}
-                      <div className={`w-16 h-16 rounded-2xl bg-${item.color}/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
-                        <Icon className={`w-8 h-8 text-${item.color}`} />
+              {/* Inner glow */}
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-xl" />
+              
+              {/* Center content */}
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-card to-card/80 border border-primary/30 flex items-center justify-center">
+                <div className="text-center">
+                  <Building2 className="w-10 h-10 text-primary mx-auto mb-2" />
+                  <span className="text-sm font-semibold text-white">Custom<br/>Solutions</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Orbital Items */}
+            <div className="relative mt-8 lg:mt-0 lg:absolute lg:inset-0">
+              {idealFor.map((item, index) => {
+                const Icon = item.icon;
+                const positions = [
+                  'lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-8',
+                  'lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-16',
+                  'lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-8',
+                  'lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:-translate-x-16'
+                ];
+                const colors = ['primary', 'accent', 'neon-cyan', 'neon-violet'];
+                const color = colors[index];
+                
+                return (
+                  <motion.div
+                    key={item.title}
+                    className={`relative mb-6 lg:mb-0 ${positions[index]}`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.15 }}
+                  >
+                    {/* Connector line (desktop) */}
+                    <div className={`hidden lg:block absolute w-16 h-0.5 bg-gradient-to-r from-${color}/50 to-transparent
+                      ${index === 0 ? 'bottom-0 left-1/2 -translate-x-1/2 rotate-90 origin-bottom' : ''}
+                      ${index === 1 ? 'left-0 top-1/2 -translate-y-1/2 -translate-x-full' : ''}
+                      ${index === 2 ? 'top-0 left-1/2 -translate-x-1/2 -rotate-90 origin-top' : ''}
+                      ${index === 3 ? 'right-0 top-1/2 -translate-y-1/2 translate-x-full rotate-180' : ''}
+                    `} />
+                    
+                    <div className="flex lg:flex-col items-center gap-4 lg:gap-3 p-4 lg:p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 group lg:w-56 lg:text-center">
+                      {/* Icon Circle */}
+                      <div className={`w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-${color}/20 border-2 border-${color}/40 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
+                        <Icon className={`w-7 h-7 lg:w-8 lg:h-8 text-${color}`} />
                       </div>
                       
                       {/* Content */}
-                      <div className="flex-grow">
-                        <h3 className="text-xl font-display font-semibold text-white mb-2">
+                      <div className="flex-grow lg:flex-grow-0">
+                        <h3 className="text-lg font-display font-semibold text-white mb-1">
                           {item.title}
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           {item.description}
                         </p>
-                        
-                        {/* Arrow indicator */}
-                        <div className="flex items-center gap-2 mt-4 text-primary">
-                          <span className="text-sm font-medium">Learn more</span>
-                          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
