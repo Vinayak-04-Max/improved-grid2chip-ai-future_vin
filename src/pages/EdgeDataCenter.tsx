@@ -199,41 +199,47 @@ const EdgeDataCenter = () => {
             </p>
           </motion.div>
 
-          {/* Stats Grid - Infographic Style */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
-            {specifications.map((spec, index) => {
-              const Icon = spec.icon;
-              return (
-                <motion.div
-                  key={spec.label}
-                  className="relative group"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <div className="relative p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 text-center h-full">
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
-                    <div className="relative z-10">
-                      <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-primary/10 flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <div className="text-2xl lg:text-3xl font-bold text-white mb-1">
-                        {spec.value}
-                      </div>
-                      <div className="text-sm text-muted-foreground font-medium">
-                        {spec.label}
-                      </div>
-                      <div className="text-xs text-muted-foreground/70 mt-1">
-                        {spec.description}
+          {/* Stats Carousel - Horizontal Scroll */}
+          <div className="relative">
+            {/* Gradient Fades */}
+            <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            
+            <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory px-4 -mx-4">
+              {specifications.map((spec, index) => {
+                const Icon = spec.icon;
+                return (
+                  <motion.div
+                    key={spec.label}
+                    className="relative group flex-shrink-0 snap-center"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <div className="relative w-44 h-48 p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 text-center flex flex-col justify-center">
+                      {/* Glow Effect */}
+                      <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      
+                      <div className="relative z-10 flex flex-col items-center">
+                        <div className="w-10 h-10 mb-3 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="text-xl font-bold text-white mb-1 leading-tight">
+                          {spec.value}
+                        </div>
+                        <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                          {spec.label}
+                        </div>
+                        <div className="text-[10px] text-muted-foreground/60 mt-1">
+                          {spec.description}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
