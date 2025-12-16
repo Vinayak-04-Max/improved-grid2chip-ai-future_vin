@@ -445,13 +445,13 @@ const CustomDataCenter = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           USE CASE INFOGRAPHIC - Ideal For Section
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 relative overflow-hidden">
+      <section className="py-20 lg:py-32 relative overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.06)_0%,_transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.08)_0%,_transparent_60%)]" />
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-16 lg:mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -464,68 +464,239 @@ const CustomDataCenter = () => {
             </p>
           </motion.div>
 
-          {/* Central Hub */}
-          <motion.div 
-            className="mx-auto w-36 h-36 lg:w-44 lg:h-44 relative mb-12"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl" />
-            <motion.div 
-              className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/40"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.div 
-              className="absolute inset-4 rounded-full border-2 border-dashed border-accent/30"
-              animate={{ rotate: -360 }}
-              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-            />
-            <div className="absolute inset-6 rounded-full bg-gradient-to-br from-card to-card/90 border border-primary/20 flex items-center justify-center shadow-xl">
-              <div className="text-center">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 mx-auto mb-1 rounded-xl bg-gradient-to-br from-primary/25 to-accent/25 flex items-center justify-center">
-                  <Building2 className="w-5 h-5 lg:w-6 lg:h-6 text-primary" />
-                </div>
-                <span className="text-[10px] lg:text-xs font-display font-bold text-white">Custom<br/>Solutions</span>
-              </div>
+          {/* Desktop Orbital Layout */}
+          <div className="hidden lg:block relative" style={{ height: '650px' }}>
+            {/* Orbital Circle Path */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px]">
+              {/* Outer orbit ring */}
+              <motion.div 
+                className="absolute inset-0 rounded-full border-2 border-dashed border-primary/20"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
+              />
+              {/* Inner orbit ring */}
+              <motion.div 
+                className="absolute inset-8 rounded-full border border-accent/15"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+              />
             </div>
-          </motion.div>
 
-          {/* Cards in 2x2 Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {idealFor.map((item, index) => {
-              const Icon = item.icon;
-              const styles = [
-                { border: 'border-primary/30 hover:border-primary/60', iconBg: 'from-primary/25 to-primary/10', iconBorder: 'border-primary/30', iconColor: 'text-primary' },
-                { border: 'border-neon-cyan/30 hover:border-neon-cyan/60', iconBg: 'from-neon-cyan/25 to-neon-cyan/10', iconBorder: 'border-neon-cyan/30', iconColor: 'text-neon-cyan' },
-                { border: 'border-accent/30 hover:border-accent/60', iconBg: 'from-accent/25 to-accent/10', iconBorder: 'border-accent/30', iconColor: 'text-accent' },
-                { border: 'border-neon-violet/30 hover:border-neon-violet/60', iconBg: 'from-neon-violet/25 to-neon-violet/10', iconBorder: 'border-neon-violet/30', iconColor: 'text-neon-violet' }
-              ];
-              const style = styles[index];
-              
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <div className={`group h-full p-6 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border ${style.border} transition-all duration-300 hover:shadow-lg hover:shadow-primary/5`}>
-                    <div className="flex items-start gap-5">
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${style.iconBg} border ${style.iconBorder} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform`}>
-                        <Icon className={`w-8 h-8 ${style.iconColor}`} />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-display font-bold text-white mb-2">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                      </div>
+            {/* Central Hub */}
+            <motion.div 
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-44 h-44 z-30"
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/25 to-accent/25 blur-2xl animate-pulse" />
+              <motion.div 
+                className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/50"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div 
+                className="absolute inset-4 rounded-full border-2 border-dashed border-accent/40"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              />
+              <div className="absolute inset-6 rounded-full bg-gradient-to-br from-card via-card/95 to-card/90 border border-primary/30 flex items-center justify-center shadow-2xl">
+                <div className="text-center">
+                  <div className="w-14 h-14 mx-auto mb-2 rounded-xl bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
+                    <Building2 className="w-7 h-7 text-primary" />
+                  </div>
+                  <span className="text-sm font-display font-bold text-white">Custom<br/>Solutions</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Rotating Orbital Container with 4 Items */}
+            <motion.div 
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px]"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            >
+              {/* Connecting lines from center to each orbital position */}
+              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 520 520">
+                <defs>
+                  <linearGradient id="connectorGrad1" x1="50%" y1="50%" x2="50%" y2="0%">
+                    <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.1" />
+                  </linearGradient>
+                  <linearGradient id="connectorGrad2" x1="50%" y1="50%" x2="100%" y2="50%">
+                    <stop offset="0%" stopColor="hsl(var(--neon-cyan))" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="hsl(var(--neon-cyan))" stopOpacity="0.1" />
+                  </linearGradient>
+                  <linearGradient id="connectorGrad3" x1="50%" y1="50%" x2="50%" y2="100%">
+                    <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0.1" />
+                  </linearGradient>
+                  <linearGradient id="connectorGrad4" x1="50%" y1="50%" x2="0%" y2="50%">
+                    <stop offset="0%" stopColor="hsl(var(--neon-violet))" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="hsl(var(--neon-violet))" stopOpacity="0.1" />
+                  </linearGradient>
+                </defs>
+                <line x1="260" y1="260" x2="260" y2="60" stroke="url(#connectorGrad1)" strokeWidth="2" />
+                <line x1="260" y1="260" x2="460" y2="260" stroke="url(#connectorGrad2)" strokeWidth="2" />
+                <line x1="260" y1="260" x2="260" y2="460" stroke="url(#connectorGrad3)" strokeWidth="2" />
+                <line x1="260" y1="260" x2="60" y2="260" stroke="url(#connectorGrad4)" strokeWidth="2" />
+              </svg>
+
+              {/* Orbital Item 1 - Top (0°) */}
+              <motion.div 
+                className="absolute left-1/2 -translate-x-1/2 -top-6"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-[180px] p-4 rounded-xl bg-gradient-to-br from-card/95 to-card/85 border border-primary/40 shadow-lg shadow-primary/10 backdrop-blur-sm">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/30 to-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0">
+                      <TrendingUp className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-display font-bold text-white">{idealFor[0].title}</h4>
+                      <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">{idealFor[0].description}</p>
                     </div>
                   </div>
-                </motion.div>
-              );
-            })}
+                </div>
+              </motion.div>
+
+              {/* Orbital Item 2 - Right (90°) */}
+              <motion.div 
+                className="absolute top-1/2 -translate-y-1/2 -right-6"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-[180px] p-4 rounded-xl bg-gradient-to-br from-card/95 to-card/85 border border-neon-cyan/40 shadow-lg shadow-neon-cyan/10 backdrop-blur-sm">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-neon-cyan/30 to-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center flex-shrink-0">
+                      <Cloud className="w-6 h-6 text-neon-cyan" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-display font-bold text-white">{idealFor[1].title}</h4>
+                      <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">{idealFor[1].description}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Orbital Item 3 - Bottom (180°) */}
+              <motion.div 
+                className="absolute left-1/2 -translate-x-1/2 -bottom-6"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-[180px] p-4 rounded-xl bg-gradient-to-br from-card/95 to-card/85 border border-accent/40 shadow-lg shadow-accent/10 backdrop-blur-sm">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/30 to-accent/10 border border-accent/30 flex items-center justify-center flex-shrink-0">
+                      <Building2 className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-display font-bold text-white">{idealFor[2].title}</h4>
+                      <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">{idealFor[2].description}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Orbital Item 4 - Left (270°) */}
+              <motion.div 
+                className="absolute top-1/2 -translate-y-1/2 -left-6"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-[180px] p-4 rounded-xl bg-gradient-to-br from-card/95 to-card/85 border border-neon-violet/40 shadow-lg shadow-neon-violet/10 backdrop-blur-sm">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-neon-violet/30 to-neon-violet/10 border border-neon-violet/30 flex items-center justify-center flex-shrink-0">
+                      <Landmark className="w-6 h-6 text-neon-violet" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-display font-bold text-white">{idealFor[3].title}</h4>
+                      <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">{idealFor[3].description}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Floating particles on orbit */}
+            <motion.div 
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] pointer-events-none"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            >
+              {[0, 45, 135, 225, 315].map((deg, i) => (
+                <div 
+                  key={i}
+                  className="absolute w-2 h-2 rounded-full bg-primary/50"
+                  style={{
+                    top: '50%',
+                    left: '50%',
+                    transform: `rotate(${deg}deg) translateX(260px) translateY(-50%)`
+                  }}
+                />
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="lg:hidden">
+            {/* Central Hub Mobile */}
+            <motion.div 
+              className="mx-auto w-32 h-32 relative mb-8"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-xl" />
+              <motion.div 
+                className="absolute inset-0 rounded-full border-2 border-dashed border-primary/40"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-card to-card/90 border border-primary/20 flex items-center justify-center">
+                <div className="text-center">
+                  <Building2 className="w-6 h-6 text-primary mx-auto mb-1" />
+                  <span className="text-[9px] font-display font-bold text-white">Custom<br/>Solutions</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Mobile Cards */}
+            <div className="grid grid-cols-1 gap-4">
+              {idealFor.map((item, index) => {
+                const Icon = item.icon;
+                const styles = [
+                  { border: 'border-primary/40', iconBg: 'from-primary/25 to-primary/10', iconColor: 'text-primary' },
+                  { border: 'border-neon-cyan/40', iconBg: 'from-neon-cyan/25 to-neon-cyan/10', iconColor: 'text-neon-cyan' },
+                  { border: 'border-accent/40', iconBg: 'from-accent/25 to-accent/10', iconColor: 'text-accent' },
+                  { border: 'border-neon-violet/40', iconBg: 'from-neon-violet/25 to-neon-violet/10', iconColor: 'text-neon-violet' }
+                ];
+                const style = styles[index];
+                
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <div className={`p-5 rounded-xl bg-gradient-to-br from-card/95 to-card/80 border ${style.border}`}>
+                      <div className="flex items-center gap-4">
+                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${style.iconBg} flex items-center justify-center flex-shrink-0`}>
+                          <Icon className={`w-7 h-7 ${style.iconColor}`} />
+                        </div>
+                        <div>
+                          <h3 className="text-base font-display font-bold text-white mb-1">{item.title}</h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
