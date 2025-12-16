@@ -1,316 +1,508 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Building2, Cpu, Shield, Zap, ArrowRight, CheckCircle, ClipboardCheck, Layers, Settings, HardHat, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import { 
+  Building2, Cpu, Shield, Zap, ArrowRight, CheckCircle, ClipboardCheck, 
+  Layers, Settings, HardHat, MapPin, Server, Thermometer, Lock, 
+  Wifi, Leaf, Award, ChevronRight, CircleDot, Factory, Cloud, Building, Landmark
+} from "lucide-react";
+import heroImage from "@/assets/hero-ai-datacenter.jpg";
 
 const CustomDataCenter = () => {
   const advantages = [
     {
       title: "Precision Engineering",
-      description: "Every aspect—from power and cooling to layout and security—is tailored to your specific workload and business goals.",
-      icon: Settings
+      description: "Every aspect tailored to your specific workload and business goals",
+      icon: Settings,
+      metric: "100%",
+      color: "from-primary to-primary/60"
     },
     {
-      title: "Optimized Performance & Efficiency",
-      description: "Benefit from a design that maximizes performance and minimizes PUE (Power Usage Effectiveness) for your exact applications.",
-      icon: Cpu
+      title: "Optimized Efficiency",
+      description: "Maximizes performance and minimizes PUE for your applications",
+      icon: Cpu,
+      metric: "PUE 1.2",
+      color: "from-accent to-accent/60"
     },
     {
-      title: "Future-Proof Scalability",
-      description: "Build the foundation for future growth with a scalable, modular design that can evolve with your technology roadmap.",
-      icon: Layers
+      title: "Future-Proof Design",
+      description: "Scalable, modular architecture that evolves with your roadmap",
+      icon: Layers,
+      metric: "Scalable",
+      color: "from-neon-cyan to-neon-cyan/60"
     },
     {
-      title: "End-to-End Project Management",
-      description: "Our dedicated team manages the entire lifecycle, from initial design and site selection to construction and final commissioning.",
-      icon: HardHat
+      title: "End-to-End Management",
+      description: "Complete lifecycle management from design to commissioning",
+      icon: HardHat,
+      metric: "Full Service",
+      color: "from-neon-violet to-neon-violet/60"
     },
     {
-      title: "Compliance & Certification",
-      description: "We ensure your facility is designed and built to meet all relevant industry standards and certifications, such as Uptime Institute Tiers.",
-      icon: ClipboardCheck
+      title: "Compliance Ready",
+      description: "Built to meet Uptime Institute Tiers and industry standards",
+      icon: ClipboardCheck,
+      metric: "Certified",
+      color: "from-primary to-primary/60"
     },
     {
-      title: "Total Control & Security",
-      description: "Gain complete control over your critical infrastructure with a facility that meets your exact physical and digital security requirements.",
-      icon: Shield
+      title: "Total Security",
+      description: "Complete control over physical and digital security",
+      icon: Shield,
+      metric: "Multi-Layer",
+      color: "from-accent to-accent/60"
     }
   ];
 
   const processSteps = [
     {
-      step: "1",
+      step: "01",
       title: "Consultation & Design",
       description: "Comprehensive needs analysis and blueprint creation tailored to your requirements.",
-      icon: ClipboardCheck
+      icon: ClipboardCheck,
+      duration: "2-4 weeks"
     },
     {
-      step: "2",
+      step: "02",
       title: "Site Preparation",
-      description: "Site evaluation, permitting, and ground preparation for construction readiness.",
-      icon: MapPin
+      description: "Site evaluation, permitting, and ground preparation for construction.",
+      icon: MapPin,
+      duration: "4-8 weeks"
     },
     {
-      step: "3",
+      step: "03",
       title: "Construction",
-      description: "Structural build-out with core mechanical and electrical systems installation.",
-      icon: HardHat
+      description: "Structural build-out with core mechanical and electrical systems.",
+      icon: HardHat,
+      duration: "12-24 weeks"
     },
     {
-      step: "4",
+      step: "04",
       title: "Integration",
-      description: "Complete installation of racks, cabling, security, and monitoring systems.",
-      icon: Layers
+      description: "Installation of racks, cabling, security, and monitoring systems.",
+      icon: Layers,
+      duration: "4-8 weeks"
     },
     {
-      step: "5",
+      step: "05",
       title: "Commissioning",
       description: "Rigorous testing, staff training, and certified operational handover.",
-      icon: CheckCircle
+      icon: CheckCircle,
+      duration: "2-4 weeks"
     }
   ];
 
   const customizations = [
-    { label: "Power", value: "N, N+1, 2N, 2N+1 Redundancy" },
-    { label: "Cooling", value: "Air, Liquid, or Hybrid Cooling" },
-    { label: "Density", value: "Low to High-Density Racks" },
-    { label: "Security", value: "Multi-Layer Access Control" },
-    { label: "Connectivity", value: "Carrier-Neutral Design" },
-    { label: "Monitoring", value: "Integrated BMS/DCIM" },
-    { label: "Sustainability", value: "Green Energy Options" },
-    { label: "Tier Level", value: "Uptime Tier I, II, III, or IV" }
+    { label: "Power Redundancy", value: "N, N+1, 2N, 2N+1", icon: Zap, description: "Choose your redundancy level" },
+    { label: "Cooling Systems", value: "Air / Liquid / Hybrid", icon: Thermometer, description: "Optimized thermal management" },
+    { label: "Rack Density", value: "Low to High Density", icon: Server, description: "Flexible power per rack" },
+    { label: "Security Layers", value: "Multi-Layer Access", icon: Lock, description: "Biometric & surveillance" },
+    { label: "Connectivity", value: "Carrier-Neutral", icon: Wifi, description: "Multiple provider options" },
+    { label: "Monitoring", value: "BMS / DCIM", icon: Cpu, description: "Integrated management" },
+    { label: "Sustainability", value: "Green Energy", icon: Leaf, description: "Renewable power options" },
+    { label: "Tier Level", value: "Tier I - IV", icon: Award, description: "Uptime Institute certified" }
   ];
 
   const idealFor = [
     {
       title: "Large Enterprises",
-      description: "A flagship data center to consolidate IT operations and support long-term growth."
+      description: "A flagship data center to consolidate IT operations and support long-term growth.",
+      icon: Building2,
+      color: "primary"
     },
     {
-      title: "Hyperscalers & Cloud Providers",
-      description: "Massive, highly efficient facilities built for cloud-scale infrastructure."
+      title: "Hyperscalers & Cloud",
+      description: "Massive, highly efficient facilities built for cloud-scale infrastructure.",
+      icon: Cloud,
+      color: "accent"
     },
     {
-      title: "High-Performance Computing (HPC)",
-      description: "Specialized environments for research, simulation, and data-intensive workloads."
+      title: "HPC & Research",
+      description: "Specialized environments for research, simulation, and data-intensive workloads.",
+      icon: Factory,
+      color: "neon-cyan"
     },
     {
-      title: "Government & Public Sector",
-      description: "Secure, compliant, and highly resilient facilities for mission-critical services."
+      title: "Government & Public",
+      description: "Secure, compliant facilities for mission-critical services.",
+      icon: Landmark,
+      color: "neon-violet"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-hero">
-        <div className="absolute inset-0 tech-grid opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
-            Custom Solutions
-          </Badge>
-          <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Custom-Build <span className="text-g2c-blue">Data Centers</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Engineered from the ground up to meet your unique operational, performance, and scalability requirements. We transform your vision into a state-of-the-art, mission-critical facility.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">
-                Request Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="glass" size="lg" asChild>
-              <Link to="/demo">Explore Our Process</Link>
-            </Button>
+    <div className="min-h-screen bg-background">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          HERO SECTION - Full Width Background with Overlay
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt="Custom Data Center Infrastructure"
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <motion.div 
+            className="max-w-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
+              Custom Solutions
+            </Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
+              Custom-Build Data Centers
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+              Engineered from the ground up to meet your unique operational, performance, and scalability requirements. Transform your vision into a state-of-the-art facility.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact">
+                  Request Consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button variant="glass" size="lg" asChild>
+                <Link to="/demo">Explore Our Process</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Animated Accent Line */}
+        <motion.div 
+          className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-neon-cyan"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+        />
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          CUSTOMIZATION CAROUSEL - Auto Moving Stats
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-card/30" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Infrastructure <span className="text-gradient-primary">Customizations</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Every aspect of your data center, tailored to your exact specifications
+            </p>
+          </motion.div>
+
+          {/* Auto-Moving Carousel */}
+          <div className="relative overflow-hidden">
+            {/* Gradient Fades */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            
+            <motion.div 
+              className="flex gap-6"
+              animate={{ x: [0, -1600] }}
+              transition={{ 
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {/* Double the items for seamless loop */}
+              {[...customizations, ...customizations].map((custom, index) => {
+                const Icon = custom.icon;
+                return (
+                  <div
+                    key={`${custom.label}-${index}`}
+                    className="relative group flex-shrink-0"
+                  >
+                    <div className="relative w-48 h-52 p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 text-center flex flex-col justify-center">
+                      <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      
+                      <div className="relative z-10 flex flex-col items-center">
+                        <div className="w-12 h-12 mb-3 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-6 h-6 text-primary" />
+                        </div>
+                        <div className="text-lg font-bold text-white mb-1 leading-tight">
+                          {custom.value}
+                        </div>
+                        <div className="text-xs text-primary font-medium uppercase tracking-wide">
+                          {custom.label}
+                        </div>
+                        <div className="text-[10px] text-muted-foreground/60 mt-2">
+                          {custom.description}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Advantages */}
-      <section className="py-20 lg:py-32">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          FEATURE INFOGRAPHIC - Advantages with Visual Layout
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              The Advantages of a <span className="text-g2c-green">Custom-Build</span>
+          <motion.div 
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Custom-Build <span className="text-gradient-accent">Advantages</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover the unparalleled benefits of a data center designed exclusively for your business needs.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Unparalleled benefits of a data center designed exclusively for you
             </p>
-          </div>
+          </motion.div>
 
+          {/* Hexagonal Feature Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {advantages.map((advantage, index) => {
               const Icon = advantage.icon;
-              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
-                <Card key={index} className="bg-gradient-card border-primary/20">
-                  <CardHeader>
-                    <div className={`w-16 h-16 mb-4 ${bgColor} rounded-xl flex items-center justify-center`}>
+                <motion.div
+                  key={advantage.title}
+                  className="relative"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="relative p-8 rounded-3xl bg-gradient-to-br from-card/60 to-transparent border border-primary/10 hover:border-primary/30 transition-all duration-500 group h-full">
+                    {/* Metric Badge */}
+                    <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full text-xs font-bold text-white"
+                      style={{ backgroundImage: `linear-gradient(to right, hsl(var(--${index % 2 === 0 ? 'primary' : 'accent'})), hsl(var(--${index % 2 === 0 ? 'primary' : 'accent'}) / 0.7))` }}>
+                      {advantage.metric}
+                    </div>
+                    
+                    {/* Icon */}
+                    <div className={`w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br ${advantage.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
-                    <CardTitle>{advantage.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{advantage.description}</p>
-                  </CardContent>
-                </Card>
+                    
+                    <h3 className="text-xl font-display font-semibold text-white mb-3">
+                      {advantage.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {advantage.description}
+                    </p>
+                  </div>
+                </motion.div>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* Custom-Build Process */}
-      <section className="relative py-16 lg:py-24 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Title Section */}
-          <div className="text-center mb-16">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          PROCESS INFOGRAPHIC - Timeline with Duration
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
-              Our <span className="text-primary">Custom-Build Process</span>
+              Our <span className="text-gradient-primary">Build Process</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Five proven steps to deliver your data center on time and on budget.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Five proven steps to deliver your data center on time and on budget
             </p>
-          </div>
+          </motion.div>
 
-          {/* Compact Timeline */}
-          <div className="relative max-w-4xl mx-auto">
-            {/* Solid Timeline Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary transform -translate-x-1/2 hidden lg:block" />
+          {/* Process Timeline */}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Horizontal Line (Desktop) */}
+            <div className="hidden lg:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-neon-cyan" />
+            
+            {/* Vertical Line (Mobile) */}
+            <div className="lg:hidden absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-neon-cyan" />
 
-            {/* Steps */}
-            <div className="space-y-12 lg:space-y-16">
-              {processSteps.map((item, index) => {
-                const Icon = item.icon;
-                const isEven = index % 2 === 0;
-                const iconBg = isEven ? 'bg-primary/10' : 'bg-accent/10';
-                const iconColor = isEven ? 'text-primary' : 'text-accent';
-
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-4">
+              {processSteps.map((step, index) => {
+                const Icon = step.icon;
                 return (
-                  <div key={index} className="relative">
-                    {/* Step Circle */}
-                    <div className="absolute left-1/2 top-8 transform -translate-x-1/2 -translate-y-1/2 hidden lg:flex">
-                      <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center border-4 border-background shadow-lg z-10">
-                        <span className="text-white text-xl font-bold">{item.step}</span>
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-                      <div className={`${isEven ? 'lg:pr-12' : 'lg:pl-12 lg:col-start-2'}`}>
-                        {/* Mobile step number */}
-                        <div className="flex items-center gap-3 mb-3 lg:hidden">
-                          <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                            <span className="text-white font-bold">{item.step}</span>
-                          </div>
-                          <h3 className="text-xl font-bold">{item.title}</h3>
-                        </div>
-
-                        {/* Desktop title with icon */}
-                        <div className={`hidden lg:flex items-center gap-3 mb-4 ${isEven ? 'justify-end' : ''}`}>
-                          <div className={`w-12 h-12 ${iconBg} rounded-lg flex items-center justify-center ${isEven ? 'order-2' : ''}`}>
-                            <Icon className={`w-6 h-6 ${iconColor}`} />
-                          </div>
-                          <h3 className="text-2xl font-bold">{item.title}</h3>
-                        </div>
-
-                        {/* Description */}
-                        <div className={`flex gap-3 p-4 rounded-xl bg-card border border-primary/20 ${isEven ? 'lg:flex-row-reverse lg:text-right' : ''}`}>
-                          <Icon className={`w-5 h-5 ${iconColor} mt-0.5 flex-shrink-0 lg:hidden`} />
-                          <p className="text-muted-foreground leading-relaxed">
-                            {item.description}
-                          </p>
-                        </div>
+                  <motion.div
+                    key={step.step}
+                    className="relative"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.15 }}
+                  >
+                    {/* Step Node */}
+                    <div className="flex lg:flex-col items-start lg:items-center gap-6 lg:gap-0">
+                      {/* Number Circle */}
+                      <div className="relative z-10 w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-background border-4 border-primary flex items-center justify-center flex-shrink-0">
+                        <span className="text-lg lg:text-xl font-bold text-primary">{step.step}</span>
                       </div>
 
-                      <div className="hidden lg:block" />
+                      {/* Content */}
+                      <div className="lg:mt-8 lg:text-center flex-grow">
+                        <div className="flex items-center lg:justify-center gap-2 mb-2">
+                          <Icon className="w-5 h-5 text-primary" />
+                          <h3 className="text-lg font-display font-semibold text-white">
+                            {step.title}
+                          </h3>
+                        </div>
+                        <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
+                          {step.description}
+                        </p>
+                        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                          {step.duration}
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
 
             {/* Final Badge */}
-            <div className="mt-12 flex justify-center">
-              <div className="px-6 py-3 bg-accent rounded-full shadow-lg">
-                <div className="flex items-center gap-2 text-white">
-                  <CheckCircle className="w-5 h-5" />
-                  <span className="font-semibold">Data Center Ready</span>
+            <motion.div 
+              className="mt-16 flex justify-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+            >
+              <div className="px-8 py-4 bg-gradient-to-r from-accent to-accent/80 rounded-full shadow-lg">
+                <div className="flex items-center gap-3 text-white">
+                  <CheckCircle className="w-6 h-6" />
+                  <span className="font-semibold text-lg">Data Center Ready</span>
                 </div>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          USE CASE INFOGRAPHIC - Ideal For Section
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Ideal <span className="text-gradient-accent">For</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Custom-build solutions tailored for enterprise-scale requirements
+            </p>
+          </motion.div>
+
+          {/* Use Cases Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {idealFor.map((item, index) => {
+              const Icon = item.icon;
+              const isEven = index % 2 === 0;
+              
+              return (
+                <motion.div
+                  key={item.title}
+                  className="relative"
+                  initial={{ opacity: 0, x: isEven ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.15 }}
+                >
+                  <div className="p-8 rounded-3xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 group h-full">
+                    <div className="flex items-start gap-6">
+                      {/* Icon */}
+                      <div className={`w-16 h-16 rounded-2xl bg-${item.color}/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
+                        <Icon className={`w-8 h-8 text-${item.color}`} />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="flex-grow">
+                        <h3 className="text-xl font-display font-semibold text-white mb-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {item.description}
+                        </p>
+                        
+                        {/* Arrow indicator */}
+                        <div className="flex items-center gap-2 mt-4 text-primary">
+                          <span className="text-sm font-medium">Learn more</span>
+                          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          CTA SECTION - Modern Gradient Design
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[120px]" />
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+              Ready to Build Your{" "}
+              <span className="text-gradient-primary">Custom Data Center?</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
+              Let's partner to engineer a data center that serves as the foundation for your future success.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact">
+                  Start Your Project
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button variant="glass" size="lg" asChild>
+                <Link to="/demo">See Our Portfolio</Link>
+              </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Key Infrastructure Customizations */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Key Infrastructure <span className="text-g2c-green">Customizations</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {customizations.map((custom, index) => (
-              <Card key={index} className="bg-gradient-card border-primary/20">
-                <CardContent className="p-6 text-center">
-                  <div className="font-semibold text-primary mb-2">{custom.label}</div>
-                  <div className="text-sm text-muted-foreground">{custom.value}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Ideal For */}
-      <section className="py-20 lg:py-32 bg-gradient-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Ideal <span className="text-g2c-blue">For</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {idealFor.map((item, index) => (
-              <Card key={index} className="bg-card border-primary/20">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-primary mr-3" />
-                    {item.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground"><span className="font-semibold">Need:</span> {item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Build Your <span className="text-g2c-green">Data Center?</span>
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Let's partner to engineer a custom data center that serves as the foundation for your future success. Contact our experts today.
-          </p>
-          <Button variant="hero" size="lg" asChild>
-            <Link to="/contact">
-              Start Your Project
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          </motion.div>
         </div>
       </section>
     </div>
