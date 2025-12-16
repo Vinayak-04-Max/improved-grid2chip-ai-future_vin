@@ -338,47 +338,85 @@ const CustomDataCenter = () => {
             </p>
           </motion.div>
 
-          {/* Process Timeline */}
-          <div className="relative max-w-5xl mx-auto">
-            {/* Horizontal Line (Desktop) */}
-            <div className="hidden lg:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-neon-cyan" />
-            
-            {/* Vertical Line (Mobile) */}
-            <div className="lg:hidden absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-neon-cyan" />
+          {/* Vertical Roadmap Infographic */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Central Vertical Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-gradient-to-b from-primary via-accent to-neon-cyan" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-4">
+            <div className="space-y-0">
               {processSteps.map((step, index) => {
                 const Icon = step.icon;
+                const isEven = index % 2 === 0;
+                
                 return (
                   <motion.div
                     key={step.step}
                     className="relative"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.15 }}
                   >
-                    {/* Step Node */}
-                    <div className="flex lg:flex-col items-start lg:items-center gap-6 lg:gap-0">
-                      {/* Number Circle */}
-                      <div className="relative z-10 w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-background border-4 border-primary flex items-center justify-center flex-shrink-0">
-                        <span className="text-lg lg:text-xl font-bold text-primary">{step.step}</span>
+                    {/* Connector Line */}
+                    <div className={`absolute top-1/2 w-12 h-0.5 bg-gradient-to-r ${isEven ? 'right-1/2 mr-6 from-transparent to-primary' : 'left-1/2 ml-6 from-primary to-transparent'}`} />
+                    
+                    {/* Center Node */}
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                      <div className="w-14 h-14 rounded-full bg-background border-4 border-primary flex items-center justify-center shadow-lg shadow-primary/20">
+                        <span className="text-xl font-bold text-primary">{step.step}</span>
+                      </div>
+                    </div>
+
+                    {/* Content Card */}
+                    <div className={`grid grid-cols-2 gap-24 py-8 ${isEven ? '' : ''}`}>
+                      {/* Left side content (for even steps) */}
+                      <div className={`${isEven ? 'text-right pr-8' : 'opacity-0 pointer-events-none'}`}>
+                        {isEven && (
+                          <div className="p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/20 hover:border-primary/40 transition-all duration-300 group">
+                            {/* Duration Badge */}
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20 mb-4">
+                              <span>{step.duration}</span>
+                            </div>
+                            
+                            <div className="flex items-center justify-end gap-3 mb-3">
+                              <h3 className="text-xl font-display font-semibold text-white">
+                                {step.title}
+                              </h3>
+                              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <Icon className="w-6 h-6 text-primary" />
+                              </div>
+                            </div>
+                            
+                            <p className="text-muted-foreground leading-relaxed">
+                              {step.description}
+                            </p>
+                          </div>
+                        )}
                       </div>
 
-                      {/* Content */}
-                      <div className="lg:mt-8 lg:text-center flex-grow">
-                        <div className="flex items-center lg:justify-center gap-2 mb-2">
-                          <Icon className="w-5 h-5 text-primary" />
-                          <h3 className="text-lg font-display font-semibold text-white">
-                            {step.title}
-                          </h3>
-                        </div>
-                        <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
-                          {step.description}
-                        </p>
-                        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
-                          {step.duration}
-                        </span>
+                      {/* Right side content (for odd steps) */}
+                      <div className={`${!isEven ? 'text-left pl-8' : 'opacity-0 pointer-events-none'}`}>
+                        {!isEven && (
+                          <div className="p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-accent/20 hover:border-accent/40 transition-all duration-300 group">
+                            {/* Duration Badge */}
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20 mb-4">
+                              <span>{step.duration}</span>
+                            </div>
+                            
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <Icon className="w-6 h-6 text-accent" />
+                              </div>
+                              <h3 className="text-xl font-display font-semibold text-white">
+                                {step.title}
+                              </h3>
+                            </div>
+                            
+                            <p className="text-muted-foreground leading-relaxed">
+                              {step.description}
+                            </p>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </motion.div>
@@ -388,12 +426,12 @@ const CustomDataCenter = () => {
 
             {/* Final Badge */}
             <motion.div 
-              className="mt-16 flex justify-center"
+              className="relative z-20 flex justify-center pt-8"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <div className="px-8 py-4 bg-gradient-to-r from-accent to-accent/80 rounded-full shadow-lg">
+              <div className="px-8 py-4 bg-gradient-to-r from-accent to-primary rounded-full shadow-lg shadow-accent/20">
                 <div className="flex items-center gap-3 text-white">
                   <CheckCircle className="w-6 h-6" />
                   <span className="font-semibold text-lg">Data Center Ready</span>
