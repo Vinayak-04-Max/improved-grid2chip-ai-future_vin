@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { 
   Building2, Cpu, Shield, Zap, ArrowRight, CheckCircle, ClipboardCheck, 
   Layers, Settings, HardHat, MapPin, Server, Thermometer, Lock, 
-  Wifi, Leaf, Award, ChevronRight, CircleDot, Factory, Cloud, Building, Landmark
+  Wifi, Leaf, Award, ChevronRight, CircleDot, Factory, Cloud, Building, Landmark, TrendingUp
 } from "lucide-react";
 import heroImage from "@/assets/hero-ai-datacenter.jpg";
 
@@ -462,128 +462,180 @@ const CustomDataCenter = () => {
           </motion.div>
 
           {/* Circular Infographic */}
-          <div className="relative max-w-5xl mx-auto min-h-[600px] lg:min-h-[700px]">
-            {/* Central Hub */}
-            <motion.div 
-              className="relative mx-auto w-44 h-44 lg:w-56 lg:h-56 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 z-10"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-            >
-              {/* Outer spinning dashed ring */}
-              <div 
-                className="absolute inset-0 rounded-full border-4 border-dashed border-primary/50"
-                style={{ 
-                  animation: 'spin 25s linear infinite'
-                }} 
-              />
-              
-              {/* Second ring - counter spin */}
-              <div 
-                className="absolute inset-3 rounded-full border-2 border-dashed border-accent/40"
-                style={{ 
-                  animation: 'spin 20s linear infinite reverse'
-                }} 
-              />
-              
-              {/* Inner glow */}
-              <div className="absolute inset-6 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 blur-xl" />
-              
-              {/* Center content */}
-              <div className="absolute inset-6 rounded-full bg-gradient-to-br from-card via-card/90 to-card/80 border-2 border-primary/40 flex items-center justify-center shadow-2xl">
-                <div className="text-center">
-                  <div className="w-14 h-14 lg:w-16 lg:h-16 mx-auto mb-2 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
-                    <Building2 className="w-8 h-8 lg:w-10 lg:h-10 text-primary" />
+          <div className="relative max-w-6xl mx-auto">
+            {/* Desktop Layout */}
+            <div className="hidden lg:block relative" style={{ height: '650px' }}>
+              {/* Central Hub */}
+              <motion.div 
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 z-20"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+              >
+                {/* Outer spinning dashed ring */}
+                <div 
+                  className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/60"
+                  style={{ animation: 'spin 25s linear infinite' }} 
+                />
+                
+                {/* Second ring - counter spin */}
+                <div 
+                  className="absolute inset-4 rounded-full border-2 border-dashed border-accent/50"
+                  style={{ animation: 'spin 20s linear infinite reverse' }} 
+                />
+                
+                {/* Inner glow */}
+                <div className="absolute inset-8 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-lg" />
+                
+                {/* Center content */}
+                <div className="absolute inset-8 rounded-full bg-gradient-to-br from-card to-card/90 border border-primary/30 flex items-center justify-center">
+                  <div className="text-center">
+                    <Building2 className="w-10 h-10 text-primary mx-auto mb-1" />
+                    <span className="text-sm font-display font-bold text-white">Custom<br/>Solutions</span>
                   </div>
-                  <span className="text-sm lg:text-base font-display font-bold text-white">Custom<br/>Solutions</span>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Connector Lines (Desktop only) */}
-            <svg className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 800 700">
-              {/* Top connector */}
-              <line x1="400" y1="350" x2="400" y2="120" stroke="url(#lineGradient1)" strokeWidth="2" strokeDasharray="8 4" />
-              {/* Right connector */}
-              <line x1="400" y1="350" x2="650" y2="350" stroke="url(#lineGradient2)" strokeWidth="2" strokeDasharray="8 4" />
-              {/* Bottom connector */}
-              <line x1="400" y1="350" x2="400" y2="580" stroke="url(#lineGradient3)" strokeWidth="2" strokeDasharray="8 4" />
-              {/* Left connector */}
-              <line x1="400" y1="350" x2="150" y2="350" stroke="url(#lineGradient4)" strokeWidth="2" strokeDasharray="8 4" />
-              
-              {/* Gradient definitions */}
-              <defs>
-                <linearGradient id="lineGradient1" x1="0%" y1="100%" x2="0%" y2="0%">
-                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.1" />
-                </linearGradient>
-                <linearGradient id="lineGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0.1" />
-                </linearGradient>
-                <linearGradient id="lineGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="hsl(var(--neon-cyan))" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="hsl(var(--neon-cyan))" stopOpacity="0.1" />
-                </linearGradient>
-                <linearGradient id="lineGradient4" x1="100%" y1="0%" x2="0%" y2="0%">
-                  <stop offset="0%" stopColor="hsl(var(--neon-violet))" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="hsl(var(--neon-violet))" stopOpacity="0.1" />
-                </linearGradient>
-              </defs>
-            </svg>
+              {/* Connector Lines */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="xMidYMid meet">
+                {/* Top connector */}
+                <line x1="50%" y1="50%" x2="50%" y2="12%" stroke="url(#grad1)" strokeWidth="2" strokeDasharray="6 4" />
+                {/* Right connector */}
+                <line x1="50%" y1="50%" x2="88%" y2="50%" stroke="url(#grad2)" strokeWidth="2" strokeDasharray="6 4" />
+                {/* Bottom connector */}
+                <line x1="50%" y1="50%" x2="50%" y2="88%" stroke="url(#grad3)" strokeWidth="2" strokeDasharray="6 4" />
+                {/* Left connector */}
+                <line x1="50%" y1="50%" x2="12%" y2="50%" stroke="url(#grad4)" strokeWidth="2" strokeDasharray="6 4" />
+                
+                <defs>
+                  <linearGradient id="grad1" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="30%" stopColor="hsl(var(--primary))" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+                  </linearGradient>
+                  <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="30%" stopColor="hsl(var(--neon-cyan))" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="hsl(var(--neon-cyan))" stopOpacity="0" />
+                  </linearGradient>
+                  <linearGradient id="grad3" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="30%" stopColor="hsl(var(--accent))" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0" />
+                  </linearGradient>
+                  <linearGradient id="grad4" x1="100%" y1="0%" x2="0%" y2="0%">
+                    <stop offset="30%" stopColor="hsl(var(--neon-violet))" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="hsl(var(--neon-violet))" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
 
-            {/* Orbital Items */}
-            <div className="mt-8 lg:mt-0 space-y-6 lg:space-y-0">
+              {/* Top Card - HPC & Research */}
+              <motion.div 
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-64"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/70 backdrop-blur-sm border border-primary/40 hover:border-primary/70 transition-all duration-300 group text-center">
+                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-primary/20 border-2 border-primary/50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <TrendingUp className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-display font-semibold text-white mb-1">{idealFor[0].title}</h3>
+                  <p className="text-sm text-muted-foreground">{idealFor[0].description}</p>
+                </div>
+              </motion.div>
+
+              {/* Right Card - Hyperscalers */}
+              <motion.div 
+                className="absolute top-1/2 right-0 -translate-y-1/2 w-64"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/70 backdrop-blur-sm border border-neon-cyan/40 hover:border-neon-cyan/70 transition-all duration-300 group text-center">
+                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-neon-cyan/20 border-2 border-neon-cyan/50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Cloud className="w-8 h-8 text-neon-cyan" />
+                  </div>
+                  <h3 className="text-lg font-display font-semibold text-white mb-1">{idealFor[1].title}</h3>
+                  <p className="text-sm text-muted-foreground">{idealFor[1].description}</p>
+                </div>
+              </motion.div>
+
+              {/* Bottom Card - Large Enterprises */}
+              <motion.div 
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64"
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/70 backdrop-blur-sm border border-accent/40 hover:border-accent/70 transition-all duration-300 group text-center">
+                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-accent/20 border-2 border-accent/50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Building2 className="w-8 h-8 text-accent" />
+                  </div>
+                  <h3 className="text-lg font-display font-semibold text-white mb-1">{idealFor[2].title}</h3>
+                  <p className="text-sm text-muted-foreground">{idealFor[2].description}</p>
+                </div>
+              </motion.div>
+
+              {/* Left Card - Government */}
+              <motion.div 
+                className="absolute top-1/2 left-0 -translate-y-1/2 w-64"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/70 backdrop-blur-sm border border-neon-violet/40 hover:border-neon-violet/70 transition-all duration-300 group text-center">
+                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-neon-violet/20 border-2 border-neon-violet/50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Landmark className="w-8 h-8 text-neon-violet" />
+                  </div>
+                  <h3 className="text-lg font-display font-semibold text-white mb-1">{idealFor[3].title}</h3>
+                  <p className="text-sm text-muted-foreground">{idealFor[3].description}</p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Mobile Layout - Vertical Stack */}
+            <div className="lg:hidden space-y-4">
+              {/* Central Hub for Mobile */}
+              <motion.div 
+                className="mx-auto w-36 h-36 relative mb-8"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+              >
+                <div className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/60" style={{ animation: 'spin 25s linear infinite' }} />
+                <div className="absolute inset-4 rounded-full border-2 border-dashed border-accent/50" style={{ animation: 'spin 20s linear infinite reverse' }} />
+                <div className="absolute inset-6 rounded-full bg-gradient-to-br from-card to-card/90 border border-primary/30 flex items-center justify-center">
+                  <div className="text-center">
+                    <Building2 className="w-8 h-8 text-primary mx-auto mb-1" />
+                    <span className="text-xs font-display font-bold text-white">Custom<br/>Solutions</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Mobile Cards */}
               {idealFor.map((item, index) => {
                 const Icon = item.icon;
-                const positions = [
-                  'lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2', // Top
-                  'lg:absolute lg:top-1/2 lg:right-0 lg:-translate-y-1/2', // Right
-                  'lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2', // Bottom
-                  'lg:absolute lg:top-1/2 lg:left-0 lg:-translate-y-1/2' // Left
-                ];
-                const borderColors = [
-                  'border-primary/60 hover:border-primary',
-                  'border-accent/60 hover:border-accent', 
-                  'border-neon-cyan/60 hover:border-neon-cyan',
-                  'border-neon-violet/60 hover:border-neon-violet'
-                ];
-                const iconBgColors = [
-                  'bg-primary/20',
-                  'bg-accent/20',
-                  'bg-neon-cyan/20',
-                  'bg-neon-violet/20'
-                ];
-                const iconColors = [
-                  'text-primary',
-                  'text-accent',
-                  'text-neon-cyan',
-                  'text-neon-violet'
-                ];
+                const colors = ['primary', 'neon-cyan', 'accent', 'neon-violet'];
+                const color = colors[index];
                 
                 return (
                   <motion.div
                     key={item.title}
-                    className={`${positions[index]} lg:w-64`}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.15 }}
+                    transition={{ delay: index * 0.1 }}
                   >
-                    <div className={`flex lg:flex-col items-center gap-4 lg:gap-3 p-5 lg:p-6 rounded-2xl bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-sm border-2 ${borderColors[index]} transition-all duration-300 group lg:text-center hover:shadow-lg hover:shadow-primary/10`}>
-                      {/* Icon Circle */}
-                      <div className={`w-16 h-16 lg:w-20 lg:h-20 rounded-full ${iconBgColors[index]} border-2 ${borderColors[index]} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                        <Icon className={`w-8 h-8 lg:w-10 lg:h-10 ${iconColors[index]}`} />
+                    <div className={`flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-card/95 to-card/70 border border-${color}/40`}>
+                      <div className={`w-14 h-14 rounded-full bg-${color}/20 border-2 border-${color}/50 flex items-center justify-center flex-shrink-0`}>
+                        <Icon className={`w-7 h-7 text-${color}`} />
                       </div>
-                      
-                      {/* Content */}
-                      <div className="flex-grow lg:flex-grow-0">
-                        <h3 className="text-lg lg:text-xl font-display font-semibold text-white mb-1">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {item.description}
-                        </p>
+                      <div>
+                        <h3 className="text-base font-display font-semibold text-white">{item.title}</h3>
+                        <p className="text-sm text-muted-foreground">{item.description}</p>
                       </div>
                     </div>
                   </motion.div>
