@@ -453,10 +453,10 @@ const Home = () => {
                   >
                     <Icon className={`w-fib-34 h-fib-34 ${index % 2 === 0 ? 'text-primary' : 'text-accent'}`} />
                   </motion.div>
-                  <h3 className="text-phi-lg font-display font-semibold mb-fib-8 text-foreground/95 group-hover:text-primary transition-colors flex-shrink-0">
+                  <h3 className="text-phi-lg font-display font-semibold mb-fib-8 text-white group-hover:text-primary transition-colors flex-shrink-0">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-foreground/80 flex-grow">
+                  <p className="text-sm text-white/80 flex-grow">
                     {service.desc}
                   </p>
                 </motion.div>
@@ -480,7 +480,7 @@ const Home = () => {
                       <div className={`w-fib-34 h-fib-34 rounded-fib flex items-center justify-center flex-shrink-0 ${index % 2 === 0 ? 'bg-accent/20' : 'bg-primary/20'}`}>
                         <Icon className={`w-fib-21 h-fib-21 ${index % 2 === 0 ? 'text-accent' : 'text-primary'}`} />
                       </div>
-                      <span className="text-sm font-medium text-foreground/90 truncate">{service.title}</span>
+                      <span className="text-sm font-medium text-white truncate">{service.title}</span>
                     </div>
                   </motion.div>
                 </Link>
