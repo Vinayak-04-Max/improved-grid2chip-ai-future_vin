@@ -199,23 +199,28 @@ const EdgeDataCenter = () => {
             </p>
           </motion.div>
 
-          {/* Stats Carousel - Horizontal Scroll */}
-          <div className="relative">
+          {/* Stats Carousel - Auto Moving */}
+          <div className="relative overflow-hidden">
             {/* Gradient Fades */}
-            <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
             
-            <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory px-4 -mx-4">
-              {specifications.map((spec, index) => {
+            <motion.div 
+              className="flex gap-6"
+              animate={{ x: [0, -1200] }}
+              transition={{ 
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {/* Double the items for seamless loop */}
+              {[...specifications, ...specifications].map((spec, index) => {
                 const Icon = spec.icon;
                 return (
-                  <motion.div
-                    key={spec.label}
-                    className="relative group flex-shrink-0 snap-center"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
+                  <div
+                    key={`${spec.label}-${index}`}
+                    className="relative group flex-shrink-0"
                   >
                     <div className="relative w-44 h-48 p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 text-center flex flex-col justify-center">
                       {/* Glow Effect */}
@@ -236,10 +241,10 @@ const EdgeDataCenter = () => {
                         </div>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
