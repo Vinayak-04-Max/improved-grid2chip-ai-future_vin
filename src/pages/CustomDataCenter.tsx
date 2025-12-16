@@ -462,68 +462,123 @@ const CustomDataCenter = () => {
           </motion.div>
 
           {/* Circular Infographic */}
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative max-w-5xl mx-auto min-h-[600px] lg:min-h-[700px]">
             {/* Central Hub */}
             <motion.div 
-              className="relative mx-auto w-40 h-40 lg:w-48 lg:h-48"
+              className="relative mx-auto w-44 h-44 lg:w-56 lg:h-56 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 z-10"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              {/* Outer ring */}
-              <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '30s' }} />
+              {/* Outer spinning dashed ring */}
+              <div 
+                className="absolute inset-0 rounded-full border-4 border-dashed border-primary/50"
+                style={{ 
+                  animation: 'spin 25s linear infinite'
+                }} 
+              />
+              
+              {/* Second ring - counter spin */}
+              <div 
+                className="absolute inset-3 rounded-full border-2 border-dashed border-accent/40"
+                style={{ 
+                  animation: 'spin 20s linear infinite reverse'
+                }} 
+              />
               
               {/* Inner glow */}
-              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-xl" />
+              <div className="absolute inset-6 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 blur-xl" />
               
               {/* Center content */}
-              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-card to-card/80 border border-primary/30 flex items-center justify-center">
+              <div className="absolute inset-6 rounded-full bg-gradient-to-br from-card via-card/90 to-card/80 border-2 border-primary/40 flex items-center justify-center shadow-2xl">
                 <div className="text-center">
-                  <Building2 className="w-10 h-10 text-primary mx-auto mb-2" />
-                  <span className="text-sm font-semibold text-white">Custom<br/>Solutions</span>
+                  <div className="w-14 h-14 lg:w-16 lg:h-16 mx-auto mb-2 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
+                    <Building2 className="w-8 h-8 lg:w-10 lg:h-10 text-primary" />
+                  </div>
+                  <span className="text-sm lg:text-base font-display font-bold text-white">Custom<br/>Solutions</span>
                 </div>
               </div>
             </motion.div>
 
+            {/* Connector Lines (Desktop only) */}
+            <svg className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 800 700">
+              {/* Top connector */}
+              <line x1="400" y1="350" x2="400" y2="120" stroke="url(#lineGradient1)" strokeWidth="2" strokeDasharray="8 4" />
+              {/* Right connector */}
+              <line x1="400" y1="350" x2="650" y2="350" stroke="url(#lineGradient2)" strokeWidth="2" strokeDasharray="8 4" />
+              {/* Bottom connector */}
+              <line x1="400" y1="350" x2="400" y2="580" stroke="url(#lineGradient3)" strokeWidth="2" strokeDasharray="8 4" />
+              {/* Left connector */}
+              <line x1="400" y1="350" x2="150" y2="350" stroke="url(#lineGradient4)" strokeWidth="2" strokeDasharray="8 4" />
+              
+              {/* Gradient definitions */}
+              <defs>
+                <linearGradient id="lineGradient1" x1="0%" y1="100%" x2="0%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.1" />
+                </linearGradient>
+                <linearGradient id="lineGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0.1" />
+                </linearGradient>
+                <linearGradient id="lineGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="hsl(var(--neon-cyan))" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="hsl(var(--neon-cyan))" stopOpacity="0.1" />
+                </linearGradient>
+                <linearGradient id="lineGradient4" x1="100%" y1="0%" x2="0%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(var(--neon-violet))" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="hsl(var(--neon-violet))" stopOpacity="0.1" />
+                </linearGradient>
+              </defs>
+            </svg>
+
             {/* Orbital Items */}
-            <div className="relative mt-8 lg:mt-0 lg:absolute lg:inset-0">
+            <div className="mt-8 lg:mt-0 space-y-6 lg:space-y-0">
               {idealFor.map((item, index) => {
                 const Icon = item.icon;
                 const positions = [
-                  'lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-8',
-                  'lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-16',
-                  'lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-8',
-                  'lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:-translate-x-16'
+                  'lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2', // Top
+                  'lg:absolute lg:top-1/2 lg:right-0 lg:-translate-y-1/2', // Right
+                  'lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2', // Bottom
+                  'lg:absolute lg:top-1/2 lg:left-0 lg:-translate-y-1/2' // Left
                 ];
-                const colors = ['primary', 'accent', 'neon-cyan', 'neon-violet'];
-                const color = colors[index];
+                const borderColors = [
+                  'border-primary/60 hover:border-primary',
+                  'border-accent/60 hover:border-accent', 
+                  'border-neon-cyan/60 hover:border-neon-cyan',
+                  'border-neon-violet/60 hover:border-neon-violet'
+                ];
+                const iconBgColors = [
+                  'bg-primary/20',
+                  'bg-accent/20',
+                  'bg-neon-cyan/20',
+                  'bg-neon-violet/20'
+                ];
+                const iconColors = [
+                  'text-primary',
+                  'text-accent',
+                  'text-neon-cyan',
+                  'text-neon-violet'
+                ];
                 
                 return (
                   <motion.div
                     key={item.title}
-                    className={`relative mb-6 lg:mb-0 ${positions[index]}`}
+                    className={`${positions[index]} lg:w-64`}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.15 }}
                   >
-                    {/* Connector line (desktop) */}
-                    <div className={`hidden lg:block absolute w-16 h-0.5 bg-gradient-to-r from-${color}/50 to-transparent
-                      ${index === 0 ? 'bottom-0 left-1/2 -translate-x-1/2 rotate-90 origin-bottom' : ''}
-                      ${index === 1 ? 'left-0 top-1/2 -translate-y-1/2 -translate-x-full' : ''}
-                      ${index === 2 ? 'top-0 left-1/2 -translate-x-1/2 -rotate-90 origin-top' : ''}
-                      ${index === 3 ? 'right-0 top-1/2 -translate-y-1/2 translate-x-full rotate-180' : ''}
-                    `} />
-                    
-                    <div className="flex lg:flex-col items-center gap-4 lg:gap-3 p-4 lg:p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 group lg:w-56 lg:text-center">
+                    <div className={`flex lg:flex-col items-center gap-4 lg:gap-3 p-5 lg:p-6 rounded-2xl bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-sm border-2 ${borderColors[index]} transition-all duration-300 group lg:text-center hover:shadow-lg hover:shadow-primary/10`}>
                       {/* Icon Circle */}
-                      <div className={`w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-${color}/20 border-2 border-${color}/40 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
-                        <Icon className={`w-7 h-7 lg:w-8 lg:h-8 text-${color}`} />
+                      <div className={`w-16 h-16 lg:w-20 lg:h-20 rounded-full ${iconBgColors[index]} border-2 ${borderColors[index]} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon className={`w-8 h-8 lg:w-10 lg:h-10 ${iconColors[index]}`} />
                       </div>
                       
                       {/* Content */}
                       <div className="flex-grow lg:flex-grow-0">
-                        <h3 className="text-lg font-display font-semibold text-white mb-1">
+                        <h3 className="text-lg lg:text-xl font-display font-semibold text-white mb-1">
                           {item.title}
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
