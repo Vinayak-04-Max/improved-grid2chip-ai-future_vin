@@ -273,69 +273,39 @@ const PrefabContainer = () => {
             </p>
           </motion.div>
 
-          {/* Horizontal Timeline for Desktop */}
-          <div className="hidden lg:block relative">
-            {/* Progress Line */}
-            <div className="absolute top-16 left-0 right-0 h-1 bg-gradient-to-r from-accent via-primary to-accent/30 rounded-full" />
+          {/* Vertical Roadmap Timeline */}
+          <div className="max-w-3xl mx-auto relative">
+            {/* Vertical Progress Line */}
+            <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-primary to-accent/30 rounded-full" />
             
-            <div className="grid grid-cols-5 gap-4">
-              {deploymentSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.15 }}
-                  className="relative"
-                >
-                  {/* Node */}
-                  <div className="relative z-10 flex justify-center mb-6">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-accent/30">
-                      {step.step}
-                    </div>
-                  </div>
-                  
-                  {/* Card */}
-                  <div className="p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border border-accent/20 hover:border-accent/40 transition-all duration-300 text-center">
-                    <Badge variant="outline" className="mb-3 bg-accent/10 border-accent/30 text-accent text-xs">
-                      {step.duration}
-                    </Badge>
-                    <h3 className="text-lg font-display font-bold text-white mb-2">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Vertical Timeline for Mobile */}
-          <div className="lg:hidden space-y-6">
             {deploymentSteps.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex gap-4"
+                transition={{ delay: index * 0.15 }}
+                className={`relative flex items-start gap-6 pb-12 last:pb-0 ${
+                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                }`}
               >
-                <div className="flex flex-col items-center">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-bold text-sm">
+                {/* Node */}
+                <div className="absolute left-6 lg:left-1/2 -translate-x-1/2 z-10">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-accent/30 border-4 border-background">
                     {step.step}
                   </div>
-                  {index < deploymentSteps.length - 1 && (
-                    <div className="w-0.5 flex-1 bg-gradient-to-b from-accent to-accent/30 mt-2" />
-                  )}
                 </div>
-                <div className="flex-1 pb-6">
-                  <div className="p-4 rounded-xl bg-gradient-to-br from-card/95 to-card/80 border border-accent/20">
-                    <div className="flex items-center gap-2 mb-2">
-                      <h3 className="text-base font-display font-bold text-white">{step.title}</h3>
-                      <Badge variant="outline" className="bg-accent/10 border-accent/30 text-accent text-[10px]">
-                        {step.duration}
-                      </Badge>
-                    </div>
-                    <p className="text-sm text-muted-foreground">{step.description}</p>
+                
+                {/* Content Card */}
+                <div className={`ml-20 lg:ml-0 lg:w-[calc(50%-40px)] ${
+                  index % 2 === 0 ? 'lg:pr-8 lg:text-right' : 'lg:pl-8 lg:ml-auto'
+                }`}>
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10">
+                    <Badge variant="outline" className="mb-3 bg-accent/10 border-accent/30 text-accent text-xs">
+                      {step.duration}
+                    </Badge>
+                    <h3 className="text-xl font-display font-bold text-white mb-2">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                   </div>
                 </div>
               </motion.div>
