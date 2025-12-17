@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   Container, Zap, Shield, Clock, Thermometer, Cpu, ArrowRight, CheckCircle,
-  Truck, MapPin, Building2, Radio, Factory, Cloud, Landmark, ChevronRight
+  Truck, MapPin, Building2, Radio, Factory, Cloud, Landmark, ChevronRight,
+  Server, Gauge, Ruler, Activity, Monitor, TrendingUp
 } from "lucide-react";
 import solutionsImage from "@/assets/solutions-containers.jpg";
 
@@ -49,12 +50,12 @@ const PrefabContainer = () => {
   ];
 
   const specifications = [
-    { label: "IT Capacity", value: "100-500", unit: "kW" },
-    { label: "Deployment", value: "4-6", unit: "Weeks" },
-    { label: "Dimensions", value: "40ft", unit: "Container" },
-    { label: "PUE", value: "< 1.3", unit: "Efficiency" },
-    { label: "Redundancy", value: "N+1", unit: "/ 2N" },
-    { label: "Monitoring", value: "24/7", unit: "Remote" }
+    { label: "IT Capacity", value: "100-500kW", icon: Server, description: "Power capacity" },
+    { label: "Deployment", value: "4-6 Weeks", icon: Clock, description: "Lead time" },
+    { label: "Dimensions", value: "40ft", icon: Ruler, description: "Container size" },
+    { label: "PUE", value: "< 1.3", icon: Gauge, description: "Efficiency rating" },
+    { label: "Redundancy", value: "N+1 / 2N", icon: Activity, description: "System backup" },
+    { label: "Monitoring", value: "24/7", icon: Monitor, description: "Remote access" }
   ];
 
   const useCases = [
@@ -206,12 +207,12 @@ const PrefabContainer = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          STATISTICS INFOGRAPHIC - Key Specs
+          STATISTICAL INFOGRAPHIC - Key Metrics Dashboard (Carousel Style)
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--accent)/0.06)_0%,_transparent_60%)]" />
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-card/30" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -226,30 +227,52 @@ const PrefabContainer = () => {
             </p>
           </motion.div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {specifications.map((spec, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative group"
-              >
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-card/90 to-card/60 border border-accent/20 hover:border-accent/40 transition-all duration-300 text-center">
-                  <div className="text-3xl lg:text-4xl font-display font-bold text-accent mb-1">
-                    {spec.value}
+          {/* Stats Carousel - Auto Moving */}
+          <div className="relative overflow-hidden">
+            {/* Gradient Fades */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            
+            <motion.div 
+              className="flex gap-6"
+              animate={{ x: [0, -1200] }}
+              transition={{ 
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {/* Double the items for seamless loop */}
+              {[...specifications, ...specifications].map((spec, index) => {
+                const Icon = spec.icon;
+                return (
+                  <div
+                    key={`${spec.label}-${index}`}
+                    className="relative group flex-shrink-0"
+                  >
+                    <div className="relative w-44 h-48 p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 text-center flex flex-col justify-center">
+                      {/* Glow Effect */}
+                      <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      
+                      <div className="relative z-10 flex flex-col items-center">
+                        <div className="w-10 h-10 mb-3 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="text-xl font-bold text-white mb-1 leading-tight">
+                          {spec.value}
+                        </div>
+                        <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                          {spec.label}
+                        </div>
+                        <div className="text-[10px] text-muted-foreground/60 mt-1">
+                          {spec.description}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
-                    {spec.unit}
-                  </div>
-                  <div className="text-sm font-medium text-white">
-                    {spec.label}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                );
+              })}
+            </motion.div>
           </div>
         </div>
       </section>
