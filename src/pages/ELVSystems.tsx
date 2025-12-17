@@ -1,215 +1,469 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Camera, Phone, Wifi, Shield, Monitor, Bell, ArrowRight, CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { 
+  Camera, Phone, Wifi, Shield, Monitor, Bell, ArrowRight, CheckCircle,
+  Server, Clock, Lock, Eye, Radio, TrendingUp
+} from "lucide-react";
+import heroImage from "@/assets/hero-ai-datacenter.jpg";
 
 const ELVSystems = () => {
   const elvSystems = [
     {
       title: "CCTV & Video Surveillance",
-      description: "High-definition IP cameras with intelligent analytics for comprehensive facility monitoring and security.",
+      description: "High-definition IP cameras with intelligent analytics for comprehensive monitoring",
       icon: Camera,
-      features: ["4K resolution cameras", "AI-powered analytics", "Cloud storage", "24/7 monitoring"]
+      metric: "4K Ready"
     },
     {
       title: "Access Control Systems",
-      description: "Multi-level security with biometric authentication, card readers, and intelligent access management.",
+      description: "Multi-level security with biometric authentication and smart access management",
       icon: Shield,
-      features: ["Biometric authentication", "Card access control", "Visitor management", "Audit trails"]
+      metric: "Biometric"
     },
     {
       title: "Structured Cabling",
-      description: "Enterprise-grade Cat6/Cat6a cabling infrastructure for reliable data and voice communications.",
+      description: "Enterprise-grade Cat6/Cat6a infrastructure for reliable communications",
       icon: Wifi,
-      features: ["Cat6/Cat6a cabling", "Fiber optic backbone", "Cable management", "Future-proof design"]
+      metric: "Cat6a+"
     },
     {
       title: "Public Address Systems",
-      description: "Crystal-clear audio communication for announcements, emergency alerts, and background music.",
+      description: "Crystal-clear audio for announcements, alerts, and emergency communication",
       icon: Bell,
-      features: ["Zone-based control", "Emergency override", "Voice evacuation", "Background music"]
+      metric: "Zone-Based"
     },
     {
       title: "Intercom Systems",
-      description: "Modern IP-based intercom solutions for seamless internal and external communication.",
+      description: "Modern IP-based intercom for seamless internal and external communication",
       icon: Phone,
-      features: ["Video intercom", "Two-way audio", "Remote access", "Mobile integration"]
+      metric: "IP-Based"
     },
     {
-      title: "Building Automation Integration",
-      description: "Seamless integration with BMS for centralized monitoring and control of all ELV systems.",
+      title: "BMS Integration",
+      description: "Seamless integration with BMS for centralized monitoring and control",
       icon: Monitor,
-      features: ["BMS integration", "Centralized control", "Real-time monitoring", "Automated alerts"]
+      metric: "Unified"
     }
+  ];
+
+  const specifications = [
+    { label: "Camera Resolution", value: "4K Ultra", icon: Camera, description: "HD Quality" },
+    { label: "Access Speed", value: "<1 sec", icon: Clock, description: "Authentication" },
+    { label: "Network", value: "10 Gbps", icon: Wifi, description: "Backbone" },
+    { label: "Security", value: "Zero Trust", icon: Lock, description: "Architecture" },
+    { label: "Monitoring", value: "24/7", icon: Eye, description: "Continuous" },
+    { label: "Integration", value: "100%", icon: Server, description: "BMS Compatible" }
   ];
 
   const benefits = [
-    {
-      title: "Enhanced Security",
-      description: "Multi-layered security systems protect your facility and assets 24/7."
-    },
-    {
-      title: "Improved Communication",
-      description: "Reliable infrastructure for voice, data, and video communications."
-    },
-    {
-      title: "Scalable Infrastructure",
-      description: "Future-proof systems that grow with your facility needs."
-    },
-    {
-      title: "Centralized Management",
-      description: "Single platform to monitor and control all ELV systems."
-    }
+    { name: "Enhanced Security", icon: Shield },
+    { name: "Improved Communication", icon: Phone },
+    { name: "Scalable Infrastructure", icon: TrendingUp },
+    { name: "Centralized Management", icon: Monitor }
   ];
 
   const applications = [
-    "Data Centers & IT Facilities",
-    "Corporate Office Buildings",
-    "Manufacturing & Industrial Plants",
-    "Healthcare Facilities",
-    "Educational Institutions",
-    "Retail & Commercial Spaces"
+    { step: "01", title: "Data Centers & IT Facilities", description: "Maximum security and monitoring for mission-critical environments", duration: "Tier III/IV" },
+    { step: "02", title: "Corporate Buildings", description: "Comprehensive ELV solutions for office towers and campuses", duration: "Enterprise" },
+    { step: "03", title: "Manufacturing Plants", description: "Industrial-grade systems for complex operational environments", duration: "Industrial" },
+    { step: "04", title: "Healthcare Facilities", description: "Specialized systems meeting healthcare compliance requirements", duration: "Certified" }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-hero">
-        <div className="absolute inset-0 tech-grid opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
-            ELV Systems
-          </Badge>
-          <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Extra Low Voltage <span className="text-g2c-blue">Systems</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Comprehensive ELV solutions including security, communications, and monitoring systems for modern critical facilities.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">
-                Get Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="glass" size="lg" asChild>
-              <Link to="/demo">Explore Solutions</Link>
-            </Button>
+    <div className="min-h-screen bg-background">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          HERO SECTION - Full Width Background with Overlay
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt="Extra Low Voltage Systems"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <motion.div 
+            className="max-w-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
+              ELV Systems
+            </Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
+              Extra Low Voltage Systems
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+              Comprehensive ELV solutions including security, communications, and monitoring systems for modern critical facilities.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact">
+                  Get Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button variant="glass" size="lg" asChild>
+                <Link to="/demo">Explore Solutions</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+
+        <motion.div 
+          className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary/50"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+        />
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          STATISTICAL INFOGRAPHIC - Key Metrics Carousel
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-card/30" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Technical <span className="text-gradient-primary">Specifications</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Enterprise-grade ELV infrastructure specifications
+            </p>
+          </motion.div>
+
+          {/* Stats Carousel - Auto Moving */}
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            
+            <motion.div 
+              className="flex gap-6"
+              animate={{ x: [0, -1200] }}
+              transition={{ 
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {[...specifications, ...specifications].map((spec, index) => {
+                const Icon = spec.icon;
+                return (
+                  <div key={`${spec.label}-${index}`} className="relative group flex-shrink-0">
+                    <div className="relative w-44 h-48 p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 text-center flex flex-col justify-center">
+                      <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="relative z-10 flex flex-col items-center">
+                        <div className="w-10 h-10 mb-3 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="text-xl font-bold text-white mb-1 leading-tight">
+                          {spec.value}
+                        </div>
+                        <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                          {spec.label}
+                        </div>
+                        <div className="text-[10px] text-muted-foreground/60 mt-1">
+                          {spec.description}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ELV Systems Grid */}
-      <section className="py-20 lg:py-32">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          FEATURE INFOGRAPHIC - ELV Solutions
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Our <span className="text-g2c-green">ELV Solutions</span>
+          <motion.div 
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Our <span className="text-gradient-accent">ELV Solutions</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Complete extra low voltage systems for security, communication, and building automation.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Complete extra low voltage systems for security, communication, and automation
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {elvSystems.map((system, index) => {
               const Icon = system.icon;
-              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
-                <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300">
-                  <CardHeader>
-                    <div className={`w-16 h-16 mb-4 ${bgColor} rounded-xl flex items-center justify-center`}>
+                <motion.div
+                  key={system.title}
+                  className="relative"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="relative p-8 rounded-3xl bg-gradient-to-br from-card/60 to-transparent border border-primary/10 hover:border-primary/30 transition-all duration-500 group h-full">
+                    <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-xs font-bold text-white">
+                      {system.metric}
+                    </div>
+                    
+                    <div className={`w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br ${index % 2 === 0 ? 'from-primary to-primary/60' : 'from-accent to-accent/60'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
-                    <CardTitle className="text-xl">{system.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground">{system.description}</p>
-                    <div className="space-y-2">
-                      {system.features.map((feature, i) => (
-                        <div key={i} className="flex items-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
-                          <span className="text-muted-foreground">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                    
+                    <h3 className="text-xl font-display font-semibold text-white mb-3">
+                      {system.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {system.description}
+                    </p>
+                  </div>
+                </motion.div>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-20 lg:py-32 bg-gradient-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Key <span className="text-g2c-blue">Benefits</span>
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          CIRCULAR HUB INFOGRAPHIC - Key Benefits
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Key <span className="text-gradient-primary">Benefits</span>
             </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="text-center bg-card border-primary/20">
-                <CardHeader>
-                  <CardTitle className="text-lg">{benefit.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Applications */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Ideal <span className="text-g2c-green">Applications</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our ELV systems are perfect for a wide range of facilities and industries.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Advantages of our integrated ELV solutions
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {applications.map((app, index) => (
-              <div key={index} className="flex items-center p-4 bg-gradient-card rounded-lg border border-primary/20">
-                <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="text-foreground">{app}</span>
+          {/* Cross Layout Infographic */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Desktop Layout */}
+            <div className="hidden lg:grid grid-cols-3 gap-8 items-center">
+              {/* Left Column */}
+              <div className="space-y-8">
+                {benefits.slice(0, 2).map((benefit, index) => {
+                  const Icon = benefit.icon;
+                  return (
+                    <motion.div
+                      key={benefit.name}
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.15 }}
+                      className="flex items-center gap-4 justify-end"
+                    >
+                      <div className="text-right">
+                        <h4 className="text-lg font-semibold text-white">{benefit.name}</h4>
+                      </div>
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
+
+              {/* Center Hub */}
+              <div className="flex justify-center">
+                <motion.div 
+                  className="relative w-40 h-40"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s' }} />
+                  <div className="absolute inset-4 rounded-full border border-accent/20" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/40 flex items-center justify-center">
+                      <Radio className="w-8 h-8 text-primary" />
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right Column */}
+              <div className="space-y-8">
+                {benefits.slice(2, 4).map((benefit, index) => {
+                  const Icon = benefit.icon;
+                  return (
+                    <motion.div
+                      key={benefit.name}
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.15 }}
+                      className="flex items-center gap-4"
+                    >
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/30 flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-accent" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white">{benefit.name}</h4>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Mobile Layout */}
+            <div className="lg:hidden">
+              <div className="flex justify-center mb-8">
+                <div className="relative w-32 h-32">
+                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s' }} />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/40 flex items-center justify-center">
+                      <Radio className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {benefits.map((benefit, index) => {
+                  const Icon = benefit.icon;
+                  return (
+                    <motion.div
+                      key={benefit.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="p-4 rounded-xl bg-card/50 border border-primary/10 text-center"
+                    >
+                      <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <h4 className="text-sm font-semibold text-white">{benefit.name}</h4>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          VERTICAL ROADMAP - Ideal Applications
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-card/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Ideal <span className="text-gradient-accent">Applications</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our ELV systems are perfect for a wide range of facilities
+            </p>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto relative">
+            <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary/30 rounded-full" />
+            
+            {applications.map((app, index) => (
+              <motion.div
+                key={app.step}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                className={`relative flex items-start gap-6 mb-12 last:mb-0 ${
+                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                }`}
+              >
+                <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10" />
+                
+                <div className={`ml-16 lg:ml-0 lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12'}`}>
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-3 justify-start lg:justify-end">
+                      {index % 2 !== 0 && <span className="text-3xl font-bold text-primary/30">{app.step}</span>}
+                      <Badge variant="outline" className="border-accent/30 text-accent text-xs">
+                        {app.duration}
+                      </Badge>
+                      {index % 2 === 0 && <span className="text-3xl font-bold text-primary/30">{app.step}</span>}
+                    </div>
+                    <h3 className="text-xl font-display font-semibold text-white mb-2">
+                      {app.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {app.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Upgrade Your <span className="text-g2c-blue">ELV Systems?</span>
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Get a comprehensive ELV solution tailored to your facility's specific needs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">
-                Request Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="glass" size="lg" asChild>
-              <Link to="/solutions">View All Solutions</Link>
-            </Button>
-          </div>
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          CTA SECTION - Modern Gradient
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+              Ready to Upgrade Your <span className="text-gradient-primary">ELV Systems?</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Get a comprehensive ELV solution tailored to your facility's specific needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact">
+                  Request Consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button variant="glass" size="lg" asChild>
+                <Link to="/solutions">View All Solutions</Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -1,267 +1,538 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Flame, Shield, AlertTriangle, Zap, Wind, Bell, ArrowRight, CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { 
+  Flame, Shield, AlertTriangle, Zap, Wind, Bell, ArrowRight, CheckCircle,
+  Server, Clock, TrendingUp, Gauge, Eye, Building2
+} from "lucide-react";
+import heroImage from "@/assets/hero-ai-datacenter.jpg";
 
 const FireSafety = () => {
   const fireSystems = [
     {
       title: "Fire Detection Systems",
-      description: "Advanced early warning systems with intelligent smoke, heat, and flame detection for rapid response.",
+      description: "Advanced early warning with intelligent smoke, heat, and flame detection",
       icon: AlertTriangle,
-      features: ["Intelligent smoke detectors", "Heat detection", "Flame sensors", "Early warning alerts"]
+      metric: "Early Warning"
     },
     {
-      title: "Fire Suppression Systems",
-      description: "Automated suppression systems including sprinklers, gas-based, and specialized solutions for critical areas.",
+      title: "Fire Suppression",
+      description: "Automated suppression including sprinklers and clean agent systems",
       icon: Shield,
-      features: ["Sprinkler systems", "FM-200/Novec 1230", "Clean agent systems", "Automated activation"]
+      metric: "FM-200/Novec"
     },
     {
       title: "Fire Alarm Systems",
-      description: "Comprehensive alarm networks with voice evacuation, visual alerts, and emergency communication.",
+      description: "Comprehensive alarm networks with voice evacuation and visual alerts",
       icon: Bell,
-      features: ["Voice evacuation", "Visual alarms", "Emergency PA", "Zone-based control"]
+      metric: "Zone-Based"
     },
     {
       title: "Emergency Lighting",
-      description: "Reliable emergency and exit lighting systems ensuring safe evacuation during power failures.",
+      description: "Reliable emergency and exit lighting for safe evacuation",
       icon: Zap,
-      features: ["LED exit signs", "Emergency luminaires", "Battery backup", "Automatic testing"]
+      metric: "LED-Based"
     },
     {
-      title: "Smoke Extraction Systems",
-      description: "Mechanical and natural smoke extraction to maintain visibility and reduce heat during fire events.",
+      title: "Smoke Extraction",
+      description: "Mechanical and natural smoke extraction to maintain visibility",
       icon: Wind,
-      features: ["Mechanical extraction", "Natural ventilation", "Smoke control", "Stairwell pressurization"]
+      metric: "Automated"
     },
     {
       title: "Firefighting Equipment",
-      description: "Complete range of portable and fixed firefighting equipment strategically positioned throughout facilities.",
+      description: "Complete range of portable and fixed firefighting equipment",
       icon: Flame,
-      features: ["Fire extinguishers", "Hose reels", "Fire hydrants", "Cabinet installations"]
+      metric: "Strategic"
     }
   ];
 
+  const specifications = [
+    { label: "Detection Speed", value: "<30 sec", icon: Clock, description: "Response time" },
+    { label: "Coverage", value: "100%", icon: Eye, description: "Zone coverage" },
+    { label: "Suppression", value: "10 sec", icon: Gauge, description: "Activation" },
+    { label: "Compliance", value: "NFPA", icon: Shield, description: "Standards" },
+    { label: "Monitoring", value: "24/7", icon: Server, description: "Continuous" },
+    { label: "Uptime", value: "99.99%", icon: TrendingUp, description: "System" }
+  ];
+
   const standards = [
-    "NFPA (National Fire Protection Association)",
-    "NBC (National Building Code)",
-    "IS Standards (Indian Standards)",
-    "FM Global Requirements",
-    "UL Listed Equipment",
-    "Local Fire Safety Regulations"
+    { name: "NFPA Standards", icon: Shield },
+    { name: "NBC Compliance", icon: Building2 },
+    { name: "FM Global", icon: CheckCircle },
+    { name: "UL Listed", icon: TrendingUp }
+  ];
+
+  const criticalFacilities = [
+    { step: "01", title: "Data Centers", description: "Clean agent suppression systems to protect sensitive equipment without water damage", duration: "Mission-Critical" },
+    { step: "02", title: "Industrial Facilities", description: "Heavy-duty systems for high-risk areas with specialized suppression methods", duration: "Heavy-Duty" },
+    { step: "03", title: "Commercial Buildings", description: "Comprehensive protection with sprinklers, alarms, and evacuation systems", duration: "Full Coverage" },
+    { step: "04", title: "Healthcare Facilities", description: "Life-safety focused systems with smoke compartmentation and staged evacuation", duration: "Life-Safety" }
   ];
 
   const benefits = [
     {
       title: "Life Safety",
-      description: "Protect occupants with early detection and rapid response systems."
+      description: "Protect occupants with early detection and rapid response",
+      icon: Shield
     },
     {
       title: "Asset Protection",
-      description: "Minimize damage to critical equipment and infrastructure."
+      description: "Minimize damage to critical equipment and infrastructure",
+      icon: Building2
     },
     {
       title: "Business Continuity",
-      description: "Reduce downtime and maintain operations during emergencies."
+      description: "Reduce downtime and maintain operations during emergencies",
+      icon: TrendingUp
     },
     {
       title: "Compliance Assured",
-      description: "Meet all local and international fire safety regulations."
-    }
-  ];
-
-  const criticalFacilities = [
-    {
-      type: "Data Centers",
-      requirements: "Clean agent suppression systems to protect sensitive equipment without water damage."
-    },
-    {
-      type: "Industrial Facilities",
-      requirements: "Heavy-duty systems for high-risk areas with specialized suppression methods."
-    },
-    {
-      type: "Commercial Buildings",
-      requirements: "Comprehensive protection with sprinklers, alarms, and evacuation systems."
-    },
-    {
-      type: "Healthcare Facilities",
-      requirements: "Life-safety focused systems with smoke compartmentation and staged evacuation."
+      description: "Meet all local and international fire safety regulations",
+      icon: CheckCircle
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-hero">
-        <div className="absolute inset-0 tech-grid opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
-            Fire Safety
-          </Badge>
-          <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Fire Safety <span className="text-g2c-blue">Systems</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Advanced fire detection, suppression, and safety systems for critical facilities. Protect lives, assets, and ensure business continuity.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">
-                Safety Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="glass" size="lg" asChild>
-              <Link to="/demo">View Systems</Link>
-            </Button>
+    <div className="min-h-screen bg-background">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          HERO SECTION - Full Width Background with Overlay
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt="Fire Safety Systems"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <motion.div 
+            className="max-w-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
+              Fire Safety
+            </Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
+              Fire Safety Systems
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+              Advanced fire detection, suppression, and safety systems for critical facilities. Protect lives, assets, and ensure business continuity.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact">
+                  Safety Consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button variant="glass" size="lg" asChild>
+                <Link to="/demo">View Systems</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+
+        <motion.div 
+          className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary/50"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+        />
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          STATISTICAL INFOGRAPHIC - Key Metrics Carousel
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-card/30" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Performance <span className="text-gradient-primary">Specifications</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Industry-leading fire safety system specifications
+            </p>
+          </motion.div>
+
+          {/* Stats Carousel - Auto Moving */}
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            
+            <motion.div 
+              className="flex gap-6"
+              animate={{ x: [0, -1200] }}
+              transition={{ 
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {[...specifications, ...specifications].map((spec, index) => {
+                const Icon = spec.icon;
+                return (
+                  <div key={`${spec.label}-${index}`} className="relative group flex-shrink-0">
+                    <div className="relative w-44 h-48 p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 text-center flex flex-col justify-center">
+                      <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="relative z-10 flex flex-col items-center">
+                        <div className="w-10 h-10 mb-3 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="text-xl font-bold text-white mb-1 leading-tight">
+                          {spec.value}
+                        </div>
+                        <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                          {spec.label}
+                        </div>
+                        <div className="text-[10px] text-muted-foreground/60 mt-1">
+                          {spec.description}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Fire Safety Systems Grid */}
-      <section className="py-20 lg:py-32">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          FEATURE INFOGRAPHIC - Fire Safety Solutions
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Comprehensive Fire <span className="text-g2c-green">Safety Solutions</span>
+          <motion.div 
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Comprehensive <span className="text-gradient-accent">Fire Safety Solutions</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Complete fire protection systems designed for mission-critical facilities.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Complete fire protection systems designed for mission-critical facilities
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {fireSystems.map((system, index) => {
               const Icon = system.icon;
-              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
-                <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300">
-                  <CardHeader>
-                    <div className={`w-16 h-16 mb-4 ${bgColor} rounded-xl flex items-center justify-center`}>
+                <motion.div
+                  key={system.title}
+                  className="relative"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="relative p-8 rounded-3xl bg-gradient-to-br from-card/60 to-transparent border border-primary/10 hover:border-primary/30 transition-all duration-500 group h-full">
+                    <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-xs font-bold text-white">
+                      {system.metric}
+                    </div>
+                    
+                    <div className={`w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br ${index % 2 === 0 ? 'from-primary to-primary/60' : 'from-accent to-accent/60'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
-                    <CardTitle className="text-xl">{system.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground">{system.description}</p>
-                    <div className="space-y-2">
-                      {system.features.map((feature, i) => (
-                        <div key={i} className="flex items-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
-                          <span className="text-muted-foreground">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                    
+                    <h3 className="text-xl font-display font-semibold text-white mb-3">
+                      {system.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {system.description}
+                    </p>
+                  </div>
+                </motion.div>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* Critical Facilities */}
-      <section className="py-20 lg:py-32 bg-gradient-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Critical <span className="text-g2c-blue">Facility Protection</span>
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          CIRCULAR HUB INFOGRAPHIC - Compliance Standards
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Compliance & <span className="text-gradient-primary">Standards</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Specialized fire safety solutions for different facility types.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              All systems comply with international and local fire safety standards
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {criticalFacilities.map((facility, index) => (
-              <Card key={index} className="bg-card border-primary/20">
-                <CardHeader>
-                  <CardTitle className="text-xl">{facility.type}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{facility.requirements}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Compliance Standards */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Compliance & <span className="text-g2c-green">Standards</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              All our systems comply with international and local fire safety standards.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {standards.map((standard, index) => (
-              <div key={index} className="flex items-center p-4 bg-gradient-card rounded-lg border border-primary/20">
-                <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="text-foreground">{standard}</span>
+          {/* Cross Layout Infographic */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Desktop Layout */}
+            <div className="hidden lg:grid grid-cols-3 gap-8 items-center">
+              {/* Left Column */}
+              <div className="space-y-8">
+                {standards.slice(0, 2).map((standard, index) => {
+                  const Icon = standard.icon;
+                  return (
+                    <motion.div
+                      key={standard.name}
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.15 }}
+                      className="flex items-center gap-4 justify-end"
+                    >
+                      <div className="text-right">
+                        <h4 className="text-lg font-semibold text-white">{standard.name}</h4>
+                      </div>
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
-            ))}
+
+              {/* Center Hub */}
+              <div className="flex justify-center">
+                <motion.div 
+                  className="relative w-40 h-40"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s' }} />
+                  <div className="absolute inset-4 rounded-full border border-accent/20" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/40 flex items-center justify-center">
+                      <Flame className="w-8 h-8 text-primary" />
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right Column */}
+              <div className="space-y-8">
+                {standards.slice(2, 4).map((standard, index) => {
+                  const Icon = standard.icon;
+                  return (
+                    <motion.div
+                      key={standard.name}
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.15 }}
+                      className="flex items-center gap-4"
+                    >
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/30 flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-accent" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white">{standard.name}</h4>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Mobile Layout */}
+            <div className="lg:hidden">
+              <div className="flex justify-center mb-8">
+                <div className="relative w-32 h-32">
+                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s' }} />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/40 flex items-center justify-center">
+                      <Flame className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {standards.map((standard, index) => {
+                  const Icon = standard.icon;
+                  return (
+                    <motion.div
+                      key={standard.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="p-4 rounded-xl bg-card/50 border border-primary/10 text-center"
+                    >
+                      <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <h4 className="text-sm font-semibold text-white">{standard.name}</h4>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-20 lg:py-32 bg-gradient-card">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          BENEFITS INFOGRAPHIC - Gradient Cards
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              Key <span className="text-g2c-blue">Benefits</span>
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Key <span className="text-gradient-accent">Benefits</span>
             </h2>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => {
-              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
+              const Icon = benefit.icon;
               return (
-                <Card key={index} className="text-center bg-card border-primary/20">
-                  <CardHeader>
-                    <div className={`w-12 h-12 ${bgColor} rounded-full mx-auto mb-4 flex items-center justify-center`}>
-                      <Shield className="w-6 h-6 text-white" />
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group"
+                >
+                  <div className="relative p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 h-full text-center">
+                    <div className={`w-14 h-14 mx-auto mb-4 rounded-xl ${index % 2 === 0 ? 'bg-primary/20' : 'bg-accent/20'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className={`w-7 h-7 ${index % 2 === 0 ? 'text-primary' : 'text-accent'}`} />
                     </div>
-                    <CardTitle className="text-lg">{benefit.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground text-sm">{benefit.description}</p>
-                  </CardContent>
-                </Card>
+                    <h3 className="text-lg font-display font-semibold text-white mb-2">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </motion.div>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Protect Your Facility with <span className="text-g2c-green">Advanced Fire Safety</span>
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Get a comprehensive fire safety assessment and customized protection plan.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">
-                Schedule Safety Audit
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="glass" size="lg" asChild>
-              <Link to="/solutions">Explore Solutions</Link>
-            </Button>
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          VERTICAL ROADMAP - Critical Facilities
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-card/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Critical <span className="text-gradient-primary">Facility Protection</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Specialized fire safety solutions for different facility types
+            </p>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto relative">
+            <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary/30 rounded-full" />
+            
+            {criticalFacilities.map((facility, index) => (
+              <motion.div
+                key={facility.step}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                className={`relative flex items-start gap-6 mb-12 last:mb-0 ${
+                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                }`}
+              >
+                <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10" />
+                
+                <div className={`ml-16 lg:ml-0 lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12'}`}>
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-3 justify-start lg:justify-end">
+                      {index % 2 !== 0 && <span className="text-3xl font-bold text-primary/30">{facility.step}</span>}
+                      <Badge variant="outline" className="border-accent/30 text-accent text-xs">
+                        {facility.duration}
+                      </Badge>
+                      {index % 2 === 0 && <span className="text-3xl font-bold text-primary/30">{facility.step}</span>}
+                    </div>
+                    <h3 className="text-xl font-display font-semibold text-white mb-2">
+                      {facility.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {facility.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          CTA SECTION - Modern Gradient
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+              Protect Your Facility with <span className="text-gradient-primary">Advanced Fire Safety</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Get a comprehensive fire safety assessment and customized protection plan.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact">
+                  Schedule Safety Audit
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button variant="glass" size="lg" asChild>
+                <Link to="/solutions">Explore Solutions</Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
