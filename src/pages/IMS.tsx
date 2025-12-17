@@ -1,265 +1,469 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Monitor, Brain, Cpu, Shield, Zap, Activity, BarChart3, AlertTriangle } from "lucide-react";
+import { motion } from "framer-motion";
+import { 
+  ArrowRight, Monitor, Brain, Cpu, Shield, Zap, Activity, BarChart3, 
+  AlertTriangle, Server, Clock, TrendingUp, Gauge, Eye, Database
+} from "lucide-react";
+import heroImage from "@/assets/ai-neural-network.jpg";
 
 const IMS = () => {
   const features = [
     {
-      icon: Brain,
       title: "Predictive Analytics",
-      description: "Advanced algorithms for predictive maintenance and anomaly detection."
+      description: "Advanced algorithms for predictive maintenance and anomaly detection",
+      icon: Brain,
+      metric: "AI-Powered"
     },
     {
-      icon: Monitor,
       title: "Real-Time Monitoring",
-      description: "24/7 continuous monitoring of all critical systems with instant alerts and notifications."
+      description: "24/7 continuous monitoring with instant alerts and notifications",
+      icon: Monitor,
+      metric: "24/7"
     },
     {
-      icon: BarChart3,
       title: "Centralized Reporting",
-      description: "Comprehensive dashboards and automated reports with insights and trends."
+      description: "Comprehensive dashboards and automated reports with insights",
+      icon: BarChart3,
+      metric: "Real-time"
     },
     {
-      icon: Shield,
       title: "Security Integration",
-      description: "Advanced cybersecurity monitoring with threat detection and response capabilities."
+      description: "Advanced cybersecurity monitoring with threat detection",
+      icon: Shield,
+      metric: "Zero Trust"
     },
     {
-      icon: Zap,
       title: "Energy Optimization",
-      description: "Data-driven energy management for maximum efficiency and cost reduction."
+      description: "Data-driven energy management for maximum efficiency",
+      icon: Zap,
+      metric: "30% Savings"
     },
     {
-      icon: AlertTriangle,
       title: "Proactive Alerting",
-      description: "Smart alerting system that predicts issues before they become critical problems."
+      description: "Smart alerting that predicts issues before they become critical",
+      icon: AlertTriangle,
+      metric: "Predictive"
     }
+  ];
+
+  const specifications = [
+    { label: "System Uptime", value: "99.99%", icon: TrendingUp, description: "Guaranteed" },
+    { label: "Energy Savings", value: "30%", icon: Gauge, description: "Potential" },
+    { label: "Monitoring", value: "24/7", icon: Eye, description: "Centralized" },
+    { label: "Detection", value: "Real-time", icon: AlertTriangle, description: "Threat" },
+    { label: "Response", value: "<100ms", icon: Clock, description: "Alert time" },
+    { label: "Systems", value: "100+", icon: Database, description: "Integrated" }
   ];
 
   const monitoringSystems = [
-    "Power Distribution Systems",
-    "UPS & Battery Management",
-    "Cooling & HVAC Systems", 
-    "Fire Detection & Suppression",
-    "Access Control & Security",
-    "Environmental Monitoring",
-    "Network Infrastructure",
-    "Server & Equipment Health"
+    { name: "Power Distribution", icon: Zap },
+    { name: "UPS & Battery", icon: Server },
+    { name: "Cooling & HVAC", icon: Activity },
+    { name: "Fire Detection", icon: AlertTriangle }
   ];
 
-  const benefits = [
-    {
-      metric: "99.99%",
-      label: "System Uptime",
-      description: "Guaranteed availability through automated redundancy"
-    },
-    {
-      metric: "30%",
-      label: "Potential Energy Savings",
-      description: "Reduced operational costs through optimization"
-    },
-    {
-      metric: "24/7",
-      label: "Centralized Monitoring", 
-      description: "Continuous oversight and analysis"
-    },
-    {
-      metric: "Real-time",
-      label: "Threat Detection",
-      description: "Instant security threat identification"
-    }
+  const processSteps = [
+    { step: "01", title: "System Assessment", description: "Comprehensive evaluation of existing infrastructure and monitoring needs", duration: "1-2 Weeks" },
+    { step: "02", title: "Integration Design", description: "Custom IMS architecture designed for your facility requirements", duration: "2-3 Weeks" },
+    { step: "03", title: "Deployment", description: "Professional installation with minimal disruption to operations", duration: "3-4 Weeks" },
+    { step: "04", title: "Optimization", description: "Continuous tuning and optimization for maximum performance", duration: "Ongoing" }
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero py-20 lg:py-32">
-        <div className="absolute inset-0 tech-grid opacity-20"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <Badge variant="outline" className="w-fit border-primary/30 text-primary">
-                Integrated Monitoring System
-              </Badge>
-              
-              <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight">
-                <span className="text-g2c-blue">Integrated</span> Monitoring System (IMS)
-              </h1>
-              
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Comprehensive Integrated Monitoring System (IMS) that transforms critical facility 
-                management with automation, predictive analytics, and centralized oversight.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="lg" className="group" asChild>
-                  <Link to="/demo">
-                    Experience IMS Demo
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-                <Button variant="glass" size="lg" asChild>
-                  <Link to="/contact">
-                    Get Consultation
-                  </Link>
-                </Button>
-              </div>
-            </div>
+    <div className="min-h-screen bg-background">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          HERO SECTION - Full Width Background with Overlay
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt="Integrated Monitoring System"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        </div>
 
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-ai opacity-20 rounded-2xl ai-pulse"></div>
-              <Card className="bg-gradient-card border-primary/20 ai-glow">
-                <CardContent className="p-8">
-                  <div className="grid grid-cols-2 gap-6">
-                    {benefits.map((benefit, index) => (
-                      <div key={index} className="text-center">
-                        <div className="text-2xl font-bold text-primary mb-1">{benefit.metric}</div>
-                        <div className="text-sm font-medium text-foreground mb-1">{benefit.label}</div>
-                        <div className="text-xs text-muted-foreground">{benefit.description}</div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <motion.div 
+            className="max-w-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
+              Integrated Monitoring
+            </Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
+              Integrated Monitoring System
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+              Comprehensive IMS that transforms critical facility management with automation, predictive analytics, and centralized oversight.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/demo">
+                  Experience IMS Demo
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button variant="glass" size="lg" asChild>
+                <Link to="/contact">Get Consultation</Link>
+              </Button>
             </div>
+          </motion.div>
+        </div>
+
+        <motion.div 
+          className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary/50"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+        />
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          STATISTICAL INFOGRAPHIC - Key Metrics Carousel
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-card/30" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Performance at a <span className="text-gradient-primary">Glance</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Industry-leading specifications for intelligent facility monitoring
+            </p>
+          </motion.div>
+
+          {/* Stats Carousel - Auto Moving */}
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            
+            <motion.div 
+              className="flex gap-6"
+              animate={{ x: [0, -1200] }}
+              transition={{ 
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {[...specifications, ...specifications].map((spec, index) => {
+                const Icon = spec.icon;
+                return (
+                  <div key={`${spec.label}-${index}`} className="relative group flex-shrink-0">
+                    <div className="relative w-44 h-48 p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 text-center flex flex-col justify-center">
+                      <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="relative z-10 flex flex-col items-center">
+                        <div className="w-10 h-10 mb-3 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="text-xl font-bold text-white mb-1 leading-tight">
+                          {spec.value}
+                        </div>
+                        <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                          {spec.label}
+                        </div>
+                        <div className="text-[10px] text-muted-foreground/60 mt-1">
+                          {spec.description}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 lg:py-32">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          FEATURE INFOGRAPHIC - Visual Cards with Metrics
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-              <span className="text-g2c-green">IMS Features</span>
+          <motion.div 
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              IMS <span className="text-gradient-accent">Features</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive monitoring capabilities for superior facility management.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive monitoring capabilities for superior facility management
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
-              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
               return (
-                <Card key={index} className="bg-gradient-card border-primary/20 ai-glow group hover:border-primary/40 transition-all duration-300">
-                  <CardHeader>
-                    <div className={`w-12 h-12 ${bgColor} rounded-xl flex items-center justify-center mb-4`}>
-                      <Icon className="w-6 h-6 text-white" />
+                <motion.div
+                  key={feature.title}
+                  className="relative"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="relative p-8 rounded-3xl bg-gradient-to-br from-card/60 to-transparent border border-primary/10 hover:border-primary/30 transition-all duration-500 group h-full">
+                    <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-xs font-bold text-white">
+                      {feature.metric}
                     </div>
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                    
+                    <div className={`w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br ${index % 2 === 0 ? 'from-primary to-primary/60' : 'from-accent to-accent/60'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    
+                    <h3 className="text-xl font-display font-semibold text-white mb-3">
                       {feature.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
+                    </h3>
                     <p className="text-muted-foreground leading-relaxed">
                       {feature.description}
                     </p>
-                  </CardContent>
-                </Card>
+                  </div>
+                </motion.div>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* Monitoring Systems */}
-      <section className="py-20 lg:py-32 bg-gradient-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h2 className="text-3xl lg:text-5xl font-display font-bold">
-                <span className="text-g2c-blue">Comprehensive</span> System Coverage
-              </h2>
-              
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Our IMS monitors every critical aspect of your facility infrastructure, 
-                providing complete visibility and control over all systems.
-              </p>
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          CIRCULAR HUB INFOGRAPHIC - Monitoring Systems
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Comprehensive <span className="text-gradient-primary">System Coverage</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Monitor every critical aspect of your facility infrastructure
+            </p>
+          </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {monitoringSystems.map((system, index) => (
-                  <div key={index} className="flex items-center space-x-3 group">
-                    <Activity className="w-5 h-5 text-primary group-hover:text-accent transition-colors" />
-                    <span className="text-foreground group-hover:text-primary transition-colors">{system}</span>
-                  </div>
-                ))}
+          {/* Cross Layout Infographic */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Desktop Layout */}
+            <div className="hidden lg:grid grid-cols-3 gap-8 items-center">
+              {/* Left Column */}
+              <div className="space-y-8">
+                {monitoringSystems.slice(0, 2).map((system, index) => {
+                  const Icon = system.icon;
+                  return (
+                    <motion.div
+                      key={system.name}
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.15 }}
+                      className="flex items-center gap-4 justify-end"
+                    >
+                      <div className="text-right">
+                        <h4 className="text-lg font-semibold text-white">{system.name}</h4>
+                      </div>
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
 
-              <Button variant="hero" size="lg" asChild>
-                <Link to="/contact">
-                  Request IMS Assessment
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-
-            <div className="relative">
-              <Card className="bg-gradient-card border-primary/20 ai-glow">
-                <CardHeader>
-                  <CardTitle className="text-center">AI Control Dashboard</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg">
-                      <span className="text-sm">Power Systems</span>
-                      <Badge variant="outline" className="bg-accent/20 text-foreground border-accent/30">
-                        Optimal
-                      </Badge>
-                    </div>
-                    <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg">
-                      <span className="text-sm">Cooling Systems</span>
-                      <Badge variant="outline" className="bg-primary/20 text-foreground border-primary/30">
-                        Efficient
-                      </Badge>
-                    </div>
-                    <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg">
-                      <span className="text-sm">Security Systems</span>
-                      <Badge variant="outline" className="bg-primary/20 text-primary border-primary/30">
-                        Active
-                      </Badge>
-                    </div>
-                    <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg">
-                      <span className="text-sm">Fire Safety</span>
-                      <Badge variant="outline" className="bg-accent/20 text-foreground border-accent/30">
-                        Protected
-                      </Badge>
+              {/* Center Hub */}
+              <div className="flex justify-center">
+                <motion.div 
+                  className="relative w-40 h-40"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s' }} />
+                  <div className="absolute inset-4 rounded-full border border-accent/20" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/40 flex items-center justify-center">
+                      <Brain className="w-8 h-8 text-primary" />
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </motion.div>
+              </div>
+
+              {/* Right Column */}
+              <div className="space-y-8">
+                {monitoringSystems.slice(2, 4).map((system, index) => {
+                  const Icon = system.icon;
+                  return (
+                    <motion.div
+                      key={system.name}
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.15 }}
+                      className="flex items-center gap-4"
+                    >
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/30 flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-accent" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white">{system.name}</h4>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Mobile Layout */}
+            <div className="lg:hidden">
+              <div className="flex justify-center mb-8">
+                <div className="relative w-32 h-32">
+                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s' }} />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/40 flex items-center justify-center">
+                      <Brain className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {monitoringSystems.map((system, index) => {
+                  const Icon = system.icon;
+                  return (
+                    <motion.div
+                      key={system.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="p-4 rounded-xl bg-card/50 border border-primary/10 text-center"
+                    >
+                      <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <h4 className="text-sm font-semibold text-white">{system.name}</h4>
+                    </motion.div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Deploy <span className="text-g2c-green">IMS</span>?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Transform your critical facility management with our integrated monitoring system.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" className="group" asChild>
-              <Link to="/demo">
-                Schedule Demo
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-            <Button variant="glass" size="lg" asChild>
-              <Link to="/contact">
-                Get Custom Quote
-              </Link>
-            </Button>
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          VERTICAL ROADMAP - Implementation Process
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-card/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Implementation <span className="text-gradient-accent">Process</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Seamless deployment with minimal disruption
+            </p>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto relative">
+            <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary/30 rounded-full" />
+            
+            {processSteps.map((step, index) => (
+              <motion.div
+                key={step.step}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                className={`relative flex items-start gap-6 mb-12 last:mb-0 ${
+                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                }`}
+              >
+                <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10" />
+                
+                <div className={`ml-16 lg:ml-0 lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12'}`}>
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-3 justify-start lg:justify-end">
+                      {index % 2 !== 0 && <span className="text-3xl font-bold text-primary/30">{step.step}</span>}
+                      <Badge variant="outline" className="border-accent/30 text-accent text-xs">
+                        {step.duration}
+                      </Badge>
+                      {index % 2 === 0 && <span className="text-3xl font-bold text-primary/30">{step.step}</span>}
+                    </div>
+                    <h3 className="text-xl font-display font-semibold text-white mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          CTA SECTION - Modern Gradient
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+              Ready to Deploy <span className="text-gradient-primary">IMS?</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Transform your critical facility management with our integrated monitoring system.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/demo">
+                  Schedule Demo
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button variant="glass" size="lg" asChild>
+                <Link to="/contact">Get Custom Quote</Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
