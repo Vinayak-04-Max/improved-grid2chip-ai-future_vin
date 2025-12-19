@@ -349,16 +349,16 @@ const IMS = () => {
                     })}
                   </svg>
 
-                  {/* Central Icon */}
+                  {/* Central Icon - Positioned at arc center */}
                   <motion.div 
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 z-20"
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, type: "spring" }}
                   >
-                    <div className="w-28 h-28 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-2xl shadow-primary/40 border-4 border-background">
-                      <Monitor className="w-12 h-12 text-white" />
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-2xl shadow-primary/40 border-4 border-background">
+                      <Monitor className="w-10 h-10 text-white" />
                     </div>
                   </motion.div>
                 </div>
