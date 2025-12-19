@@ -213,12 +213,14 @@ const FireSafety = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          FEATURE INFOGRAPHIC - Fire Safety Solutions
+          SEMICIRCULAR INFOGRAPHIC - Fire Safety Solutions
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="features" className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/10 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
-            className="text-center mb-20"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -231,31 +233,137 @@ const FireSafety = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Desktop Semicircular Layout */}
+          <div className="hidden lg:block">
+            <div className="relative max-w-5xl mx-auto">
+              {/* Left Side Features */}
+              <div className="absolute left-0 top-0 w-[280px] space-y-12 z-20">
+                {fireSystems.slice(0, 3).map((system, index) => {
+                  const Icon = system.icon;
+                  return (
+                    <motion.div 
+                      key={system.title} 
+                      className="flex items-start gap-4"
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 * index }}
+                    >
+                      <div className="relative flex-shrink-0">
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
+                          <Icon className="w-7 h-7 text-white" />
+                        </div>
+                        <div className="absolute -bottom-2 -right-2 w-7 h-7 rounded-full bg-background border-2 border-primary/40 flex items-center justify-center">
+                          <span className="text-xs font-bold text-primary">0{index + 1}</span>
+                        </div>
+                      </div>
+                      
+                      <div className="pt-1">
+                        <h4 className="text-base font-display font-semibold text-white mb-1">
+                          {system.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {system.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              {/* Right Side Features */}
+              <div className="absolute right-0 top-0 w-[280px] space-y-12 z-20">
+                {fireSystems.slice(3, 6).map((system, index) => {
+                  const Icon = system.icon;
+                  return (
+                    <motion.div 
+                      key={system.title} 
+                      className="flex items-start gap-4 flex-row-reverse text-right"
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 * (index + 3) }}
+                    >
+                      <div className="relative flex-shrink-0">
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center shadow-lg shadow-accent/20">
+                          <Icon className="w-7 h-7 text-white" />
+                        </div>
+                        <div className="absolute -bottom-2 -left-2 w-7 h-7 rounded-full bg-background border-2 border-accent/40 flex items-center justify-center">
+                          <span className="text-xs font-bold text-accent">0{index + 4}</span>
+                        </div>
+                      </div>
+                      
+                      <div className="pt-1">
+                        <h4 className="text-base font-display font-semibold text-white mb-1">
+                          {system.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {system.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              {/* Center Semicircle Arc */}
+              <div className="flex justify-center pt-8">
+                <div className="relative w-[420px] h-[260px]">
+                  <svg viewBox="0 0 420 260" className="w-full h-full mx-0">
+                    <defs>
+                      <linearGradient id="fireArcGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="hsl(var(--primary))" />
+                        <stop offset="100%" stopColor="hsl(var(--accent))" />
+                      </linearGradient>
+                    </defs>
+                    
+                    <path d="M 30 250 A 180 180 0 0 1 390 250" fill="none" stroke="hsl(var(--primary) / 0.15)" strokeWidth="60" strokeLinecap="round" />
+                    <path d="M 30 250 A 180 180 0 0 1 390 250" fill="none" stroke="url(#fireArcGradient)" strokeWidth="40" strokeLinecap="round" opacity="0.9" />
+                    <path d="M 50 250 A 160 160 0 0 1 370 250" fill="none" stroke="hsl(var(--primary) / 0.3)" strokeWidth="2" strokeLinecap="round" />
+                    
+                    {[0, 1, 2, 3, 4, 5].map(i => {
+                      const angle = Math.PI * (i + 0.5) / 6;
+                      const x = 210 + 180 * Math.cos(Math.PI - angle);
+                      const y = 250 - 180 * Math.sin(angle);
+                      return <circle key={i} cx={x} cy={y} r="6" fill="white" opacity="0.9" />;
+                    })}
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Layout - Vertical Steps */}
+          <div className="lg:hidden space-y-8">
             {fireSystems.map((system, index) => {
               const Icon = system.icon;
               return (
-                <motion.div
-                  key={system.title}
-                  className="relative"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                <motion.div 
+                  key={system.title} 
+                  className="flex items-start gap-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <div className="relative p-8 rounded-3xl bg-gradient-to-br from-card/60 to-transparent border border-primary/10 hover:border-primary/30 transition-all duration-500 group h-full">
-                    <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-xs font-bold text-white">
-                      {system.metric}
+                  <div className="relative flex-shrink-0">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
+                      <Icon className="w-7 h-7 text-white" />
                     </div>
-                    
-                    <div className={`w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br ${index % 2 === 0 ? 'from-primary to-primary/60' : 'from-accent to-accent/60'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="w-8 h-8 text-white" />
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-background border-2 border-primary/40 flex items-center justify-center">
+                      <span className="text-xs font-bold text-primary">0{index + 1}</span>
                     </div>
-                    
-                    <h3 className="text-xl font-display font-semibold text-white mb-3">
+                    {index < fireSystems.length - 1 && (
+                      <div className="absolute top-16 left-1/2 -translate-x-1/2 w-0.5 h-10 bg-gradient-to-b from-primary/40 to-transparent" />
+                    )}
+                  </div>
+                  
+                  <div className="flex-1 pt-1">
+                    <div className="text-xs text-primary font-semibold mb-1 uppercase tracking-wider">{system.metric}</div>
+                    <h4 className="text-lg font-display font-semibold text-white mb-1">
                       {system.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {system.description}
                     </p>
                   </div>
