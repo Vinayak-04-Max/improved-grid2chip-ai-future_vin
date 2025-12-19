@@ -368,9 +368,6 @@ const IMS = () => {
                   delay: 0.3,
                   type: "spring"
                 }}>
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-accent items-center justify-center shadow-2xl shadow-primary/40 border-4 border-background mx-0 flex flex-col">
-                      <Monitor className="w-10 h-10 text-white" />
-                    </div>
                   </motion.div>
                 </div>
               </div>
