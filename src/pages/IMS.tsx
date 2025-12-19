@@ -190,49 +190,205 @@ const IMS = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          FEATURE INFOGRAPHIC - Visual Cards with Metrics
+          SEMICIRCULAR INFOGRAPHIC - IMS Features
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-card/10 via-transparent to-card/10" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
-            className="text-center mb-20"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
-              IMS <span className="text-gradient-accent">Features</span>
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-2">
+              The 6-Steps of
+            </h2>
+            <h2 className="text-3xl lg:text-5xl font-display font-bold text-gradient-primary mb-4">
+              Intelligent Monitoring
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Comprehensive monitoring capabilities for superior facility management
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Semicircular Infographic - Desktop */}
+          <div className="hidden lg:block relative">
+            {/* Central Hub with Main Icon */}
+            <div className="relative h-[500px] flex items-end justify-center">
+              {/* Semicircle Arc Background */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px]">
+                <svg viewBox="0 0 800 400" className="w-full h-full">
+                  {/* Arc segments with different colors */}
+                  <defs>
+                    <linearGradient id="segment1" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="hsl(var(--primary))" />
+                      <stop offset="100%" stopColor="hsl(var(--primary) / 0.7)" />
+                    </linearGradient>
+                    <linearGradient id="segment2" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#38bdf8" />
+                      <stop offset="100%" stopColor="#0ea5e9" />
+                    </linearGradient>
+                    <linearGradient id="segment3" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#a78bfa" />
+                      <stop offset="100%" stopColor="#8b5cf6" />
+                    </linearGradient>
+                    <linearGradient id="segment4" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#f472b6" />
+                      <stop offset="100%" stopColor="#ec4899" />
+                    </linearGradient>
+                    <linearGradient id="segment5" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#fb923c" />
+                      <stop offset="100%" stopColor="#f97316" />
+                    </linearGradient>
+                    <linearGradient id="segment6" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#34d399" />
+                      <stop offset="100%" stopColor="#10b981" />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Arc segments */}
+                  <path d="M 60 400 A 340 340 0 0 1 152 152" fill="none" stroke="url(#segment1)" strokeWidth="50" strokeLinecap="round" opacity="0.9" />
+                  <path d="M 152 152 A 340 340 0 0 1 280 60" fill="none" stroke="url(#segment2)" strokeWidth="50" strokeLinecap="round" opacity="0.9" />
+                  <path d="M 280 60 A 340 340 0 0 1 400 35" fill="none" stroke="url(#segment3)" strokeWidth="50" strokeLinecap="round" opacity="0.9" />
+                  <path d="M 400 35 A 340 340 0 0 1 520 60" fill="none" stroke="url(#segment4)" strokeWidth="50" strokeLinecap="round" opacity="0.9" />
+                  <path d="M 520 60 A 340 340 0 0 1 648 152" fill="none" stroke="url(#segment5)" strokeWidth="50" strokeLinecap="round" opacity="0.9" />
+                  <path d="M 648 152 A 340 340 0 0 1 740 400" fill="none" stroke="url(#segment6)" strokeWidth="50" strokeLinecap="round" opacity="0.9" />
+                </svg>
+              </div>
+
+              {/* Central Icon */}
+              <motion.div 
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, type: "spring" }}
+              >
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-2xl shadow-primary/30">
+                  <Monitor className="w-16 h-16 text-white" />
+                </div>
+              </motion.div>
+
+              {/* Feature Points positioned around the arc */}
+              {features.map((feature, index) => {
+                const Icon = feature.icon;
+                const positions = [
+                  { left: '2%', bottom: '65%', align: 'left' },
+                  { left: '8%', bottom: '95%', align: 'left' },
+                  { left: '28%', bottom: '115%', align: 'left' },
+                  { right: '28%', bottom: '115%', align: 'right' },
+                  { right: '8%', bottom: '95%', align: 'right' },
+                  { right: '2%', bottom: '65%', align: 'right' },
+                ];
+                const pos = positions[index];
+                const colors = [
+                  'from-primary to-primary/80',
+                  'from-sky-400 to-sky-500',
+                  'from-violet-400 to-violet-500',
+                  'from-pink-400 to-pink-500',
+                  'from-orange-400 to-orange-500',
+                  'from-emerald-400 to-emerald-500',
+                ];
+                const bgColors = [
+                  'bg-primary/10 border-primary/30',
+                  'bg-sky-500/10 border-sky-500/30',
+                  'bg-violet-500/10 border-violet-500/30',
+                  'bg-pink-500/10 border-pink-500/30',
+                  'bg-orange-500/10 border-orange-500/30',
+                  'bg-emerald-500/10 border-emerald-500/30',
+                ];
+                const textColors = [
+                  'text-primary',
+                  'text-sky-400',
+                  'text-violet-400',
+                  'text-pink-400',
+                  'text-orange-400',
+                  'text-emerald-400',
+                ];
+
+                return (
+                  <motion.div
+                    key={feature.title}
+                    className="absolute"
+                    style={{ 
+                      left: pos.left, 
+                      right: pos.right, 
+                      bottom: pos.bottom 
+                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 * index }}
+                  >
+                    <div className={`flex items-start gap-4 ${pos.align === 'right' ? 'flex-row-reverse text-right' : ''}`}>
+                      {/* Icon with number */}
+                      <div className="relative flex-shrink-0">
+                        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${colors[index]} flex items-center justify-center shadow-lg`}>
+                          <Icon className="w-7 h-7 text-white" />
+                        </div>
+                        <div className={`absolute -bottom-2 ${pos.align === 'right' ? '-left-2' : '-right-2'} w-7 h-7 rounded-full bg-background border-2 ${bgColors[index].split(' ')[1]} flex items-center justify-center`}>
+                          <span className={`text-xs font-bold ${textColors[index]}`}>0{index + 1}</span>
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="max-w-[200px]">
+                        <h4 className="text-base font-display font-semibold text-white mb-1">
+                          {feature.title}
+                        </h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Mobile Layout - Vertical Steps */}
+          <div className="lg:hidden space-y-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
+              const colors = [
+                'from-primary to-primary/80 border-primary/30',
+                'from-sky-400 to-sky-500 border-sky-500/30',
+                'from-violet-400 to-violet-500 border-violet-500/30',
+                'from-pink-400 to-pink-500 border-pink-500/30',
+                'from-orange-400 to-orange-500 border-orange-500/30',
+                'from-emerald-400 to-emerald-500 border-emerald-500/30',
+              ];
+
               return (
                 <motion.div
                   key={feature.title}
-                  className="relative"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  className="flex items-start gap-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <div className="relative p-8 rounded-3xl bg-gradient-to-br from-card/60 to-transparent border border-primary/10 hover:border-primary/30 transition-all duration-500 group h-full">
-                    <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-xs font-bold text-white">
-                      {feature.metric}
+                  <div className="relative flex-shrink-0">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${colors[index].split(' ').slice(0, 2).join(' ')} flex items-center justify-center shadow-lg`}>
+                      <Icon className="w-7 h-7 text-white" />
                     </div>
-                    
-                    <div className={`w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br ${index % 2 === 0 ? 'from-primary to-primary/60' : 'from-accent to-accent/60'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="w-8 h-8 text-white" />
+                    <div className={`absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-background border ${colors[index].split(' ')[2]} flex items-center justify-center`}>
+                      <span className="text-xs font-bold text-primary">0{index + 1}</span>
                     </div>
-                    
-                    <h3 className="text-xl font-display font-semibold text-white mb-3">
+                    {index < features.length - 1 && (
+                      <div className="absolute top-16 left-1/2 -translate-x-1/2 w-0.5 h-8 bg-gradient-to-b from-primary/30 to-transparent" />
+                    )}
+                  </div>
+                  
+                  <div className="flex-1 pt-1">
+                    <div className="text-xs text-primary font-semibold mb-1">{feature.metric}</div>
+                    <h4 className="text-lg font-display font-semibold text-white mb-1">
                       {feature.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
