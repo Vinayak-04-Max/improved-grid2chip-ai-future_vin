@@ -49,12 +49,10 @@ const HPC = () => {
   ];
 
   const specifications = [
-    { label: "Compute Density", value: "100 kW", unit: "per rack" },
-    { label: "Networking", value: "400", unit: "Gbps" },
-    { label: "Storage", value: "PB", unit: "Scale" },
-    { label: "PUE", value: "< 1.2", unit: "Efficiency" },
-    { label: "Redundancy", value: "2N", unit: "Power" },
-    { label: "Uptime", value: "99.99%", unit: "SLA" }
+    { label: "Compute Density", value: "100 kW", unit: "per rack", scale: 100, applications: ["AI training", "Deep learning", "Scientific simulation"], ideal: "GPU-intensive workloads" },
+    { label: "Networking", value: "400 Gbps", unit: "InfiniBand", scale: 85, applications: ["Low-latency interconnect", "Parallel processing", "MPI clusters"], ideal: "Distributed computing" },
+    { label: "Storage", value: "Petabyte", unit: "Scale", scale: 90, applications: ["Large datasets", "Parallel file systems", "NVMe arrays"], ideal: "Data-intensive research" },
+    { label: "PUE Rating", value: "< 1.2", unit: "Efficiency", scale: 95, applications: ["Liquid cooling", "Heat recovery", "Precision airflow"], ideal: "Sustainable operations" }
   ];
 
   const useCases = [
@@ -196,12 +194,12 @@ const HPC = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          STATISTICS INFOGRAPHIC - Key Metrics
+          COMPARISON INFOGRAPHIC - Technical Specifications Scale Visualization
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.06)_0%,_transparent_60%)]" />
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -216,26 +214,56 @@ const HPC = () => {
             </p>
           </motion.div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          {/* Scale Comparison Infographic */}
+          <div className="space-y-6">
             {specifications.map((spec, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                key={spec.label}
+                className="relative"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative group"
+                transition={{ delay: index * 0.15 }}
               >
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-card/90 to-card/60 border border-primary/20 hover:border-primary/40 transition-all duration-300 text-center">
-                  <div className="text-3xl lg:text-4xl font-display font-bold text-primary mb-1">
-                    {spec.value}
+                <div className="flex flex-col lg:flex-row lg:items-center gap-6 p-6 rounded-2xl bg-gradient-to-r from-card/60 to-transparent border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                  {/* Name & Value */}
+                  <div className="lg:w-48 flex-shrink-0">
+                    <h3 className="text-xl font-display font-semibold text-white mb-1">
+                      {spec.label}
+                    </h3>
+                    <div className="text-2xl font-bold text-primary">{spec.value}</div>
+                    <div className="text-sm text-muted-foreground">{spec.unit}</div>
                   </div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
-                    {spec.unit}
+
+                  {/* Scale Bar */}
+                  <div className="flex-grow">
+                    <div className="relative h-4 rounded-full bg-card overflow-hidden mb-4">
+                      <motion.div
+                        className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-primary to-accent"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${spec.scale}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: index * 0.2 }}
+                      />
+                      <div className="absolute inset-0 flex items-center justify-end pr-2">
+                        <span className="text-xs font-bold text-white drop-shadow-lg">{spec.scale}%</span>
+                      </div>
+                    </div>
+                    
+                    {/* Applications Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {spec.applications.map((app, i) => (
+                        <span key={i} className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                          {app}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <div className="text-sm font-medium text-white">
-                    {spec.label}
+
+                  {/* Ideal For */}
+                  <div className="lg:w-56 flex-shrink-0 lg:text-right">
+                    <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Ideal For</div>
+                    <div className="text-sm text-foreground">{spec.ideal}</div>
                   </div>
                 </div>
               </motion.div>
