@@ -3,6 +3,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Users, Heart, Award, TrendingUp, ArrowRight, AlertCircle, Send } from "lucide-react";
+import { motion } from "framer-motion";
+import heroImage from "@/assets/hero-careers.jpg";
 
 const Careers = () => {
   const benefits = [
@@ -52,22 +54,42 @@ const Careers = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-hero">
-        <div className="absolute inset-0 tech-grid opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
-            Careers at Grid2Chip
-          </Badge>
-          <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
-            Stay Connected with <span className="text-g2c-blue">Grid2Chip</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            While we don't have current openings, we're always interested in connecting with 
-            talented professionals who share our passion for critical facility infrastructure.
-          </p>
+    <div className="min-h-screen bg-background">
+      {/* Hero Section - Full Width Background with Overlay */}
+      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Careers at Grid2Chip" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <motion.div className="max-w-2xl" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
+              Careers at Grid2Chip
+            </Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
+              Stay Connected with <span className="text-g2c-blue">Grid2Chip</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+              While we don't have current openings, we're always interested in connecting with 
+              talented professionals who share our passion for critical facility infrastructure.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact">
+                  Submit Your Resume
+                  <Send className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button variant="glass" size="lg" asChild>
+                <Link to="/about/leadership">Meet Our Team</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+
+        <motion.div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary/50" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.5, delay: 0.5 }} />
       </section>
 
       {/* No Current Openings Message */}
