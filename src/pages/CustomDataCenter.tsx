@@ -144,9 +144,6 @@ const CustomDataCenter = () => {
             alt="Custom Data Center Infrastructure"
             className="w-full h-full object-cover"
           />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
 
         {/* Content */}
@@ -306,7 +303,7 @@ const CustomDataCenter = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-white mb-1">
+                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
                           {advantage.title}
                         </h4>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -341,7 +338,7 @@ const CustomDataCenter = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-white mb-1">
+                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
                           {advantage.title}
                         </h4>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -408,7 +405,7 @@ const CustomDataCenter = () => {
                         {advantage.metric}
                       </span>
                     </div>
-                    <h4 className="text-lg font-display font-semibold text-white mb-1">
+                    <h4 className="text-lg font-display font-semibold text-foreground mb-1">
                       {advantage.title}
                     </h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">
@@ -585,7 +582,7 @@ const CustomDataCenter = () => {
                     <Landmark className="w-7 h-7 text-neon-violet" />
                   </div>
                   <div>
-                    <h3 className="text-base font-display font-bold text-white mb-1">{idealFor[3].title}</h3>
+                    <h3 className="text-base font-display font-bold text-foreground mb-1">{idealFor[3].title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{idealFor[3].description}</p>
                   </div>
                 </div>
@@ -607,7 +604,7 @@ const CustomDataCenter = () => {
                       <TrendingUp className="w-7 h-7 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-base font-display font-bold text-white mb-1">{idealFor[0].title}</h3>
+                      <h3 className="text-base font-display font-bold text-foreground mb-1">{idealFor[0].title}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">{idealFor[0].description}</p>
                     </div>
                   </div>
@@ -662,7 +659,7 @@ const CustomDataCenter = () => {
                       <Building2 className="w-7 h-7 text-accent" />
                     </div>
                     <div>
-                      <h3 className="text-base font-display font-bold text-white mb-1">{idealFor[2].title}</h3>
+                      <h3 className="text-base font-display font-bold text-foreground mb-1">{idealFor[2].title}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">{idealFor[2].description}</p>
                     </div>
                   </div>
@@ -684,7 +681,7 @@ const CustomDataCenter = () => {
                     <Cloud className="w-7 h-7 text-neon-cyan" />
                   </div>
                   <div>
-                    <h3 className="text-base font-display font-bold text-white mb-1">{idealFor[1].title}</h3>
+                    <h3 className="text-base font-display font-bold text-foreground mb-1">{idealFor[1].title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{idealFor[1].description}</p>
                   </div>
                 </div>

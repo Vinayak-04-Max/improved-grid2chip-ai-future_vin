@@ -67,8 +67,6 @@ const AboutUs = () => {
             alt="About Grid2Chip"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -154,7 +152,7 @@ const AboutUs = () => {
                         <div className="w-10 h-10 mb-3 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                           <Icon className="w-5 h-5 text-primary" />
                         </div>
-                        <div className="text-xl font-bold text-white mb-1 leading-tight">
+                        <div className="text-xl font-bold text-foreground mb-1 leading-tight">
                           {stat.value}
                         </div>
                         <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
@@ -298,7 +296,7 @@ const AboutUs = () => {
                         </defs>
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-xl font-bold text-white">{item.percentage}%</span>
+                        <span className="text-xl font-bold text-primary">{item.percentage}%</span>
                       </div>
                     </div>
                     <span className="text-sm font-medium text-muted-foreground text-center">{item.sector}</span>

@@ -108,8 +108,6 @@ const IMS = () => {
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Integrated Monitoring System" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -401,7 +399,7 @@ const IMS = () => {
                   
                   <div className="flex-1 pt-1">
                     <div className="text-xs text-primary font-semibold mb-1 uppercase tracking-wider">{feature.metric}</div>
-                    <h4 className="text-lg font-display font-semibold text-white mb-1">
+                    <h4 className="text-lg font-display font-semibold text-foreground mb-1">
                       {feature.title}
                     </h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">
