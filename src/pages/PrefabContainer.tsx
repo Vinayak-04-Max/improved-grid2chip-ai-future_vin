@@ -195,7 +195,7 @@ const PrefabContainer = () => {
                       {feature.metric}
                     </Badge>
                   </div>
-                  <h3 className="text-lg font-display font-semibold text-white mb-2">{feature.title}</h3>
+                  <h3 className="text-lg font-display font-semibold text-foreground mb-2">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
               );
@@ -239,7 +239,7 @@ const PrefabContainer = () => {
                 <div className="flex flex-col lg:flex-row lg:items-center gap-6 p-6 rounded-2xl bg-gradient-to-r from-card/60 to-transparent border border-accent/10 hover:border-accent/30 transition-all duration-300">
                   {/* Name & Value */}
                   <div className="lg:w-48 flex-shrink-0">
-                    <h3 className="text-xl font-display font-semibold text-white mb-1">
+                    <h3 className="text-xl font-display font-semibold text-foreground mb-1">
                       {spec.label}
                     </h3>
                     <div className="text-2xl font-bold text-accent">{spec.value}</div>
@@ -332,7 +332,7 @@ const PrefabContainer = () => {
                     <Badge variant="outline" className="mb-3 bg-accent/10 border-accent/30 text-accent text-xs">
                       {step.duration}
                     </Badge>
-                    <h3 className="text-xl font-display font-bold text-white mb-2">{step.title}</h3>
+                    <h3 className="text-xl font-display font-bold text-foreground mb-2">{step.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                   </div>
                 </div>
@@ -386,7 +386,7 @@ const PrefabContainer = () => {
                           <Icon className="w-7 h-7" />
                         </div>
                         <div>
-                          <h3 className="text-base font-display font-bold text-white mb-1">{useCase.title}</h3>
+                          <h3 className="text-base font-display font-bold text-foreground mb-1">{useCase.title}</h3>
                           <p className="text-sm text-muted-foreground leading-relaxed mb-2">{useCase.description}</p>
                           <div className="flex flex-wrap gap-1">
                             {useCase.applications.slice(0, 2).map((app, i) => (
@@ -450,7 +450,7 @@ const PrefabContainer = () => {
                           <Icon className="w-7 h-7" />
                         </div>
                         <div>
-                          <h3 className="text-base font-display font-bold text-white mb-1">{useCase.title}</h3>
+                          <h3 className="text-base font-display font-bold text-foreground mb-1">{useCase.title}</h3>
                           <p className="text-sm text-muted-foreground leading-relaxed mb-2">{useCase.description}</p>
                           <div className="flex flex-wrap gap-1">
                             {useCase.applications.slice(0, 2).map((app, i) => (
@@ -492,7 +492,7 @@ const PrefabContainer = () => {
                         <Icon className={`w-6 h-6 ${style.iconColor}`} />
                       </div>
                       <div>
-                        <h3 className="text-sm font-display font-bold text-white mb-0.5">{useCase.title}</h3>
+                        <h3 className="text-sm font-display font-bold text-foreground mb-0.5">{useCase.title}</h3>
                         <p className="text-xs text-muted-foreground leading-relaxed">{useCase.description}</p>
                       </div>
                     </div>

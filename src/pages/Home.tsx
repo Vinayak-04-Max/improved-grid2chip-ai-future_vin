@@ -130,7 +130,7 @@ const Home = () => {
   }));
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-void overflow-hidden">
+    <div ref={containerRef} className="min-h-screen bg-background overflow-hidden">
       {/* Global Scroll Progress */}
       <ScrollProgress />
 
@@ -149,7 +149,7 @@ const Home = () => {
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-void/90 via-void/70 to-void" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
         </motion.div>
 
         {/* Animated Background Layers */}
@@ -325,7 +325,7 @@ const Home = () => {
       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative py-fib-21 overflow-hidden border-y border-primary/10">
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-void via-primary/5 to-void"
+          className="absolute inset-0 bg-gradient-to-r from-background via-primary/5 to-background"
           animate={{ opacity: [0.5, 0.8, 0.5] }}
           transition={{ duration: 4, repeat: Infinity }}
         />
@@ -453,10 +453,10 @@ const Home = () => {
                   >
                     <Icon className={`w-fib-34 h-fib-34 ${index % 2 === 0 ? 'text-primary' : 'text-accent'}`} />
                   </motion.div>
-                  <h3 className="text-phi-lg font-display font-semibold mb-fib-8 text-white group-hover:text-primary transition-colors flex-shrink-0">
+                  <h3 className="text-phi-lg font-display font-semibold mb-fib-8 text-foreground group-hover:text-primary transition-colors flex-shrink-0">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-white/80 flex-grow">
+                  <p className="text-sm text-muted-foreground flex-grow">
                     {service.desc}
                   </p>
                 </motion.div>
@@ -480,7 +480,7 @@ const Home = () => {
                       <div className={`w-fib-34 h-fib-34 rounded-fib flex items-center justify-center flex-shrink-0 ${index % 2 === 0 ? 'bg-accent/20' : 'bg-primary/20'}`}>
                         <Icon className={`w-fib-21 h-fib-21 ${index % 2 === 0 ? 'text-accent' : 'text-primary'}`} />
                       </div>
-                      <span className="text-sm font-medium text-white truncate">{service.title}</span>
+                      <span className="text-sm font-medium text-foreground truncate">{service.title}</span>
                     </div>
                   </motion.div>
                 </Link>

@@ -240,7 +240,7 @@ const CustomDataCenter = () => {
                         <div className="w-12 h-12 mb-3 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                           <Icon className="w-6 h-6 text-primary" />
                         </div>
-                        <div className="text-lg font-bold text-white mb-1 leading-tight">
+                        <div className="text-lg font-bold text-foreground mb-1 leading-tight">
                           {custom.value}
                         </div>
                         <div className="text-xs text-primary font-medium uppercase tracking-wide">

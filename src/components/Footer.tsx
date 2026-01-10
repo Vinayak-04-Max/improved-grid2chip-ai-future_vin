@@ -25,7 +25,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-void border-t border-primary/20 overflow-hidden">
+    <footer className="relative bg-muted border-t border-border overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 tech-grid-3d opacity-30" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />

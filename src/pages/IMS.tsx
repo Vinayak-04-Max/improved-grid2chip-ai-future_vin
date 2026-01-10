@@ -200,7 +200,7 @@ const IMS = () => {
                         <div className="w-10 h-10 mb-3 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                           <Icon className="w-5 h-5 text-primary" />
                         </div>
-                        <div className="text-xl font-bold text-white mb-1 leading-tight">
+                        <div className="text-xl font-bold text-foreground mb-1 leading-tight">
                           {spec.value}
                         </div>
                         <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
@@ -273,7 +273,7 @@ const IMS = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-white mb-1">
+                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
                           {feature.title}
                         </h4>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -309,7 +309,7 @@ const IMS = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-white mb-1">
+                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
                           {feature.title}
                         </h4>
                         <p className="text-sm text-muted-foreground leading-relaxed">
