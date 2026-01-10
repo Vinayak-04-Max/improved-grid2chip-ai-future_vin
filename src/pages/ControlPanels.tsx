@@ -83,8 +83,6 @@ const ControlPanels = () => {
             alt="Control Panel Services"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -170,7 +168,7 @@ const ControlPanels = () => {
                         <div className="w-10 h-10 mb-3 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                           <Icon className="w-5 h-5 text-primary" />
                         </div>
-                        <div className="text-xl font-bold text-white mb-1 leading-tight">
+                        <div className="text-xl font-bold text-foreground mb-1 leading-tight">
                           {spec.value}
                         </div>
                         <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
@@ -236,7 +234,7 @@ const ControlPanels = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-white mb-1">
+                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
                           {solution.title}
                         </h4>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -271,7 +269,7 @@ const ControlPanels = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-white mb-1">
+                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
                           {solution.title}
                         </h4>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -337,7 +335,7 @@ const ControlPanels = () => {
                   
                   <div className="flex-1 pt-1">
                     <div className="text-xs text-primary font-semibold mb-1 uppercase tracking-wider">{solution.metric}</div>
-                    <h4 className="text-lg font-display font-semibold text-white mb-1">
+                    <h4 className="text-lg font-display font-semibold text-foreground mb-1">
                       {solution.title}
                     </h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">

@@ -149,7 +149,6 @@ const Home = () => {
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
         </motion.div>
 
         {/* Animated Background Layers */}
