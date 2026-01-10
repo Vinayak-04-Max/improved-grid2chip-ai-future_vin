@@ -230,7 +230,7 @@ const EdgeDataCenter = () => {
                         <div className="w-10 h-10 mb-3 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                           <Icon className="w-5 h-5 text-primary" />
                         </div>
-                        <div className="text-xl font-bold text-white mb-1 leading-tight">
+                        <div className="text-xl font-bold text-foreground mb-1 leading-tight">
                           {spec.value}
                         </div>
                         <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
@@ -306,7 +306,7 @@ const EdgeDataCenter = () => {
                         <Icon className="w-8 h-8 text-white" />
                       </div>
                       
-                      <h3 className="text-xl font-display font-semibold text-white mb-3">
+                      <h3 className="text-xl font-display font-semibold text-foreground mb-3">
                         {feature.title}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
@@ -356,7 +356,7 @@ const EdgeDataCenter = () => {
                 <div className="flex flex-col lg:flex-row lg:items-center gap-6 p-6 rounded-2xl bg-gradient-to-r from-card/60 to-transparent border border-primary/10 hover:border-primary/30 transition-all duration-300">
                   {/* Name & Capacity */}
                   <div className="lg:w-48 flex-shrink-0">
-                    <h3 className="text-xl font-display font-semibold text-white mb-1">
+                    <h3 className="text-xl font-display font-semibold text-foreground mb-1">
                       {type.name}
                     </h3>
                     <div className="text-2xl font-bold text-primary">{type.capacity}</div>
@@ -447,7 +447,7 @@ const EdgeDataCenter = () => {
                             <Icon className={`w-7 h-7 text-${useCase.color}`} />
                           </div>
                           <div>
-                            <h3 className="text-xl font-display font-semibold text-white">
+                            <h3 className="text-xl font-display font-semibold text-foreground">
                               {useCase.industry}
                             </h3>
                           </div>

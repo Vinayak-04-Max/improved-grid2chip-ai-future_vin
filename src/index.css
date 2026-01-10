@@ -40,79 +40,77 @@
     --type-7xl: 6.854rem;
     --type-8xl: 8.721rem;
     
-    /* ─── Core Futuristic Color Palette ─── */
-    --background: 222 47% 4%;
-    --foreground: 210 40% 98%;
+    /* ─── Core Light Theme Color Palette ─── */
+    --background: 210 40% 98%;
+    --foreground: 220 40% 13%;
     
-    /* Deep Space Background Layers */
-    --void: 222 47% 2%;
-    --abyss: 222 47% 6%;
-    --deep: 220 47% 8%;
-    --surface: 220 40% 11%;
-    --elevated: 220 35% 14%;
+    /* Light Background Layers */
+    --void: 210 40% 96%;
+    --abyss: 210 35% 94%;
+    --deep: 210 30% 92%;
+    --surface: 210 25% 97%;
+    --elevated: 0 0% 100%;
     
-    /* G2C Brand Colors - Cyberpunk Enhancement */
-    --g2c-blue: 220 100% 60%;
-    --g2c-blue-glow: 220 100% 70%;
-    --g2c-green: 160 100% 45%;
-    --g2c-green-glow: 160 100% 55%;
+    /* G2C Brand Colors - Professional Light Theme */
+    --g2c-blue: 220 90% 50%;
+    --g2c-blue-glow: 220 85% 60%;
+    --g2c-green: 160 85% 38%;
+    --g2c-green-glow: 160 80% 48%;
     
-    /* Neon Accent Palette */
-    --neon-cyan: 185 100% 55%;
-    --neon-magenta: 300 100% 60%;
-    --neon-amber: 35 100% 55%;
-    --neon-violet: 270 100% 65%;
+    /* Accent Palette - Softer for Light Theme */
+    --neon-cyan: 185 80% 42%;
+    --neon-magenta: 300 70% 50%;
+    --neon-amber: 35 90% 48%;
+    --neon-violet: 270 70% 55%;
     
     /* Component Colors */
-    --card: 220 40% 8%;
-    --card-foreground: 210 40% 98%;
-    --popover: 220 47% 6%;
-    --popover-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 13%;
     
-    --primary: 220 100% 60%;
-    --primary-foreground: 210 40% 98%;
-    --primary-glow: 220 100% 70%;
+    --primary: 220 90% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 220 85% 60%;
     
-    --secondary: 160 100% 45%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 160 85% 38%;
+    --secondary-foreground: 0 0% 100%;
     
-    --muted: 220 30% 18%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 210 25% 92%;
+    --muted-foreground: 220 20% 46%;
     
-    --accent: 160 100% 45%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 160 85% 38%;
+    --accent-foreground: 0 0% 100%;
     
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
     
-    --border: 220 40% 15%;
-    --input: 220 40% 12%;
-    --ring: 220 100% 60%;
+    --border: 220 20% 88%;
+    --input: 220 20% 92%;
+    --ring: 220 90% 50%;
     
-    /* ─── Glow & Shadow System ─── */
-    --glow-primary: 0 0 var(--fib-21) hsl(220 100% 60% / 0.4),
-                    0 0 var(--fib-55) hsl(220 100% 60% / 0.2),
-                    0 0 var(--fib-89) hsl(220 100% 60% / 0.1);
-    --glow-accent: 0 0 var(--fib-21) hsl(160 100% 45% / 0.4),
-                   0 0 var(--fib-55) hsl(160 100% 45% / 0.2),
-                   0 0 var(--fib-89) hsl(160 100% 45% / 0.1);
-    --glow-subtle: 0 0 var(--fib-13) hsl(220 100% 60% / 0.2);
+    /* ─── Shadow System for Light Theme ─── */
+    --glow-primary: 0 4px 20px hsl(220 90% 50% / 0.15),
+                    0 8px 40px hsl(220 90% 50% / 0.1);
+    --glow-accent: 0 4px 20px hsl(160 85% 38% / 0.15),
+                   0 8px 40px hsl(160 85% 38% / 0.1);
+    --glow-subtle: 0 2px 12px hsl(220 90% 50% / 0.08);
     
-    --shadow-depth-1: 0 var(--fib-2) var(--fib-8) hsl(222 47% 0% / 0.3);
-    --shadow-depth-2: 0 var(--fib-5) var(--fib-21) hsl(222 47% 0% / 0.4);
-    --shadow-depth-3: 0 var(--fib-13) var(--fib-55) hsl(222 47% 0% / 0.5);
+    --shadow-depth-1: 0 1px 3px hsl(220 40% 13% / 0.06), 0 1px 2px hsl(220 40% 13% / 0.04);
+    --shadow-depth-2: 0 4px 12px hsl(220 40% 13% / 0.08), 0 2px 4px hsl(220 40% 13% / 0.04);
+    --shadow-depth-3: 0 12px 40px hsl(220 40% 13% / 0.12), 0 4px 12px hsl(220 40% 13% / 0.06);
     
     --radius: 0.75rem;
     
     /* Sidebar */
-    --sidebar-background: 220 47% 6%;
-    --sidebar-foreground: 210 40% 85%;
-    --sidebar-primary: 220 100% 60%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 160 100% 45%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 220 40% 15%;
-    --sidebar-ring: 220 100% 60%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 40% 25%;
+    --sidebar-primary: 220 90% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 85% 38%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 20% 90%;
+    --sidebar-ring: 220 90% 50%;
   }
 }
 
@@ -327,34 +325,31 @@
   }
   
   /* ═══════════════════════════════════════════════════════════════════════════
-     GLASS MORPHISM & DEPTH
+     GLASS MORPHISM & DEPTH - Light Theme
   ═══════════════════════════════════════════════════════════════════════════ */
   
   .glass-panel {
-    background: hsl(var(--card) / 0.6);
-    backdrop-filter: blur(var(--fib-21)) saturate(180%);
-    border: 1px solid hsl(var(--border) / 0.5);
+    background: hsl(var(--card) / 0.85);
+    backdrop-filter: blur(var(--fib-21)) saturate(120%);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-depth-1);
   }
   
   .glass-frosted {
     background: linear-gradient(
       135deg,
-      hsl(var(--surface) / 0.8) 0%,
-      hsl(var(--elevated) / 0.6) 100%
+      hsl(var(--surface) / 0.95) 0%,
+      hsl(var(--elevated) / 0.9) 100%
     );
-    backdrop-filter: blur(var(--fib-34)) saturate(150%);
-    border: 1px solid hsl(var(--primary) / 0.15);
+    backdrop-filter: blur(var(--fib-34)) saturate(120%);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-depth-1);
   }
   
   .depth-card {
-    background: linear-gradient(
-      145deg,
-      hsl(var(--elevated)) 0%,
-      hsl(var(--surface)) 100%
-    );
-    box-shadow: 
-      inset 0 1px 0 hsl(var(--foreground) / 0.05),
-      var(--shadow-depth-2);
+    background: hsl(var(--card));
+    box-shadow: var(--shadow-depth-2);
+    border: 1px solid hsl(var(--border));
   }
   
   /* ═══════════════════════════════════════════════════════════════════════════

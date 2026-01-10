@@ -184,7 +184,7 @@ const HPC = () => {
                       {feature.metric}
                     </Badge>
                   </div>
-                  <h3 className="text-lg font-display font-semibold text-white mb-2">{feature.title}</h3>
+                  <h3 className="text-lg font-display font-semibold text-foreground mb-2">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
               );
@@ -228,7 +228,7 @@ const HPC = () => {
                 <div className="flex flex-col lg:flex-row lg:items-center gap-6 p-6 rounded-2xl bg-gradient-to-r from-card/60 to-transparent border border-primary/10 hover:border-primary/30 transition-all duration-300">
                   {/* Name & Value */}
                   <div className="lg:w-48 flex-shrink-0">
-                    <h3 className="text-xl font-display font-semibold text-white mb-1">
+                    <h3 className="text-xl font-display font-semibold text-foreground mb-1">
                       {spec.label}
                     </h3>
                     <div className="text-2xl font-bold text-primary">{spec.value}</div>
@@ -314,7 +314,7 @@ const HPC = () => {
                           {step.duration}
                         </Badge>
                       </div>
-                      <h3 className="text-xl font-display font-bold text-white mb-2">{step.title}</h3>
+                      <h3 className="text-xl font-display font-bold text-foreground mb-2">{step.title}</h3>
                       <p className="text-muted-foreground">{step.description}</p>
                     </div>
                   </div>
@@ -382,7 +382,7 @@ const HPC = () => {
                           <Icon className="w-7 h-7" />
                         </div>
                         <div>
-                          <h3 className="text-base font-display font-bold text-white mb-1">{useCase.title}</h3>
+                          <h3 className="text-base font-display font-bold text-foreground mb-1">{useCase.title}</h3>
                           <p className="text-sm text-muted-foreground leading-relaxed mb-2">{useCase.description}</p>
                           <div className="flex flex-wrap gap-1">
                             {useCase.applications.slice(0, 2).map((app, i) => (
@@ -420,7 +420,7 @@ const HPC = () => {
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
                     <Brain className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-[10px] font-display font-bold text-white leading-tight">HPC<br/>Solutions</span>
+                  <span className="text-[10px] font-display font-bold text-foreground leading-tight">HPC<br/>Solutions</span>
                 </div>
               </div>
             </motion.div>
@@ -446,7 +446,7 @@ const HPC = () => {
                           <Icon className="w-7 h-7" />
                         </div>
                         <div>
-                          <h3 className="text-base font-display font-bold text-white mb-1">{useCase.title}</h3>
+                          <h3 className="text-base font-display font-bold text-foreground mb-1">{useCase.title}</h3>
                           <p className="text-sm text-muted-foreground leading-relaxed mb-2">{useCase.description}</p>
                           <div className="flex flex-wrap gap-1">
                             {useCase.applications.slice(0, 2).map((app, i) => (
