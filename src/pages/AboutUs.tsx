@@ -50,11 +50,27 @@ const AboutUs = () => {
     { title: "LEED Certified", org: "Green Building", year: "Current", icon: Lightbulb }
   ];
 
-  const coreValues = [
-    { name: "Innovation", icon: Lightbulb },
-    { name: "Reliability", icon: Shield },
-    { name: "Excellence", icon: Award },
-    { name: "Sustainability", icon: Globe }
+  const companyValues = [
+    {
+      title: "Innovation Excellence",
+      description: "Continuously pushing the boundaries of critical infrastructure technology",
+      icon: Lightbulb
+    },
+    {
+      title: "Client Success", 
+      description: "Committed to delivering exceptional results that exceed expectations",
+      icon: Users
+    },
+    {
+      title: "Reliability",
+      description: "Building dependable solutions with uncompromising quality standards",
+      icon: Shield
+    },
+    {
+      title: "Strategic Vision",
+      description: "Fostering a culture of strategic planning and long-term excellence",
+      icon: Target
+    }
   ];
 
   // Leadership Team Data
@@ -215,7 +231,7 @@ const AboutUs = () => {
                 </Link>
               </Button>
               <Button variant="glass" size="lg" asChild>
-                <Link to="/about/leadership">Meet Our Team</Link>
+                <Link to="/about/clients">Our Clients</Link>
               </Button>
             </div>
           </motion.div>
@@ -713,128 +729,51 @@ const AboutUs = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          CIRCULAR HUB INFOGRAPHIC - Core Values
+          CORE VALUES SECTION (from Leadership page)
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-20 lg:py-28 bg-gradient-card">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
-              Our Core <span className="text-gradient-accent">Values</span>
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+              Our <span className="text-g2c-green">Core Values</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide everything we do
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              The principles that guide our leadership and drive our success in delivering 
+              world-class infrastructure solutions.
             </p>
           </motion.div>
 
-          {/* Cross Layout Infographic */}
-          <div className="relative max-w-4xl mx-auto">
-            {/* Desktop Layout */}
-            <div className="hidden lg:grid grid-cols-3 gap-8 items-center">
-              {/* Left Column */}
-              <div className="space-y-8">
-                {coreValues.slice(0, 2).map((value, index) => {
-                  const Icon = value.icon;
-                  return (
-                    <motion.div
-                      key={value.name}
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.15 }}
-                      className="flex items-center gap-4 justify-end"
-                    >
-                      <div className="text-right">
-                        <h4 className="text-lg font-semibold text-foreground">{value.name}</h4>
-                      </div>
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-
-              {/* Center Hub */}
-              <div className="flex justify-center">
-                <motion.div 
-                  className="relative w-40 h-40"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {companyValues.map((value, index) => {
+              const Icon = value.icon;
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s' }} />
-                  <div className="absolute inset-4 rounded-full border border-accent/20" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/40 flex items-center justify-center">
-                      <Target className="w-8 h-8 text-primary" />
-                    </div>
-                  </div>
+                  <Card className="text-center bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 h-full">
+                    <CardHeader>
+                      <div className={`w-16 h-16 mx-auto mb-4 ${bgColor} rounded-full flex items-center justify-center`}>
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
+                      <CardTitle className="text-lg font-semibold">{value.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground">{value.description}</p>
+                    </CardContent>
+                  </Card>
                 </motion.div>
-              </div>
-
-              {/* Right Column */}
-              <div className="space-y-8">
-                {coreValues.slice(2, 4).map((value, index) => {
-                  const Icon = value.icon;
-                  return (
-                    <motion.div
-                      key={value.name}
-                      initial={{ opacity: 0, x: 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.15 }}
-                      className="flex items-center gap-4"
-                    >
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/30 flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-accent" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-semibold text-foreground">{value.name}</h4>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Mobile Layout */}
-            <div className="lg:hidden">
-              <div className="flex justify-center mb-8">
-                <div className="relative w-32 h-32">
-                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s' }} />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/40 flex items-center justify-center">
-                      <Target className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {coreValues.map((value, index) => {
-                  const Icon = value.icon;
-                  return (
-                    <motion.div
-                      key={value.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex flex-col items-center gap-3 p-4 rounded-xl bg-card/30 border border-primary/10"
-                    >
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <span className="text-sm font-medium text-foreground">{value.name}</span>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -16,10 +16,7 @@ import Demo from "./pages/Demo";
 import NotFound from "./pages/NotFound";
 // About G2C Pages
 import AboutUs from "./pages/AboutUs";
-import Partners from "./pages/Partners";
 import Blog from "./pages/Blog";
-import Testimonials from "./pages/Testimonials";
-import Leadership from "./pages/Leadership";
 import Clients from "./pages/Clients";
 import Careers from "./pages/Careers";
 // Products Pages
@@ -54,9 +51,6 @@ const App = () => (
               
               {/* About G2C Routes */}
               <Route path="/about/us" element={<AboutUs />} />
-              <Route path="/about/partners" element={<Partners />} />
-              <Route path="/about/testimonials" element={<Testimonials />} />
-              <Route path="/about/leadership" element={<Leadership />} />
               <Route path="/about/clients" element={<Clients />} />
               <Route path="/about/careers" element={<Careers />} />
               
