@@ -1,10 +1,12 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   Target, Lightbulb, Award, Shield, Cpu, Users, TrendingUp, ArrowRight, 
-  CheckCircle, Globe, Building2, Zap, Clock, BarChart3, PieChart, Activity
+  CheckCircle, Globe, Building2, Zap, Clock, BarChart3, PieChart, Activity,
+  Network, Building, Star, Trophy, Linkedin, Mail
 } from "lucide-react";
 import heroImage from "@/assets/hero-ai-datacenter.jpg";
 
@@ -53,6 +55,126 @@ const AboutUs = () => {
     { name: "Reliability", icon: Shield },
     { name: "Excellence", icon: Award },
     { name: "Sustainability", icon: Globe }
+  ];
+
+  // Leadership Team Data
+  const leaders = [
+    {
+      name: "Seetharam Mannava",
+      role: "Founder & CEO",
+      experience: "24+ years",
+      bio: "With over 24+ years of cross-functional experience, Seetharam is the visionary founder and CEO of Grid2Chip. Specializing in designing and executing critical infrastructure services for data centers.",
+      expertise: ["Critical Infrastructure Services", "Data Center Design", "Strategic Planning", "Turnkey Solutions"],
+      achievements: ["Founder of Grid2Chip", "24+ years industry experience", "Critical facility engagement expert"],
+    },
+    {
+      name: "M V Surya Ganesh",
+      role: "Head of Research & Development",
+      experience: "26+ years",
+      bio: "With over 26+ years of distinguished experience in designing and executing mechanical and electrical requirements for Indian Aviation projects, Surya Ganesh leads our Research & Development division with visionary expertise.",
+      expertise: ["Mechanical & Electrical Design", "Embedded Computing Systems", "Critical Infrastructure", "Aviation Projects"],
+      achievements: ["26+ years industry experience", "Pioneered embedded computing systems", "Aviation project specialist"],
+    }
+  ];
+
+  // Technology Partners Data
+  const partners = [
+    {
+      name: "Schneider Electric",
+      logo: "SE",
+      description: "A global leader in energy management and automation solutions for critical infrastructure.",
+      specialties: ["Power Management", "Cooling Solutions", "Automation", "Energy Efficiency"],
+      color: "bg-primary",
+      icon: Zap
+    },
+    {
+      name: "Legrand",
+      logo: "LG",
+      description: "An innovator in electrical and digital building infrastructures.",
+      specialties: ["Digital Infrastructure", "Cable Management", "Power Distribution", "Smart Buildings"],
+      color: "bg-accent",
+      icon: Building
+    },
+    {
+      name: "Siemens",
+      logo: "SI",
+      description: "A pioneer in advanced building technologies and automation for intelligent facilities.",
+      specialties: ["Building Automation", "Fire Safety", "Security Systems", "Integration"],
+      color: "bg-primary",
+      icon: Cpu
+    },
+    {
+      name: "CommScope",
+      logo: "CS",
+      description: "A provider of next-generation network infrastructure solutions.",
+      specialties: ["Network Infrastructure", "Fiber Solutions", "Wireless Systems", "Connectivity"],
+      color: "bg-accent",
+      icon: Network
+    }
+  ];
+
+  // Testimonials Data
+  const testimonials = [
+    {
+      text: "Grid2Chip's infrastructure accelerated our drug discovery pipeline by 300%. Their predictive maintenance capabilities have eliminated unexpected downtime completely.",
+      author: "Dr. Sarah Chen",
+      company: "Pharmaceutical Research",
+      role: "Chief Technology Officer",
+      rating: 5,
+      industry: "Pharmaceutical"
+    },
+    {
+      text: "The modular design allowed us to scale our computing capacity seamlessly as our needs grew. System optimization reduced our energy costs by 40%.",
+      author: "Michael Rodriguez",
+      company: "Smart City Solutions",
+      role: "Infrastructure Director", 
+      rating: 5,
+      industry: "Smart Cities"
+    },
+    {
+      text: "Their edge data center solutions gave us the ultra-low latency we needed for our autonomous vehicle testing. Exceptional reliability and support.",
+      author: "Emma Thompson",
+      company: "AutoTech Innovations",
+      role: "VP of Engineering",
+      rating: 5,
+      industry: "Automotive"
+    },
+    {
+      text: "Grid2Chip delivered our custom data center 30% faster than projected. The intelligent cooling system maintains perfect temperatures automatically.",
+      author: "David Park",
+      company: "Research Laboratory",
+      role: "Facilities Manager",
+      rating: 5,
+      industry: "Research"
+    }
+  ];
+
+  // Awards Data
+  const awards = [
+    {
+      title: "Data Center Excellence Award 2024",
+      organization: "Data Center Institute",
+      category: "Innovation",
+      year: "2024"
+    },
+    {
+      title: "Green Technology Leader",
+      organization: "Sustainable Tech Council",
+      category: "Energy Efficiency",
+      year: "2024"
+    },
+    {
+      title: "Critical Infrastructure Provider of the Year", 
+      organization: "Infrastructure Awards",
+      category: "Innovation",
+      year: "2023"
+    },
+    {
+      title: "Best Technology Integration",
+      organization: "TechInnovate Awards",
+      category: "Excellence",
+      year: "2023"
+    }
   ];
 
   return (
@@ -167,6 +289,94 @@ const AboutUs = () => {
                 );
               })}
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          LEADERSHIP TEAM SECTION
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Our <span className="text-gradient-primary">Leadership Team</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Meet the visionary leaders driving innovation in critical facility infrastructure
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            {leaders.map((leader, index) => {
+              const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
+              const nameParts = leader.name.split(' ');
+              const initials = nameParts.length >= 2 
+                ? `${nameParts[0][0]}${nameParts[nameParts.length - 1][0]}`
+                : nameParts[0].substring(0, 2);
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow group h-full flex flex-col">
+                    <CardHeader className="text-center flex-shrink-0">
+                      <div className={`w-32 h-32 mx-auto mb-6 rounded-full ${bgColor} p-1`}>
+                        <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden">
+                          <span className="text-4xl font-bold text-primary">{initials}</span>
+                        </div>
+                      </div>
+                      <CardTitle className="text-xl font-semibold">{leader.name}</CardTitle>
+                      <p className="text-primary font-medium">{leader.role}</p>
+                      <Badge variant="secondary" className="w-fit mx-auto">{leader.experience}</Badge>
+                    </CardHeader>
+                    <CardContent className="space-y-6 flex-grow flex flex-col">
+                      <p className="text-muted-foreground text-sm leading-relaxed">{leader.bio}</p>
+                      
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">Key Expertise</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {leader.expertise.map((skill, i) => (
+                            <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">Key Achievements</h4>
+                        <ul className="text-sm text-muted-foreground space-y-1">
+                          {leader.achievements.map((achievement, i) => (
+                            <li key={i} className="flex items-start">
+                              <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>
+                              {achievement}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="flex gap-2 pt-4 border-t border-primary/20 mt-auto">
+                        <Button variant="ghost" size="sm" className="flex-1">
+                          <Linkedin className="w-4 h-4 mr-2" />
+                          LinkedIn
+                        </Button>
+                        <Button variant="ghost" size="sm" className="flex-1">
+                          <Mail className="w-4 h-4 mr-2" />
+                          Contact
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -427,6 +637,82 @@ const AboutUs = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
+          TECHNOLOGY PARTNERS SECTION
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Our <span className="text-gradient-accent">Technology Partners</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Working with global leaders in technology to provide comprehensive infrastructure solutions
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {partners.map((partner, index) => {
+              const Icon = partner.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="bg-gradient-card border-primary/20 ai-glow group hover:border-primary/40 transition-all duration-300 h-full">
+                    <CardHeader>
+                      <div className="flex items-start space-x-4">
+                        <div className={`w-16 h-16 rounded-xl ${partner.color} flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
+                          {partner.logo}
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-3 mb-2">
+                            <CardTitle className="text-2xl group-hover:text-primary transition-colors">
+                              {partner.name}
+                            </CardTitle>
+                            <Icon className="w-6 h-6 text-primary" />
+                          </div>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            {partner.description}
+                          </p>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="mb-6">
+                        <h4 className="font-semibold text-foreground mb-3">Specialties:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {partner.specialties.map((specialty) => (
+                            <Badge key={specialty} variant="outline" className="border-primary/30 text-primary">
+                              {specialty}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <Button variant="ghost" className="w-full group-hover:bg-primary/10" asChild>
+                        <Link to="/contact">
+                          Learn More About Partnership
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
           CIRCULAR HUB INFOGRAPHIC - Core Values
       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 relative overflow-hidden">
@@ -463,7 +749,7 @@ const AboutUs = () => {
                       className="flex items-center gap-4 justify-end"
                     >
                       <div className="text-right">
-                        <h4 className="text-lg font-semibold text-white">{value.name}</h4>
+                        <h4 className="text-lg font-semibold text-foreground">{value.name}</h4>
                       </div>
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center">
                         <Icon className="w-6 h-6 text-primary" />
@@ -508,7 +794,7 @@ const AboutUs = () => {
                         <Icon className="w-6 h-6 text-accent" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-white">{value.name}</h4>
+                        <h4 className="text-lg font-semibold text-foreground">{value.name}</h4>
                       </div>
                     </motion.div>
                   );
@@ -543,7 +829,7 @@ const AboutUs = () => {
                       <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 flex items-center justify-center">
                         <Icon className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-sm font-medium text-white">{value.name}</span>
+                      <span className="text-sm font-medium text-foreground">{value.name}</span>
                     </motion.div>
                   );
                 })}
@@ -592,11 +878,131 @@ const AboutUs = () => {
                     <Icon className="w-7 h-7 text-primary" />
                   </div>
                   
-                  <h3 className="text-lg font-semibold text-white mb-2">{cert.title}</h3>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{cert.title}</h3>
                   <p className="text-sm text-muted-foreground">{cert.org}</p>
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          WHAT OUR CLIENTS SAY - AUTO-MOVING CAROUSEL
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              What Our <span className="text-gradient-accent">Clients Say</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Real feedback from organizations that trust Grid2Chip for their critical infrastructure needs
+            </p>
+          </motion.div>
+
+          {/* Auto-moving Testimonials Carousel */}
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            
+            <motion.div 
+              className="flex gap-6"
+              animate={{ x: [0, -1600] }}
+              transition={{ 
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
+                <div key={`testimonial-${index}`} className="flex-shrink-0 w-[400px]">
+                  <Card className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow h-full">
+                    <CardHeader>
+                      <div className="flex items-center mb-4">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 text-primary fill-current" />
+                        ))}
+                      </div>
+                      <Badge variant="secondary" className="w-fit">{testimonial.industry}</Badge>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-muted-foreground italic line-clamp-4">"{testimonial.text}"</p>
+                      <div className="border-t border-primary/20 pt-4">
+                        <div className="font-semibold text-foreground">{testimonial.author}</div>
+                        <div className="text-sm text-primary">{testimonial.role}</div>
+                        <div className="text-sm text-muted-foreground">{testimonial.company}</div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          AWARDS & RECOGNITION - AUTO-MOVING CAROUSEL
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 relative overflow-hidden bg-gradient-card">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Awards & <span className="text-gradient-primary">Recognition</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Industry recognition for our innovation in critical facility infrastructure
+            </p>
+          </motion.div>
+
+          {/* Auto-moving Awards Carousel */}
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-card to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-card to-transparent z-10 pointer-events-none" />
+            
+            <motion.div 
+              className="flex gap-6"
+              animate={{ x: [0, -1200] }}
+              transition={{ 
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {[...awards, ...awards].map((award, index) => {
+                const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
+                return (
+                  <div key={`award-${index}`} className="flex-shrink-0 w-[280px]">
+                    <Card className="text-center bg-gradient-to-br from-card to-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 h-full">
+                      <CardHeader>
+                        <div className={`w-16 h-16 mx-auto mb-4 ${bgColor} rounded-full flex items-center justify-center`}>
+                          <Trophy className="w-8 h-8 text-white" />
+                        </div>
+                        <CardTitle className="text-lg font-semibold">{award.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground mb-2">{award.organization}</p>
+                        <Badge variant="outline" className="mb-2">{award.category}</Badge>
+                        <p className="text-sm text-primary font-semibold">{award.year}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                );
+              })}
+            </motion.div>
           </div>
         </div>
       </section>
