@@ -24,9 +24,6 @@ const Navigation = () => {
 
   const aboutItems = [
     { name: "About Us", path: "/about/us" },
-    { name: "Partners", path: "/about/partners" },
-    { name: "Testimonials & Awards", path: "/about/testimonials" },
-    { name: "Our Leadership", path: "/about/leadership" },
     { name: "Our Clients", path: "/about/clients" },
     { name: "Careers", path: "/about/careers" }
   ];
