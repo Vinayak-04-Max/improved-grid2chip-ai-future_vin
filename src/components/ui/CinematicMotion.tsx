@@ -73,6 +73,7 @@ interface OrbitingWheelProps {
   items: CategoryItem[];
   radius?: number;
   duration?: number;
+  animated?: boolean;
   className?: string;
   centerContent?: React.ReactNode;
 }
@@ -81,42 +82,72 @@ export const OrbitingWheel: React.FC<OrbitingWheelProps> = ({
   items,
   radius = 180,
   duration = 30,
+  animated = true,
   className,
   centerContent,
 }) => {
   const angleStep = (2 * Math.PI) / items.length;
 
+  const ring1Animate = animated ? { rotate: 360 } : undefined;
+  const ring1Transition = animated
+    ? ({ duration: duration * 2, repeat: Infinity, ease: "linear" } as const)
+    : undefined;
+
+  const ring2Animate = animated ? { rotate: -360 } : undefined;
+  const ring2Transition = animated
+    ? ({ duration: duration * 1.5, repeat: Infinity, ease: "linear" } as const)
+    : undefined;
+
+  const orbitAnimate = animated ? { rotate: 360 } : undefined;
+  const orbitTransition = animated
+    ? ({ duration, repeat: Infinity, ease: "linear" } as const)
+    : undefined;
+
+  const itemAnimate = animated ? { rotate: -360 } : undefined;
+  const itemTransition = animated
+    ? ({ duration, repeat: Infinity, ease: "linear" } as const)
+    : undefined;
+
+  const innerPulseAnimate = animated ? { scale: [1, 1.05, 1] } : undefined;
+  const innerPulseTransition = animated
+    ? ({ duration: 2, repeat: Infinity, ease: "easeInOut" } as const)
+    : undefined;
+
   return (
     <div className={cn("relative flex items-center justify-center", className)} style={{ height: radius * 2.5 }}>
       {/* Center Content */}
-      <motion.div
-        className="absolute z-10"
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      >
-        {centerContent}
-      </motion.div>
+      {animated ? (
+        <motion.div
+          className="absolute z-10"
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        >
+          {centerContent}
+        </motion.div>
+      ) : (
+        <div className="absolute z-10">{centerContent}</div>
+      )}
 
       {/* Orbital Rings */}
       <motion.div
         className="absolute border border-primary/20 rounded-full"
         style={{ width: radius * 2, height: radius * 2 }}
-        animate={{ rotate: 360 }}
-        transition={{ duration: duration * 2, repeat: Infinity, ease: "linear" }}
+        animate={ring1Animate}
+        transition={ring1Transition}
       />
       <motion.div
         className="absolute border border-accent/10 rounded-full"
         style={{ width: radius * 1.5, height: radius * 1.5 }}
-        animate={{ rotate: -360 }}
-        transition={{ duration: duration * 1.5, repeat: Infinity, ease: "linear" }}
+        animate={ring2Animate}
+        transition={ring2Transition}
       />
 
       {/* Orbiting Items */}
       <motion.div
         className="absolute"
         style={{ width: radius * 2, height: radius * 2 }}
-        animate={{ rotate: 360 }}
-        transition={{ duration, repeat: Infinity, ease: "linear" }}
+        animate={orbitAnimate}
+        transition={orbitTransition}
       >
         {items.map((item, index) => {
           const angle = index * angleStep - Math.PI / 2;
@@ -133,14 +164,21 @@ export const OrbitingWheel: React.FC<OrbitingWheelProps> = ({
                 x: x - 40,
                 y: y - 40,
               }}
-              animate={{ rotate: -360 }}
-              transition={{ duration, repeat: Infinity, ease: "linear" }}
+              animate={itemAnimate}
+              transition={itemTransition}
               whileHover={{ scale: 1.2, zIndex: 50 }}
             >
               <motion.div
                 className="flex flex-col items-center gap-fib-5 min-w-[80px]"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
+                animate={innerPulseAnimate}
+                transition={
+                  animated
+                    ? ({
+                        ...innerPulseTransition,
+                        delay: index * 0.2,
+                      } as const)
+                    : undefined
+                }
               >
                 <div className="text-primary group-hover:text-accent transition-colors">
                   {item.icon}

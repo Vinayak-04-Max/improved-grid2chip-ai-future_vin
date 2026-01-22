@@ -13,7 +13,6 @@ import {
   DepthLayer, 
   PulseAccent, 
   RefractiveCard,
-  ContinuousCarousel,
   MorphingBlob,
   DataStream,
   VelocityText,
@@ -434,58 +433,40 @@ const Home = () => {
           </ScrollRevealBlock>
         </div>
 
-        {/* Continuous Carousel */}
-        <ContinuousCarousel direction="left" speed={40}>
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <Link key={service.title} to={service.path}>
-                <motion.div
-                  className="glass-panel rounded-fib-xl p-fib-34 w-[300px] h-[200px] group cursor-pointer flex flex-col"
-                  whileHover={{ scale: 1.05, y: -10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <motion.div 
-                    className={`w-fib-55 h-fib-55 rounded-fib-lg flex items-center justify-center mb-fib-21 flex-shrink-0 ${index % 2 === 0 ? 'bg-primary/20' : 'bg-accent/20'}`}
-                    animate={{ rotate: [0, 5, 0, -5, 0] }}
-                    transition={{ duration: 6, repeat: Infinity, delay: index * 0.5 }}
-                  >
-                    <Icon className={`w-fib-34 h-fib-34 ${index % 2 === 0 ? 'text-primary' : 'text-accent'}`} />
-                  </motion.div>
-                  <h3 className="text-phi-lg font-display font-semibold mb-fib-8 text-foreground group-hover:text-primary transition-colors flex-shrink-0">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground flex-grow">
-                    {service.desc}
-                  </p>
-                </motion.div>
-              </Link>
-            );
-          })}
-        </ContinuousCarousel>
-
-        {/* Reverse direction carousel for visual interest */}
-        <div className="mt-fib-21">
-          <ContinuousCarousel direction="right" speed={45}>
-            {[...services].reverse().map((service, index) => {
+        {/* Static responsive service cards (2–3 rows depending on width) */}
+        <div className="fib-container relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-fib-21 items-stretch">
+            {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Link key={`rev-${service.title}`} to={service.path}>
+                <Link key={service.title} to={service.path} className="h-full">
                   <motion.div
-                    className="glass-panel rounded-fib-xl p-fib-21 w-[250px] h-[60px] group cursor-pointer border border-primary/10 flex items-center"
-                    whileHover={{ scale: 1.05 }}
+                    className="glass-panel rounded-fib-xl p-fib-34 h-[200px] group cursor-pointer flex flex-col"
+                    whileHover={{ scale: 1.03, y: -6 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 22 }}
                   >
-                    <div className="flex items-center gap-fib-13">
-                      <div className={`w-fib-34 h-fib-34 rounded-fib flex items-center justify-center flex-shrink-0 ${index % 2 === 0 ? 'bg-accent/20' : 'bg-primary/20'}`}>
-                        <Icon className={`w-fib-21 h-fib-21 ${index % 2 === 0 ? 'text-accent' : 'text-primary'}`} />
-                      </div>
-                      <span className="text-sm font-medium text-foreground truncate">{service.title}</span>
+                    <div
+                      className={`w-fib-55 h-fib-55 rounded-fib-lg flex items-center justify-center mb-fib-21 flex-shrink-0 ${
+                        index % 2 === 0 ? "bg-primary/20" : "bg-accent/20"
+                      }`}
+                    >
+                      <Icon
+                        className={`w-fib-34 h-fib-34 ${
+                          index % 2 === 0 ? "text-primary" : "text-accent"
+                        }`}
+                      />
                     </div>
+                    <h3 className="text-phi-lg font-display font-semibold mb-fib-8 text-foreground group-hover:text-primary transition-colors flex-shrink-0">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground flex-grow line-clamp-3">
+                      {service.desc}
+                    </p>
                   </motion.div>
                 </Link>
               );
             })}
-          </ContinuousCarousel>
+          </div>
         </div>
       </section>
 
@@ -496,73 +477,39 @@ const Home = () => {
         <AnimatedBackground variant="aurora" intensity={0.5} />
         
         <div className="fib-container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-fib-89 items-center">
-            {/* Text Content */}
-            <div className="order-2 lg:order-1">
-              <ScrollRevealBlock variant="slide" direction="left">
-                <h2 className="text-phi-4xl md:text-phi-5xl font-display font-bold mb-fib-21">
-                  Industries We{" "}
-                  <span className="text-gradient-primary">Serve</span>
-                </h2>
-              </ScrollRevealBlock>
-              
-              <ScrollRevealBlock variant="fade" delay={0.2}>
-                <p className="text-phi-lg text-muted-foreground mb-fib-34">
-                  Our data center solutions power critical operations across diverse sectors, 
-                  enabling digital transformation and operational excellence.
-                </p>
-              </ScrollRevealBlock>
+          <div className="max-w-5xl mx-auto text-center mb-fib-55">
+            <ScrollRevealBlock variant="slide" direction="up">
+              <h2 className="text-phi-4xl md:text-phi-5xl font-display font-bold mb-fib-21">
+                Industries We <span className="text-gradient-primary">Serve</span>
+              </h2>
+            </ScrollRevealBlock>
 
-              <StaggerReveal className="space-y-fib-13" staggerDelay={0.1}>
-                {industries.map((industry) => {
-                  const Icon = industry.icon;
-                  return (
-                    <motion.div
-                      key={industry.name}
-                      className="flex items-center gap-fib-13 glass-panel rounded-fib-lg p-fib-13 cursor-pointer group"
-                      whileHover={{ x: 10, backgroundColor: 'hsl(var(--primary) / 0.1)' }}
-                    >
-                      <motion.div
-                        className="w-fib-34 h-fib-34 rounded-full bg-primary/20 flex items-center justify-center"
-                        whileHover={{ scale: 1.2, rotate: 360 }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        <Icon className="w-fib-21 h-fib-21 text-primary" />
-                      </motion.div>
-                      <div>
-                        <h4 className="font-medium text-foreground group-hover:text-primary transition-colors">
-                          {industry.name}
-                        </h4>
-                        <p className="text-xs text-muted-foreground">{industry.desc}</p>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </StaggerReveal>
-            </div>
+            <ScrollRevealBlock variant="fade" delay={0.2}>
+              <p className="text-phi-lg text-muted-foreground">
+                Our data center solutions power critical operations across diverse sectors,
+                enabling digital transformation and operational excellence.
+              </p>
+            </ScrollRevealBlock>
+          </div>
 
-            {/* Orbiting Wheel */}
-            <div className="order-1 lg:order-2 flex justify-center">
-              <ScrollRevealBlock variant="scale" delay={0.3}>
-                <OrbitingWheel
-                  items={industryItems}
-                  radius={200}
-                  duration={40}
-                  centerContent={
-                    <motion.div
-                      className="glass-panel rounded-full w-32 h-32 flex items-center justify-center"
-                      animate={{ boxShadow: ['0 0 30px hsl(var(--primary) / 0.3)', '0 0 60px hsl(var(--primary) / 0.5)', '0 0 30px hsl(var(--primary) / 0.3)'] }}
-                      transition={{ duration: 3, repeat: Infinity }}
-                    >
-                      <div className="text-center">
-                        <Cloud className="w-10 h-10 text-primary mx-auto mb-2" />
-                        <span className="text-xs font-medium text-foreground">Industries</span>
-                      </div>
-                    </motion.div>
-                  }
-                />
-              </ScrollRevealBlock>
-            </div>
+          {/* Circular layout only (static, centered) */}
+          <div className="flex justify-center">
+            <ScrollRevealBlock variant="scale" delay={0.3}>
+              <OrbitingWheel
+                items={industryItems}
+                radius={200}
+                duration={40}
+                animated={false}
+                centerContent={
+                  <div className="glass-panel rounded-full w-32 h-32 flex items-center justify-center">
+                    <div className="text-center">
+                      <Cloud className="w-10 h-10 text-primary mx-auto mb-2" />
+                      <span className="text-xs font-medium text-foreground">Industries</span>
+                    </div>
+                  </div>
+                }
+              />
+            </ScrollRevealBlock>
           </div>
         </div>
       </section>
