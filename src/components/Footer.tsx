@@ -112,8 +112,8 @@ const Footer = () => {
                 <div className="p-fib-5 rounded-fib bg-primary/10 mt-1">
                   <MapPin className="h-4 w-4 text-primary" />
                 </div>
-                <div className="text-sm text-muted-foreground">#306, Downtown mall,
-Lakdikapool, Hyderabad - 500004.<br />
+                <div className="text-sm text-muted-foreground">#306, Downtown mall, Lakdikapool, Hyderabad - 500004.
+                <br />
                   Beside Lotus Hospital<br />
                   Lakdikapool, Hyderabad - 500004
                 </div>
