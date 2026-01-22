@@ -2,120 +2,141 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { 
-  Building2, Thermometer, Zap, Shield, ArrowRight, Activity, BarChart3, 
-  AlertTriangle, Settings, CheckCircle, Server, Clock, Gauge, TrendingUp,
-  Monitor, Cpu, ChevronRight
-} from "lucide-react";
+import { Building2, Thermometer, Zap, Shield, ArrowRight, Activity, BarChart3, AlertTriangle, Settings, CheckCircle, Server, Clock, Gauge, TrendingUp, Monitor, Cpu, ChevronRight } from "lucide-react";
 import heroImage from "@/assets/hero-ai-datacenter.jpg";
-
 const BuildingManagement = () => {
-  const features = [
-    {
-      title: "Centralized Monitoring",
-      description: "Single interface to monitor all facility systems",
-      icon: Activity,
-      metric: "360°"
-    },
-    {
-      title: "Energy Management",
-      description: "Track and optimize energy consumption in real-time",
-      icon: Zap,
-      metric: "30% Savings"
-    },
-    {
-      title: "Predictive Alerts",
-      description: "Smart analytics predict equipment failures",
-      icon: AlertTriangle,
-      metric: "AI-Powered"
-    },
-    {
-      title: "Environmental Control",
-      description: "Automated temperature and humidity management",
-      icon: Thermometer,
-      metric: "±0.5°C"
-    },
-    {
-      title: "Comprehensive Reports",
-      description: "Detailed analytics and compliance reporting",
-      icon: BarChart3,
-      metric: "Real-time"
-    },
-    {
-      title: "Systems Integration",
-      description: "Open-platform compatibility with all protocols",
-      icon: Settings,
-      metric: "100+"
-    }
-  ];
-
-  const specifications = [
-    { label: "System Uptime", value: "99.998%", icon: TrendingUp, description: "Availability" },
-    { label: "Response Time", value: "<100ms", icon: Clock, description: "Alert speed" },
-    { label: "Protocols", value: "BACnet+", icon: Server, description: "Supported" },
-    { label: "Energy Savings", value: "30%", icon: Gauge, description: "Average" },
-    { label: "Integration", value: "Open", icon: Settings, description: "Platform" },
-    { label: "Monitoring", value: "24/7", icon: Monitor, description: "Continuous" }
-  ];
-
-  const integratedSystems = [
-    { name: "HVAC Systems", icon: Thermometer },
-    { name: "Power Management", icon: Zap },
-    { name: "Lighting Control", icon: Monitor },
-    { name: "Physical Security", icon: Shield }
-  ];
-
-  const benefits = [
-    {
-      title: "Reduced Operational Costs",
-      description: "Lower energy bills and maintenance expenses through intelligent automation",
-      icon: Zap
-    },
-    {
-      title: "Improved Reliability",
-      description: "Proactively address potential issues to ensure system availability",
-      icon: Shield
-    },
-    {
-      title: "Enhanced Comfort & Safety",
-      description: "Create safer, more comfortable environments for occupants",
-      icon: Thermometer
-    },
-    {
-      title: "Centralized Efficiency",
-      description: "Streamline facility management with single point of control",
-      icon: Activity
-    }
-  ];
-
-  const applications = [
-    { step: "01", title: "Mission-Critical Data Centers", description: "Maximum uptime and efficiency for critical IT environments", duration: "Tier III/IV" },
-    { step: "02", title: "Commercial Buildings", description: "Optimize comfort, safety, and energy across office towers", duration: "Enterprise" },
-    { step: "03", title: "Industrial Facilities", description: "Precise environmental controls for manufacturing processes", duration: "Industrial" },
-    { step: "04", title: "Healthcare & Life Sciences", description: "Compliance and reliability for sensitive environments", duration: "Certified" }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const features = [{
+    title: "Centralized Monitoring",
+    description: "Single interface to monitor all facility systems",
+    icon: Activity,
+    metric: "360°"
+  }, {
+    title: "Energy Management",
+    description: "Track and optimize energy consumption in real-time",
+    icon: Zap,
+    metric: "30% Savings"
+  }, {
+    title: "Predictive Alerts",
+    description: "Smart analytics predict equipment failures",
+    icon: AlertTriangle,
+    metric: "AI-Powered"
+  }, {
+    title: "Environmental Control",
+    description: "Automated temperature and humidity management",
+    icon: Thermometer,
+    metric: "±0.5°C"
+  }, {
+    title: "Comprehensive Reports",
+    description: "Detailed analytics and compliance reporting",
+    icon: BarChart3,
+    metric: "Real-time"
+  }, {
+    title: "Systems Integration",
+    description: "Open-platform compatibility with all protocols",
+    icon: Settings,
+    metric: "100+"
+  }];
+  const specifications = [{
+    label: "System Uptime",
+    value: "99.998%",
+    icon: TrendingUp,
+    description: "Availability"
+  }, {
+    label: "Response Time",
+    value: "<100ms",
+    icon: Clock,
+    description: "Alert speed"
+  }, {
+    label: "Protocols",
+    value: "BACnet+",
+    icon: Server,
+    description: "Supported"
+  }, {
+    label: "Energy Savings",
+    value: "30%",
+    icon: Gauge,
+    description: "Average"
+  }, {
+    label: "Integration",
+    value: "Open",
+    icon: Settings,
+    description: "Platform"
+  }, {
+    label: "Monitoring",
+    value: "24/7",
+    icon: Monitor,
+    description: "Continuous"
+  }];
+  const integratedSystems = [{
+    name: "HVAC Systems",
+    icon: Thermometer
+  }, {
+    name: "Power Management",
+    icon: Zap
+  }, {
+    name: "Lighting Control",
+    icon: Monitor
+  }, {
+    name: "Physical Security",
+    icon: Shield
+  }];
+  const benefits = [{
+    title: "Reduced Operational Costs",
+    description: "Lower energy bills and maintenance expenses through intelligent automation",
+    icon: Zap
+  }, {
+    title: "Improved Reliability",
+    description: "Proactively address potential issues to ensure system availability",
+    icon: Shield
+  }, {
+    title: "Enhanced Comfort & Safety",
+    description: "Create safer, more comfortable environments for occupants",
+    icon: Thermometer
+  }, {
+    title: "Centralized Efficiency",
+    description: "Streamline facility management with single point of control",
+    icon: Activity
+  }];
+  const applications = [{
+    step: "01",
+    title: "Mission-Critical Data Centers",
+    description: "Maximum uptime and efficiency for critical IT environments",
+    duration: "Tier III/IV"
+  }, {
+    step: "02",
+    title: "Commercial Buildings",
+    description: "Optimize comfort, safety, and energy across office towers",
+    duration: "Enterprise"
+  }, {
+    step: "03",
+    title: "Industrial Facilities",
+    description: "Precise environmental controls for manufacturing processes",
+    duration: "Industrial"
+  }, {
+    step: "04",
+    title: "Healthcare & Life Sciences",
+    description: "Compliance and reliability for sensitive environments",
+    duration: "Certified"
+  }];
+  return <div className="min-h-screen bg-background">
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
-      ═══════════════════════════════════════════════════════════════════════════ */}
+       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt="Building Management Systems"
-            className="w-full h-full object-cover"
-          />
+          <img src={heroImage} alt="Building Management Systems" className="w-full h-full object-cover opacity-85" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <motion.div 
-            className="max-w-2xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.div className="max-w-2xl" initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }}>
             <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
               IBMS Solutions
             </Badge>
@@ -139,27 +160,32 @@ const BuildingManagement = () => {
           </motion.div>
         </div>
 
-        <motion.div 
-          className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary/50"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-        />
+        <motion.div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary/50" initial={{
+        scaleX: 0
+      }} animate={{
+        scaleX: 1
+      }} transition={{
+        duration: 1.5,
+        delay: 0.5
+      }} />
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
           STATISTICAL INFOGRAPHIC - Key Metrics Carousel
-      ═══════════════════════════════════════════════════════════════════════════ */}
+       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-card/30" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="text-center mb-16" initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }}>
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
               Performance <span className="text-gradient-primary">Metrics</span>
             </h2>
@@ -173,19 +199,16 @@ const BuildingManagement = () => {
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
             
-            <motion.div 
-              className="flex gap-6"
-              animate={{ x: [0, -1200] }}
-              transition={{ 
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            >
+            <motion.div className="flex gap-6" animate={{
+            x: [0, -1200]
+          }} transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}>
               {[...specifications, ...specifications].map((spec, index) => {
-                const Icon = spec.icon;
-                return (
-                  <div key={`${spec.label}-${index}`} className="relative group flex-shrink-0">
+              const Icon = spec.icon;
+              return <div key={`${spec.label}-${index}`} className="relative group flex-shrink-0">
                     <div className="relative w-44 h-48 p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 text-center flex flex-col justify-center">
                       <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       <div className="relative z-10 flex flex-col items-center">
@@ -203,9 +226,8 @@ const BuildingManagement = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  </div>;
+            })}
             </motion.div>
           </div>
         </div>
@@ -213,17 +235,20 @@ const BuildingManagement = () => {
 
       {/* ═══════════════════════════════════════════════════════════════════════════
           SEMICIRCULAR INFOGRAPHIC - Key Features
-      ═══════════════════════════════════════════════════════════════════════════ */}
+       ═══════════════════════════════════════════════════════════════════════════ */}
       <section id="features" className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/10 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="text-center mb-16" initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }}>
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
               Key <span className="text-gradient-accent">Features</span>
             </h2>
@@ -238,16 +263,18 @@ const BuildingManagement = () => {
               {/* Left Side Features */}
               <div className="absolute left-0 top-0 w-[280px] space-y-12 z-20">
                 {features.slice(0, 3).map((feature, index) => {
-                  const Icon = feature.icon;
-                  return (
-                    <motion.div 
-                      key={feature.title} 
-                      className="flex items-start gap-4"
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 * index }}
-                    >
+                const Icon = feature.icon;
+                return <motion.div key={feature.title} className="flex items-start gap-4" initial={{
+                  opacity: 0,
+                  x: -30
+                }} whileInView={{
+                  opacity: 1,
+                  x: 0
+                }} viewport={{
+                  once: true
+                }} transition={{
+                  delay: 0.1 * index
+                }}>
                       <div className="relative flex-shrink-0">
                         <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
                           <Icon className="w-7 h-7 text-white" />
@@ -265,24 +292,25 @@ const BuildingManagement = () => {
                           {feature.description}
                         </p>
                       </div>
-                    </motion.div>
-                  );
-                })}
+                    </motion.div>;
+              })}
               </div>
 
               {/* Right Side Features */}
               <div className="absolute right-0 top-0 w-[280px] space-y-12 z-20">
                 {features.slice(3, 6).map((feature, index) => {
-                  const Icon = feature.icon;
-                  return (
-                    <motion.div 
-                      key={feature.title} 
-                      className="flex items-start gap-4 flex-row-reverse text-right"
-                      initial={{ opacity: 0, x: 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 * (index + 3) }}
-                    >
+                const Icon = feature.icon;
+                return <motion.div key={feature.title} className="flex items-start gap-4 flex-row-reverse text-right" initial={{
+                  opacity: 0,
+                  x: 30
+                }} whileInView={{
+                  opacity: 1,
+                  x: 0
+                }} viewport={{
+                  once: true
+                }} transition={{
+                  delay: 0.1 * (index + 3)
+                }}>
                       <div className="relative flex-shrink-0">
                         <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center shadow-lg shadow-accent/20">
                           <Icon className="w-7 h-7 text-white" />
@@ -300,9 +328,8 @@ const BuildingManagement = () => {
                           {feature.description}
                         </p>
                       </div>
-                    </motion.div>
-                  );
-                })}
+                    </motion.div>;
+              })}
               </div>
 
               {/* Center Semicircle Arc */}
@@ -321,11 +348,11 @@ const BuildingManagement = () => {
                     <path d="M 50 250 A 160 160 0 0 1 370 250" fill="none" stroke="hsl(var(--primary) / 0.3)" strokeWidth="2" strokeLinecap="round" />
                     
                     {[0, 1, 2, 3, 4, 5].map(i => {
-                      const angle = Math.PI * (i + 0.5) / 6;
-                      const x = 210 + 180 * Math.cos(Math.PI - angle);
-                      const y = 250 - 180 * Math.sin(angle);
-                      return <circle key={i} cx={x} cy={y} r="6" fill="white" opacity="0.9" />;
-                    })}
+                    const angle = Math.PI * (i + 0.5) / 6;
+                    const x = 210 + 180 * Math.cos(Math.PI - angle);
+                    const y = 250 - 180 * Math.sin(angle);
+                    return <circle key={i} cx={x} cy={y} r="6" fill="white" opacity="0.9" />;
+                  })}
                   </svg>
                 </div>
               </div>
@@ -335,16 +362,18 @@ const BuildingManagement = () => {
           {/* Mobile Layout - Vertical Steps */}
           <div className="lg:hidden space-y-8">
             {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <motion.div 
-                  key={feature.title} 
-                  className="flex items-start gap-4"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
+            const Icon = feature.icon;
+            return <motion.div key={feature.title} className="flex items-start gap-4" initial={{
+              opacity: 0,
+              x: -20
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              delay: index * 0.1
+            }}>
                   <div className="relative flex-shrink-0">
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
                       <Icon className="w-7 h-7 text-white" />
@@ -352,9 +381,7 @@ const BuildingManagement = () => {
                     <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-background border-2 border-primary/40 flex items-center justify-center">
                       <span className="text-xs font-bold text-primary">0{index + 1}</span>
                     </div>
-                    {index < features.length - 1 && (
-                      <div className="absolute top-16 left-1/2 -translate-x-1/2 w-0.5 h-10 bg-gradient-to-b from-primary/40 to-transparent" />
-                    )}
+                    {index < features.length - 1 && <div className="absolute top-16 left-1/2 -translate-x-1/2 w-0.5 h-10 bg-gradient-to-b from-primary/40 to-transparent" />}
                   </div>
                   
                   <div className="flex-1 pt-1">
@@ -366,26 +393,28 @@ const BuildingManagement = () => {
                       {feature.description}
                     </p>
                   </div>
-                </motion.div>
-              );
-            })}
+                </motion.div>;
+          })}
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
           CIRCULAR HUB INFOGRAPHIC - Integrated Systems
-      ═══════════════════════════════════════════════════════════════════════════ */}
+       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="text-center mb-16" initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }}>
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
               Integrated <span className="text-gradient-primary">Systems</span>
             </h2>
@@ -401,36 +430,42 @@ const BuildingManagement = () => {
               {/* Left Column */}
               <div className="space-y-8">
                 {integratedSystems.slice(0, 2).map((system, index) => {
-                  const Icon = system.icon;
-                  return (
-                    <motion.div
-                      key={system.name}
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.15 }}
-                      className="flex items-center gap-4 justify-end"
-                    >
+                const Icon = system.icon;
+                return <motion.div key={system.name} initial={{
+                  opacity: 0,
+                  x: -30
+                }} whileInView={{
+                  opacity: 1,
+                  x: 0
+                }} viewport={{
+                  once: true
+                }} transition={{
+                  delay: index * 0.15
+                }} className="flex items-center gap-4 justify-end">
                       <div className="text-right">
-                        <h4 className="text-lg font-semibold text-white">{system.name}</h4>
+                        <h4 className="text-lg font-semibold text-primary-glow">{system.name}</h4>
                       </div>
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center">
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
-                    </motion.div>
-                  );
-                })}
+                    </motion.div>;
+              })}
               </div>
 
               {/* Center Hub */}
               <div className="flex justify-center">
-                <motion.div 
-                  className="relative w-40 h-40"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s' }} />
+                <motion.div className="relative w-40 h-40" initial={{
+                opacity: 0,
+                scale: 0.8
+              }} whileInView={{
+                opacity: 1,
+                scale: 1
+              }} viewport={{
+                once: true
+              }}>
+                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{
+                  animationDuration: '20s'
+                }} />
                   <div className="absolute inset-4 rounded-full border border-accent/20" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/40 flex items-center justify-center">
@@ -443,25 +478,26 @@ const BuildingManagement = () => {
               {/* Right Column */}
               <div className="space-y-8">
                 {integratedSystems.slice(2, 4).map((system, index) => {
-                  const Icon = system.icon;
-                  return (
-                    <motion.div
-                      key={system.name}
-                      initial={{ opacity: 0, x: 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.15 }}
-                      className="flex items-center gap-4"
-                    >
+                const Icon = system.icon;
+                return <motion.div key={system.name} initial={{
+                  opacity: 0,
+                  x: 30
+                }} whileInView={{
+                  opacity: 1,
+                  x: 0
+                }} viewport={{
+                  once: true
+                }} transition={{
+                  delay: index * 0.15
+                }} className="flex items-center gap-4">
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/30 flex items-center justify-center">
                         <Icon className="w-6 h-6 text-accent" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-white">{system.name}</h4>
+                        <h4 className="text-lg font-semibold text-secondary">{system.name}</h4>
                       </div>
-                    </motion.div>
-                  );
-                })}
+                    </motion.div>;
+              })}
               </div>
             </div>
 
@@ -469,7 +505,9 @@ const BuildingManagement = () => {
             <div className="lg:hidden">
               <div className="flex justify-center mb-8">
                 <div className="relative w-32 h-32">
-                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s' }} />
+                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{
+                  animationDuration: '20s'
+                }} />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/40 flex items-center justify-center">
                       <Building2 className="w-6 h-6 text-primary" />
@@ -479,23 +517,24 @@ const BuildingManagement = () => {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {integratedSystems.map((system, index) => {
-                  const Icon = system.icon;
-                  return (
-                    <motion.div
-                      key={system.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="p-4 rounded-xl bg-card/50 border border-primary/10 text-center"
-                    >
+                const Icon = system.icon;
+                return <motion.div key={system.name} initial={{
+                  opacity: 0,
+                  y: 20
+                }} whileInView={{
+                  opacity: 1,
+                  y: 0
+                }} viewport={{
+                  once: true
+                }} transition={{
+                  delay: index * 0.1
+                }} className="p-4 rounded-xl bg-card/50 border border-primary/10 text-center">
                       <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
                         <Icon className="w-5 h-5 text-primary" />
                       </div>
                       <h4 className="text-sm font-semibold text-white">{system.name}</h4>
-                    </motion.div>
-                  );
-                })}
+                    </motion.div>;
+              })}
               </div>
             </div>
           </div>
@@ -504,15 +543,18 @@ const BuildingManagement = () => {
 
       {/* ═══════════════════════════════════════════════════════════════════════════
           BENEFITS INFOGRAPHIC - Gradient Cards
-      ═══════════════════════════════════════════════════════════════════════════ */}
+       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="text-center mb-16" initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }}>
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
               Core <span className="text-gradient-accent">Benefits</span>
             </h2>
@@ -520,16 +562,18 @@ const BuildingManagement = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group"
-                >
+            const Icon = benefit.icon;
+            return <motion.div key={benefit.title} initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              delay: index * 0.1
+            }} className="group">
                   <div className="relative p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 h-full text-center">
                     <div className={`w-14 h-14 mx-auto mb-4 rounded-xl ${index % 2 === 0 ? 'bg-primary/20' : 'bg-accent/20'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className={`w-7 h-7 ${index % 2 === 0 ? 'text-primary' : 'text-accent'}`} />
@@ -541,24 +585,26 @@ const BuildingManagement = () => {
                       {benefit.description}
                     </p>
                   </div>
-                </motion.div>
-              );
-            })}
+                </motion.div>;
+          })}
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
           VERTICAL ROADMAP - Ideal Applications
-      ═══════════════════════════════════════════════════════════════════════════ */}
+       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 bg-card/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="text-center mb-16" initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }}>
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
               Ideal <span className="text-gradient-primary">Applications</span>
             </h2>
@@ -570,17 +616,17 @@ const BuildingManagement = () => {
           <div className="max-w-3xl mx-auto relative">
             <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary/30 rounded-full" />
             
-            {applications.map((app, index) => (
-              <motion.div
-                key={app.step}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                className={`relative flex items-start gap-6 mb-12 last:mb-0 ${
-                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                }`}
-              >
+            {applications.map((app, index) => <motion.div key={app.step} initial={{
+            opacity: 0,
+            y: 30
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            delay: index * 0.15
+          }} className={`relative flex items-start gap-6 mb-12 last:mb-0 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
                 <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10" />
                 
                 <div className={`ml-16 lg:ml-0 lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12'}`}>
@@ -600,15 +646,14 @@ const BuildingManagement = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
           CTA SECTION - Modern Gradient
-      ═══════════════════════════════════════════════════════════════════════════ */}
+       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
         <div className="absolute inset-0">
@@ -617,11 +662,15 @@ const BuildingManagement = () => {
         </div>
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }}>
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
               Ready to Optimize Your <span className="text-gradient-primary">Facility?</span>
             </h2>
@@ -642,8 +691,6 @@ const BuildingManagement = () => {
           </motion.div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default BuildingManagement;
