@@ -456,7 +456,7 @@ const IMS = () => {
                   delay: index * 0.15
                 }} className="flex items-center gap-4 justify-end">
                       <div className="text-right">
-                        <h4 className="text-lg font-semibold text-white">{system.name}</h4>
+                        <h4 className="text-lg font-semibold text-primary-glow">{system.name}</h4>
                       </div>
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center">
                         <Icon className="w-6 h-6 text-primary" />
@@ -507,7 +507,7 @@ const IMS = () => {
                         <Icon className="w-6 h-6 text-accent" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-white">{system.name}</h4>
+                        <h4 className="text-lg font-semibold text-secondary">{system.name}</h4>
                       </div>
                     </motion.div>;
               })}
