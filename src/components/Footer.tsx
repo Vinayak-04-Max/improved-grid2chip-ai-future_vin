@@ -75,7 +75,7 @@ const Footer = () => {
               label: "AI-Ready Data Centers"
             }, {
               to: "/solutions/container",
-              label: "Container Data Centers"
+              label: "Custom Build Centers"
             }, {
               to: "/solutions/edge",
               label: "Edge Data Centers"
@@ -85,6 +85,9 @@ const Footer = () => {
             }, {
               to: "/solutions/hpc",
               label: "HPC Data Centers"
+            }, {
+              to: "/services/ims",
+              label: "IMS"
             }].map(link => <Link key={link.to} to={link.to} className="block text-sm text-muted-foreground hover:text-primary transition-colors link-underline">
                   {link.label}
                 </Link>)}
