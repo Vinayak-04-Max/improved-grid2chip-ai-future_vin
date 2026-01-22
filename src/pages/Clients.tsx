@@ -5,57 +5,103 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-clients.jpg";
-
 const Clients = () => {
-  const clientLogos = [
-    { name: "Global Pharma Research", industry: "Pharmaceutical", logo: "GPR", color: "bg-primary" },
-    { name: "Smart Cities International", industry: "Smart Cities", logo: "SCI", color: "bg-accent" },
-    { name: "Automotive Tech Group", industry: "Automotive", logo: "ATG", color: "bg-primary" },
-    { name: "Research Institute", industry: "Research", logo: "RI", color: "bg-accent" },
-    { name: "Medical Devices Inc", industry: "Healthcare", logo: "MDI", color: "bg-primary" },
-    { name: "Telecom Solutions", industry: "Telecommunications", logo: "TS", color: "bg-accent" },
-    { name: "Data Systems Corp", industry: "Technology", logo: "DSC", color: "bg-primary" },
-    { name: "Energy Solutions", industry: "Energy", logo: "ES", color: "bg-accent" },
-    { name: "Security Systems Global", industry: "Security", logo: "SSG", color: "bg-primary" },
-    { name: "Cloud Technologies", industry: "Cloud Services", logo: "CT", color: "bg-accent" },
-    { name: "Research Labs", industry: "Research", logo: "RL", color: "bg-primary" },
-    { name: "Financial Systems", industry: "Financial", logo: "FS", color: "bg-accent" }
-  ];
-
-
-  const testimonials = [
-    {
-      text: "Grid2Chip's expertise in critical infrastructure is unmatched. They delivered exactly what we needed.",
-      author: "Dr. Sarah Chen, CTO",
-      company: "Research Institute"
-    },
-    {
-      text: "The modular approach allowed us to scale seamlessly. Exceptional service and support.",
-      author: "Michael Rodriguez",
-      company: "Smart Cities International"
-    },
-    {
-      text: "Outstanding reliability and performance. Grid2Chip exceeded our expectations.",
-      author: "Emma Thompson, VP Engineering",
-      company: "Automotive Tech Group"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const clientLogos = [{
+    name: "Global Pharma Research",
+    industry: "Pharmaceutical",
+    logo: "GPR",
+    color: "bg-primary"
+  }, {
+    name: "Smart Cities International",
+    industry: "Smart Cities",
+    logo: "SCI",
+    color: "bg-accent"
+  }, {
+    name: "Automotive Tech Group",
+    industry: "Automotive",
+    logo: "ATG",
+    color: "bg-primary"
+  }, {
+    name: "Research Institute",
+    industry: "Research",
+    logo: "RI",
+    color: "bg-accent"
+  }, {
+    name: "Medical Devices Inc",
+    industry: "Healthcare",
+    logo: "MDI",
+    color: "bg-primary"
+  }, {
+    name: "Telecom Solutions",
+    industry: "Telecommunications",
+    logo: "TS",
+    color: "bg-accent"
+  }, {
+    name: "Data Systems Corp",
+    industry: "Technology",
+    logo: "DSC",
+    color: "bg-primary"
+  }, {
+    name: "Energy Solutions",
+    industry: "Energy",
+    logo: "ES",
+    color: "bg-accent"
+  }, {
+    name: "Security Systems Global",
+    industry: "Security",
+    logo: "SSG",
+    color: "bg-primary"
+  }, {
+    name: "Cloud Technologies",
+    industry: "Cloud Services",
+    logo: "CT",
+    color: "bg-accent"
+  }, {
+    name: "Research Labs",
+    industry: "Research",
+    logo: "RL",
+    color: "bg-primary"
+  }, {
+    name: "Financial Systems",
+    industry: "Financial",
+    logo: "FS",
+    color: "bg-accent"
+  }];
+  const testimonials = [{
+    text: "Grid2Chip's expertise in critical infrastructure is unmatched. They delivered exactly what we needed.",
+    author: "Dr. Sarah Chen, CTO",
+    company: "Research Institute"
+  }, {
+    text: "The modular approach allowed us to scale seamlessly. Exceptional service and support.",
+    author: "Michael Rodriguez",
+    company: "Smart Cities International"
+  }, {
+    text: "Outstanding reliability and performance. Grid2Chip exceeded our expectations.",
+    author: "Emma Thompson, VP Engineering",
+    company: "Automotive Tech Group"
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Hero Section - Full Width Background with Overlay */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Our Clientele" className="w-full h-full object-cover" />
+          <img src={heroImage} alt="Our Clientele" className="w-full h-full object-cover opacity-85" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <motion.div className="max-w-2xl" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div className="max-w-2xl" initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }}>
             <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
               Trusted by Industry Leaders
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
-              Our <span className="text-g2c-blue">Clientele</span>
+              Our <span className="text-primary-foreground">Clientele</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
               Discover the organizations that trust Grid2Chip for their critical infrastructure needs. 
@@ -75,7 +121,14 @@ const Clients = () => {
           </motion.div>
         </div>
 
-        <motion.div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary/50" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.5, delay: 0.5 }} />
+        <motion.div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary/50" initial={{
+        scaleX: 0
+      }} animate={{
+        scaleX: 1
+      }} transition={{
+        duration: 1.5,
+        delay: 0.5
+      }} />
       </section>
 
       {/* Client Logos Grid */}
@@ -91,8 +144,7 @@ const Clients = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {clientLogos.map((client, index) => (
-              <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 group text-center">
+            {clientLogos.map((client, index) => <Card key={index} className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 group text-center">
                 <CardContent className="p-6">
                   <div className={`w-16 h-16 mx-auto mb-4 ${client.color} rounded-full flex items-center justify-center text-white font-bold text-lg`}>
                     {client.logo}
@@ -100,8 +152,7 @@ const Clients = () => {
                   <h3 className="font-semibold text-foreground mb-2">{client.name}</h3>
                   <Badge variant="secondary" className="text-xs">{client.industry}</Badge>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -116,8 +167,7 @@ const Clients = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-gradient-to-br from-card to-card/50 border-primary/20">
+            {testimonials.map((testimonial, index) => <Card key={index} className="bg-gradient-to-br from-card to-card/50 border-primary/20">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground italic mb-4">"{testimonial.text}"</p>
                   <div className="border-t border-primary/20 pt-4">
@@ -125,8 +175,7 @@ const Clients = () => {
                     <div className="text-sm text-muted-foreground">{testimonial.company}</div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -153,8 +202,6 @@ const Clients = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Clients;
