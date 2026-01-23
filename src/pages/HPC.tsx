@@ -456,7 +456,7 @@ const HPC = () => {
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
                     <Brain className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-[10px] font-display font-bold text-foreground leading-tight">HPC<br />Solutions</span>
+                  <span className="text-[10px] font-display font-bold leading-tight text-primary-foreground bg-primary">HPC<br />Solutions</span>
                 </div>
               </div>
             </motion.div>
