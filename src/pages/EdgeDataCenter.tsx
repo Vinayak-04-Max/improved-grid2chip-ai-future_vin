@@ -448,7 +448,7 @@ const EdgeDataCenter = () => {
                             <Icon className={`w-7 h-7 text-${useCase.color}`} />
                           </div>
                           <div>
-                            <h3 className="text-xl font-display font-semibold text-foreground">
+                            <h3 className="font-display font-semibold text-foreground text-2xl">
                               {useCase.industry}
                             </h3>
                           </div>
@@ -462,7 +462,7 @@ const EdgeDataCenter = () => {
                             </div>
                             <div>
                               <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Challenge</div>
-                              <p className="text-sm text-foreground">{useCase.challenge}</p>
+                              <p className="text-foreground text-base">{useCase.challenge}</p>
                             </div>
                           </div>
 
@@ -478,7 +478,7 @@ const EdgeDataCenter = () => {
                             </div>
                             <div>
                               <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Solution</div>
-                              <p className="text-sm text-foreground">{useCase.solution}</p>
+                              <p className="text-foreground text-base">{useCase.solution}</p>
                             </div>
                           </div>
                         </div>
@@ -486,7 +486,7 @@ const EdgeDataCenter = () => {
                         {/* Benefits */}
                         <div className="mt-6 pt-6 border-t border-primary/10">
                           <div className="flex flex-wrap gap-2">
-                            {useCase.benefits.map((benefit, i) => <span key={i} className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent">
+                            {useCase.benefits.map((benefit, i) => <span key={i} className="inline-flex items-center gap-1 px-3 py-1 rounded-full font-medium bg-accent/10 text-accent text-sm">
                                 <CircleDot className="w-3 h-3" />
                                 {benefit}
                               </span>)}
