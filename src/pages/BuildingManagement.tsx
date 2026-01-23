@@ -140,9 +140,7 @@ const BuildingManagement = () => {
             <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
               IBMS Solutions
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
-              Building Management Systems
-            </h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">Building Management System</h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
               Centralize monitoring and control of your facility's critical infrastructure with advanced BMS. Gain unparalleled visibility, automate operations, and drive efficiency.
             </p>
@@ -154,7 +152,7 @@ const BuildingManagement = () => {
                 </Link>
               </Button>
               <Button variant="glass" size="lg" asChild>
-                <Link to="/demo">Speak with Engineer</Link>
+                <Link to="/demo">Speak with Expert</Link>
               </Button>
             </div>
           </motion.div>
