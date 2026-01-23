@@ -149,16 +149,7 @@ const Home = () => {
         y: heroY,
         scale: heroScale,
         rotate: heroRotate
-      }} className="absolute inset-0">
-          <motion.div className="absolute inset-0 bg-cover bg-center" style={{
-          backgroundImage: `url(${heroImage})`
-        }} animate={{
-          scale: [1, 1.02, 1]
-        }} transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }} />
+      }} className="absolute inset-0 bg-background">
         </motion.div>
 
         {/* Animated Background Layers */}
