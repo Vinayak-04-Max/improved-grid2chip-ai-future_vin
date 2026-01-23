@@ -441,7 +441,7 @@ const BuildingManagement = () => {
                   delay: index * 0.15
                 }} className="flex items-center gap-4 justify-end">
                       <div className="text-right">
-                        <h4 className="text-lg font-semibold text-primary-glow">{system.name}</h4>
+                        <h4 className="font-semibold text-primary-glow text-xl">{system.name}</h4>
                       </div>
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center">
                         <Icon className="w-6 h-6 text-primary" />
@@ -492,7 +492,7 @@ const BuildingManagement = () => {
                         <Icon className="w-6 h-6 text-accent" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-secondary">{system.name}</h4>
+                        <h4 className="font-semibold text-secondary text-xl">{system.name}</h4>
                       </div>
                     </motion.div>;
               })}
@@ -576,10 +576,10 @@ const BuildingManagement = () => {
                     <div className={`w-14 h-14 mx-auto mb-4 rounded-xl ${index % 2 === 0 ? 'bg-primary/20' : 'bg-accent/20'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className={`w-7 h-7 ${index % 2 === 0 ? 'text-primary' : 'text-accent'}`} />
                     </div>
-                    <h3 className="text-lg font-display font-semibold text-foreground mb-2">
+                    <h3 className="font-display font-semibold text-foreground mb-2 text-xl">
                       {benefit.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-base">
                       {benefit.description}
                     </p>
                   </div>
@@ -639,7 +639,7 @@ const BuildingManagement = () => {
                     <h3 className="text-xl font-display font-semibold mb-2 text-primary">
                       {app.title}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground text-base">
                       {app.description}
                     </p>
                   </div>
