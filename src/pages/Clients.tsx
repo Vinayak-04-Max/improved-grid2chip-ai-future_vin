@@ -104,7 +104,7 @@ const Clients = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
               Our <span className="text-primary-foreground">Clientele</span>
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed mb-8 text-deep">
+            <p className="text-lg md:text-xl leading-relaxed mb-8 text-elevated">
               Discover the organizations that trust Grid2Chip for their critical infrastructure needs. 
               From pharmaceutical research to smart cities, we power innovation across industries.
             </p>
