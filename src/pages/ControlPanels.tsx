@@ -107,7 +107,7 @@ const ControlPanels = () => {
        ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Control Panel Services" className="w-full h-full object-cover" />
+          <img alt="Control Panel Services" className="w-full h-full object-cover" src="/lovable-uploads/c62e1e7d-beab-448d-b5bc-5a5a0f142a6d.jpg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
