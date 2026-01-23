@@ -148,9 +148,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <motion.div variants={itemVariants} className="border-t border-primary/10 mt-fib-55 pt-fib-21">
           <div className="flex flex-col md:flex-row justify-between items-center gap-fib-13">
-            <p className="text-sm text-muted-foreground">
-              © 2024 Grid2Chip. All rights reserved.
-            </p>
+            <p className="text-sm text-muted-foreground">© 2026 Grid2Chip. All rights reserved.</p>
             <div className="flex gap-fib-21">
               <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
