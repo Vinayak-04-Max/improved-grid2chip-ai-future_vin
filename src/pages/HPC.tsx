@@ -342,7 +342,7 @@ const HPC = () => {
                           {step.duration}
                         </Badge>
                       </div>
-                      <h3 className="text-xl font-display font-bold text-foreground mb-2">{step.title}</h3>
+                      <h3 className="text-xl font-display font-bold mb-2 text-primary">{step.title}</h3>
                       <p className="text-muted-foreground">{step.description}</p>
                     </div>
                   </div>
@@ -414,10 +414,10 @@ const HPC = () => {
                           <Icon className="w-7 h-7" />
                         </div>
                         <div>
-                          <h3 className="text-base font-display font-bold text-foreground mb-1">{useCase.title}</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed mb-2">{useCase.description}</p>
+                          <h3 className="font-display font-bold text-foreground mb-1 text-lg">{useCase.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed mb-2 text-base">{useCase.description}</p>
                           <div className="flex flex-wrap gap-1">
-                            {useCase.applications.slice(0, 2).map((app, i) => <span key={i} className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary/80">{app}</span>)}
+                            {useCase.applications.slice(0, 2).map((app, i) => <span key={i} className="px-2 py-0.5 rounded-full bg-primary/10 text-primary/80 text-xs">{app}</span>)}
                           </div>
                         </div>
                       </div>
@@ -484,10 +484,10 @@ const HPC = () => {
                           <Icon className="w-7 h-7" />
                         </div>
                         <div>
-                          <h3 className="text-base font-display font-bold text-foreground mb-1">{useCase.title}</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed mb-2">{useCase.description}</p>
+                          <h3 className="font-display font-bold text-foreground mb-1 text-lg">{useCase.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed mb-2 text-base">{useCase.description}</p>
                           <div className="flex flex-wrap gap-1">
-                            {useCase.applications.slice(0, 2).map((app, i) => <span key={i} className="text-[10px] px-2 py-0.5 rounded-full bg-accent/10 text-accent/80">{app}</span>)}
+                            {useCase.applications.slice(0, 2).map((app, i) => <span key={i} className="px-2 py-0.5 rounded-full bg-accent/10 text-accent/80 text-xs">{app}</span>)}
                           </div>
                         </div>
                       </div>
