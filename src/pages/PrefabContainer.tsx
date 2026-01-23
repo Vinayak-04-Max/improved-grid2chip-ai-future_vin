@@ -116,7 +116,7 @@ const PrefabContainer = () => {
       <section className="relative min-h-[85vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img src={solutionsImage} alt="Prefabricated Data Center Container" className="w-full h-full object-cover" />
+          <img alt="Prefabricated Data Center Container" className="w-full h-full object-cover" src="/lovable-uploads/046b0d8c-29f0-4b02-a2dc-e5527e7c81d4.jpg" />
         </div>
 
         {/* Content */}
@@ -200,7 +200,7 @@ const PrefabContainer = () => {
                       {feature.metric}
                     </Badge>
                   </div>
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-2">{feature.title}</h3>
+                  <h3 className="text-lg font-display font-semibold mb-2 text-secondary">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>;
           })}
