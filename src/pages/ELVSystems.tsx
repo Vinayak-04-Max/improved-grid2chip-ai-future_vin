@@ -107,7 +107,7 @@ const ELVSystems = () => {
        ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Extra Low Voltage Systems" className="w-full h-full object-cover" />
+          <img alt="Extra Low Voltage Systems" className="w-full h-full object-cover" src="/lovable-uploads/a7e73196-a7ab-4aea-ab3e-58cdb46e005f.jpg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -120,7 +120,7 @@ const ELVSystems = () => {
         }} transition={{
           duration: 0.8
         }}>
-            <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
+            <Badge variant="outline" className="mb-6 backdrop-blur-sm border-primary-foreground text-primary-foreground">
               ELV Systems
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
