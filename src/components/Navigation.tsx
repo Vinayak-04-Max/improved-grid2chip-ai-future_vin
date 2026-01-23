@@ -68,7 +68,7 @@ const Navigation = () => {
     to: string;
     children: React.ReactNode;
     isActive: boolean;
-  }) => <Link to={to} className={cn("relative text-sm font-medium transition-all duration-300 link-underline text-secondary", isActive ? "text-primary" : "text-muted-foreground")}>
+  }) => <Link to={to} className={cn("relative font-medium transition-all duration-300 link-underline text-secondary text-base", isActive ? "text-primary" : "text-muted-foreground")}>
       {children}
     </Link>;
   const DropdownMenu = ({
@@ -87,7 +87,7 @@ const Navigation = () => {
     setIsOpen: (open: boolean) => void;
     isActive: boolean;
   }) => <div className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
-      <button className={cn("flex items-center gap-1 text-sm font-medium transition-all duration-300 text-secondary", isActive ? "text-primary" : "text-muted-foreground")}>
+      <button className={cn("flex items-center gap-1 font-medium transition-all duration-300 text-secondary text-base", isActive ? "text-primary" : "text-muted-foreground")}>
         {label}
         <motion.span animate={{
         rotate: isOpen ? 180 : 0

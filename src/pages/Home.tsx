@@ -190,7 +190,7 @@ const Home = () => {
                 <Badge className="glass-panel border-primary/30 px-fib-21 py-fib-8 text-sm animate-pulse-glow">
                   <span className="relative flex items-center gap-fib-8">
                     <PulseAccent size="sm" color="primary" />
-                    <span className="ml-2">Complete Data Center Solutions</span>
+                    <span className="ml-2 text-sm">Complete Data Center Solutions</span>
                   </span>
                 </Badge>
               </MagneticArea>
@@ -206,15 +206,15 @@ const Home = () => {
               duration: 0.5
             }}>
                 <ScrollRevealBlock variant="slide" direction="up" delay={0.2}>
-                  <span className="block text-foreground">Your Complete</span>
+                  <span className="block text-foreground text-7xl">Your Complete</span>
                 </ScrollRevealBlock>
                 <ScrollRevealBlock variant="scale" delay={0.4}>
-                  <span className="block text-primary">
+                  <span className="block text-primary text-7xl">
                     Data Center
                   </span>
                 </ScrollRevealBlock>
                 <ScrollRevealBlock variant="slide" direction="up" delay={0.6}>
-                  <span className="block text-g2c-green">Partner</span>
+                  <span className="block text-g2c-green text-7xl">Partner</span>
                 </ScrollRevealBlock>
               </motion.h1>
             </div>
