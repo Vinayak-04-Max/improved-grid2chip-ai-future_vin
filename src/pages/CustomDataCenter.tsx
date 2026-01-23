@@ -308,10 +308,10 @@ const CustomDataCenter = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
                           {advantage.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-base">
                           {advantage.description}
                         </p>
                       </div>
@@ -344,10 +344,10 @@ const CustomDataCenter = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
                           {advantage.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-base">
                           {advantage.description}
                         </p>
                       </div>
@@ -490,7 +490,7 @@ const CustomDataCenter = () => {
                             </div>
                             
                             <div className="flex items-center justify-end gap-3 mb-3">
-                              <h3 className="text-xl font-display font-semibold text-white">
+                              <h3 className="text-xl font-display font-semibold text-primary">
                                 {step.title}
                               </h3>
                               <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -516,7 +516,7 @@ const CustomDataCenter = () => {
                               <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                                 <Icon className="w-6 h-6 text-accent" />
                               </div>
-                              <h3 className="text-xl font-display font-semibold text-white">
+                              <h3 className="text-xl font-display font-semibold text-primary">
                                 {step.title}
                               </h3>
                             </div>
@@ -597,8 +597,8 @@ const CustomDataCenter = () => {
                     <Landmark className="w-7 h-7 text-neon-violet" />
                   </div>
                   <div>
-                    <h3 className="text-base font-display font-bold text-foreground mb-1">{idealFor[3].title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{idealFor[3].description}</p>
+                    <h3 className="font-display font-bold text-foreground mb-1 text-lg">{idealFor[3].title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-base">{idealFor[3].description}</p>
                   </div>
                 </div>
               </div>
@@ -624,8 +624,8 @@ const CustomDataCenter = () => {
                       <TrendingUp className="w-7 h-7 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-base font-display font-bold text-foreground mb-1">{idealFor[0].title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{idealFor[0].description}</p>
+                      <h3 className="font-display font-bold text-foreground mb-1 text-lg">{idealFor[0].title}</h3>
+                      <p className="text-muted-foreground leading-relaxed text-base">{idealFor[0].description}</p>
                     </div>
                   </div>
                 </div>
@@ -691,8 +691,8 @@ const CustomDataCenter = () => {
                       <Building2 className="w-7 h-7 text-accent" />
                     </div>
                     <div>
-                      <h3 className="text-base font-display font-bold text-foreground mb-1">{idealFor[2].title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{idealFor[2].description}</p>
+                      <h3 className="font-display font-bold text-foreground mb-1 text-lg">{idealFor[2].title}</h3>
+                      <p className="text-muted-foreground leading-relaxed text-base">{idealFor[2].description}</p>
                     </div>
                   </div>
                 </div>
@@ -717,8 +717,8 @@ const CustomDataCenter = () => {
                     <Cloud className="w-7 h-7 text-neon-cyan" />
                   </div>
                   <div>
-                    <h3 className="text-base font-display font-bold text-foreground mb-1">{idealFor[1].title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{idealFor[1].description}</p>
+                    <h3 className="font-display font-bold text-foreground mb-1 text-lg">{idealFor[1].title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-base">{idealFor[1].description}</p>
                   </div>
                 </div>
               </div>
