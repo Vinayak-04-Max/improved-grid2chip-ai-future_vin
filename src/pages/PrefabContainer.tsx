@@ -547,7 +547,7 @@ const PrefabContainer = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-3xl font-display font-bold mb-4 lg:text-4xl">
               Why Choose <span className="text-gradient-accent">Prefabricated Data Centers?</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
