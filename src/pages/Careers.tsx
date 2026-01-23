@@ -49,7 +49,7 @@ const Careers = () => {
       {/* Hero Section - Full Width Background with Overlay */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img alt="Careers at Grid2Chip" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/f50441a7-f962-4b6d-a840-d72340945312.jpg" />
+          <img alt="Careers at Grid2Chip" className="w-full h-full object-cover opacity-100" src="/lovable-uploads/f50441a7-f962-4b6d-a840-d72340945312.jpg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
