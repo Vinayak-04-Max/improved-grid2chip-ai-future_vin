@@ -199,7 +199,7 @@ const ControlPanels = () => {
                         <div className="text-xl font-bold text-foreground mb-1 leading-tight">
                           {spec.value}
                         </div>
-                        <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                        <div className="text-xs font-medium uppercase tracking-wide text-primary">
                           {spec.label}
                         </div>
                         <div className="text-[10px] text-muted-foreground/60 mt-1">
@@ -220,7 +220,7 @@ const ControlPanels = () => {
       <section id="features" className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/10 to-transparent" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 my-[50px]">
           <motion.div className="text-center mb-16" initial={{
           opacity: 0,
           y: 20
@@ -266,10 +266,10 @@ const ControlPanels = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
                           {solution.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-base">
                           {solution.description}
                         </p>
                       </div>
@@ -302,10 +302,10 @@ const ControlPanels = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
                           {solution.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-base">
                           {solution.description}
                         </p>
                       </div>
@@ -424,7 +424,7 @@ const ControlPanels = () => {
                   delay: index * 0.15
                 }} className="flex items-center gap-4 justify-end">
                       <div className="text-right">
-                        <h4 className="text-lg font-semibold text-primary">{benefit.name}</h4>
+                        <h4 className="font-semibold text-primary text-xl">{benefit.name}</h4>
                       </div>
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center">
                         <Icon className="w-6 h-6 text-primary" />
@@ -475,7 +475,7 @@ const ControlPanels = () => {
                         <Icon className="w-6 h-6 text-accent" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-secondary">{benefit.name}</h4>
+                        <h4 className="font-semibold text-secondary text-xl">{benefit.name}</h4>
                       </div>
                     </motion.div>;
               })}
