@@ -130,7 +130,7 @@ const PrefabContainer = () => {
         }} transition={{
           duration: 0.8
         }} className="max-w-3xl">
-            <Badge variant="outline" className="mb-6 border-accent/50 bg-accent/10 text-accent">
+            <Badge variant="outline" className="mb-6 bg-accent/10 text-primary-foreground border-primary-foreground">
               Prefabricated Solutions
             </Badge>
             
