@@ -201,7 +201,7 @@ const IMS = () => {
                         <div className="text-xl font-bold text-foreground mb-1 leading-tight">
                           {spec.value}
                         </div>
-                        <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                        <div className="text-xs font-medium uppercase tracking-wide text-primary">
                           {spec.label}
                         </div>
                         <div className="text-[10px] text-muted-foreground/60 mt-1">
@@ -271,10 +271,10 @@ const IMS = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
                           {feature.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-base">
                           {feature.description}
                         </p>
                       </div>
@@ -307,10 +307,10 @@ const IMS = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
                           {feature.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-base">
                           {feature.description}
                         </p>
                       </div>
@@ -456,7 +456,7 @@ const IMS = () => {
                   delay: index * 0.15
                 }} className="flex items-center gap-4 justify-end">
                       <div className="text-right">
-                        <h4 className="text-lg font-semibold text-primary-glow">{system.name}</h4>
+                        <h4 className="font-semibold text-primary-glow text-xl">{system.name}</h4>
                       </div>
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center">
                         <Icon className="w-6 h-6 text-primary" />
@@ -507,7 +507,7 @@ const IMS = () => {
                         <Icon className="w-6 h-6 text-accent" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-secondary">{system.name}</h4>
+                        <h4 className="font-semibold text-secondary text-xl">{system.name}</h4>
                       </div>
                     </motion.div>;
               })}
@@ -604,7 +604,7 @@ const IMS = () => {
                     <h3 className="text-xl font-display font-semibold mb-2 text-primary">
                       {step.title}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground text-base">
                       {step.description}
                     </p>
                   </div>
