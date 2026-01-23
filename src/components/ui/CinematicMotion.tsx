@@ -114,7 +114,7 @@ export const OrbitingWheel: React.FC<OrbitingWheelProps> = ({
     : undefined;
 
   return (
-    <div className={cn("relative flex items-center justify-center", className)} style={{ height: radius * 2.4, width: radius * 2.4 }}>
+    <div className={cn("relative flex items-center justify-center", className)} style={{ height: radius * 2.8, width: radius * 2.8 }}>
       {/* Center Content */}
       {animated ? (
         <motion.div
@@ -157,19 +157,19 @@ export const OrbitingWheel: React.FC<OrbitingWheelProps> = ({
           return (
             <motion.div
               key={item.name}
-              className="absolute glass-panel rounded-xl p-4 md:p-5 cursor-pointer group shadow-lg"
+              className="absolute glass-panel rounded-xl p-3 md:p-4 cursor-pointer group shadow-lg"
               style={{
                 left: '50%',
                 top: '50%',
-                x: x - 60,
-                y: y - 45,
+                x: x - 55,
+                y: y - 40,
               }}
               animate={itemAnimate}
               transition={itemTransition}
               whileHover={{ scale: 1.1, zIndex: 50 }}
             >
               <motion.div
-                className="flex flex-col items-center gap-2 min-w-[100px] md:min-w-[120px]"
+                className="flex flex-col items-center gap-1.5 min-w-[90px] md:min-w-[100px]"
                 animate={innerPulseAnimate}
                 transition={
                   animated
