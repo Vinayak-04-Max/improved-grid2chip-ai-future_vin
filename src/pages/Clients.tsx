@@ -85,7 +85,7 @@ const Clients = () => {
       {/* Hero Section - Full Width Background with Overlay */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Our Clientele" className="w-full h-full object-cover opacity-85" />
+          <img alt="Our Clientele" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/a9d0783f-a920-4007-9124-9231dac110c2.jpg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -98,7 +98,7 @@ const Clients = () => {
         }} transition={{
           duration: 0.8
         }}>
-            <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
+            <Badge variant="outline" className="mb-6 backdrop-blur-sm border-primary-foreground text-primary-foreground">
               Trusted by Industry Leaders
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
@@ -168,15 +168,7 @@ const Clients = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={index}
-                text={testimonial.text}
-                author={testimonial.author}
-                company={testimonial.company}
-                index={index}
-              />
-            ))}
+            {testimonials.map((testimonial, index) => <TestimonialCard key={index} text={testimonial.text} author={testimonial.author} company={testimonial.company} index={index} />)}
           </div>
         </div>
       </section>
