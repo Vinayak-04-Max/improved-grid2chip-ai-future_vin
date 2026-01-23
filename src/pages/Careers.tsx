@@ -49,7 +49,7 @@ const Careers = () => {
       {/* Hero Section - Full Width Background with Overlay */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Careers at Grid2Chip" className="w-full h-full object-cover opacity-85" />
+          <img alt="Careers at Grid2Chip" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/f50441a7-f962-4b6d-a840-d72340945312.jpg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -62,11 +62,11 @@ const Careers = () => {
         }} transition={{
           duration: 0.8
         }}>
-            <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
+            <Badge variant="outline" className="border-primary/50 mb-6 backdrop-blur-sm text-primary-foreground">
               Careers at Grid2Chip
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight text-primary lg:text-6xl">
-              Stay Connected with <span className="text-g2c-blue">Grid2Chip</span>
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight text-white lg:text-7xl">
+              Stay Connected with <span className="text-7xl text-secondary">Grid2Chip</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
               While we don't have current openings, we're always interested in connecting with 
