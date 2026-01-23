@@ -516,7 +516,7 @@ const CustomDataCenter = () => {
                               <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                                 <Icon className="w-6 h-6 text-accent" />
                               </div>
-                              <h3 className="text-xl font-display font-semibold text-primary">
+                              <h3 className="text-xl font-display font-semibold text-secondary">
                                 {step.title}
                               </h3>
                             </div>
