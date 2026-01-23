@@ -601,7 +601,7 @@ const IMS = () => {
                       </Badge>
                       {index % 2 === 0 && <span className="text-3xl font-bold text-primary/30">{step.step}</span>}
                     </div>
-                    <h3 className="text-xl font-display font-semibold text-white mb-2">
+                    <h3 className="text-xl font-display font-semibold mb-2 text-primary">
                       {step.title}
                     </h3>
                     <p className="text-muted-foreground">
