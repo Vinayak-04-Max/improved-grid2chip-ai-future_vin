@@ -490,7 +490,7 @@ const Home = () => {
               <OrbitingWheel items={industryItems} radius={200} duration={40} animated={false} centerContent={<div className="glass-panel rounded-full w-32 h-32 flex items-center justify-center">
                     <div className="text-center">
                       <Cloud className="w-10 h-10 text-primary mx-auto mb-2" />
-                      <span className="text-xs font-medium text-foreground">Industries</span>
+                      <span className="font-medium text-foreground text-base">Industries</span>
                     </div>
                   </div>} />
             </ScrollRevealBlock>
