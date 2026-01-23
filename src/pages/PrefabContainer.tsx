@@ -134,11 +134,11 @@ const PrefabContainer = () => {
               Prefabricated Solutions
             </Badge>
             
-            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-display font-bold mb-6 leading-tight">
+            <h1 className="text-4xl xl:text-7xl font-display font-bold mb-6 leading-tight text-primary-foreground lg:text-7xl">
               Prefabricated Data Centers
             </h1>
             
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+            <p className="text-xl lg:text-2xl mb-8 leading-relaxed max-w-2xl text-slate-300">
               Rapidly deployable, factory-built modular data centers perfect for edge computing, disaster recovery, and remote operations.
             </p>
 
@@ -442,7 +442,7 @@ const PrefabContainer = () => {
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center">
                     <Container className="w-5 h-5 text-accent" />
                   </div>
-                  <span className="font-display font-bold leading-tight bg-[#0d59f2]/0 text-primary text-sm">Prefab<br />Solutions</span>
+                  <span className="text-[10px] font-display font-bold text-white leading-tight bg-primary">Prefab<br />Solutions</span>
                 </div>
               </div>
             </motion.div>
