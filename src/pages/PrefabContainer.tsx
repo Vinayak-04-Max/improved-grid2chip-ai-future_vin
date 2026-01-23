@@ -268,7 +268,7 @@ const PrefabContainer = () => {
                     delay: index * 0.2
                   }} />
                       <div className="absolute inset-0 flex items-center justify-end pr-2">
-                        <span className="text-xs font-bold text-white drop-shadow-lg">{spec.scale}%</span>
+                        <span className="font-bold drop-shadow-lg text-[g2c-green-glow] text-secondary">{spec.scale}%</span>
                       </div>
                     </div>
                     
@@ -548,7 +548,7 @@ const PrefabContainer = () => {
           once: true
         }}>
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
-              Why Choose <span className="text-gradient-accent">Prefabricated?</span>
+              Why Choose <span className="text-gradient-accent">Prefabricated Data Centers?</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Factory-built quality with speed-to-market advantages
