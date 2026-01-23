@@ -120,7 +120,7 @@ const ControlPanels = () => {
         }} transition={{
           duration: 0.8
         }}>
-            <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
+            <Badge variant="outline" className="mb-6 backdrop-blur-sm text-primary-foreground border-primary-foreground">
               Control Systems
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">Control & Automation Panel</h1>
