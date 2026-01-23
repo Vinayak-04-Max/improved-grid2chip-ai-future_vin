@@ -126,7 +126,7 @@ const EdgeDataCenter = () => {
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img src={edgeImage} alt="Edge Data Center Infrastructure" className="w-full h-full object-cover" />
+          <img alt="Edge Data Center Infrastructure" className="w-full h-full object-cover" src="/lovable-uploads/95734983-48ba-46b7-9abd-6e1b435cf762.jpg" />
         </div>
 
         {/* Content */}
@@ -140,7 +140,7 @@ const EdgeDataCenter = () => {
         }} transition={{
           duration: 0.8
         }}>
-            <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
+            <Badge variant="outline" className="mb-6 backdrop-blur-sm text-primary-foreground border-primary-foreground">
               Edge Computing Solutions
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
