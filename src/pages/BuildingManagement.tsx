@@ -216,7 +216,7 @@ const BuildingManagement = () => {
                         <div className="text-xl font-bold text-foreground mb-1 leading-tight">
                           {spec.value}
                         </div>
-                        <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                        <div className="text-xs font-medium uppercase tracking-wide text-primary">
                           {spec.label}
                         </div>
                         <div className="text-[10px] text-muted-foreground/60 mt-1">
@@ -283,10 +283,10 @@ const BuildingManagement = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
                           {feature.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-base">
                           {feature.description}
                         </p>
                       </div>
@@ -319,10 +319,10 @@ const BuildingManagement = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
                           {feature.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-base">
                           {feature.description}
                         </p>
                       </div>
