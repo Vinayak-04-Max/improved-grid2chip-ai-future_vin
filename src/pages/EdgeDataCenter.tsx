@@ -126,7 +126,7 @@ const EdgeDataCenter = () => {
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img src={edgeImage} alt="Edge Data Center Infrastructure" className="w-full h-full object-cover" />
+          <img src={edgeImage} alt="Edge Data Center Infrastructure" className="w-full h-full object-cover brightness-50" />
         </div>
 
         {/* Content */}
