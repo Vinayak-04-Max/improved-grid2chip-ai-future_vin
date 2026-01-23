@@ -203,7 +203,7 @@ const HPC = () => {
                       {feature.metric}
                     </Badge>
                   </div>
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-2">{feature.title}</h3>
+                  <h3 className="text-lg font-display font-semibold mb-2 text-primary">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>;
           })}
