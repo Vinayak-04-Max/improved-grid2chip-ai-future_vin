@@ -149,7 +149,16 @@ const Home = () => {
         y: heroY,
         scale: heroScale,
         rotate: heroRotate
-      }} className="absolute inset-0 bg-background">
+      }} className="absolute inset-0">
+          <motion.div className="absolute inset-0 bg-cover bg-center" style={{
+          backgroundImage: `url(${heroImage})`
+        }} animate={{
+          scale: [1, 1.02, 1]
+        }} transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }} />
         </motion.div>
 
         {/* Animated Background Layers */}
@@ -211,7 +220,7 @@ const Home = () => {
               duration: 0.5
             }}>
                 <ScrollRevealBlock variant="slide" direction="up" delay={0.2}>
-                  <span className="block text-primary-foreground">Your Complete</span>
+                  <span className="block text-destructive">Your Complete</span>
                 </ScrollRevealBlock>
                 <ScrollRevealBlock variant="scale" delay={0.4}>
                   <motion.span className="block text-gradient-holographic text-primary-foreground bg-destructive" animate={{
@@ -496,22 +505,14 @@ const Home = () => {
           </div>
 
           {/* Circular layout only (static, centered) */}
-          <div className="flex justify-center w-full">
+          <div className="flex justify-center">
             <ScrollRevealBlock variant="scale" delay={0.3}>
-              <OrbitingWheel 
-                items={industryItems} 
-                radius={280} 
-                duration={40} 
-                animated={false} 
-                centerContent={
-                  <div className="glass-panel rounded-full w-40 h-40 md:w-48 md:h-48 flex items-center justify-center shadow-xl">
+              <OrbitingWheel items={industryItems} radius={200} duration={40} animated={false} centerContent={<div className="glass-panel rounded-full w-32 h-32 flex items-center justify-center">
                     <div className="text-center">
-                      <Cloud className="w-12 h-12 md:w-14 md:h-14 text-primary mx-auto mb-2" />
-                      <span className="text-sm md:text-base font-semibold text-foreground">Industries</span>
+                      <Cloud className="w-10 h-10 text-primary mx-auto mb-2" />
+                      <span className="text-xs font-medium text-foreground">Industries</span>
                     </div>
-                  </div>
-                } 
-              />
+                  </div>} />
             </ScrollRevealBlock>
           </div>
         </div>
