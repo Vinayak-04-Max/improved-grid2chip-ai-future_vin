@@ -222,7 +222,7 @@ const ELVSystems = () => {
       <section id="features" className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/10 to-transparent" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 my-[100px]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 my-[150px]">
           <motion.div className="text-center mb-16" initial={{
           opacity: 0,
           y: 20
@@ -426,7 +426,7 @@ const ELVSystems = () => {
                   delay: index * 0.15
                 }} className="flex items-center gap-4 justify-end">
                       <div className="text-right">
-                        <h4 className="text-lg font-semibold text-primary">{benefit.name}</h4>
+                        <h4 className="font-semibold text-primary text-xl">{benefit.name}</h4>
                       </div>
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center">
                         <Icon className="w-6 h-6 text-primary" />
@@ -477,7 +477,7 @@ const ELVSystems = () => {
                         <Icon className="w-6 h-6 text-accent" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-secondary">{benefit.name}</h4>
+                        <h4 className="font-semibold text-secondary text-xl">{benefit.name}</h4>
                       </div>
                     </motion.div>;
               })}
@@ -574,7 +574,7 @@ const ELVSystems = () => {
                     <h3 className="text-xl font-display font-semibold mb-2 text-primary">
                       {app.title}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground text-base">
                       {app.description}
                     </p>
                   </div>
