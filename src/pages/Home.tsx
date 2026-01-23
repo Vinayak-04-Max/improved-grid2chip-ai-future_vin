@@ -144,22 +144,8 @@ const Home = () => {
           HERO SECTION - Fully Immersive Cinematic Experience
        ═══════════════════════════════════════════════════════════════════════════ */}
       <section ref={heroRef} className="relative min-h-[120vh] flex items-center overflow-hidden">
-        {/* Multi-Layer Parallax Background */}
-        <motion.div style={{
-        y: heroY,
-        scale: heroScale,
-        rotate: heroRotate
-      }} className="absolute inset-0">
-          <motion.div className="absolute inset-0 bg-cover bg-center" style={{
-          backgroundImage: `url(${heroImage})`
-        }} animate={{
-          scale: [1, 1.02, 1]
-        }} transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }} />
-        </motion.div>
+      {/* Clean White Background */}
+        <div className="absolute inset-0 bg-background" />
 
         {/* Animated Background Layers */}
         <AnimatedBackground variant="neural" intensity={0.5} />
@@ -220,21 +206,15 @@ const Home = () => {
               duration: 0.5
             }}>
                 <ScrollRevealBlock variant="slide" direction="up" delay={0.2}>
-                  <span className="block text-secondary">Your Complete</span>
+                  <span className="block text-foreground">Your Complete</span>
                 </ScrollRevealBlock>
                 <ScrollRevealBlock variant="scale" delay={0.4}>
-                  <motion.span className="block text-gradient-holographic text-primary-foreground bg-destructive" animate={{
-                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
-                }} transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}>
+                  <span className="block text-primary">
                     Data Center
-                  </motion.span>
+                  </span>
                 </ScrollRevealBlock>
                 <ScrollRevealBlock variant="slide" direction="up" delay={0.6}>
-                  <span className="block text-neon-violet">Partner</span>
+                  <span className="block text-g2c-green">Partner</span>
                 </ScrollRevealBlock>
               </motion.h1>
             </div>
@@ -267,12 +247,12 @@ const Home = () => {
                       repeat: Infinity,
                       ease: "easeInOut"
                     }}>
-                          <Icon className="w-5 h-5 text-primary opacity-60" />
-                          <span className="text-phi-3xl md:text-phi-4xl font-display font-bold text-gradient-primary group-hover:text-glow transition-all text-destructive">
+                          <Icon className="w-5 h-5 text-primary" />
+                          <span className="text-phi-3xl md:text-phi-4xl font-display font-bold text-primary">
                             {stat.value}
                           </span>
                         </motion.div>
-                        <div className="text-sm text-primary-glow">{stat.label}</div>
+                        <div className="text-sm text-muted-foreground">{stat.label}</div>
                       </motion.div>
                     </MagneticArea>;
               })}
