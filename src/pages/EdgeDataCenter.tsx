@@ -266,12 +266,7 @@ const EdgeDataCenter = () => {
           {/* Circular Feature Layout */}
           <div className="relative">
             {/* Central Hub */}
-            <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 items-center justify-center z-10">
-              <div className="text-center">
-                <Server className="w-8 h-8 text-primary mx-auto mb-1" />
-                <span className="text-xs font-medium text-foreground">Edge Core</span>
-              </div>
-            </div>
+            
 
             {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
