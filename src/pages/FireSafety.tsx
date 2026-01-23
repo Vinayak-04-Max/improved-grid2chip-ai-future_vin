@@ -218,7 +218,7 @@ const FireSafety = () => {
                         <div className="text-xl font-bold text-foreground mb-1 leading-tight">
                           {spec.value}
                         </div>
-                        <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                        <div className="text-xs font-medium uppercase tracking-wide text-primary">
                           {spec.label}
                         </div>
                         <div className="text-[10px] text-muted-foreground/60 mt-1">
@@ -239,7 +239,7 @@ const FireSafety = () => {
       <section id="features" className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/10 to-transparent" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 my-[50px]">
           <motion.div className="text-center mb-16" initial={{
           opacity: 0,
           y: 20
@@ -285,10 +285,10 @@ const FireSafety = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
                           {system.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-base">
                           {system.description}
                         </p>
                       </div>
@@ -321,10 +321,10 @@ const FireSafety = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
                           {system.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-base">
                           {system.description}
                         </p>
                       </div>
@@ -443,7 +443,7 @@ const FireSafety = () => {
                   delay: index * 0.15
                 }} className="flex items-center gap-4 justify-end">
                       <div className="text-right">
-                        <h4 className="text-lg font-semibold text-primary">{standard.name}</h4>
+                        <h4 className="font-semibold text-primary text-xl">{standard.name}</h4>
                       </div>
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center">
                         <Icon className="w-6 h-6 text-primary" />
@@ -494,7 +494,7 @@ const FireSafety = () => {
                         <Icon className="w-6 h-6 text-accent" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-secondary">{standard.name}</h4>
+                        <h4 className="font-semibold text-secondary text-xl">{standard.name}</h4>
                       </div>
                     </motion.div>;
               })}
@@ -578,10 +578,10 @@ const FireSafety = () => {
                     <div className={`w-14 h-14 mx-auto mb-4 rounded-xl ${index % 2 === 0 ? 'bg-primary/20' : 'bg-accent/20'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className={`w-7 h-7 ${index % 2 === 0 ? 'text-primary' : 'text-accent'}`} />
                     </div>
-                    <h3 className="text-lg font-display font-semibold text-foreground mb-2">
+                    <h3 className="font-display font-semibold text-foreground mb-2 text-xl">
                       {benefit.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-base">
                       {benefit.description}
                     </p>
                   </div>
@@ -641,7 +641,7 @@ const FireSafety = () => {
                     <h3 className="text-xl font-display font-semibold mb-2 text-primary">
                       {facility.title}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground text-base">
                       {facility.description}
                     </p>
                   </div>
