@@ -142,7 +142,7 @@ const CustomDataCenter = () => {
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Custom Data Center Infrastructure" className="w-full h-full object-cover" />
+          <img alt="Custom Data Center Infrastructure" className="w-full h-full object-cover" src="/lovable-uploads/c132fe79-4101-48fc-abfd-9fb8614d5afb.jpg" />
         </div>
 
         {/* Content */}
@@ -156,7 +156,7 @@ const CustomDataCenter = () => {
         }} transition={{
           duration: 0.8
         }}>
-            <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
+            <Badge variant="outline" className="mb-6 backdrop-blur-sm text-primary-foreground border-primary-foreground">
               Custom Solutions
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
