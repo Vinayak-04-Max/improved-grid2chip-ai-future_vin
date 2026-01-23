@@ -342,7 +342,7 @@ const PrefabContainer = () => {
                     <Badge variant="outline" className="mb-3 bg-accent/10 border-accent/30 text-accent text-xs">
                       {step.duration}
                     </Badge>
-                    <h3 className="text-xl font-display font-bold text-foreground mb-2">{step.title}</h3>
+                    <h3 className="text-xl font-display font-bold mb-2 text-primary">{step.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                   </div>
                 </div>
