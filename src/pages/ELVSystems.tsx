@@ -201,7 +201,7 @@ const ELVSystems = () => {
                         <div className="text-xl font-bold text-foreground mb-1 leading-tight">
                           {spec.value}
                         </div>
-                        <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                        <div className="text-xs font-medium uppercase tracking-wide text-primary">
                           {spec.label}
                         </div>
                         <div className="text-[10px] text-muted-foreground/60 mt-1">
@@ -222,7 +222,7 @@ const ELVSystems = () => {
       <section id="features" className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/10 to-transparent" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 my-[100px]">
           <motion.div className="text-center mb-16" initial={{
           opacity: 0,
           y: 20
@@ -268,10 +268,10 @@ const ELVSystems = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
                           {system.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-base">
                           {system.description}
                         </p>
                       </div>
@@ -304,10 +304,10 @@ const ELVSystems = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="text-base font-display font-semibold text-foreground mb-1">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
                           {system.title}
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-base">
                           {system.description}
                         </p>
                       </div>
@@ -318,7 +318,7 @@ const ELVSystems = () => {
               {/* Center Semicircle Arc */}
               <div className="flex justify-center pt-8">
                 <div className="relative w-[420px] h-[260px]">
-                  <svg viewBox="0 0 420 260" className="w-full h-full mx-0">
+                  <svg viewBox="0 0 420 260" className="w-full h-full mx-0 my-[50px]">
                     <defs>
                       <linearGradient id="elvArcGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="hsl(var(--primary))" />
@@ -385,8 +385,8 @@ const ELVSystems = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           CIRCULAR HUB INFOGRAPHIC - Key Benefits
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
+      <section className="py-20 lg:py-28 relative overflow-hidden my-[50px]">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent my-[40px]" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div className="text-center mb-16" initial={{
