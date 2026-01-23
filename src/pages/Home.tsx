@@ -220,7 +220,7 @@ const Home = () => {
               duration: 0.5
             }}>
                 <ScrollRevealBlock variant="slide" direction="up" delay={0.2}>
-                  <span className="block text-destructive">Your Complete</span>
+                  <span className="block text-secondary">Your Complete</span>
                 </ScrollRevealBlock>
                 <ScrollRevealBlock variant="scale" delay={0.4}>
                   <motion.span className="block text-gradient-holographic text-primary-foreground bg-destructive" animate={{
@@ -234,14 +234,14 @@ const Home = () => {
                   </motion.span>
                 </ScrollRevealBlock>
                 <ScrollRevealBlock variant="slide" direction="up" delay={0.6}>
-                  <span className="block text-primary-foreground">Partner</span>
+                  <span className="block text-neon-violet">Partner</span>
                 </ScrollRevealBlock>
               </motion.h1>
             </div>
 
             {/* Subheadline */}
             <ScrollRevealBlock variant="fade" direction="up" delay={0.8}>
-              <p className="text-phi-lg md:text-phi-xl max-w-2xl mx-auto text-destructive-foreground">
+              <p className="text-phi-lg md:text-phi-xl max-w-2xl mx-auto text-muted-foreground">
                 From concept to commissioning and beyond, we manage every phase of your critical infrastructure lifecycle.
               </p>
             </ScrollRevealBlock>
@@ -272,7 +272,7 @@ const Home = () => {
                             {stat.value}
                           </span>
                         </motion.div>
-                        <div className="text-sm text-white">{stat.label}</div>
+                        <div className="text-sm text-primary-glow">{stat.label}</div>
                       </motion.div>
                     </MagneticArea>;
               })}
