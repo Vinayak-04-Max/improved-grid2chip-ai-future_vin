@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import heroImage from "@/assets/hero-clients.jpg";
 const Clients = () => {
   const clientLogos = [{
@@ -167,15 +168,15 @@ const Clients = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => <Card key={index} className="bg-gradient-to-br from-card to-card/50 border-primary/20">
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground italic mb-4">"{testimonial.text}"</p>
-                  <div className="border-t border-primary/20 pt-4">
-                    <div className="font-semibold text-foreground">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.company}</div>
-                  </div>
-                </CardContent>
-              </Card>)}
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={index}
+                text={testimonial.text}
+                author={testimonial.author}
+                company={testimonial.company}
+                index={index}
+              />
+            ))}
           </div>
         </div>
       </section>
