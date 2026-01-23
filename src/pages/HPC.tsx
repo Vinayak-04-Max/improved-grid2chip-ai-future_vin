@@ -272,7 +272,7 @@ const HPC = () => {
                     delay: index * 0.2
                   }} />
                       <div className="absolute inset-0 flex items-center justify-end pr-2">
-                        <span className="text-xs font-bold text-white drop-shadow-lg">{spec.scale}%</span>
+                        <span className="font-bold drop-shadow-lg text-[sidebar-accent-foreground] text-slate-900">{spec.scale}%</span>
                       </div>
                     </div>
                     
