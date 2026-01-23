@@ -400,10 +400,10 @@ const PrefabContainer = () => {
                           <Icon className="w-7 h-7" />
                         </div>
                         <div>
-                          <h3 className="text-base font-display font-bold text-foreground mb-1">{useCase.title}</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed mb-2">{useCase.description}</p>
+                          <h3 className="font-display font-bold text-foreground mb-1 text-lg">{useCase.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed mb-2 text-base">{useCase.description}</p>
                           <div className="flex flex-wrap gap-1">
-                            {useCase.applications.slice(0, 2).map((app, i) => <span key={i} className="text-[10px] px-2 py-0.5 rounded-full bg-accent/10 text-accent/80">{app}</span>)}
+                            {useCase.applications.slice(0, 2).map((app, i) => <span key={i} className="px-2 py-0.5 rounded-full bg-accent/10 text-accent/80 text-xs">{app}</span>)}
                           </div>
                         </div>
                       </div>
@@ -442,7 +442,7 @@ const PrefabContainer = () => {
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center">
                     <Container className="w-5 h-5 text-accent" />
                   </div>
-                  <span className="text-[10px] font-display font-bold text-white leading-tight bg-primary">Prefab<br />Solutions</span>
+                  <span className="font-display font-bold leading-tight text-sm bg-white/0 text-primary">Prefab<br />Solutions</span>
                 </div>
               </div>
             </motion.div>
@@ -470,10 +470,10 @@ const PrefabContainer = () => {
                           <Icon className="w-7 h-7" />
                         </div>
                         <div>
-                          <h3 className="text-base font-display font-bold text-foreground mb-1">{useCase.title}</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed mb-2">{useCase.description}</p>
+                          <h3 className="font-display font-bold text-foreground mb-1 text-lg">{useCase.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed mb-2 text-base">{useCase.description}</p>
                           <div className="flex flex-wrap gap-1">
-                            {useCase.applications.slice(0, 2).map((app, i) => <span key={i} className="text-[10px] px-2 py-0.5 rounded-full bg-neon-cyan/10 text-neon-cyan/80">{app}</span>)}
+                            {useCase.applications.slice(0, 2).map((app, i) => <span key={i} className="px-2 py-0.5 rounded-full bg-neon-cyan/10 text-neon-cyan/80 text-xs">{app}</span>)}
                           </div>
                         </div>
                       </div>
