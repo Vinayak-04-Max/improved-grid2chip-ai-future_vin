@@ -114,7 +114,7 @@ export const OrbitingWheel: React.FC<OrbitingWheelProps> = ({
     : undefined;
 
   return (
-    <div className={cn("relative flex items-center justify-center", className)} style={{ height: radius * 2.5 }}>
+    <div className={cn("relative flex items-center justify-center", className)} style={{ height: radius * 2.4, width: radius * 2.4 }}>
       {/* Center Content */}
       {animated ? (
         <motion.div
@@ -157,19 +157,19 @@ export const OrbitingWheel: React.FC<OrbitingWheelProps> = ({
           return (
             <motion.div
               key={item.name}
-              className="absolute glass-panel rounded-fib-lg p-fib-13 cursor-pointer group"
+              className="absolute glass-panel rounded-xl p-4 md:p-5 cursor-pointer group shadow-lg"
               style={{
                 left: '50%',
                 top: '50%',
-                x: x - 40,
-                y: y - 40,
+                x: x - 60,
+                y: y - 45,
               }}
               animate={itemAnimate}
               transition={itemTransition}
-              whileHover={{ scale: 1.2, zIndex: 50 }}
+              whileHover={{ scale: 1.1, zIndex: 50 }}
             >
               <motion.div
-                className="flex flex-col items-center gap-fib-5 min-w-[80px]"
+                className="flex flex-col items-center gap-2 min-w-[100px] md:min-w-[120px]"
                 animate={innerPulseAnimate}
                 transition={
                   animated
@@ -180,10 +180,10 @@ export const OrbitingWheel: React.FC<OrbitingWheelProps> = ({
                     : undefined
                 }
               >
-                <div className="text-primary group-hover:text-accent transition-colors">
+                <div className="text-primary group-hover:text-accent transition-colors [&>svg]:w-7 [&>svg]:h-7 md:[&>svg]:w-8 md:[&>svg]:h-8">
                   {item.icon}
                 </div>
-                <span className="text-xs font-medium text-foreground whitespace-nowrap">
+                <span className="text-sm md:text-base font-medium text-foreground whitespace-nowrap">
                   {item.name}
                 </span>
               </motion.div>
