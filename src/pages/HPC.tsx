@@ -342,7 +342,7 @@ const HPC = () => {
                           {step.duration}
                         </Badge>
                       </div>
-                      <h3 className="text-xl font-display font-bold text-foreground mb-2">{step.title}</h3>
+                      <h3 className="text-xl font-display font-bold mb-2 text-primary">{step.title}</h3>
                       <p className="text-muted-foreground">{step.description}</p>
                     </div>
                   </div>
