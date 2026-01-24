@@ -339,7 +339,7 @@ const PrefabContainer = () => {
                 {/* Content Card */}
                 <div className={`ml-20 lg:ml-0 lg:w-[calc(50%-40px)] ${index % 2 === 0 ? 'lg:pr-8 lg:text-right' : 'lg:pl-8 lg:ml-auto'}`}>
                   <div className="p-6 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10">
-                    <Badge variant="outline" className="mb-3 bg-accent/10 border-accent/30 text-accent text-xs">
+                    <Badge variant="outline" className="mb-3 border-accent/30 text-xs bg-[#bcd0fb] text-primary">
                       {step.duration}
                     </Badge>
                     <h3 className="text-xl font-display font-bold mb-2 text-primary">{step.title}</h3>
