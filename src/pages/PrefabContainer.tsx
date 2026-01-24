@@ -413,7 +413,7 @@ const PrefabContainer = () => {
             </div>
 
             {/* Central Hub */}
-            <motion.div className="relative w-36 h-36 mx-auto" initial={{
+            <motion.div className="relative w-36 h-36 mx-auto px-0 py-[200px]" initial={{
             opacity: 0,
             scale: 0.8
           }} whileInView={{
@@ -437,7 +437,7 @@ const PrefabContainer = () => {
               repeat: Infinity,
               ease: "linear"
             }} />
-              <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-accent/30 flex items-center justify-center shadow-xl rounded-xl py-[80px]">
+              <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-accent/30 flex items-center justify-center shadow-xl rounded-xl py-0 my-[100px]">
                 <div className="text-center">
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center">
                     <Container className="w-5 h-5 text-accent" />
