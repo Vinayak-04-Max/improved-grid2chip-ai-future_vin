@@ -171,8 +171,8 @@ const PrefabContainer = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-3">
-              Container <span className="text-gradient-accent">Features</span>
+            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-3 text-card-foreground">
+              Container <span className="text-gradient-accent text-primary">Features</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Enterprise-grade infrastructure in a rapidly deployable package
@@ -193,14 +193,14 @@ const PrefabContainer = () => {
             const Icon = feature.icon;
             return <div key={index} className="flex-shrink-0 w-80 p-6 rounded-2xl bg-gradient-to-br from-card/90 to-card/60 border border-accent/20 hover:border-accent/40 transition-all duration-300 group">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/30 to-accent/10 border border-accent/30 flex items-center justify-center group-hover:scale-105 transition-transform">
-                      <Icon className="w-7 h-7 text-accent" />
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/30 to-accent/10 border flex items-center justify-center group-hover:scale-105 transition-transform border-primary text-primary bg-[#0d59f2]/[0.09]">
+                      <Icon className="w-7 h-7 text-sidebar-primary bg-sidebar-primary" />
                     </div>
-                    <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/30">
+                    <Badge variant="secondary" className="text-primary bg-[#0d59f2]/[0.27] border-primary">
                       {feature.metric}
                     </Badge>
                   </div>
-                  <h3 className="text-lg font-display font-semibold mb-2 text-secondary">{feature.title}</h3>
+                  <h3 className="text-lg font-display font-semibold mb-2 text-primary">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>;
           })}
