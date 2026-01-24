@@ -598,7 +598,7 @@ const CustomDataCenter = () => {
                   </div>
                   <div>
                     <h3 className="font-display font-bold text-foreground mb-1 text-lg">{idealFor[3].title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-base">{idealFor[3].description}</p>
+                    <p className="text-muted-foreground leading-relaxed text-sm">{idealFor[3].description}</p>
                   </div>
                 </div>
               </div>
@@ -625,7 +625,7 @@ const CustomDataCenter = () => {
                     </div>
                     <div>
                       <h3 className="font-display font-bold text-foreground mb-1 text-lg">{idealFor[0].title}</h3>
-                      <p className="text-muted-foreground leading-relaxed text-base">{idealFor[0].description}</p>
+                      <p className="text-muted-foreground leading-relaxed text-sm">{idealFor[0].description}</p>
                     </div>
                   </div>
                 </div>
@@ -692,7 +692,7 @@ const CustomDataCenter = () => {
                     </div>
                     <div>
                       <h3 className="font-display font-bold text-foreground mb-1 text-lg">{idealFor[2].title}</h3>
-                      <p className="text-muted-foreground leading-relaxed text-base">{idealFor[2].description}</p>
+                      <p className="text-muted-foreground leading-relaxed text-sm">{idealFor[2].description}</p>
                     </div>
                   </div>
                 </div>
@@ -718,7 +718,7 @@ const CustomDataCenter = () => {
                   </div>
                   <div>
                     <h3 className="font-display font-bold text-foreground mb-1 text-lg">{idealFor[1].title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-base">{idealFor[1].description}</p>
+                    <p className="text-muted-foreground leading-relaxed text-sm">{idealFor[1].description}</p>
                   </div>
                 </div>
               </div>
