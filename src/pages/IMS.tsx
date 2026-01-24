@@ -107,7 +107,7 @@ const IMS = () => {
        ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img alt="Integrated Monitoring System" className="w-full h-full object-cover" src="/lovable-uploads/4564c2ee-1115-48c5-a0f5-9fe0e6a158b2.jpg" />
+          <img alt="Integrated Monitoring System" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/4564c2ee-1115-48c5-a0f5-9fe0e6a158b2.jpg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
