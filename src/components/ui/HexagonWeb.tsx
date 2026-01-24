@@ -192,15 +192,11 @@ export const HexagonWeb: React.FC<HexagonWebProps> = ({
           scale: 1.05,
           boxShadow: "0 15px 30px -8px hsl(var(--primary) / 0.25)"
         }}>
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center mb-2 group-hover:from-primary/30 group-hover:to-accent/20 transition-colors duration-300 py-[5px]">
-                <div className="text-primary group-hover:text-accent transition-colors [&>svg]:w-5 [&>svg]:h-5">
-                  {item.icon}
-                </div>
-              </div>
-              <span className="text-sm font-semibold text-foreground text-center leading-tight">
+              
+              <span className="font-semibold text-foreground text-center leading-tight text-base">
                 {item.name}
               </span>
-              {item.desc && <span className="text-[10px] text-muted-foreground text-center leading-snug mt-1">
+              {item.desc && <span className="text-muted-foreground text-center leading-snug mt-1 text-sm">
                   {item.desc}
                 </span>}
             </motion.div>
