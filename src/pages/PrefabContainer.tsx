@@ -442,7 +442,7 @@ const PrefabContainer = () => {
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center">
                     <Container className="w-5 h-5 text-accent" />
                   </div>
-                  <span className="font-display font-bold leading-tight bg-white/0 text-primary text-base">Prefab<br />Solutions</span>
+                  <span className="font-display font-bold leading-tight bg-white/0 text-primary text-lg">Prefab<br />Solutions</span>
                 </div>
               </div>
             </motion.div>
