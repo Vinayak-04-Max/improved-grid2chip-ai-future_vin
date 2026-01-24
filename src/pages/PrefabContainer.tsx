@@ -225,7 +225,7 @@ const PrefabContainer = () => {
           once: true
         }}>
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
-              Technical <span className="text-gradient-primary">Specifications</span>
+              Technical <span className="text-gradient-primary text-secondary">Specifications</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Engineered to enterprise standards for mission-critical applications
