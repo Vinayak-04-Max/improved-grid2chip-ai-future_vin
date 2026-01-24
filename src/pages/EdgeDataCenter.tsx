@@ -126,7 +126,7 @@ const EdgeDataCenter = () => {
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img alt="Edge Data Center Infrastructure" className="w-full h-full object-cover" src="/lovable-uploads/95734983-48ba-46b7-9abd-6e1b435cf762.jpg" />
+          <img alt="Edge Data Center Infrastructure" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/95734983-48ba-46b7-9abd-6e1b435cf762.jpg" />
         </div>
 
         {/* Content */}
@@ -191,7 +191,7 @@ const EdgeDataCenter = () => {
           once: true
         }}>
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
-              Performance at a <span className="text-gradient-primary">Glance</span>
+              Performance at a <span className="text-gradient-primary text-secondary">Glance</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Industry-leading specifications that power your edge infrastructure
