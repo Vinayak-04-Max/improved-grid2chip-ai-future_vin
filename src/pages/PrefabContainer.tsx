@@ -251,7 +251,7 @@ const PrefabContainer = () => {
                     <h3 className="text-xl font-display font-semibold text-foreground mb-1">
                       {spec.label}
                     </h3>
-                    <div className="text-2xl font-bold text-accent">{spec.value}</div>
+                    <div className="text-2xl font-bold text-primary">{spec.value}</div>
                   </div>
 
                   {/* Scale Bar */}
@@ -274,7 +274,7 @@ const PrefabContainer = () => {
                     
                     {/* Applications Tags */}
                     <div className="flex flex-wrap gap-2">
-                      {spec.applications.map((app, i) => <span key={i} className="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20">
+                      {spec.applications.map((app, i) => <span key={i} className="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 border border-accent/20 text-primary">
                           {app}
                         </span>)}
                     </div>
