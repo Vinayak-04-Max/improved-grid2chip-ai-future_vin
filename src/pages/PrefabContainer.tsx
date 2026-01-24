@@ -423,21 +423,21 @@ const PrefabContainer = () => {
             once: true
           }}>
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 blur-xl" />
-              <motion.div className="absolute inset-0 border-[3px] border-dashed border-accent/40 rounded-xl" animate={{
+              <motion.div className="absolute inset-0 border-[3px] border-dashed border-accent/40 mx-[30px] py-[180px] rounded-full" animate={{
               rotate: 360
             }} transition={{
               duration: 25,
               repeat: Infinity,
               ease: "linear"
             }} />
-              <motion.div className="absolute inset-3 rounded-full border-2 border-dashed border-primary/30" animate={{
+              <motion.div className="absolute inset-3 rounded-full border-2 border-dashed border-primary/30 my-0 py-[180px] mx-[10px]" animate={{
               rotate: -360
             }} transition={{
               duration: 18,
               repeat: Infinity,
               ease: "linear"
             }} />
-              <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-accent/30 flex items-center justify-center shadow-xl rounded-xl">
+              <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-accent/30 flex items-center justify-center shadow-xl rounded-xl py-[80px]">
                 <div className="text-center">
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center">
                     <Container className="w-5 h-5 text-accent" />
