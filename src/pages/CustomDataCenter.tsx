@@ -142,7 +142,7 @@ const CustomDataCenter = () => {
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img alt="Custom Data Center Infrastructure" className="w-full h-full object-cover" src="/lovable-uploads/c132fe79-4101-48fc-abfd-9fb8614d5afb.jpg" />
+          <img alt="Custom Data Center Infrastructure" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/c132fe79-4101-48fc-abfd-9fb8614d5afb.jpg" />
         </div>
 
         {/* Content */}
@@ -207,7 +207,7 @@ const CustomDataCenter = () => {
           once: true
         }}>
             <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
-              Infrastructure <span className="text-gradient-primary">Customizations</span>
+              Infrastructure <span className="text-gradient-primary text-secondary">Customizations</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Every aspect of your data center, tailored to your exact specifications
