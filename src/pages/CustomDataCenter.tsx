@@ -262,7 +262,7 @@ const CustomDataCenter = () => {
       <section className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/10 to-transparent" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 lg:px-[3px] py-[70px]">
           <motion.div className="text-center mb-16" initial={{
           opacity: 0,
           y: 20
@@ -335,7 +335,7 @@ const CustomDataCenter = () => {
                   delay: 0.1 * (index + 3)
                 }}>
                       <div className="relative flex-shrink-0">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center shadow-lg shadow-accent/20">
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center shadow-lg shadow-accent/20 mx-0">
                           <Icon className="w-7 h-7 text-white" />
                         </div>
                         <div className="absolute -bottom-2 -left-2 w-7 h-7 rounded-full bg-background border-2 border-accent/40 flex items-center justify-center">
@@ -344,10 +344,10 @@ const CustomDataCenter = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg text-left">
                           {advantage.title}
                         </h4>
-                        <p className="text-muted-foreground leading-relaxed text-base">
+                        <p className="text-muted-foreground leading-relaxed text-base text-left">
                           {advantage.description}
                         </p>
                       </div>
