@@ -193,7 +193,7 @@ const PrefabContainer = () => {
             const Icon = feature.icon;
             return <div key={index} className="flex-shrink-0 w-80 p-6 rounded-2xl bg-gradient-to-br from-card/90 to-card/60 border border-accent/20 hover:border-accent/40 transition-all duration-300 group">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/30 to-accent/10 border group-hover:scale-105 transition-transform text-primary border-primary flex items-center justify-center bg-[#0d59f2]/[0.29]">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/30 to-accent/10 border group-hover:scale-105 transition-transform text-primary border-primary flex items-center justify-center bg-[#bcd0fb]">
                       <Icon className="w-7 h-7 text-sidebar-primary bg-black/0" />
                     </div>
                     <Badge variant="secondary" className="text-primary bg-[#0d59f2]/[0.27] border-primary">
