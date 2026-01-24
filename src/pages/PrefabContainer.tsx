@@ -423,7 +423,7 @@ const PrefabContainer = () => {
             once: true
           }}>
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 blur-xl" />
-              <motion.div className="absolute inset-0 border-[3px] border-dashed border-accent/40 rounded-full py-[10px] my-[10px] mx-[40px]" animate={{
+              <motion.div className="absolute inset-0 border-[3px] border-dashed border-accent/40 rounded-full py-[10px] my-[10px] mx-[30px]" animate={{
               rotate: 360
             }} transition={{
               duration: 25,
