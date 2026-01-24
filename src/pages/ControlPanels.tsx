@@ -107,7 +107,7 @@ const ControlPanels = () => {
        ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img alt="Control Panel Services" className="w-full h-full object-cover" src="/lovable-uploads/c62e1e7d-beab-448d-b5bc-5a5a0f142a6d.jpg" />
+          <img alt="Control Panel Services" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/c62e1e7d-beab-448d-b5bc-5a5a0f142a6d.jpg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -220,7 +220,7 @@ const ControlPanels = () => {
       <section id="features" className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/10 to-transparent" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 my-[50px]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 my-0 py-[100px]">
           <motion.div className="text-center mb-16" initial={{
           opacity: 0,
           y: 20
