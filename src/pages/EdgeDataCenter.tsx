@@ -444,7 +444,7 @@ const EdgeDataCenter = () => {
                       <div className="p-8 rounded-3xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300 group">
                         {/* Header */}
                         <div className="flex items-center gap-4 mb-6">
-                          <div className={`w-14 h-14 rounded-2xl bg-${useCase.color}/20 flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                          <div className="">
                             <Icon className={`w-7 h-7 text-${useCase.color}`} />
                           </div>
                           <div>
