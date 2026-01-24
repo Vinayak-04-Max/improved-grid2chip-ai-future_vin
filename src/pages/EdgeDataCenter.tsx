@@ -286,7 +286,7 @@ const EdgeDataCenter = () => {
                     {/* Connecting Line (hidden on mobile) */}
                     <div className="hidden lg:block absolute top-1/2 left-1/2 w-[200%] h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent -z-10" />
                     
-                    <div className="relative h-[280px] p-8 rounded-3xl bg-gradient-to-br from-card/60 to-transparent border border-primary/10 hover:border-primary/30 transition-all duration-500 group flex flex-col">
+                    <div className="relative h-[320px] p-8 rounded-3xl bg-gradient-to-br from-card/60 to-transparent border border-primary/10 hover:border-primary/30 transition-all duration-500 group flex flex-col">
                       {/* Metric Badge */}
                       <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full bg-gradient-to-r text-xs font-bold text-white" style={{
                     backgroundImage: `linear-gradient(to right, hsl(var(--${index % 2 === 0 ? 'primary' : 'accent'})), hsl(var(--${index % 2 === 0 ? 'primary' : 'accent'}) / 0.7))`
@@ -302,7 +302,7 @@ const EdgeDataCenter = () => {
                       <h3 className="text-xl font-display font-semibold text-foreground mb-3 flex-shrink-0">
                         {feature.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed line-clamp-3 flex-grow">
+                      <p className="text-muted-foreground leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
