@@ -452,7 +452,7 @@ const HPC = () => {
               ease: "linear"
             }} />
               <div className="relative w-58 h-48 py-0 mx-0 my-[75px]">
-                <div className="text-center border-primary rounded-xl my-0 py-[20px] bg-primary-foreground">
+                <div className="text-center border-primary rounded-xl bg-primary-foreground px-[10px] my-px py-[80px]">
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
                     <Brain className="w-5 h-5 text-primary" />
                   </div>
