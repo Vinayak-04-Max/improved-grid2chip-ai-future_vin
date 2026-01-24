@@ -119,7 +119,7 @@ const HPC = () => {
       <section className="relative min-h-[85vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img alt="HPC Data Center" className="w-full h-full object-cover" src="/lovable-uploads/76536a0d-be93-4bae-a8ab-ea3b0101f599.jpg" />
+          <img alt="HPC Data Center" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/76536a0d-be93-4bae-a8ab-ea3b0101f599.jpg" />
         </div>
 
         {/* Content */}
@@ -175,7 +175,7 @@ const HPC = () => {
           once: true
         }}>
             <h2 className="text-3xl lg:text-4xl font-display font-bold mb-3">
-              HPC <span className="text-gradient-primary">Capabilities</span>
+              HPC <span className="text-gradient-primary text-secondary">Capabilities</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Enterprise-grade computing infrastructure built for the most demanding workloads
