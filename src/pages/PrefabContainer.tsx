@@ -395,7 +395,7 @@ const PrefabContainer = () => {
                 delay: index * 0.1
               }}>
                     <div className={`p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border ${colors} transition-all duration-300 group`}>
-                      <div className="flex items-start gap-4">
+                      <div className="flex items-start gap-4 mx-0">
                         <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${iconColors} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform`}>
                           <Icon className="w-7 h-7" />
                         </div>
@@ -437,12 +437,12 @@ const PrefabContainer = () => {
               repeat: Infinity,
               ease: "linear"
             }} />
-              <div className="absolute inset-5 rounded-full bg-gradient-to-br from-card to-card/90 border border-accent/30 flex items-center justify-center shadow-xl">
+              <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-accent/30 flex items-center justify-center shadow-xl rounded-xl">
                 <div className="text-center">
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center">
                     <Container className="w-5 h-5 text-accent" />
                   </div>
-                  <span className="font-display font-bold leading-tight text-sm bg-white/0 text-primary">Prefab<br />Solutions</span>
+                  <span className="font-display font-bold leading-tight bg-white/0 text-primary text-base">Prefab<br />Solutions</span>
                 </div>
               </div>
             </motion.div>
