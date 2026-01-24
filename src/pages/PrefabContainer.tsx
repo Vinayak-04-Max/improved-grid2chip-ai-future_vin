@@ -274,7 +274,7 @@ const PrefabContainer = () => {
                     
                     {/* Applications Tags */}
                     <div className="flex flex-wrap gap-2">
-                      {spec.applications.map((app, i) => <span key={i} className="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 border border-accent/20 text-primary">
+                      {spec.applications.map((app, i) => <span key={i} className="px-3 py-1 rounded-full text-xs font-medium border border-accent/20 text-primary bg-[#bcd0fb]">
                           {app}
                         </span>)}
                     </div>
