@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@/assets/g2c-logo-new.png";
 const Footer = () => {
@@ -61,7 +61,7 @@ const Footer = () => {
             }} whileTap={{
               scale: 0.95
             }}>
-                <Mail className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                <Globe className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </motion.a>
             </div>
           </motion.div>
