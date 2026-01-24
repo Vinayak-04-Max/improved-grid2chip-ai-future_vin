@@ -427,7 +427,7 @@ const HPC = () => {
             </div>
 
             {/* Central Hub */}
-            <motion.div className="relative w-36 h-36 mx-auto" initial={{
+            <motion.div className="relative w-86 h-96 mx-auto" initial={{
             opacity: 0,
             scale: 0.8
           }} whileInView={{
@@ -456,7 +456,7 @@ const HPC = () => {
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
                     <Brain className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="font-display font-bold leading-tight text-sm text-primary bg-white/0">HPC<br />Solutions</span>
+                  <span className="font-display font-bold leading-tight text-primary bg-white/0 text-xl">HPC<br />Solutions</span>
                 </div>
               </div>
             </motion.div>
