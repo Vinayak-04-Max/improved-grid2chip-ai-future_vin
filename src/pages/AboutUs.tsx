@@ -242,7 +242,7 @@ const AboutUs = () => {
        ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="About Grid2Chip" className="w-full h-full object-cover" />
+          <img src={heroImage} alt="About Grid2Chip" className="w-full h-full object-cover opacity-85" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -255,7 +255,7 @@ const AboutUs = () => {
         }} transition={{
           duration: 0.8
         }}>
-            <Badge variant="outline" className="border-primary/50 text-primary mb-6 backdrop-blur-sm">
+            <Badge variant="outline" className="mb-6 backdrop-blur-sm text-primary-foreground border-primary-foreground">
               About Grid2Chip
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
