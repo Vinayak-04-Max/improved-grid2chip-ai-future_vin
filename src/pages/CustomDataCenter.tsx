@@ -498,7 +498,7 @@ const CustomDataCenter = () => {
                               </div>
                             </div>
                             
-                            <p className="text-muted-foreground leading-relaxed">
+                            <p className="text-muted-foreground leading-relaxed text-base">
                               {step.description}
                             </p>
                           </div>}
