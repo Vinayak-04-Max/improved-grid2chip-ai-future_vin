@@ -415,7 +415,7 @@ const HPC = () => {
                         </div>
                         <div>
                           <h3 className="font-display font-bold text-foreground mb-1 text-lg">{useCase.title}</h3>
-                          <p className="text-muted-foreground leading-relaxed mb-2 text-base">{useCase.description}</p>
+                          <p className="text-muted-foreground leading-relaxed mb-2 text-sm">{useCase.description}</p>
                           <div className="flex flex-wrap gap-1">
                             {useCase.applications.slice(0, 2).map((app, i) => <span key={i} className="px-2 py-0.5 rounded-full bg-primary/10 text-primary/80 text-xs">{app}</span>)}
                           </div>
@@ -485,7 +485,7 @@ const HPC = () => {
                         </div>
                         <div>
                           <h3 className="font-display font-bold text-foreground mb-1 text-lg">{useCase.title}</h3>
-                          <p className="text-muted-foreground leading-relaxed mb-2 text-base">{useCase.description}</p>
+                          <p className="text-muted-foreground leading-relaxed mb-2 text-sm">{useCase.description}</p>
                           <div className="flex flex-wrap gap-1">
                             {useCase.applications.slice(0, 2).map((app, i) => <span key={i} className="px-2 py-0.5 rounded-full bg-accent/10 text-accent/80 text-xs">{app}</span>)}
                           </div>
