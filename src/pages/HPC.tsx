@@ -436,15 +436,15 @@ const HPC = () => {
           }} viewport={{
             once: true
           }}>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/40 to-accent/20 blur-xl" />
-              <motion.div className="relative w-32 h-32 rounded-xl my-0" animate={{
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-xl" />
+              <motion.div className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/40" animate={{
               rotate: 360
             }} transition={{
               duration: 25,
               repeat: Infinity,
               ease: "linear"
             }} />
-              <motion.div className="relative w-32 h-32" animate={{
+              <motion.div className="absolute inset-3 rounded-full border-2 border-dashed border-accent/30" animate={{
               rotate: -360
             }} transition={{
               duration: 18,
@@ -452,11 +452,11 @@ const HPC = () => {
               ease: "linear"
             }} />
               <div className="relative w-58 h-48 py-0 mx-0 my-[75px]">
-                <div className="relative w-32 h-32">
+                <div className="text-center border-primary bg-primary-foreground rounded-xl my-0 py-[20px]">
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
                     <Brain className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="font-display font-bold leading-tight text-primary bg-white/0 text-lg my-0 py-px">HPC<br />Solutions</span>
+                  <span className="font-display font-bold leading-tight text-primary bg-white/0 text-lg">HPC<br />Solutions</span>
                 </div>
               </div>
             </motion.div>
