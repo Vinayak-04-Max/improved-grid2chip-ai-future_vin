@@ -401,7 +401,7 @@ const PrefabContainer = () => {
                         </div>
                         <div>
                           <h3 className="font-display font-bold text-foreground mb-1 text-lg">{useCase.title}</h3>
-                          <p className="text-muted-foreground leading-relaxed mb-2 text-base">{useCase.description}</p>
+                          <p className="text-muted-foreground leading-relaxed mb-2 text-sm">{useCase.description}</p>
                           <div className="flex flex-wrap gap-1">
                             {useCase.applications.slice(0, 2).map((app, i) => <span key={i} className="px-2 py-0.5 rounded-full bg-accent/10 text-accent/80 text-xs">{app}</span>)}
                           </div>
@@ -471,7 +471,7 @@ const PrefabContainer = () => {
                         </div>
                         <div>
                           <h3 className="font-display font-bold text-foreground mb-1 text-lg">{useCase.title}</h3>
-                          <p className="text-muted-foreground leading-relaxed mb-2 text-base">{useCase.description}</p>
+                          <p className="text-muted-foreground leading-relaxed mb-2 text-sm">{useCase.description}</p>
                           <div className="flex flex-wrap gap-1">
                             {useCase.applications.slice(0, 2).map((app, i) => <span key={i} className="px-2 py-0.5 rounded-full bg-neon-cyan/10 text-neon-cyan/80 text-xs">{app}</span>)}
                           </div>
@@ -567,7 +567,7 @@ const PrefabContainer = () => {
           }} transition={{
             delay: index * 0.1
           }}>
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-card/80 to-card/50 border border-accent/10 hover:border-accent/30 transition-all duration-300 group">
+                <div className="gap-4 p-4 rounded-xl bg-gradient-to-br from-card/80 to-card/50 border border-accent/10 hover:border-accent/30 transition-all duration-300 group items-center justify-start flex flex-row mx-px">
                   <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
                     <CheckCircle className="w-5 h-5 text-accent" />
                   </div>
