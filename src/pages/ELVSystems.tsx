@@ -304,10 +304,10 @@ const ELVSystems = () => {
                       </div>
                       
                       <div className="pt-1">
-                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
+                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg text-left">
                           {system.title}
                         </h4>
-                        <p className="text-muted-foreground leading-relaxed text-base">
+                        <p className="text-muted-foreground leading-relaxed text-base text-left">
                           {system.description}
                         </p>
                       </div>
