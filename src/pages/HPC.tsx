@@ -451,7 +451,7 @@ const HPC = () => {
               repeat: Infinity,
               ease: "linear"
             }} />
-              <div className="absolute inset-5 rounded-full bg-gradient-to-br from-card to-card/90 border border-primary/30 flex items-center justify-center shadow-xl">
+              <div className="relative w-58 h-48 py-0 mx-0 my-[75px]">
                 <div className="text-center">
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
                     <Brain className="w-5 h-5 text-primary" />
