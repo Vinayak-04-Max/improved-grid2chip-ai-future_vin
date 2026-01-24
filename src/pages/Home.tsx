@@ -482,15 +482,14 @@ const Home = () => {
           </div>
 
           {/* Hexagonal Spider Web Layout */}
-          <div className="flex justify-center items-center min-h-[700px] lg:min-h-[900px]">
+          <div className="flex justify-center items-center py-8">
             <HexagonWeb 
               items={industries.map(ind => ({
                 name: ind.name,
-                icon: <ind.icon className="w-7 h-7" />,
+                icon: <ind.icon className="w-5 h-5" />,
                 desc: ind.desc
               }))} 
-              size={320}
-              className="scale-90 md:scale-100 lg:scale-110"
+              size={260}
             />
           </div>
         </div>
