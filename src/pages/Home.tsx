@@ -7,10 +7,11 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 import { FibonacciSection, ParallaxLayer, GlowingNode } from "@/components/ui/FibonacciSection";
 import { HeroParticles, NeuralNetwork, OrbitalRings } from "@/components/HeroParticles";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
-import { OrbitingWheel, FloatingObject, DepthLayer, PulseAccent, RefractiveCard, MorphingBlob, DataStream, VelocityText } from "@/components/ui/CinematicMotion";
+import { FloatingObject, DepthLayer, PulseAccent, RefractiveCard, MorphingBlob, DataStream, VelocityText } from "@/components/ui/CinematicMotion";
+import { HexagonWeb } from "@/components/ui/HexagonWeb";
 import { ScrollRevealBlock, StaggerReveal, CharacterReveal, ScrollProgress, MagneticArea } from "@/components/ui/ScrollRevealBlock";
 import { Badge } from "@/components/ui/badge";
-import { Cpu, Zap, Shield, Globe, ArrowRight, CheckCircle, Building2, Microscope, Factory, Fuel, Server, Ship, Sparkles, CircuitBoard, Network, Cloud } from "lucide-react";
+import { Cpu, Zap, Shield, Globe, ArrowRight, CheckCircle, Building2, Microscope, Factory, Fuel, Server, Ship, Sparkles, CircuitBoard, Network } from "lucide-react";
 import heroImage from "@/assets/hero-ai-datacenter.jpg";
 const Home = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -132,10 +133,6 @@ const Home = () => {
     label: "Support",
     icon: Network
   }];
-  const industryItems = industries.map(ind => ({
-    name: ind.name,
-    icon: <ind.icon className="w-6 h-6" />
-  }));
   return <div ref={containerRef} className="min-h-screen bg-background overflow-hidden">
       {/* Global Scroll Progress */}
       <ScrollProgress />
@@ -463,13 +460,13 @@ const Home = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          INDUSTRIES ORBITING WHEEL SECTION
+          INDUSTRIES HEXAGON WEB SECTION
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative py-fib-144 overflow-hidden">
+      <section className="relative py-24 lg:py-32 overflow-hidden">
         <AnimatedBackground variant="aurora" intensity={0.5} />
         
-        <div className="fib-container relative z-10">
-          <div className="max-w-5xl mx-auto text-center mb-fib-55">
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12 lg:mb-16">
             <ScrollRevealBlock variant="slide" direction="up">
               <h2 className="text-phi-4xl md:text-phi-5xl font-display font-bold mb-fib-21">
                 Industries We <span className="text-gradient-primary">Serve</span>
@@ -477,23 +474,24 @@ const Home = () => {
             </ScrollRevealBlock>
 
             <ScrollRevealBlock variant="fade" delay={0.2}>
-              <p className="text-phi-lg text-muted-foreground">
+              <p className="text-phi-lg text-muted-foreground max-w-2xl mx-auto">
                 Our data center solutions power critical operations across diverse sectors,
                 enabling digital transformation and operational excellence.
               </p>
             </ScrollRevealBlock>
           </div>
 
-          {/* Circular layout only (static, centered) */}
-          <div className="flex justify-center">
-            <ScrollRevealBlock variant="scale" delay={0.3}>
-              <OrbitingWheel items={industryItems} radius={200} duration={40} animated={false} centerContent={<div className="glass-panel rounded-full w-32 h-32 flex items-center justify-center">
-                    <div className="text-center">
-                      <Cloud className="w-10 h-10 text-primary mx-auto mb-2" />
-                      <span className="font-medium text-foreground text-base">Industries</span>
-                    </div>
-                  </div>} />
-            </ScrollRevealBlock>
+          {/* Hexagonal Spider Web Layout */}
+          <div className="flex justify-center items-center min-h-[700px] lg:min-h-[900px]">
+            <HexagonWeb 
+              items={industries.map(ind => ({
+                name: ind.name,
+                icon: <ind.icon className="w-7 h-7" />,
+                desc: ind.desc
+              }))} 
+              size={320}
+              className="scale-90 md:scale-100 lg:scale-110"
+            />
           </div>
         </div>
       </section>
