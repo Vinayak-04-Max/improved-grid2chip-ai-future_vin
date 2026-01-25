@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, MapPin, Phone, Globe } from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone, Globe, Youtube, Facebook } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@/assets/g2c-logo-new.png";
 const Footer = () => {
@@ -47,23 +47,43 @@ const Footer = () => {
               Crafting AI-ready data centers for the future. Sustainable, scalable, and optimized for next-generation computing.
             </p>
             <div className="flex gap-fib-13">
-              <motion.a href="#" className="p-fib-8 rounded-fib bg-surface border border-border hover:border-primary transition-colors group" whileHover={{
-              scale: 1.1,
-              y: -2
-            }} whileTap={{
-              scale: 0.95
-            }}>
-                <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              </motion.a>
-              <motion.a href="mailto:info@grid2chip.com" className="p-fib-8 rounded-fib bg-surface border border-border hover:border-primary transition-colors group" whileHover={{
-              scale: 1.1,
-              y: -2
-            }} whileTap={{
-              scale: 0.95
-            }}>
-                <Globe className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              </motion.a>
-            </div>
+  {/* LinkedIn */}
+  <motion.a
+    href="https://www.linkedin.com/company/grid2chip/?originalSubdomain=in"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="p-fib-8 rounded-fib bg-surface border border-border hover:border-primary transition-colors group"
+    whileHover={{ scale: 1.1, y: -2 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+  </motion.a>
+
+  {/* YouTube */}
+  <motion.a
+    href="https://www.youtube.com/channel/UCRVkgOLB_SH4wbOjCMxTozQ"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="p-fib-8 rounded-fib bg-surface border border-border hover:border-primary transition-colors group"
+    whileHover={{ scale: 1.1, y: -2 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <Youtube className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+  </motion.a>
+
+  {/* Facebook */}
+  <motion.a
+    href="https://www.facebook.com/Grid2chip/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="p-fib-8 rounded-fib bg-surface border border-border hover:border-primary transition-colors group"
+    whileHover={{ scale: 1.1, y: -2 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <Facebook className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+  </motion.a>
+</div>
+           
           </motion.div>
 
           {/* Solutions */}
@@ -112,24 +132,24 @@ const Footer = () => {
                 <div className="p-fib-5 rounded-fib bg-primary/10 mt-1">
                   <MapPin className="h-4 w-4 text-primary" />
                 </div>
-                <div className="text-sm text-muted-foreground">#306, Downtown mall, Lakdikapool, Hyderabad - 500004.
+                <div className="text-sm text-muted-foreground">#306, Downtown mall,
                 <br />
                   Beside Lotus Hospital<br />
-                  Lakdikapool, Hyderabad - 500004
+                  Lakdikapool, Hyderabad - 500004.
                 </div>
               </div>
               <div className="flex items-start gap-fib-8">
                 <div className="p-fib-5 rounded-fib bg-primary/10 mt-1">
                   <Mail className="h-4 w-4 text-primary" />
                 </div>
-                <a href="mailto:info@grid2chip.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">sales@grid2chip.com</a>
+                <a href="mailto:sales@grid2chip.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">sales@grid2chip.com</a>
               </div>
               <div className="flex items-start gap-fib-8">
                 <div className="p-fib-5 rounded-fib bg-primary/10 mt-1">
                   <Phone className="h-4 w-4 text-primary" />
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  +91-40-23302112<br />
+                  +91-40-23302112
                   7032808049
                 </div>
               </div>
