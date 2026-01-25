@@ -509,7 +509,8 @@ const Home = () => {
       }} />
         
         <OrbitalRings className="opacity-30" />
-        <DataStream columns={10} />
+        {/* <DataStream columns={10} /> */}
+
 
         <div className="fib-container relative z-10">
           <ScrollRevealBlock variant="morph">
