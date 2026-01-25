@@ -134,8 +134,7 @@ const Footer = () => {
                 </div>
                 <div className="text-sm text-muted-foreground">#306, Downtown mall,
                 <br />
-                  Beside Lotus Hospital<br />
-                  Lakdikapool, Hyderabad - 500004.
+                  Lakdikapool, Hyderabad - 500004.<br />
                 </div>
               </div>
               <div className="flex items-start gap-fib-8">
@@ -149,8 +148,7 @@ const Footer = () => {
                   <Phone className="h-4 w-4 text-primary" />
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  +91-40-23302112
-                  7032808049
+                  +91-40-23302112  7032808049
                 </div>
               </div>
               <div className="space-y-fib-8 pt-fib-8">
