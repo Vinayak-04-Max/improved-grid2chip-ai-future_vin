@@ -148,7 +148,7 @@ const Home = () => {
         <AnimatedBackground variant="neural" intensity={0.5} />
         <HeroParticles count={60} color="mixed" />
         <NeuralNetwork />
-        <DataStream columns={15} />
+        {/* <DataStream columns={15} /> */}
 
         {/* Floating 3D Orbs */}
         <FloatingObject className="absolute top-[15%] left-[8%] z-20" depth={1.5} floatIntensity={30}>
