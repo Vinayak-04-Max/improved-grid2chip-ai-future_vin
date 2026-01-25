@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Building2, Cpu, Shield, Zap, ArrowRight, CheckCircle, ClipboardCheck, Layers, Settings, HardHat, MapPin, Server, Thermometer, Lock, Wifi, Leaf, Award, ChevronRight, CircleDot, Factory, Cloud, Building, Landmark, TrendingUp } from "lucide-react";
 import heroImage from "@/assets/hero-ai-datacenter.jpg";
+import VerticalRoadmap from "@/components/ui/VerticalRoadmap";
 const CustomDataCenter = () => {
   const advantages = [{
     title: "Precision Engineering",
@@ -390,106 +391,10 @@ const CustomDataCenter = () => {
             </p>
           </motion.div>
 
-          {/* Vertical Roadmap Infographic */}
-          <div className="relative max-w-4xl mx-auto">
-            {/* Central Vertical Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-gradient-to-b from-primary via-accent to-neon-cyan" />
-
-            <div className="space-y-0">
-              {processSteps.map((step, index) => {
-              const Icon = step.icon;
-              const isEven = index % 2 === 0;
-              return <motion.div key={step.step} className="relative" initial={{
-                opacity: 0,
-                x: isEven ? -50 : 50
-              }} whileInView={{
-                opacity: 1,
-                x: 0
-              }} viewport={{
-                once: true
-              }} transition={{
-                delay: index * 0.15
-              }}>
-                    {/* Connector Line */}
-                    <div className={`absolute top-1/2 w-12 h-0.5 bg-gradient-to-r ${isEven ? 'right-1/2 mr-6 from-transparent to-primary' : 'left-1/2 ml-6 from-primary to-transparent'}`} />
-                    
-                    {/* Center Node */}
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                      <div className="w-14 h-14 rounded-full bg-background border-4 border-primary flex items-center justify-center shadow-lg shadow-primary/20">
-                        <span className="text-xl font-bold text-primary">{step.step}</span>
-                      </div>
-                    </div>
-
-                    {/* Content Card */}
-                    <div className={`grid grid-cols-2 gap-24 py-8 ${isEven ? '' : ''}`}>
-                      {/* Left side content (for even steps) */}
-                      <div className={`${isEven ? 'text-right pr-8' : 'opacity-0 pointer-events-none'}`}>
-                        {isEven && <div className="p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/20 hover:border-primary/40 transition-all duration-300 group">
-                            {/* Duration Badge */}
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20 mb-4">
-                              <span>{step.duration}</span>
-                            </div>
-                            
-                            <div className="flex items-center justify-end gap-3 mb-3">
-                              <h3 className="text-xl font-display font-semibold text-primary">
-                                {step.title}
-                              </h3>
-                              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <Icon className="w-6 h-6 text-primary" />
-                              </div>
-                            </div>
-                            
-                            <p className="text-muted-foreground leading-relaxed text-base">
-                              {step.description}
-                            </p>
-                          </div>}
-                      </div>
-
-                      {/* Right side content (for odd steps) */}
-                      <div className={`${!isEven ? 'text-left pl-8' : 'opacity-0 pointer-events-none'}`}>
-                        {!isEven && <div className="p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-accent/20 hover:border-accent/40 transition-all duration-300 group">
-                            {/* Duration Badge */}
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20 mb-4">
-                              <span>{step.duration}</span>
-                            </div>
-                            
-                            <div className="flex items-center gap-3 mb-3">
-                              <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <Icon className="w-6 h-6 text-accent" />
-                              </div>
-                              <h3 className="text-xl font-display font-semibold text-secondary">
-                                {step.title}
-                              </h3>
-                            </div>
-                            
-                            <p className="text-muted-foreground leading-relaxed">
-                              {step.description}
-                            </p>
-                          </div>}
-                      </div>
-                    </div>
-                  </motion.div>;
-            })}
-            </div>
-
-            {/* Final Badge */}
-            <motion.div className="relative z-20 flex justify-center pt-8" initial={{
-            opacity: 0,
-            scale: 0.9
-          }} whileInView={{
-            opacity: 1,
-            scale: 1
-          }} viewport={{
-            once: true
-          }}>
-              <div className="px-8 py-4 bg-gradient-to-r from-accent to-primary rounded-full shadow-lg shadow-accent/20">
-                <div className="flex items-center gap-3 text-white">
-                  <CheckCircle className="w-6 h-6" />
-                  <span className="font-semibold text-lg">Data Center Ready</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          <VerticalRoadmap 
+            steps={processSteps} 
+            finalBadge={{ icon: CheckCircle, text: "Data Center Ready" }}
+          />
         </div>
       </section>
 
