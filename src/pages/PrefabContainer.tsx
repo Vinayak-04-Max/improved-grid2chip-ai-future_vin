@@ -314,11 +314,10 @@ const PrefabContainer = () => {
             </p>
           </motion.div>
 
-          <VerticalRoadmap 
-            steps={deploymentSteps} 
-            accentColor="accent"
-            finalBadge={{ icon: CheckCircle, text: "Deployment Complete" }}
-          />
+          <VerticalRoadmap steps={deploymentSteps} accentColor="accent" finalBadge={{
+          icon: CheckCircle,
+          text: "Deployment Complete"
+        }} />
         </div>
       </section>
 
@@ -542,7 +541,7 @@ const PrefabContainer = () => {
                   <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
                     <CheckCircle className="w-5 h-5 text-accent" />
                   </div>
-                  <span className="text-sm text-muted-foreground group-hover:text-white transition-colors">{benefit}</span>
+                  <span className="text-sm text-muted-foreground group-hover:text-green transition-colors">{benefit}</span>
                 </div>
               </motion.div>)}
           </div>
