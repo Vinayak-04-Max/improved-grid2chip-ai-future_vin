@@ -67,7 +67,7 @@ const ChatBot = () => {
             {/* Quick Responses */}
             <div className="p-4 border-t border-primary/20">
               <div className="grid grid-cols-1 gap-2 mb-4">
-                {quickResponses.map((response, index) => <Button key={index} variant="ghost" size="sm" onClick={() => handleQuickResponse(response)} className="justify-start text-left h-auto py-2 px-3 text-xs hover:bg-blue-100 text-primary">
+                {quickResponses.map((response, index) => <Button key={index} variant="ghost" size="sm" onClick={() => handleQuickResponse(response)} className="justify-start text-left h-auto py-2 px-3 text-xs text-primary">
                     {response}
                   </Button>)}
               </div>
