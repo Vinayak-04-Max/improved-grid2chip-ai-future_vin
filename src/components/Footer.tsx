@@ -148,8 +148,10 @@ const Footer = () => {
                   <Phone className="h-4 w-4 text-primary" />
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  +91-40-23302112 <br>7032808049</br>
+                  +91-40-23302112<br />
+                  7032808049
                 </div>
+
               </div>
               <div className="space-y-fib-8 pt-fib-8">
                 <Link to="/demo" className="block text-sm text-primary hover:text-primary-glow transition-colors font-medium">
