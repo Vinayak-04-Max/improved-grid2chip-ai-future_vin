@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Cpu, Zap, Server, Database, Network, Shield, ArrowRight, CheckCircle, Brain, Atom, TrendingUp, Building2, FlaskConical, Landmark, ChevronRight } from "lucide-react";
 import heroImage from "@/assets/hero-ai-datacenter.jpg";
+import VerticalRoadmap from "@/components/ui/VerticalRoadmap";
 const HPC = () => {
   const features = [{
     title: "Massively Parallel Processing",
@@ -317,51 +318,10 @@ const HPC = () => {
             </p>
           </motion.div>
 
-          {/* Vertical Timeline */}
-          <div className="relative">
-            {/* Center Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary/30 hidden lg:block" />
-
-            <div className="space-y-8 lg:space-y-0">
-              {processSteps.map((step, index) => <motion.div key={index} initial={{
-              opacity: 0,
-              x: index % 2 === 0 ? -30 : 30
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              delay: index * 0.15
-            }} className={`relative lg:flex lg:items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} lg:mb-12`}>
-                  {/* Content Card */}
-                  <div className={`lg:w-[45%] ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12'}`}>
-                    <div className="p-6 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border border-primary/20 hover:border-primary/40 transition-all duration-300 group">
-                      <div className={`flex items-center gap-3 mb-3 ${index % 2 === 0 ? 'lg:justify-end' : ''}`}>
-                        <Badge variant="outline" className="bg-primary/10 border-primary/30 text-primary">
-                          {step.duration}
-                        </Badge>
-                      </div>
-                      <h3 className="text-xl font-display font-bold mb-2 text-primary">{step.title}</h3>
-                      <p className="text-muted-foreground">{step.description}</p>
-                    </div>
-                  </div>
-
-                  {/* Center Node */}
-                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary/30">
-                    {step.step}
-                  </div>
-
-                  {/* Mobile Step Number */}
-                  <div className="lg:hidden absolute -left-3 top-6 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold">
-                    {step.step}
-                  </div>
-
-                  {/* Spacer */}
-                  <div className="hidden lg:block lg:w-[45%]" />
-                </motion.div>)}
-            </div>
-          </div>
+          <VerticalRoadmap 
+            steps={processSteps} 
+            finalBadge={{ icon: CheckCircle, text: "HPC Ready" }}
+          />
         </div>
       </section>
 

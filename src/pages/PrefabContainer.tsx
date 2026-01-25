@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Container, Zap, Shield, Clock, Thermometer, Cpu, ArrowRight, CheckCircle, Truck, MapPin, Building2, Radio, Factory, Cloud, Landmark, ChevronRight, Server, Gauge, Ruler, Activity, Monitor, TrendingUp } from "lucide-react";
 import solutionsImage from "@/assets/solutions-containers.jpg";
+import VerticalRoadmap from "@/components/ui/VerticalRoadmap";
 const PrefabContainer = () => {
   const features = [{
     title: "Rapid Deployment",
@@ -313,41 +314,11 @@ const PrefabContainer = () => {
             </p>
           </motion.div>
 
-          {/* Vertical Roadmap Timeline */}
-          <div className="max-w-3xl mx-auto relative">
-            {/* Vertical Progress Line */}
-            <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-primary to-accent/30 rounded-full" />
-            
-            {deploymentSteps.map((step, index) => <motion.div key={index} initial={{
-            opacity: 0,
-            x: index % 2 === 0 ? -30 : 30
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            delay: index * 0.15
-          }} className={`relative flex items-start gap-6 pb-12 last:pb-0 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-                {/* Node */}
-                <div className="absolute left-6 lg:left-1/2 -translate-x-1/2 z-10">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-accent/30 border-4 border-background">
-                    {step.step}
-                  </div>
-                </div>
-                
-                {/* Content Card */}
-                <div className={`ml-20 lg:ml-0 lg:w-[calc(50%-40px)] ${index % 2 === 0 ? 'lg:pr-8 lg:text-right' : 'lg:pl-8 lg:ml-auto'}`}>
-                  <div className="p-6 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10">
-                    <Badge variant="outline" className="mb-3 border-accent/30 text-xs bg-[#bcd0fb] text-primary">
-                      {step.duration}
-                    </Badge>
-                    <h3 className="text-xl font-display font-bold mb-2 text-primary">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-                  </div>
-                </div>
-              </motion.div>)}
-          </div>
+          <VerticalRoadmap 
+            steps={deploymentSteps} 
+            accentColor="accent"
+            finalBadge={{ icon: CheckCircle, text: "Deployment Complete" }}
+          />
         </div>
       </section>
 

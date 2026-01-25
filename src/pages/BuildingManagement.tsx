@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Building2, Thermometer, Zap, Shield, ArrowRight, Activity, BarChart3, AlertTriangle, Settings, CheckCircle, Server, Clock, Gauge, TrendingUp, Monitor, Cpu, ChevronRight } from "lucide-react";
 import heroImage from "@/assets/hero-ai-datacenter.jpg";
+import VerticalRoadmap from "@/components/ui/VerticalRoadmap";
+import SemicircleFeatures from "@/components/ui/SemicircleFeatures";
 const BuildingManagement = () => {
   const features = [{
     title: "Centralized Monitoring",
@@ -255,145 +257,10 @@ const BuildingManagement = () => {
             </p>
           </motion.div>
 
-          {/* Desktop Semicircular Layout */}
-          <div className="hidden lg:block">
-            <div className="relative max-w-5xl mx-auto">
-              {/* Left Side Features */}
-              <div className="absolute left-0 top-0 w-[280px] space-y-12 z-20">
-                {features.slice(0, 3).map((feature, index) => {
-                const Icon = feature.icon;
-                return <motion.div key={feature.title} className="flex items-start gap-4" initial={{
-                  opacity: 0,
-                  x: -30
-                }} whileInView={{
-                  opacity: 1,
-                  x: 0
-                }} viewport={{
-                  once: true
-                }} transition={{
-                  delay: 0.1 * index
-                }}>
-                      <div className="relative flex-shrink-0">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
-                          <Icon className="w-7 h-7 text-white" />
-                        </div>
-                        <div className="absolute -bottom-2 -right-2 w-7 h-7 rounded-full bg-background border-2 border-primary/40 flex items-center justify-center">
-                          <span className="text-xs font-bold text-primary">0{index + 1}</span>
-                        </div>
-                      </div>
-                      
-                      <div className="pt-1">
-                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg">
-                          {feature.title}
-                        </h4>
-                        <p className="text-muted-foreground leading-relaxed text-base">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </motion.div>;
-              })}
-              </div>
-
-              {/* Right Side Features */}
-              <div className="absolute right-0 top-0 w-[280px] space-y-12 z-20">
-                {features.slice(3, 6).map((feature, index) => {
-                const Icon = feature.icon;
-                return <motion.div key={feature.title} className="flex items-start gap-4 flex-row-reverse text-right" initial={{
-                  opacity: 0,
-                  x: 30
-                }} whileInView={{
-                  opacity: 1,
-                  x: 0
-                }} viewport={{
-                  once: true
-                }} transition={{
-                  delay: 0.1 * (index + 3)
-                }}>
-                      <div className="relative flex-shrink-0">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center shadow-lg shadow-accent/20">
-                          <Icon className="w-7 h-7 text-white" />
-                        </div>
-                        <div className="absolute -bottom-2 -left-2 w-7 h-7 rounded-full bg-background border-2 border-accent/40 flex items-center justify-center">
-                          <span className="text-xs font-bold text-accent">0{index + 4}</span>
-                        </div>
-                      </div>
-                      
-                      <div className="pt-1">
-                        <h4 className="font-display font-semibold text-foreground mb-1 text-lg text-left">
-                          {feature.title}
-                        </h4>
-                        <p className="text-muted-foreground leading-relaxed text-base text-left">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </motion.div>;
-              })}
-              </div>
-
-              {/* Center Semicircle Arc */}
-              <div className="flex justify-center pt-8">
-                <div className="relative w-[420px] h-[260px]">
-                  <svg viewBox="0 0 420 260" className="w-full h-full mx-0">
-                    <defs>
-                      <linearGradient id="bmsArcGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="hsl(var(--primary))" />
-                        <stop offset="100%" stopColor="hsl(var(--accent))" />
-                      </linearGradient>
-                    </defs>
-                    
-                    <path d="M 30 250 A 180 180 0 0 1 390 250" fill="none" stroke="hsl(var(--primary) / 0.15)" strokeWidth="60" strokeLinecap="round" />
-                    <path d="M 30 250 A 180 180 0 0 1 390 250" fill="none" stroke="url(#bmsArcGradient)" strokeWidth="40" strokeLinecap="round" opacity="0.9" />
-                    <path d="M 50 250 A 160 160 0 0 1 370 250" fill="none" stroke="hsl(var(--primary) / 0.3)" strokeWidth="2" strokeLinecap="round" />
-                    
-                    {[0, 1, 2, 3, 4, 5].map(i => {
-                    const angle = Math.PI * (i + 0.5) / 6;
-                    const x = 210 + 180 * Math.cos(Math.PI - angle);
-                    const y = 250 - 180 * Math.sin(angle);
-                    return <circle key={i} cx={x} cy={y} r="6" fill="white" opacity="0.9" />;
-                  })}
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile Layout - Vertical Steps */}
-          <div className="lg:hidden space-y-8">
-            {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return <motion.div key={feature.title} className="flex items-start gap-4" initial={{
-              opacity: 0,
-              x: -20
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              delay: index * 0.1
-            }}>
-                  <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
-                      <Icon className="w-7 h-7 text-white" />
-                    </div>
-                    <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-background border-2 border-primary/40 flex items-center justify-center">
-                      <span className="text-xs font-bold text-primary">0{index + 1}</span>
-                    </div>
-                    {index < features.length - 1 && <div className="absolute top-16 left-1/2 -translate-x-1/2 w-0.5 h-10 bg-gradient-to-b from-primary/40 to-transparent" />}
-                  </div>
-                  
-                  <div className="flex-1 pt-1">
-                    <div className="text-xs text-primary font-semibold mb-1 uppercase tracking-wider">{feature.metric}</div>
-                    <h4 className="text-lg font-display font-semibold text-foreground mb-1">
-                      {feature.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                </motion.div>;
-          })}
-          </div>
+          <SemicircleFeatures 
+            features={features} 
+            gradientId="bmsArcGradient"
+          />
         </div>
       </section>
 
@@ -611,41 +478,7 @@ const BuildingManagement = () => {
             </p>
           </motion.div>
 
-          <div className="max-w-3xl mx-auto relative">
-            <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary/30 rounded-full" />
-            
-            {applications.map((app, index) => <motion.div key={app.step} initial={{
-            opacity: 0,
-            y: 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            delay: index * 0.15
-          }} className={`relative flex items-start gap-6 mb-12 last:mb-0 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-                <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10" />
-                
-                <div className={`ml-16 lg:ml-0 lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12'}`}>
-                  <div className="p-6 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 border border-primary/10 hover:border-primary/30 transition-all duration-300">
-                    <div className="flex items-center gap-3 mb-3 justify-start lg:justify-end">
-                      {index % 2 !== 0 && <span className="text-3xl font-bold text-primary/30">{app.step}</span>}
-                      <Badge variant="outline" className="border-accent/30 text-accent text-xs">
-                        {app.duration}
-                      </Badge>
-                      {index % 2 === 0 && <span className="text-3xl font-bold text-primary/30">{app.step}</span>}
-                    </div>
-                    <h3 className="text-xl font-display font-semibold mb-2 text-primary">
-                      {app.title}
-                    </h3>
-                    <p className="text-muted-foreground text-base">
-                      {app.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>)}
-          </div>
+          <VerticalRoadmap steps={applications} />
         </div>
       </section>
 
