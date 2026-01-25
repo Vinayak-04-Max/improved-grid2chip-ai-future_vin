@@ -286,20 +286,23 @@ const CustomDataCenter = () => {
             <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-2 gap-x-16 gap-y-6">
                 {advantages.map((advantage, index) => {
-                  const Icon = advantage.icon;
-                  const isLeft = index < 3;
-                  const rowIndex = isLeft ? index : index - 3;
-                  
-                  return (
-                    <motion.div
-                      key={advantage.title}
-                      className="flex items-start gap-4 h-[120px]"
-                      style={{ gridRow: rowIndex + 1, gridColumn: isLeft ? 1 : 2 }}
-                      initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 * index }}
-                    >
+                const Icon = advantage.icon;
+                const isLeft = index < 3;
+                const rowIndex = isLeft ? index : index - 3;
+                return <motion.div key={advantage.title} className="flex items-start gap-4 h-[120px]" style={{
+                  gridRow: rowIndex + 1,
+                  gridColumn: isLeft ? 1 : 2
+                }} initial={{
+                  opacity: 0,
+                  x: isLeft ? -30 : 30
+                }} whileInView={{
+                  opacity: 1,
+                  x: 0
+                }} viewport={{
+                  once: true
+                }} transition={{
+                  delay: 0.1 * index
+                }}>
                       <div className="relative flex-shrink-0">
                         <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${isLeft ? 'from-primary to-accent' : 'from-accent to-primary'} flex items-center justify-center shadow-lg ${isLeft ? 'shadow-primary/20' : 'shadow-accent/20'}`}>
                           <Icon className="w-7 h-7 text-white" />
@@ -317,9 +320,8 @@ const CustomDataCenter = () => {
                           {advantage.description}
                         </p>
                       </div>
-                    </motion.div>
-                  );
-                })}
+                    </motion.div>;
+              })}
               </div>
             </div>
           </div>
@@ -391,10 +393,10 @@ const CustomDataCenter = () => {
             </p>
           </motion.div>
 
-          <VerticalRoadmap 
-            steps={processSteps} 
-            finalBadge={{ icon: CheckCircle, text: "Data Center Ready" }}
-          />
+          <VerticalRoadmap steps={processSteps} finalBadge={{
+          icon: CheckCircle,
+          text: "Data Center Ready"
+        }} />
         </div>
       </section>
 
@@ -478,7 +480,7 @@ const CustomDataCenter = () => {
               </motion.div>
 
               {/* Central Hub */}
-              <motion.div className="relative w-36 h-36" initial={{
+              <motion.div className="relative w-36 h-36 py-[180px]" initial={{
               opacity: 0,
               scale: 0.8
             }} whileInView={{
@@ -491,7 +493,7 @@ const CustomDataCenter = () => {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-xl" />
                 
                 {/* Spinning ring */}
-                <motion.div className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/40" animate={{
+                <motion.div className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/40 mx-[30px]" animate={{
                 rotate: 360
               }} transition={{
                 duration: 25,
@@ -500,7 +502,7 @@ const CustomDataCenter = () => {
               }} />
                 
                 {/* Counter ring */}
-                <motion.div className="absolute inset-3 rounded-full border-2 border-dashed border-accent/30" animate={{
+                <motion.div className="absolute inset-3 rounded-full border-2 border-dashed border-accent/30 mx-[30px]" animate={{
                 rotate: -360
               }} transition={{
                 duration: 18,
@@ -509,7 +511,7 @@ const CustomDataCenter = () => {
               }} />
                 
                 {/* Center */}
-                <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-primary/30 flex items-center justify-center shadow-xl text-primary bg-primary-foreground rounded-xl">
+                <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-primary/30 flex items-center justify-center shadow-xl text-primary bg-primary-foreground rounded-xl py-0 my-[80px]">
                   <div className="text-center text-primary bg-white/0">
                     <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
                       <Building2 className="w-5 h-5 text-primary" />
