@@ -109,7 +109,7 @@ const ControlPanels = () => {
        ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img alt="Control Panel Services" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/c62e1e7d-beab-448d-b5bc-5a5a0f142a6d.jpg" />
+          <img alt="Control Panel Services" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/bd43b21f-641a-4cda-99dc-e9a6e82b768d.jpg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -240,10 +240,7 @@ const ControlPanels = () => {
             </p>
           </motion.div>
 
-          <SemicircleFeatures 
-            features={solutions} 
-            gradientId="cpArcGradient"
-          />
+          <SemicircleFeatures features={solutions} gradientId="cpArcGradient" />
         </div>
       </section>
 
