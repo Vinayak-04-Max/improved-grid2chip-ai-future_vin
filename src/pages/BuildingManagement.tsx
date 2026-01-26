@@ -126,7 +126,7 @@ const BuildingManagement = () => {
        ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img alt="Building Management Systems" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/4fef3e2a-e9bd-4124-92ec-10bd0c6f7b8a.webp" />
+          <img alt="Building Management Systems" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/20676fe0-066c-4a5b-a7e2-82aa53995a7b.jpg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
