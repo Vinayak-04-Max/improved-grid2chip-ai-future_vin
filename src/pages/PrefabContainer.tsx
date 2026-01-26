@@ -526,23 +526,30 @@ const PrefabContainer = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-            {benefits.map((benefit, index) => <motion.div key={index} initial={{
-            opacity: 0,
-            x: index % 2 === 0 ? -20 : 20
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            delay: index * 0.1
-          }}>
-                <div className="gap-4 p-4 rounded-xl bg-gradient-to-br from-card/80 to-card/50 border border-accent/10 hover:border-accent/30 transition-all duration-300 group items-center justify-start flex flex-row mx-px">
-                  <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                    <CheckCircle className="w-5 h-5 text-accent" />
-                  </div>
-                  <span className="text-sm text-muted-foreground group-hover:text-green transition-colors">{benefit}</span>
-                </div>
+  {benefits.map((benefit, index) => {
+    const isLast = index === benefits.length - 1;
+
+    return (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        className={isLast ? "md:col-span-2 flex justify-center" : ""}
+      >
+        <div className="gap-4 p-4 rounded-xl bg-gradient-to-br from-card/80 to-card/50 border border-accent/10 hover:border-accent/30 transition-all duration-300 group items-center justify-start flex flex-row mx-px">
+          <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+            <CheckCircle className="w-5 h-5 text-accent" />
+          </div>
+          <span className="text-sm text-muted-foreground group-hover:text-green transition-colors">
+            {benefit}
+          </span>
+        </div>
+      </motion.div>
+    );
+  })}
+</div>
               </motion.div>)}
           </div>
         </div>
