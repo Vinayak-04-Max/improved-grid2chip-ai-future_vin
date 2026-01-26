@@ -372,34 +372,43 @@ const CustomDataCenter = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           PROCESS INFOGRAPHIC - Timeline with Duration
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 relative">
+   <section className="py-20 lg:py-28 relative overflow-hidden">
+  {/* Gradient Background */}
   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
-  
+
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <motion.div className="text-center mb-16"
+    {/* Heading with Animation */}
+    <motion.div
+      className="text-center mb-16"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}>
+      viewport={{ once: true }}
+    >
       <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
         Our <span className="text-gradient-primary">Build Process</span>
       </h2>
       <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-        Five proven steps to deliver your data center on time and on budget. Extra text will automatically wrap and expand the section without being cut off.
+        Five proven steps to deliver your data center on time and on budget
       </p>
     </motion.div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {processSteps.map(step => (
-        <div key={step.title} className="flex flex-col items-stretch bg-card p-6 rounded-lg shadow">
-          <div className="flex-1">
-            <h3 className="font-bold text-xl mb-2">{step.title}</h3>
-            <p className="text-muted-foreground">{step.description}</p>
-          </div>
-          <div className="mt-4">
-            {step.icon}
-          </div>
+    {/* Vertical Roadmap with Uniform Step Boxes */}
+    <div className="flex flex-wrap items-stretch gap-6">
+      {processSteps.map((step) => (
+        <div
+          key={step.id}
+          className="flex-1 bg-white p-6 rounded-lg shadow-md flex flex-col"
+        >
+          <h3 className="text-lg font-bold mb-2">{step.title}</h3>
+          <p className="text-gray-700 break-words">{step.description}</p>
         </div>
       ))}
+
+      {/* Final Badge */}
+      <div className="flex-1 bg-green-100 p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+        <step.finalBadge.icon className="text-green-600 w-10 h-10 mb-2" />
+        <span className="font-semibold text-green-700">{finalBadge.text}</span>
+      </div>
     </div>
   </div>
 </section>
