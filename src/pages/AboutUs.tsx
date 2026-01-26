@@ -247,7 +247,7 @@ const AboutUs = () => {
        ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="About Grid2Chip" className="w-full h-full object-cover opacity-85" />
+          <img alt="About Grid2Chip" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/411a664e-7ca7-4d90-8b4c-5fc9f72a146c.jpg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -398,10 +398,7 @@ const AboutUs = () => {
                     <CardHeader className="text-center flex-shrink-0">
                       <div className={`w-32 h-32 mx-auto mb-6 rounded-full ${bgColor} p-1`}>
                         <div className="w-full h-full rounded-full bg-card overflow-hidden">
-                        <img
-                        src={leader.image}
-                        className="w-full h-full object-cover rounded-full"
-                        />
+                        <img src={leader.image} className="w-full h-full object-cover rounded-full" />
                         </div>
                       </div>
 
