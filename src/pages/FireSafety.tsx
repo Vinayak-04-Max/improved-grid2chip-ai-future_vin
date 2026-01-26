@@ -126,7 +126,7 @@ const FireSafety = () => {
        ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Fire Safety Systems" className="w-full h-full object-cover opacity-85" />
+          <img alt="Fire Safety Systems" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/e494c733-f168-4bfd-bbba-c91257945cf9.webp" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -259,10 +259,7 @@ const FireSafety = () => {
             </p>
           </motion.div>
 
-          <SemicircleFeatures 
-            features={fireSystems} 
-            gradientId="fireArcGradient"
-          />
+          <SemicircleFeatures features={fireSystems} gradientId="fireArcGradient" />
         </div>
       </section>
 
