@@ -120,7 +120,7 @@ const HPC = () => {
       <section className="relative min-h-[85vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img alt="HPC Data Center" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/e939c5d9-374a-4199-8a51-fef2ceac58e5.jpg" />
+          <img alt="HPC Data Center" className="w-full h-full object-cover opacity-95" src="/lovable-uploads/e939c5d9-374a-4199-8a51-fef2ceac58e5.jpg" />
         </div>
 
         {/* Content */}
