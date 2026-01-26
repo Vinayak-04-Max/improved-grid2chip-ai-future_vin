@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Target, Lightbulb, Award, Shield, Cpu, Users, TrendingUp, ArrowRight, CheckCircle, Globe, Building2, Zap, Clock, BarChart3, PieChart, Activity, Network, Building, Star, Trophy, Linkedin, Mail } from "lucide-react";
 import heroImage from "@/assets/hero-ai-datacenter.jpg";
+import seetharam from "@/assets/seetharam.jpg";
+import surya from "@/assets/surya.jpg";
 const AboutUs = () => {
   const companyStats = [{
     label: "Years of Excellence",
@@ -140,6 +142,7 @@ const AboutUs = () => {
     name: "Seetharam Mannava",
     role: "Founder & CEO",
     experience: "24+ years",
+    image: seetharam,
     bio: "With over 24+ years of cross-functional experience, Seetharam is the visionary founder and CEO of Grid2Chip. Specializing in designing and executing critical infrastructure services for data centers.",
     expertise: ["Critical Infrastructure Services", "Data Center Design", "Strategic Planning", "Turnkey Solutions"],
     achievements: ["Founder of Grid2Chip", "24+ years industry experience", "Critical facility engagement expert"]
@@ -147,6 +150,7 @@ const AboutUs = () => {
     name: "M V Surya Ganesh",
     role: "Head of Research & Development",
     experience: "26+ years",
+    image: surya,
     bio: "With over 26+ years of distinguished experience in designing and executing mechanical and electrical requirements for Indian Aviation projects, Surya Ganesh leads our Research & Development division with visionary expertise.",
     expertise: ["Mechanical & Electrical Design", "Embedded Computing Systems", "Critical Infrastructure", "Aviation Projects"],
     achievements: ["26+ years industry experience", "Pioneered embedded computing systems", "Aviation project specialist"]
@@ -392,10 +396,14 @@ const AboutUs = () => {
                   <Card className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow group h-full flex flex-col">
                     <CardHeader className="text-center flex-shrink-0">
                       <div className={`w-32 h-32 mx-auto mb-6 rounded-full ${bgColor} p-1`}>
-                        <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden">
-                          <span className="text-4xl font-bold text-primary">{initials}</span>
+                        <div className="w-full h-full rounded-full bg-card overflow-hidden">
+                        <img
+                        src={leader.image}
+                        className="w-full h-full object-cover rounded-full"
+                        />
                         </div>
                       </div>
+
                       <CardTitle className="text-xl font-semibold">{leader.name}</CardTitle>
                       <p className="text-primary font-medium">{leader.role}</p>
                       <Badge variant="secondary" className="w-fit mx-auto">{leader.experience}</Badge>
