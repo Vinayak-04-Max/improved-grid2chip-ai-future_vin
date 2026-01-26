@@ -372,7 +372,7 @@ const CustomDataCenter = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           PROCESS INFOGRAPHIC - Timeline with Duration
        ═══════════════════════════════════════════════════════════════════════════ */}
-   <section className="py-20 lg:py-28 relative overflow-hidden">
+  <section className="py-20 lg:py-28 relative overflow-hidden">
   {/* Gradient Background */}
   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
 
@@ -406,14 +406,12 @@ const CustomDataCenter = () => {
 
       {/* Final Badge */}
       <div className="flex-1 bg-green-100 p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
-        <step.finalBadge.icon className="text-green-600 w-10 h-10 mb-2" />
-        <span className="font-semibold text-green-700">{finalBadge.text}</span>
+        <CheckCircle className="text-green-600 w-10 h-10 mb-2" />
+        <span className="font-semibold text-green-700">Data Center Ready</span>
       </div>
     </div>
   </div>
 </section>
-
-
 
       {/* ═══════════════════════════════════════════════════════════════════════════
           USE CASE INFOGRAPHIC - Ideal For Section
