@@ -372,46 +372,33 @@ const CustomDataCenter = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           PROCESS INFOGRAPHIC - Timeline with Duration
        ═══════════════════════════════════════════════════════════════════════════ */}
- <section className="py-20 lg:py-28 relative overflow-hidden">
-  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
+<section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div className="text-center mb-16" initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }}>
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+              Our <span className="text-gradient-primary">Build Process</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Five proven steps to deliver your data center on time and on budget
+            </p>
+          </motion.div>
 
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    {/* Heading */}
-    <motion.div
-      className="text-center mb-16"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-    >
-      <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
-        Our <span className="text-gradient-primary">Build Process</span>
-      </h2>
-      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-        Five proven steps to deliver your data center on time and on budget
-      </p>
-    </motion.div>
-
-    {/* Steps with Uniform Height */}
-    <div className="flex flex-wrap items-stretch gap-6">
-      {processSteps.map((step) => (
-        <div
-          key={step.id}
-          className="flex-1 bg-white p-6 rounded-lg shadow-md flex flex-col"
-        >
-          <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-          <p className="text-gray-700 break-words">{step.description}</p>
+          <VerticalRoadmap steps={processSteps} finalBadge={{
+          icon: CheckCircle,
+          text: "Data Center Ready"
+        }} />
         </div>
-      ))}
-
-      {/* Final Badge */}
-      <div className="flex-1 bg-green-100 p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
-        <CheckCircle className="text-green-600 w-10 h-10 mb-2" />
-        <span className="font-semibold text-green-700">Data Center Ready</span>
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
           USE CASE INFOGRAPHIC - Ideal For Section
