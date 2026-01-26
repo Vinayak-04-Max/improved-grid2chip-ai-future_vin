@@ -120,7 +120,7 @@ const HPC = () => {
       <section className="relative min-h-[85vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img alt="HPC Data Center" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/76536a0d-be93-4bae-a8ab-ea3b0101f599.jpg" />
+          <img alt="HPC Data Center" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/e939c5d9-374a-4199-8a51-fef2ceac58e5.jpg" />
         </div>
 
         {/* Content */}
@@ -318,10 +318,10 @@ const HPC = () => {
             </p>
           </motion.div>
 
-          <VerticalRoadmap 
-            steps={processSteps} 
-            finalBadge={{ icon: CheckCircle, text: "HPC Ready" }}
-          />
+          <VerticalRoadmap steps={processSteps} finalBadge={{
+          icon: CheckCircle,
+          text: "HPC Ready"
+        }} />
         </div>
       </section>
 
