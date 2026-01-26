@@ -7,6 +7,7 @@ import { Target, Lightbulb, Award, Shield, Cpu, Users, TrendingUp, ArrowRight, C
 import heroImage from "@/assets/hero-ai-datacenter.jpg";
 import seetharam from "@/assets/seetharam.jpg";
 import surya from "@/assets/surya.jpg";
+import seetharam_gemini from "@/assets/seetharam1.jpg";
 const AboutUs = () => {
   const companyStats = [{
     label: "Years of Excellence",
@@ -150,7 +151,7 @@ const AboutUs = () => {
     name: "M V Surya Ganesh",
     role: "Head of Research & Development",
     experience: "26+ years",
-    image: surya,
+    image: seetharam_gemini,
     bio: "With over 26+ years of distinguished experience in designing and executing mechanical and electrical requirements for Indian Aviation projects, Surya Ganesh leads our Research & Development division with visionary expertise.",
     expertise: ["Mechanical & Electrical Design", "Embedded Computing Systems", "Critical Infrastructure", "Aviation Projects"],
     achievements: ["26+ years industry experience", "Pioneered embedded computing systems", "Aviation project specialist"]
