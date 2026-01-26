@@ -109,7 +109,7 @@ const IMS = () => {
        ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img alt="Integrated Monitoring System" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/4564c2ee-1115-48c5-a0f5-9fe0e6a158b2.jpg" />
+          <img alt="Integrated Monitoring System" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/2ef24791-74f4-4138-aa0a-9886c08c0ad7.jpg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -128,7 +128,7 @@ const IMS = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
               Integrated Monitoring System
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 py-[10px]">
               Comprehensive IMS that transforms critical facility management with automation, predictive analytics, and centralized oversight.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -245,10 +245,7 @@ const IMS = () => {
             </p>
           </motion.div>
 
-          <SemicircleFeatures 
-            features={features} 
-            gradientId="imsArcGradient"
-          />
+          <SemicircleFeatures features={features} gradientId="imsArcGradient" />
         </div>
       </section>
 
