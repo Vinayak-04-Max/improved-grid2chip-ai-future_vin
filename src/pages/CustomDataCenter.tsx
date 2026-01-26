@@ -143,7 +143,7 @@ const CustomDataCenter = () => {
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img alt="Custom Data Center Infrastructure" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/c132fe79-4101-48fc-abfd-9fb8614d5afb.jpg" />
+          <img alt="Custom Data Center Infrastructure" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/d58f4f71-fe53-479a-ba47-06d830a612ce.webp" />
         </div>
 
         {/* Content */}
@@ -372,7 +372,7 @@ const CustomDataCenter = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           PROCESS INFOGRAPHIC - Timeline with Duration
        ═══════════════════════════════════════════════════════════════════════════ */}
-<section className="py-20 lg:py-28 relative overflow-hidden">
+    <section className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
