@@ -143,7 +143,7 @@ const CustomDataCenter = () => {
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img alt="Custom Data Center Infrastructure" className="w-full h-full object-cover opacity-95" src="/lovable-uploads/c132fe79-4101-48fc-abfd-9fb8614d5afb.jpg" />
+          <img alt="Custom Data Center Infrastructure" className="w-full h-full object-cover opacity-95" src="/lovable-uploads/d0563675-1b17-4f57-af04-ffc096f4258c.jpg" />
         </div>
 
         {/* Content */}
