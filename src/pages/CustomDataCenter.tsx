@@ -372,12 +372,11 @@ const CustomDataCenter = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           PROCESS INFOGRAPHIC - Timeline with Duration
        ═══════════════════════════════════════════════════════════════════════════ */}
-  <section className="py-20 lg:py-28 relative overflow-hidden">
-  {/* Gradient Background */}
+ <section className="py-20 lg:py-28 relative overflow-hidden">
   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
 
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    {/* Heading with Animation */}
+    {/* Heading */}
     <motion.div
       className="text-center mb-16"
       initial={{ opacity: 0, y: 20 }}
@@ -392,7 +391,7 @@ const CustomDataCenter = () => {
       </p>
     </motion.div>
 
-    {/* Vertical Roadmap with Uniform Step Boxes */}
+    {/* Steps with Uniform Height */}
     <div className="flex flex-wrap items-stretch gap-6">
       {processSteps.map((step) => (
         <div
