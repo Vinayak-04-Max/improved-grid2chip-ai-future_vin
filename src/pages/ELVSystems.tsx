@@ -109,7 +109,7 @@ const ELVSystems = () => {
        ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img alt="Extra Low Voltage Systems" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/20567b39-1f0a-4b6c-9979-f1480179a4e4.jpg" />
+          <img alt="Extra Low Voltage Systems" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/fb291b71-31ed-47ab-bcfc-5ca455939f04.jpg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
