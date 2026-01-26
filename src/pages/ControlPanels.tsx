@@ -126,9 +126,8 @@ const ControlPanels = () => {
               Control Systems
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">Control & Automation Panel</h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
-              Gain precision control over your facility's critical systems with our custom-designed and expertly fabricated control panels.
-            </p>
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 py-0 px-0 mx-0">Gain precision control over your facility's critical systems with our
+custom-designed and expertly fabricated control panels.</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" size="lg" asChild>
                 <Link to="/contact">
