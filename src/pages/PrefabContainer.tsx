@@ -506,53 +506,54 @@ const PrefabContainer = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           BENEFITS - Checklist Infographic
        ═══════════════════════════════════════════════════════════════════════════ */}
-<section className="py-20 lg:py-28 bg-card/30">
-  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <motion.div
-      className="text-center mb-12"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-    >
-      <h2 className="text-3xl font-display font-bold mb-4 lg:text-4xl">
-        Why Choose{" "}
-        <span className="text-gradient-accent">
-          Prefabricated Data Centers?
-        </span>
-      </h2>
-      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-        Factory-built quality with speed-to-market advantages
-      </p>
-    </motion.div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-      {benefits.map((benefit, index) => {
-        const isLast = index === benefits.length - 1;
-
-        return (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className={isLast ? "md:col-span-2 flex justify-center" : ""}
-          >
-            <div className="flex flex-row items-center gap-4 p-4 mx-px rounded-xl bg-gradient-to-br from-card/80 to-card/50 border border-accent/10 hover:border-accent/30 transition-all duration-300 group max-w-md w-full">
-              <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                <CheckCircle className="w-5 h-5 text-accent" />
-              </div>
-              <span className="text-sm text-muted-foreground group-hover:text-green transition-colors">
-                {benefit}
-              </span>
-            </div>
+      <section className="py-20 lg:py-28 bg-card/30">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div className="text-center mb-12" initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }}>
+            <h2 className="text-3xl font-display font-bold mb-4 lg:text-4xl">
+              Why Choose <span className="text-gradient-accent">Prefabricated Data Centers?</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Factory-built quality with speed-to-market advantages
+            </p>
           </motion.div>
-        );
-      })}
-    </div>
-  </div>
-</section>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+  {benefits.map((benefit, index) => {
+    const isLast = index === benefits.length - 1;
+
+    return (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        className={isLast ? "md:col-span-2 flex justify-center" : ""}
+      >
+        <div className="gap-4 p-4 rounded-xl bg-gradient-to-br from-card/80 to-card/50 border border-accent/10 hover:border-accent/30 transition-all duration-300 group items-center justify-start flex flex-row mx-px">
+          <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+            <CheckCircle className="w-5 h-5 text-accent" />
+          </div>
+          <span className="text-sm text-muted-foreground group-hover:text-green transition-colors">
+            {benefit}
+          </span>
+        </div>
+      </motion.div>
+    );
+  })}
+</div>
+              </motion.div>)}
+          </div>
+        </div>
+      </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
           CTA SECTION - Modern Gradient Design
