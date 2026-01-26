@@ -117,7 +117,7 @@ const PrefabContainer = () => {
       <section className="relative min-h-[85vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img alt="Prefabricated Data Center Container" className="w-full h-full object-cover opacity-90" src="/lovable-uploads/d48862d2-0d85-4b18-98f9-8e22c5849bc1.jpg" />
+          <img alt="Prefabricated Data Center Container" className="w-full h-full object-cover opacity-90" src="/lovable-uploads/4ea546a4-94a9-4b06-84cf-d601203ac46e.webp" />
         </div>
 
         {/* Content */}
