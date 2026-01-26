@@ -7,7 +7,7 @@ import { Target, Lightbulb, Award, Shield, Cpu, Users, TrendingUp, ArrowRight, C
 import heroImage from "@/assets/hero-ai-datacenter.jpg";
 import seetharam from "@/assets/seetharam.jpg";
 import surya from "@/assets/surya.jpg";
-import seetharam_gemini from "@/assets/seetharam1.jpg";
+import seetharam_gemini from "@/assets/seetharam1.png";
 const AboutUs = () => {
   const companyStats = [{
     label: "Years of Excellence",
