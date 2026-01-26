@@ -376,21 +376,34 @@ const CustomDataCenter = () => {
   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
   
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <motion.div className="text-center mb-16" 
-      initial={{ opacity: 0, y: 20 }} 
-      whileInView={{ opacity: 1, y: 0 }} 
+    <motion.div className="text-center mb-16"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}>
       <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
         Our <span className="text-gradient-primary">Build Process</span>
       </h2>
       <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-        Five proven steps to deliver your data center on time and on budget
+        Five proven steps to deliver your data center on time and on budget. Extra text will automatically wrap and expand the section without being cut off.
       </p>
     </motion.div>
 
-    <VerticalRoadmap steps={processSteps} finalBadge={{ icon: CheckCircle, text: "Data Center Ready" }} />
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {processSteps.map(step => (
+        <div key={step.title} className="flex flex-col items-stretch bg-card p-6 rounded-lg shadow">
+          <div className="flex-1">
+            <h3 className="font-bold text-xl mb-2">{step.title}</h3>
+            <p className="text-muted-foreground">{step.description}</p>
+          </div>
+          <div className="mt-4">
+            {step.icon}
+          </div>
+        </div>
+      ))}
+    </div>
   </div>
 </section>
+
 
 
       {/* ═══════════════════════════════════════════════════════════════════════════
