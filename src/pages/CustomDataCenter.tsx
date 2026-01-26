@@ -372,33 +372,26 @@ const CustomDataCenter = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           PROCESS INFOGRAPHIC - Timeline with Duration
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div className="text-center mb-16" initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
-              Our <span className="text-gradient-primary">Build Process</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Five proven steps to deliver your data center on time and on budget
-            </p>
-          </motion.div>
+      <section className="py-20 lg:py-28 relative">
+  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
+  
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <motion.div className="text-center mb-16" 
+      initial={{ opacity: 0, y: 20 }} 
+      whileInView={{ opacity: 1, y: 0 }} 
+      viewport={{ once: true }}>
+      <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+        Our <span className="text-gradient-primary">Build Process</span>
+      </h2>
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Five proven steps to deliver your data center on time and on budget
+      </p>
+    </motion.div>
 
-          <VerticalRoadmap steps={processSteps} finalBadge={{
-          icon: CheckCircle,
-          text: "Data Center Ready"
-        }} />
-        </div>
-      </section>
+    <VerticalRoadmap steps={processSteps} finalBadge={{ icon: CheckCircle, text: "Data Center Ready" }} />
+  </div>
+</section>
+
 
       {/* ═══════════════════════════════════════════════════════════════════════════
           USE CASE INFOGRAPHIC - Ideal For Section
