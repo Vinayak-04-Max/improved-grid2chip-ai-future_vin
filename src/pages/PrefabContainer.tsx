@@ -117,7 +117,7 @@ const PrefabContainer = () => {
       <section className="relative min-h-[85vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img alt="Prefabricated Data Center Container" className="w-full h-full object-cover opacity-90" src="/lovable-uploads/161144d1-6829-4eb3-b315-a9e182b8c537.jpg" />
+          <img alt="Prefabricated Data Center Container" className="w-full h-full object-cover opacity-90" src="/lovable-uploads/d48862d2-0d85-4b18-98f9-8e22c5849bc1.jpg" />
         </div>
 
         {/* Content */}
@@ -507,14 +507,17 @@ const PrefabContainer = () => {
           BENEFITS - Checklist Infographic
        ═══════════════════════════════════════════════════════════════════════════ */}
      
-<section className="py-20 lg:py-28 bg-card/30">
+    <section className="py-20 lg:py-28 bg-card/30">
   <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <motion.div
-      className="text-center mb-12"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-    >
+    <motion.div className="text-center mb-12" initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }}>
       <h2 className="text-3xl font-display font-bold mb-4 lg:text-4xl">
         Why Choose{" "}
         <span className="text-gradient-accent">
@@ -528,17 +531,18 @@ const PrefabContainer = () => {
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
       {benefits.map((benefit, index) => {
-        const isLast = index === benefits.length - 1;
-
-        return (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className={isLast ? "md:col-span-2 flex justify-center" : ""}
-          >
+            const isLast = index === benefits.length - 1;
+            return <motion.div key={index} initial={{
+              opacity: 0,
+              x: index % 2 === 0 ? -20 : 20
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              delay: index * 0.1
+            }} className={isLast ? "md:col-span-2 flex justify-center" : ""}>
             <div className="flex flex-row items-center gap-4 p-4 mx-px rounded-xl bg-gradient-to-br from-card/80 to-card/50 border border-accent/10 hover:border-accent/30 transition-all duration-300 group max-w-md w-full">
               <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
                 <CheckCircle className="w-5 h-5 text-accent" />
@@ -547,12 +551,11 @@ const PrefabContainer = () => {
                 {benefit}
               </span>
             </div>
-          </motion.div>
-        );
-      })}
+          </motion.div>;
+          })}
     </div>
   </div>
-</section>
+    </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
           CTA SECTION - Modern Gradient Design
