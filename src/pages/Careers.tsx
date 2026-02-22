@@ -65,10 +65,10 @@ const Careers = () => {
             <Badge variant="outline" className="border-primary/50 mb-6 backdrop-blur-sm text-primary-foreground">
               Careers at Grid2Chip
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight text-white lg:text-7xl">
-              Stay Connected with <span className="text-7xl text-secondary">Grid2Chip</span>
+            <h1 className="text-fluid-h1 font-display font-bold mb-6 leading-tight text-white">
+              Stay Connected with <span className="text-secondary">Grid2Chip</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+            <p className="text-fluid-body-lg text-white/80 leading-relaxed mb-8">
               While we don't have current openings, we're always interested in connecting with 
               talented professionals who share our passion for critical facility infrastructure.
             </p>
@@ -98,7 +98,7 @@ const Careers = () => {
 
       {/* No Current Openings Message */}
       <section className="py-20 lg:py-32">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full sm:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="bg-gradient-card border-primary/20 text-center">
             <CardContent className="p-12">
               <AlertCircle className="w-16 h-16 mx-auto mb-6 text-primary" />
@@ -124,10 +124,10 @@ const Careers = () => {
       <section className="py-20 lg:py-32 bg-gradient-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Our <span className="text-g2c-green">Teams</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto">
               Learn about the diverse teams that make Grid2Chip an industry leader.
             </p>
           </div>
@@ -153,10 +153,10 @@ const Careers = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Why <span className="text-g2c-blue">Grid2Chip?</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto">
               When opportunities arise, here's what makes Grid2Chip an exceptional place to work.
             </p>
           </div>
@@ -185,12 +185,12 @@ const Careers = () => {
       <section className="py-20 lg:py-32 bg-gradient-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Company <span className="text-g2c-green">Perks</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full sm:max-w-5xl mx-auto">
             {companyPerks.map((perk, index) => <div key={index} className="flex items-center space-x-3 p-4 bg-card rounded-lg border border-primary/20">
                 <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></div>
                 <span className="text-foreground">{perk}</span>
@@ -201,11 +201,11 @@ const Careers = () => {
 
       {/* CTA Section */}
       <section className="py-20">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+        <div className="w-full sm:max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-fluid-h2 font-display font-bold mb-6">
             Join Us in the <span className="text-g2c-blue">Future</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-8">
+          <p className="text-fluid-body-lg text-muted-foreground mb-8">
             Submit your resume today to be considered for future opportunities at Grid2Chip.
           </p>
           <Button variant="hero" size="lg" asChild>
