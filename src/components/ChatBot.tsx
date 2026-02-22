@@ -46,7 +46,7 @@ const ChatBot = () => {
       </Button>
 
       {/* Chat Window */}
-      {isOpen && <Card className="fixed bottom-24 right-6 w-96 h-[500px] z-40 bg-card border-primary/20 ai-glow animate-slide-up">
+      {isOpen && <Card className="fixed bottom-24 right-4 left-4 sm:left-auto sm:right-6 sm:w-96 h-[70vh] sm:h-[500px] z-40 bg-card border-primary/20 ai-glow animate-slide-up">
           <CardHeader className="bg-gradient-ai text-navy-deep">
             <CardTitle className="flex items-center space-x-2">
               <Bot className="h-5 w-5" />
@@ -54,7 +54,7 @@ const ChatBot = () => {
             </CardTitle>
           </CardHeader>
           
-          <CardContent className="p-0 flex flex-col h-[calc(500px-80px)]">
+          <CardContent className="p-0 flex flex-col h-[calc(70vh-80px)] sm:h-[calc(500px-80px)]">
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {messages.map(message => <div key={message.id} className={cn("flex", message.isBot ? "justify-start" : "justify-end")}>

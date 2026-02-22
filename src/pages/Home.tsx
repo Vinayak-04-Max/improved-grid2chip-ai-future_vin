@@ -180,7 +180,7 @@ const Home = () => {
         opacity: heroOpacity,
         y: textY
       }} className="relative z-10 fib-container w-full">
-          <div className="max-w-5xl mx-auto text-center space-y-fib-34">
+          <div className="w-full max-w-5xl mx-auto text-center space-y-fib-34">
             {/* Animated Badge */}
             <ScrollRevealBlock variant="scale" delay={0.1}>
               <MagneticArea intensity={0.2}>
@@ -195,7 +195,7 @@ const Home = () => {
 
             {/* Headline with Character Animation */}
             <div className="space-y-fib-8">
-              <motion.h1 className="text-phi-3xl md:text-phi-4xl lg:text-phi-5xl font-semibold leading-tight" initial={{
+              <motion.h1 className="text-fluid-hero font-semibold leading-tight" initial={{
               opacity: 0
             }} animate={{
               opacity: 1
@@ -203,29 +203,29 @@ const Home = () => {
               duration: 0.5
             }}>
                 <ScrollRevealBlock variant="slide" direction="up" delay={0.2}>
-                  <span className="block text-foreground text-7xl">Your Complete</span>
+                  <span className="block text-foreground">Your Complete</span>
                 </ScrollRevealBlock>
                 <ScrollRevealBlock variant="scale" delay={0.4}>
-                  <span className="block text-primary text-7xl">
+                  <span className="block text-primary">
                     Data Center
                   </span>
                 </ScrollRevealBlock>
                 <ScrollRevealBlock variant="slide" direction="up" delay={0.6}>
-                  <span className="block text-g2c-green text-7xl">Partner</span>
+                  <span className="block text-g2c-green">Partner</span>
                 </ScrollRevealBlock>
               </motion.h1>
             </div>
 
             {/* Subheadline */}
             <ScrollRevealBlock variant="fade" direction="up" delay={0.8}>
-              <p className="text-phi-lg md:text-phi-xl max-w-2xl mx-auto text-muted-foreground">
+              <p className="text-fluid-body-lg w-full sm:max-w-2xl mx-auto text-muted-foreground">
                 From concept to commissioning and beyond, we manage every phase of your critical infrastructure lifecycle.
               </p>
             </ScrollRevealBlock>
 
             {/* Animated Stats */}
             <ScrollRevealBlock variant="fade" delay={1}>
-              <StaggerReveal className="grid grid-cols-3 gap-fib-34 max-w-2xl mx-auto py-fib-34" staggerDelay={0.15}>
+              <StaggerReveal className="grid grid-cols-3 gap-4 sm:gap-fib-34 w-full sm:max-w-2xl mx-auto py-fib-34" staggerDelay={0.15}>
                 {stats.map(stat => {
                 const Icon = stat.icon;
                 return <MagneticArea key={stat.label} intensity={0.15}>
@@ -245,7 +245,7 @@ const Home = () => {
                       ease: "easeInOut"
                     }}>
                           <Icon className="w-5 h-5 text-primary" />
-                          <span className="text-phi-3xl md:text-phi-4xl font-display font-bold text-primary">
+                          <span className="text-fluid-h2 font-display font-bold text-primary">
                             {stat.value}
                           </span>
                         </motion.div>
@@ -341,7 +341,7 @@ const Home = () => {
         
         <div className="fib-container relative z-10">
           <ScrollRevealBlock variant="fade" className="text-center mb-fib-89">
-            <motion.h2 className="text-phi-4xl md:text-phi-5xl font-display font-bold mb-fib-21" whileInView={{
+            <motion.h2 className="text-fluid-h1 font-display font-bold mb-fib-21" whileInView={{
             opacity: 1
           }} initial={{
             opacity: 0
@@ -350,7 +350,7 @@ const Home = () => {
               <CharacterReveal text="Data Center Solutions" className="text-gradient-primary" delay={0.3} />
             </motion.h2>
             <ScrollRevealBlock variant="fade" delay={0.2}>
-              <p className="text-phi-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto">
                 From high-performance computing clusters to agile containerized units, we build the resilient infrastructure that powers tomorrow's innovations.
               </p>
             </ScrollRevealBlock>
@@ -419,11 +419,11 @@ const Home = () => {
         
         <div className="fib-container relative z-10 mb-fib-55">
           <ScrollRevealBlock variant="fade" className="text-center">
-            <h2 className="text-phi-4xl md:text-phi-5xl font-display font-bold mb-fib-21">
+            <h2 className="text-fluid-h1 font-display font-bold mb-fib-21">
               Integrated Facility &{" "}
               <span className="text-gradient-accent">Management Services</span>
             </h2>
-            <p className="text-phi-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto">
               Comprehensive building management and support services for peak performance.
             </p>
           </ScrollRevealBlock>
@@ -465,16 +465,16 @@ const Home = () => {
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <AnimatedBackground variant="aurora" intensity={0.5} />
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <ScrollRevealBlock variant="slide" direction="up">
-              <h2 className="text-phi-4xl md:text-phi-5xl font-display font-bold mb-fib-21">
+              <h2 className="text-fluid-h1 font-display font-bold mb-fib-21">
                 Industries We <span className="text-gradient-primary">Serve</span>
               </h2>
             </ScrollRevealBlock>
 
             <ScrollRevealBlock variant="fade" delay={0.2}>
-              <p className="text-phi-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
                 Our data center solutions power critical operations across diverse sectors,
                 enabling digital transformation and operational excellence.
               </p>
@@ -534,7 +534,7 @@ const Home = () => {
             }} />
 
               <ScrollRevealBlock variant="scale" delay={0.2}>
-                <h2 className="text-phi-3xl md:text-phi-5xl font-display font-bold mb-fib-21 relative">
+                <h2 className="text-fluid-h1 font-display font-bold mb-fib-21 relative">
                   Ready to Build Your{" "}
                   <motion.span className="text-gradient-holographic inline-block" animate={{
                   scale: [1, 1.02, 1]
@@ -548,7 +548,7 @@ const Home = () => {
               </ScrollRevealBlock>
               
               <ScrollRevealBlock variant="fade" delay={0.4}>
-                <p className="text-phi-lg text-muted-foreground max-w-2xl mx-auto mb-fib-34">
+                <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-2xl mx-auto mb-fib-34">
                   Let's discuss how our AI-ready data center solutions can transform your operations.
                 </p>
               </ScrollRevealBlock>

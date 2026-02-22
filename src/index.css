@@ -741,6 +741,34 @@
 }
 
 @layer utilities {
+  /* ═══════════════════════════════════════════════════════════════════════════
+     FLUID TYPOGRAPHY - clamp() based scaling
+  ═══════════════════════════════════════════════════════════════════════════ */
+  
+  .text-fluid-hero {
+    font-size: clamp(2.25rem, 5vw + 1rem, 5.5rem);
+  }
+  
+  .text-fluid-h1 {
+    font-size: clamp(2rem, 4vw + 0.5rem, 4rem);
+  }
+  
+  .text-fluid-h2 {
+    font-size: clamp(1.75rem, 3vw + 0.5rem, 3.25rem);
+  }
+  
+  .text-fluid-h3 {
+    font-size: clamp(1.25rem, 2vw + 0.25rem, 2rem);
+  }
+  
+  .text-fluid-body-lg {
+    font-size: clamp(1rem, 1.2vw + 0.25rem, 1.35rem);
+  }
+  
+  .text-fluid-body {
+    font-size: clamp(0.875rem, 1vw + 0.125rem, 1.125rem);
+  }
+
   .text-g2c-blue {
     color: hsl(var(--primary));
   }

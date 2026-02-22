@@ -100,24 +100,24 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-card py-20 lg:py-32">
         <div className="absolute inset-0 tech-grid opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
             About Grid2Chip
           </Badge>
           
-          <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6">
+          <h1 className="text-fluid-h1 font-display font-bold leading-tight mb-6">
             Building the <span className="text-g2c-blue">Infrastructure</span> of Tomorrow
           </h1>
           
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-8">
+          <p className="text-fluid-body-lg text-muted-foreground leading-relaxed w-full sm:max-w-4xl mx-auto mb-8">
             We are pioneers in data center infrastructure, combining cutting-edge technology 
             with sustainable practices to create the foundation for next-generation computing.
           </p>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 w-full sm:max-w-4xl mx-auto">
             {achievements.map((achievement, index) => (
               <div key={index} className="text-center">
-              <div className="text-3xl lg:text-4xl font-display font-bold text-primary mb-2">
+              <div className="text-fluid-h2 font-display font-bold text-primary mb-2">
                   {achievement.number}
                 </div>
                 <div className="text-sm text-muted-foreground">{achievement.label}</div>
@@ -162,10 +162,10 @@ const About = () => {
       <section className="py-20 lg:py-32 bg-gradient-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Our <span className="text-g2c-green">Core Values</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto">
               These principles guide everything we do, from initial design to ongoing support.
             </p>
           </div>
@@ -192,10 +192,10 @@ const About = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Our <span className="text-g2c-blue">Journey</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto">
               From startup vision to industry leader, see how we've evolved to meet the growing demands of AI infrastructure.
             </p>
           </div>
@@ -232,10 +232,10 @@ const About = () => {
       <section className="py-20 lg:py-32 bg-gradient-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Leadership <span className="text-g2c-green">Team</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto">
               Industry veterans with decades of combined experience in AI, data centers, and sustainable technology.
             </p>
           </div>
@@ -260,11 +260,11 @@ const About = () => {
 
       {/* CTA Section */}
       <section className="py-20 lg:py-32">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+        <div className="w-full sm:max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-fluid-h2 font-display font-bold mb-6">
             Join Us in Building the <span className="text-g2c-blue">Future</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-fluid-body-lg text-muted-foreground mb-8 leading-relaxed">
             Whether you're looking for infrastructure solutions or want to be part of our team, 
             we'd love to hear from you.
           </p>

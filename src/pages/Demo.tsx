@@ -118,21 +118,21 @@ const Demo = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-hero py-20 lg:py-32">
         <div className="absolute inset-0 tech-grid opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
             Book Your Demo
           </Badge>
           
-          <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6">
+          <h1 className="text-fluid-h1 font-display font-bold leading-tight mb-6">
             Experience <span className="text-g2c-blue">Infrastructure</span> in Action
           </h1>
           
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-8">
+          <p className="text-fluid-body-lg text-muted-foreground leading-relaxed w-full sm:max-w-4xl mx-auto mb-8">
             See firsthand how Grid2Chip's AI-ready data center solutions can transform 
             your organization's computing capabilities and accelerate innovation.
           </p>
 
-          <div className="flex items-center justify-center space-x-8 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm text-muted-foreground">
             <div className="flex items-center space-x-2">
               <Clock className="w-4 h-4 text-primary" />
               <span>30-minute sessions</span>
@@ -153,10 +153,10 @@ const Demo = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Choose Your <span className="text-g2c-green">Demo Format</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto">
               Select the format that works best for your team and requirements.
             </p>
           </div>
@@ -194,7 +194,7 @@ const Demo = () => {
 
       {/* Booking Form */}
       <section className="py-20 bg-gradient-card">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full sm:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="bg-card/50 border-primary/20">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl font-display">Schedule Your Demo</CardTitle>
@@ -394,10 +394,10 @@ const Demo = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               What to <span className="text-g2c-blue">Expect</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto">
               Here's what you'll gain from your demo session with our AI infrastructure experts.
             </p>
           </div>

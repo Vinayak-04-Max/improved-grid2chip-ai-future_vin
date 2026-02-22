@@ -263,10 +263,10 @@ const AboutUs = () => {
             <Badge variant="outline" className="mb-6 backdrop-blur-sm text-primary-foreground border-primary-foreground">
               About Grid2Chip
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
+            <h1 className="text-fluid-h1 font-display font-bold text-white mb-6 leading-tight">
               Leading Expert in Data Center Solutions
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+            <p className="text-fluid-body-lg text-white/80 leading-relaxed mb-8">
               We specialize in the design, construction, and lifecycle management of high-performance data centers. Our integrated approach ensures maximum reliability, efficiency, and scalability.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -309,7 +309,7 @@ const AboutUs = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Company <span className="text-gradient-primary">Overview</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -370,7 +370,7 @@ const AboutUs = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Our <span className="text-gradient-primary">Leadership Team</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -458,7 +458,7 @@ const AboutUs = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Performance <span className="text-gradient-accent">Metrics</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -592,7 +592,7 @@ const AboutUs = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Growth <span className="text-gradient-primary">Trajectory</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -716,7 +716,7 @@ const AboutUs = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Our <span className="text-gradient-accent">Technology Partners</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -795,16 +795,16 @@ const AboutUs = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Our <span className="text-g2c-green">Core Values</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto">
               The principles that guide our leadership and drive our success in delivering 
               world-class infrastructure solutions.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {companyValues.map((value, index) => {
             const Icon = value.icon;
             const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
@@ -850,7 +850,7 @@ const AboutUs = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Certifications & <span className="text-gradient-primary">Standards</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -904,7 +904,7 @@ const AboutUs = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               What Our <span className="text-gradient-accent">Clients Say</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -961,7 +961,7 @@ const AboutUs = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Awards & <span className="text-gradient-primary">Recognition</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -1013,7 +1013,7 @@ const AboutUs = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
         </div>
         
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 w-full sm:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{
           opacity: 0,
           y: 30
@@ -1023,10 +1023,10 @@ const AboutUs = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Ready to Build Your <span className="text-gradient-primary">Next Data Center?</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-fluid-body-lg text-muted-foreground mb-8 w-full sm:max-w-2xl mx-auto">
               Partner with our expert team to experience unparalleled reliability and innovation in data center solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

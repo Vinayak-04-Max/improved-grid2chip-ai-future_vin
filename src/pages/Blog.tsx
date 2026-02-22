@@ -73,7 +73,7 @@ const Blog = () => {
       <section className="relative overflow-hidden bg-card py-20 lg:py-32">
         <div className="absolute inset-0 tech-grid opacity-20"></div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center space-y-8">
             <Badge variant="outline" className="w-fit mx-auto border-primary/30 text-primary">
               <span className="relative">
@@ -82,11 +82,11 @@ const Blog = () => {
               </span>
             </Badge>
             
-            <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight">
+            <h1 className="text-fluid-h1 font-display font-bold leading-tight">
               AI Infrastructure <span className="text-g2c-blue">Blog</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto leading-relaxed">
               Stay updated with the latest insights, trends, and innovations in AI-ready critical facility 
               infrastructure and building management systems.
             </p>
@@ -252,10 +252,10 @@ const Blog = () => {
       {/* Newsletter Signup */}
       <section className="py-20 lg:py-32 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+          <h2 className="text-fluid-h2 font-display font-bold mb-6">
             Stay Updated with <span className="text-g2c-green">Infrastructure Insights</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-fluid-body-lg text-muted-foreground mb-8 w-full sm:max-w-3xl mx-auto">
             Get the latest articles, insights, and trends in AI-ready critical facility infrastructure 
             delivered directly to your inbox.
           </p>

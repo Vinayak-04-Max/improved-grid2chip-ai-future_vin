@@ -110,16 +110,16 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-card py-20 lg:py-32">
         <div className="absolute inset-0 tech-grid opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
             Get in Touch
           </Badge>
           
-          <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6">
+          <h1 className="text-fluid-h1 font-display font-bold leading-tight mb-6">
             Let's Build Your <span className="text-g2c-blue">Infrastructure</span>
           </h1>
           
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+          <p className="text-fluid-body-lg text-muted-foreground leading-relaxed w-full sm:max-w-4xl mx-auto">
             Ready to transform your computing capabilities? Our experts are here to design 
             the perfect solution for your specific needs and requirements.
           </p>
