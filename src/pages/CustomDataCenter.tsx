@@ -160,10 +160,10 @@ const CustomDataCenter = () => {
             <Badge variant="outline" className="mb-6 backdrop-blur-sm text-primary-foreground border-primary-foreground">
               Custom Solutions
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
+            <h1 className="text-fluid-h1 font-display font-bold text-white mb-6 leading-tight">
               Custom-Build Data Centers
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+            <p className="text-fluid-body-lg text-white/80 leading-relaxed mb-8">
               Engineered from the ground up to meet your unique operational, performance, and scalability requirements. Transform your vision into a state-of-the-art facility.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -263,7 +263,7 @@ const CustomDataCenter = () => {
       <section className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/10 to-transparent" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 lg:px-[3px] py-[70px]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-8 lg:py-16">
           <motion.div className="text-center mb-16" initial={{
           opacity: 0,
           y: 20
@@ -480,7 +480,7 @@ const CustomDataCenter = () => {
               </motion.div>
 
               {/* Central Hub */}
-              <motion.div className="relative w-36 h-36 py-[180px]" initial={{
+              <motion.div className="relative w-36 h-36 py-8 lg:py-16" initial={{
               opacity: 0,
               scale: 0.8
             }} whileInView={{
@@ -493,7 +493,7 @@ const CustomDataCenter = () => {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-xl" />
                 
                 {/* Spinning ring */}
-                <motion.div className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/40 mx-[30px]" animate={{
+                <motion.div className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/40" animate={{
                 rotate: 360
               }} transition={{
                 duration: 25,
@@ -502,7 +502,7 @@ const CustomDataCenter = () => {
               }} />
                 
                 {/* Counter ring */}
-                <motion.div className="absolute inset-3 rounded-full border-2 border-dashed border-accent/30 mx-[30px]" animate={{
+                <motion.div className="absolute inset-3 rounded-full border-2 border-dashed border-accent/30" animate={{
                 rotate: -360
               }} transition={{
                 duration: 18,
@@ -511,7 +511,7 @@ const CustomDataCenter = () => {
               }} />
                 
                 {/* Center */}
-                <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-primary/30 flex items-center justify-center shadow-xl text-primary bg-primary-foreground rounded-xl py-0 my-[80px]">
+                <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-primary/30 flex items-center justify-center shadow-xl text-primary bg-primary-foreground rounded-xl">
                   <div className="text-center text-primary bg-white/0">
                     <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
                       <Building2 className="w-5 h-5 text-primary" />

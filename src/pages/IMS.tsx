@@ -128,7 +128,7 @@ const IMS = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
               Integrated Monitoring System
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 py-[10px]">
+            <p className="text-fluid-body-lg text-white/80 leading-relaxed mb-8">
               Comprehensive IMS that transforms critical facility management with automation, predictive analytics, and centralized oversight.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">

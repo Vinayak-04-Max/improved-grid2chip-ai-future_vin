@@ -61,14 +61,14 @@ const AIReadyDataCenter = () => {
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 bg-gradient-hero">
         <div className="absolute inset-0 tech-grid opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
             AI Infrastructure
           </Badge>
-          <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6">
+          <h1 className="text-fluid-h1 font-display font-bold mb-6">
             AI-Ready Data Centers
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto mb-8">
             Purpose-built infrastructure optimized for AI workloads, machine learning, and next-generation computing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -89,15 +89,15 @@ const AIReadyDataCenter = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Core <span className="text-g2c-green">Infrastructure</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto">
               Essential components that power high-performance AI and machine learning.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {coreInfrastructure.map((item, index) => {
               const Icon = item.icon;
               const bgColor = index % 2 === 0 ? "bg-primary" : "bg-accent";
@@ -123,16 +123,16 @@ const AIReadyDataCenter = () => {
       <section className="py-20 lg:py-32 bg-gradient-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Performance <span className="text-g2c-blue">Specifications</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
             {specifications.map((spec, index) => (
               <Card key={index} className="text-center bg-card border-primary/20">
                 <CardContent className="p-6">
-                  <div className="text-2xl font-bold text-primary mb-2">{spec.value}</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary mb-2">{spec.value}</div>
                   <div className="text-sm text-muted-foreground">{spec.label}</div>
                 </CardContent>
               </Card>
@@ -145,12 +145,12 @@ const AIReadyDataCenter = () => {
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Ideal <span className="text-g2c-green">Use Cases</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {useCases.map((useCase, index) => (
               <Card key={index} className="bg-gradient-card border-primary/20">
                 <CardHeader>
@@ -167,11 +167,11 @@ const AIReadyDataCenter = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+        <div className="w-full sm:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-fluid-h2 font-display font-bold mb-6">
             Ready to Power Your <span className="text-g2c-blue">Infrastructure?</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-fluid-body-lg text-muted-foreground mb-8 w-full sm:max-w-3xl mx-auto">
             Build the foundation for your artificial intelligence strategy with a data center engineered for the future of computing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
