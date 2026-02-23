@@ -135,11 +135,11 @@ const PrefabContainer = () => {
               Prefabricated Solutions
             </Badge>
             
-            <h1 className="text-4xl xl:text-7xl font-display font-bold mb-6 leading-tight text-primary-foreground lg:text-7xl">
+            <h1 className="text-fluid-h1 font-display font-bold mb-6 leading-tight text-primary-foreground">
               Prefabricated Data Centers
             </h1>
             
-            <p className="text-xl lg:text-2xl mb-8 leading-relaxed max-w-2xl text-slate-300">
+            <p className="text-fluid-body-lg mb-8 leading-relaxed w-full sm:max-w-2xl text-slate-300">
               Rapidly deployable, factory-built modular data centers perfect for edge computing, disaster recovery, and remote operations.
             </p>
 
@@ -383,7 +383,7 @@ const PrefabContainer = () => {
             </div>
 
             {/* Central Hub */}
-            <motion.div className="relative w-36 h-36 mx-auto px-0 py-[200px]" initial={{
+            <motion.div className="relative w-36 h-36 mx-auto px-0 py-8 lg:py-16" initial={{
             opacity: 0,
             scale: 0.8
           }} whileInView={{
@@ -393,21 +393,21 @@ const PrefabContainer = () => {
             once: true
           }}>
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 blur-xl" />
-              <motion.div className="absolute inset-0 border-[3px] border-dashed border-accent/40 rounded-full py-[10px] my-[10px] mx-[30px]" animate={{
+              <motion.div className="absolute inset-0 border-[3px] border-dashed border-accent/40 rounded-full" animate={{
               rotate: 360
             }} transition={{
               duration: 25,
               repeat: Infinity,
               ease: "linear"
             }} />
-              <motion.div className="absolute inset-3 rounded-full border-2 border-dashed border-primary/30 my-0 py-[180px] mx-[10px]" animate={{
+              <motion.div className="absolute inset-3 rounded-full border-2 border-dashed border-primary/30" animate={{
               rotate: -360
             }} transition={{
               duration: 18,
               repeat: Infinity,
               ease: "linear"
             }} />
-              <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-accent/30 flex items-center justify-center shadow-xl rounded-xl py-0 my-[100px]">
+              <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-accent/30 flex items-center justify-center shadow-xl rounded-xl">
                 <div className="text-center">
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center">
                     <Container className="w-5 h-5 text-accent" />

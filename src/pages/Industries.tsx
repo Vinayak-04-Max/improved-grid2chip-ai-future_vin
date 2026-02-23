@@ -187,21 +187,21 @@ const Industries = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-hero py-20 lg:py-32">
         <div className="absolute inset-0 tech-grid opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
             Industry Solutions
           </Badge>
           
-          <h1 className="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6">
+          <h1 className="text-fluid-h1 font-display font-bold leading-tight mb-6">
             <span className="text-g2c-blue">Transforming Industries</span> with Data Center Infrastructure
           </h1>
           
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto mb-8">
+          <p className="text-fluid-body-lg text-muted-foreground leading-relaxed w-full sm:max-w-4xl mx-auto mb-8">
             From pharmaceutical research to smart cities, our infrastructure solutions 
             are driving innovation across diverse industries and use cases.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8 w-full sm:max-w-4xl mx-auto">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
@@ -225,14 +225,14 @@ const Industries = () => {
               const isEven = index % 2 === 0;
               
               return (
-                <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+                <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
                   <div className={`space-y-8 ${!isEven ? 'lg:col-start-2' : ''}`}>
                     <div className="space-y-4">
                       <div className={`w-16 h-16 rounded-xl ${index % 2 === 0 ? 'bg-primary' : 'bg-accent'} p-4`}>
                         <Icon className="w-full h-full text-white" />
                       </div>
-                      <h2 className="text-3xl font-display font-bold">{industry.title}</h2>
-                      <p className="text-xl text-muted-foreground leading-relaxed">
+                      <h2 className="text-fluid-h2 font-display font-bold">{industry.title}</h2>
+                      <p className="text-fluid-body-lg text-muted-foreground leading-relaxed">
                         {industry.description}
                       </p>
                     </div>
@@ -302,11 +302,11 @@ const Industries = () => {
 
       {/* CTA Section */}
       <section className="py-20 lg:py-32 bg-gradient-card">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+        <div className="w-full sm:max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-fluid-h2 font-display font-bold mb-6">
             Ready to Transform Your <span className="text-g2c-green">Industry?</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-fluid-body-lg text-muted-foreground mb-8 leading-relaxed">
             Let's discuss how Grid2Chip can design a custom infrastructure solution 
             tailored to your industry's specific needs and challenges.
           </p>

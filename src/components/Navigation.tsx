@@ -14,6 +14,11 @@ const Navigation = () => {
   const [dataCenterOpen, setDataCenterOpen] = useState(false);
   const [ibmsOpen, setIbmsOpen] = useState(false);
 
+  // Mobile accordion states
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const [mobileDataCenterOpen, setMobileDataCenterOpen] = useState(false);
+  const [mobileIbmsOpen, setMobileIbmsOpen] = useState(false);
+
   const aboutItems = [
     { name: "About Us", path: "/about/us" },
     { name: "Our Clients", path: "/about/clients" },
@@ -58,8 +63,8 @@ const Navigation = () => {
   const DropdownMenu = ({
     label,
     items,
-    isOpen,
-    setIsOpen,
+    isOpen: menuOpen,
+    setIsOpen: setMenuOpen,
     isActive,
   }: {
     label: string;
@@ -70,8 +75,8 @@ const Navigation = () => {
   }) => (
     <div
       className="relative"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      onMouseEnter={() => setMenuOpen(true)}
+      onMouseLeave={() => setMenuOpen(false)}
     >
       <button
         className={cn(
@@ -81,7 +86,7 @@ const Navigation = () => {
       >
         {label}
         <motion.span
-          animate={{ rotate: isOpen ? 180 : 0 }}
+          animate={{ rotate: menuOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
         >
           <ChevronDown className="h-4 w-4" />
@@ -89,7 +94,7 @@ const Navigation = () => {
       </button>
 
       <AnimatePresence>
-        {isOpen && (
+        {menuOpen && (
           <motion.div
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -110,6 +115,62 @@ const Navigation = () => {
                   </Link>
                 ))}
               </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+
+  const MobileAccordion = ({
+    label,
+    items,
+    isOpen: accordionOpen,
+    toggle,
+    isActive,
+  }: {
+    label: string;
+    items: { name: string; path: string }[];
+    isOpen: boolean;
+    toggle: () => void;
+    isActive: boolean;
+  }) => (
+    <div>
+      <button
+        onClick={toggle}
+        className={cn(
+          "flex items-center justify-between w-full py-3 font-medium text-base",
+          isActive ? "text-primary" : "text-foreground"
+        )}
+      >
+        {label}
+        <motion.span
+          animate={{ rotate: accordionOpen ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <ChevronDown className="h-4 w-4" />
+        </motion.span>
+      </button>
+      <AnimatePresence>
+        {accordionOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden"
+          >
+            <div className="pl-4 pb-2 space-y-1">
+              {items.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
             </div>
           </motion.div>
         )}
@@ -194,6 +255,89 @@ const Navigation = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden overflow-hidden border-t border-primary/10"
+          >
+            <div className="px-4 py-4 space-y-1 bg-background/95 backdrop-blur-xl max-h-[80vh] overflow-y-auto">
+              <Link
+                to="/"
+                onClick={() => setIsOpen(false)}
+                className={cn(
+                  "block py-3 font-medium text-base",
+                  location.pathname === "/" ? "text-primary" : "text-foreground"
+                )}
+              >
+                Home
+              </Link>
+
+              <MobileAccordion
+                label="About G2C"
+                items={aboutItems}
+                isOpen={mobileAboutOpen}
+                toggle={() => setMobileAboutOpen(!mobileAboutOpen)}
+                isActive={location.pathname.startsWith("/about")}
+              />
+
+              <MobileAccordion
+                label="Data Center"
+                items={dataCenterItems}
+                isOpen={mobileDataCenterOpen}
+                toggle={() => setMobileDataCenterOpen(!mobileDataCenterOpen)}
+                isActive={location.pathname.startsWith("/data-center")}
+              />
+
+              <MobileAccordion
+                label="IBMS"
+                items={ibmsItems}
+                isOpen={mobileIbmsOpen}
+                toggle={() => setMobileIbmsOpen(!mobileIbmsOpen)}
+                isActive={
+                  location.pathname.startsWith("/bms") ||
+                  location.pathname.startsWith("/products/ims")
+                }
+              />
+
+              <Link
+                to="/blog"
+                onClick={() => setIsOpen(false)}
+                className={cn(
+                  "block py-3 font-medium text-base",
+                  location.pathname === "/blog" ? "text-primary" : "text-foreground"
+                )}
+              >
+                Blog
+              </Link>
+
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className={cn(
+                  "block py-3 font-medium text-base",
+                  location.pathname === "/contact" ? "text-primary" : "text-foreground"
+                )}
+              >
+                Contact Us
+              </Link>
+
+              <div className="pt-3 pb-1">
+                <Link to="/demo" onClick={() => setIsOpen(false)}>
+                  <MagneticButton variant="cyber" size="sm" className="w-full">
+                    Book a Demo
+                  </MagneticButton>
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Bottom accent */}
       <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />

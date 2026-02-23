@@ -138,11 +138,11 @@ const HPC = () => {
               High-Performance Computing
             </Badge>
             
-            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-display font-bold mb-6 leading-tight text-primary-foreground">
+            <h1 className="text-fluid-h1 font-display font-bold mb-6 leading-tight text-primary-foreground">
               HPC Data Centers
             </h1>
             
-            <p className="text-xl lg:text-2xl mb-8 leading-relaxed max-w-2xl text-slate-300">
+            <p className="text-fluid-body-lg mb-8 leading-relaxed w-full sm:max-w-2xl text-slate-300">
               Purpose-built infrastructure for complex simulations, scientific research, and data-intensive workloads at unprecedented scale.
             </p>
 
@@ -175,10 +175,10 @@ const HPC = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-3">
+            <h2 className="text-fluid-h2 font-display font-bold mb-3">
               HPC <span className="text-gradient-primary text-secondary">Capabilities</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Enterprise-grade computing infrastructure built for the most demanding workloads
             </p>
           </motion.div>
@@ -228,10 +228,10 @@ const HPC = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Technical <span className="text-gradient-accent">Specifications</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Industry-leading performance metrics for high-performance computing
             </p>
           </motion.div>
@@ -310,10 +310,10 @@ const HPC = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Implementation <span className="text-gradient-primary">Roadmap</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Our proven methodology for deploying world-class HPC infrastructure
             </p>
           </motion.div>
@@ -341,10 +341,10 @@ const HPC = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Ideal <span className="text-gradient-accent">Use Cases</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Powering breakthrough research and innovation across industries
             </p>
           </motion.div>

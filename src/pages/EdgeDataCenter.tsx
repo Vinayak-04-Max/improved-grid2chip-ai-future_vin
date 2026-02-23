@@ -143,10 +143,10 @@ const EdgeDataCenter = () => {
             <Badge variant="outline" className="mb-6 backdrop-blur-sm text-primary-foreground border-primary-foreground">
               Edge Computing Solutions
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
+            <h1 className="text-fluid-h1 font-display font-bold text-white mb-6 leading-tight">
               Edge Data Centers
             </h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+            <p className="text-fluid-body-lg text-white/80 leading-relaxed mb-8">
               Bring high-performance computing closer to your data sources with ultra-low latency edge infrastructure. Perfect for IoT, 5G, autonomous systems, and real-time applications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -190,10 +190,10 @@ const EdgeDataCenter = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Performance at a <span className="text-gradient-primary text-secondary">Glance</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Industry-leading specifications that power your edge infrastructure
             </p>
           </motion.div>
@@ -255,10 +255,10 @@ const EdgeDataCenter = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Edge <span className="text-gradient-accent">Advantages</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Revolutionary capabilities for next-generation applications
             </p>
           </motion.div>
@@ -329,10 +329,10 @@ const EdgeDataCenter = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Infrastructure <span className="text-gradient-primary">Scale</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Scalable edge solutions from micro deployments to metro facilities
             </p>
           </motion.div>
@@ -411,10 +411,10 @@ const EdgeDataCenter = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Industry <span className="text-gradient-accent">Applications</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               How edge computing transforms real-world operations
             </p>
           </motion.div>
@@ -518,7 +518,7 @@ const EdgeDataCenter = () => {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[120px]" />
         
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div className="w-full sm:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div initial={{
           opacity: 0,
           y: 30
@@ -528,11 +528,11 @@ const EdgeDataCenter = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-fluid-h2 font-display font-bold mb-6">
               Ready to Build Your{" "}
               <span className="text-gradient-primary">Edge Network?</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-10 w-full sm:max-w-2xl mx-auto">
               Transform your applications with ultra-low latency edge infrastructure. Let's design your custom edge network today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -201,26 +201,48 @@ const About = () => {
           </div>
 
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary opacity-50"></div>
-            <div className="space-y-12">
+            {/* Desktop timeline */}
+            <div className="hidden md:block">
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary opacity-50"></div>
+              <div className="space-y-12">
+                {timeline.map((item, index) => (
+                  <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                    <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                      <Card className="bg-gradient-card border-primary/20">
+                        <CardContent className="p-6">
+                          <div className="flex items-center space-x-2 mb-3">
+                            <Calendar className="w-5 h-5 text-primary" />
+                            <span className="text-2xl font-display font-bold text-primary">{item.year}</span>
+                          </div>
+                          <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                    <div className="relative flex items-center justify-center w-12 h-12">
+                      <div className="w-8 h-8 rounded-full bg-primary"></div>
+                    </div>
+                    <div className="w-1/2"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Mobile timeline - stacked */}
+            <div className="md:hidden space-y-6">
+              <div className="absolute left-4 top-0 bottom-0 w-1 bg-primary opacity-50"></div>
               {timeline.map((item, index) => (
-                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                    <Card className="bg-gradient-card border-primary/20">
-                      <CardContent className="p-6">
-                        <div className="flex items-center space-x-2 mb-3">
-                          <Calendar className="w-5 h-5 text-primary" />
-                          <span className="text-2xl font-display font-bold text-primary">{item.year}</span>
-                        </div>
-                        <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                  <div className="relative flex items-center justify-center w-12 h-12">
-                    <div className="w-8 h-8 rounded-full bg-primary"></div>
-                  </div>
-                  <div className="w-1/2"></div>
+                <div key={index} className="flex items-start gap-4 pl-10 relative">
+                  <div className="absolute left-2 top-4 w-6 h-6 rounded-full bg-primary flex-shrink-0"></div>
+                  <Card className="bg-gradient-card border-primary/20 flex-1">
+                    <CardContent className="p-4">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Calendar className="w-4 h-4 text-primary" />
+                        <span className="text-xl font-display font-bold text-primary">{item.year}</span>
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground mb-1">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                    </CardContent>
+                  </Card>
                 </div>
               ))}
             </div>

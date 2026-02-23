@@ -224,7 +224,7 @@ const ELVSystems = () => {
       <section id="features" className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/10 to-transparent" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 my-0 py-[150px]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-8 lg:py-20">
           <motion.div className="text-center mb-16" initial={{
           opacity: 0,
           y: 20
@@ -249,8 +249,8 @@ const ELVSystems = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           CIRCULAR HUB INFOGRAPHIC - Key Benefits
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 relative overflow-hidden my-[50px]">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent my-[40px]" />
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/20 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div className="text-center mb-16" initial={{
