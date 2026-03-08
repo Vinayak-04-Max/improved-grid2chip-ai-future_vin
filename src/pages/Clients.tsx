@@ -83,7 +83,7 @@ const Clients = () => {
   }];
   return <div className="min-h-screen bg-background">
       {/* Hero Section - Full Width Background with Overlay */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img alt="Our Clientele" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/a7249ebd-6f59-4bc9-86be-258e77c545d6.jpg" />
         </div>

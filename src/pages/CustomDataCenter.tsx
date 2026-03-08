@@ -140,7 +140,7 @@ const CustomDataCenter = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img alt="Custom Data Center Infrastructure" className="w-full h-full object-cover opacity-95" src="/lovable-uploads/9e2e8ad9-7991-407c-936a-835723b60b8c.webp" />

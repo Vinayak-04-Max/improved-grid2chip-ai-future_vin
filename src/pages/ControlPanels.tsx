@@ -107,7 +107,7 @@ const ControlPanels = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img alt="Control Panel Services" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/bd43b21f-641a-4cda-99dc-e9a6e82b768d.jpg" />
         </div>

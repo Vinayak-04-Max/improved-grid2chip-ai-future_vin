@@ -124,7 +124,7 @@ const FireSafety = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img alt="Fire Safety Systems" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/9d504b3d-df4c-4882-aac8-906341d48d2f.jpg" />
         </div>

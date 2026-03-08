@@ -124,7 +124,7 @@ const BuildingManagement = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img alt="Building Management Systems" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/20676fe0-066c-4a5b-a7e2-82aa53995a7b.jpg" />
         </div>

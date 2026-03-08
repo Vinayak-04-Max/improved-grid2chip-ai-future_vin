@@ -107,7 +107,7 @@ const IMS = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img alt="Integrated Monitoring System" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/2ef24791-74f4-4138-aa0a-9886c08c0ad7.jpg" />
         </div>

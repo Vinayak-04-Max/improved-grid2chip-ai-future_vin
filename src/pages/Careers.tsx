@@ -47,7 +47,7 @@ const Careers = () => {
   }];
   return <div className="min-h-screen bg-background">
       {/* Hero Section - Full Width Background with Overlay */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img alt="Careers at Grid2Chip" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/f50441a7-f962-4b6d-a840-d72340945312.jpg" />
         </div>

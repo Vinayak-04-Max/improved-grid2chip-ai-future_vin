@@ -123,7 +123,7 @@ const EdgeDataCenter = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img alt="Edge Data Center Infrastructure" className="w-full h-full object-cover opacity-95" src="/lovable-uploads/6a174ba7-bee2-4c01-bab5-406e4a84f87a.jpg" />

@@ -107,7 +107,7 @@ const ELVSystems = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img alt="Extra Low Voltage Systems" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/bebc2df8-67b0-454f-bb9f-77e64e852b82.jpg" />
         </div>

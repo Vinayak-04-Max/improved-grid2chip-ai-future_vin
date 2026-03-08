@@ -245,7 +245,7 @@ const AboutUs = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img alt="About Grid2Chip" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/411a664e-7ca7-4d90-8b4c-5fc9f72a146c.jpg" />
         </div>
