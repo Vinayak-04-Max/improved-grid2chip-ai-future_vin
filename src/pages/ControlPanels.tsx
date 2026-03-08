@@ -170,7 +170,7 @@ const ControlPanels = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Technical <span className="text-gradient-primary">Specifications</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Industry-leading control panel specifications
             </p>
           </motion.div>
