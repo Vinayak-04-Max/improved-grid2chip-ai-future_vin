@@ -121,6 +121,8 @@ export const HexagonWeb: React.FC<HexagonWebProps> = ({
     offset: ['start end', 'end start'],
   });
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
+  const rotateAntiCW = useTransform(scrollYProgress, [0, 1], [0, -360]);
+  const counterRotateCW = useTransform(scrollYProgress, [0, 1], [0, 360]);
 
   if (isMobile) {
     return <MobileHexagonWeb items={items} />;
