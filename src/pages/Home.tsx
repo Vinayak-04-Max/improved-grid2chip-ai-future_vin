@@ -548,7 +548,7 @@ const Home = () => {
               </ScrollRevealBlock>
               
               <ScrollRevealBlock variant="fade" delay={0.4}>
-                <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-2xl mx-auto mb-fib-34">
+                <p className="text-sm sm:text-base lg:text-fluid-body-lg text-muted-foreground w-full sm:max-w-2xl mx-auto mb-6 sm:mb-fib-34">
                   Let's discuss how our AI-ready data center solutions can transform your operations.
                 </p>
               </ScrollRevealBlock>
