@@ -596,7 +596,7 @@ const CustomDataCenter = () => {
               <div className="absolute inset-3 rounded-full bg-gradient-to-br from-card to-card/90 border border-primary/20 flex items-center justify-center">
                 <div className="text-center">
                   <Building2 className="w-5 h-5 text-primary mx-auto mb-0.5" />
-                  <span className="text-[8px] font-display font-bold text-white">Custom<br />Solutions</span>
+                  <span className="text-[8px] font-display font-bold text-foreground">Custom<br />Solutions</span>
                 </div>
               </div>
             </motion.div>
