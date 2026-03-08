@@ -52,7 +52,7 @@ const VerticalRoadmap = ({ steps, finalBadge, accentColor = "primary" }: Vertica
             </div>
             
             {/* Content Card - Auto height */}
-            <div className={`ml-20 lg:ml-0 lg:w-[calc(50%-40px)] ${isEven ? 'lg:pr-8 lg:text-right' : 'lg:pl-8 lg:ml-auto'}`}>
+            <div className={`ml-20 lg:ml-0 max-w-md lg:max-w-none lg:w-[calc(50%-40px)] ${isEven ? 'lg:pr-8 lg:text-right' : 'lg:pl-8 lg:ml-auto'}`}>
               <div className={`w-full p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border ${borderColor} transition-all duration-300 hover:shadow-lg hover:shadow-primary/10`}>
                 <div className={`flex items-center gap-3 mb-3 ${isEven ? 'lg:justify-end' : 'lg:justify-start'}`}>
                   {Icon && (
