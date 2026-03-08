@@ -138,7 +138,7 @@ const Home = () => {
       <ScrollProgress />
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-       HERO SECTION - Fully Immersive Cinematic Experience
+      HERO SECTION - Fully Immersive Cinematic Experience
       ═══════════════════════════════════════════════════════════════════════════ */}
       <section ref={heroRef} className="relative min-h-[120vh] flex items-center overflow-hidden">
       {/* Clean White Background */}
@@ -300,26 +300,26 @@ const Home = () => {
           repeat: Infinity
         }}>
             
-            <motion.div className="w-fib-8 h-fib-34 rounded-full border-primary/50 flex justify-center pt-fib-8 bg-slate-50 border-0" animate={{
-            borderColor: ['hsl(var(--primary) / 0.5)', 'hsl(var(--accent) / 0.5)', 'hsl(var(--primary) / 0.5)']
-          }} transition={{
-            duration: 3,
-            repeat: Infinity
-          }}>
-              <motion.div className="w-fib-3 h-fib-13 bg-primary rounded-full" animate={{
-              y: [0, 8, 0],
-              opacity: [1, 0.5, 1]
-            }} transition={{
-              duration: 1.5,
-              repeat: Infinity
-            }} />
-            </motion.div>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+          
           </motion.div>
         </motion.div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-       VELOCITY TEXT MARQUEE
+      VELOCITY TEXT MARQUEE
       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative py-fib-21 overflow-hidden border-y border-primary/10">
         <motion.div className="absolute inset-0 bg-gradient-to-r from-background via-primary/5 to-background" animate={{
@@ -334,7 +334,7 @@ const Home = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-       SOLUTIONS SECTION - Animated Cards
+      SOLUTIONS SECTION - Animated Cards
       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative py-fib-144 overflow-hidden">
         <AnimatedBackground variant="cosmic" intensity={0.3} />
@@ -412,7 +412,7 @@ const Home = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-       SERVICES CAROUSEL SECTION
+      SERVICES CAROUSEL SECTION
       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative py-fib-89 overflow-hidden">
         <AnimatedBackground variant="grid" intensity={0.4} />
@@ -460,7 +460,7 @@ const Home = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-       INDUSTRIES HEXAGON WEB SECTION
+      INDUSTRIES HEXAGON WEB SECTION
       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <AnimatedBackground variant="aurora" intensity={0.5} />
@@ -496,7 +496,7 @@ const Home = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-       CTA SECTION - Cinematic Finale
+      CTA SECTION - Cinematic Finale
       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative py-fib-144 overflow-hidden">
         {/* Dynamic Background */}
