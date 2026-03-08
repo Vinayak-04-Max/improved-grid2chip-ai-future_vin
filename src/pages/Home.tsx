@@ -498,7 +498,7 @@ const Home = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
       CTA SECTION - Cinematic Finale
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative py-fib-144 overflow-hidden">
+      <section className="relative py-16 sm:py-20 lg:py-fib-144 overflow-hidden">
         {/* Dynamic Background */}
         <motion.div className="absolute inset-0" animate={{
         background: ['radial-gradient(ellipse at 20% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%)', 'radial-gradient(ellipse at 80% 50%, hsl(var(--accent) / 0.15) 0%, transparent 50%)', 'radial-gradient(ellipse at 50% 20%, hsl(var(--neon-cyan) / 0.1) 0%, transparent 50%)', 'radial-gradient(ellipse at 20% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%)']
@@ -514,7 +514,7 @@ const Home = () => {
 
         <div className="fib-container relative z-10">
           <ScrollRevealBlock variant="morph">
-            <motion.div className="glass-panel rounded-fib-xl p-fib-89 text-center relative overflow-hidden" whileInView={{
+            <motion.div className="glass-panel rounded-fib-xl p-6 sm:p-10 lg:p-fib-89 text-center relative overflow-hidden" whileInView={{
             boxShadow: '0 0 100px hsl(var(--primary) / 0.2)'
           }}>
               {/* Animated border */}
@@ -534,7 +534,7 @@ const Home = () => {
             }} />
 
               <ScrollRevealBlock variant="scale" delay={0.2}>
-                <h2 className="text-fluid-h1 font-display font-bold mb-fib-21 relative text-balance text-center">
+                <h2 className="text-2xl sm:text-3xl lg:text-fluid-h1 font-display font-bold mb-4 sm:mb-fib-21 relative text-balance text-center">
                   Ready to Build Your{" "}
                   <motion.span className="text-gradient-holographic inline" animate={{
                   scale: [1, 1.02, 1]
@@ -548,13 +548,13 @@ const Home = () => {
               </ScrollRevealBlock>
               
               <ScrollRevealBlock variant="fade" delay={0.4}>
-                <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-2xl mx-auto mb-fib-34">
+                <p className="text-sm sm:text-base lg:text-fluid-body-lg text-muted-foreground w-full sm:max-w-2xl mx-auto mb-6 sm:mb-fib-34">
                   Let's discuss how our AI-ready data center solutions can transform your operations.
                 </p>
               </ScrollRevealBlock>
 
               <ScrollRevealBlock variant="slide" direction="up" delay={0.6}>
-                <div className="flex flex-col sm:flex-row gap-fib-21 justify-center">
+                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-fib-21 justify-center">
                   <Link to="/contact">
                     <MagneticButton variant="glow" size="lg" className="group">
                       <span className="flex items-center gap-fib-8">
