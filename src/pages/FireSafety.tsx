@@ -396,7 +396,7 @@ const FireSafety = () => {
                       <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
                         <Icon className="w-5 h-5 text-primary" />
                       </div>
-                      <h4 className="text-sm font-semibold text-white">{standard.name}</h4>
+                      <h4 className="text-sm font-semibold text-foreground">{standard.name}</h4>
                     </motion.div>;
               })}
               </div>

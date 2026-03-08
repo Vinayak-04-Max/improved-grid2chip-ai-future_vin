@@ -496,7 +496,7 @@ const HPC = () => {
                         <Icon className={`w-6 h-6 ${style.iconColor}`} />
                       </div>
                       <div>
-                        <h3 className="text-sm font-display font-bold text-white mb-0.5">{useCase.title}</h3>
+                        <h3 className="text-sm font-display font-bold text-foreground mb-0.5">{useCase.title}</h3>
                         <p className="text-xs text-muted-foreground leading-relaxed">{useCase.description}</p>
                       </div>
                     </div>
