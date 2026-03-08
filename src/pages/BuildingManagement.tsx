@@ -124,7 +124,7 @@ const BuildingManagement = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img alt="Building Management Systems" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/20676fe0-066c-4a5b-a7e2-82aa53995a7b.jpg" />
         </div>
@@ -186,7 +186,7 @@ const BuildingManagement = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Performance <span className="text-gradient-primary">Metrics</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -249,7 +249,7 @@ const BuildingManagement = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Key <span className="text-gradient-accent">Features</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -277,7 +277,7 @@ const BuildingManagement = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Integrated <span className="text-gradient-primary">Systems</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -417,7 +417,7 @@ const BuildingManagement = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Core <span className="text-gradient-accent">Benefits</span>
             </h2>
           </motion.div>
@@ -467,7 +467,7 @@ const BuildingManagement = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Ideal <span className="text-gradient-primary">Applications</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -499,7 +499,7 @@ const BuildingManagement = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-6">
               Ready to Optimize Your <span className="text-gradient-primary">Facility?</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

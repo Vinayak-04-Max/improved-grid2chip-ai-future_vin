@@ -172,7 +172,7 @@ const PrefabContainer = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-3 text-card-foreground">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold mb-3 text-card-foreground">
               Container <span className="text-gradient-accent text-primary">Features</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -225,7 +225,7 @@ const PrefabContainer = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Technical <span className="text-gradient-primary text-secondary">Specifications</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -306,7 +306,7 @@ const PrefabContainer = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Deployment <span className="text-gradient-accent">Timeline</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -337,7 +337,7 @@ const PrefabContainer = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Common <span className="text-gradient-primary">Use Cases</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -518,7 +518,7 @@ const PrefabContainer = () => {
         }} viewport={{
           once: true
         }}>
-      <h2 className="text-3xl font-display font-bold mb-4 lg:text-4xl">
+      <h2 className="text-2xl sm:text-3xl font-display font-bold mb-4 lg:text-4xl">
         Why Choose{" "}
         <span className="text-gradient-accent">
           Prefabricated Data Centers?
@@ -575,7 +575,7 @@ const PrefabContainer = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-6">
               Ready for{" "}
               <span className="text-gradient-accent">Rapid Deployment?</span>
             </h2>

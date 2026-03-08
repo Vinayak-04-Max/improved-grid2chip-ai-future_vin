@@ -107,7 +107,7 @@ const IMS = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img alt="Integrated Monitoring System" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/2ef24791-74f4-4138-aa0a-9886c08c0ad7.jpg" />
         </div>
@@ -171,7 +171,7 @@ const IMS = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Performance at a <span className="text-gradient-primary">Glance</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -234,10 +234,10 @@ const IMS = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-2">
               The 6-Steps of
             </h2>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold text-gradient-primary mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold text-gradient-primary mb-4">
               Intelligent Monitoring
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -265,7 +265,7 @@ const IMS = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Comprehensive <span className="text-gradient-primary">System Coverage</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -405,7 +405,7 @@ const IMS = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Implementation <span className="text-gradient-accent">Process</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -437,7 +437,7 @@ const IMS = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-6">
               Ready to Deploy <span className="text-gradient-primary">IMS?</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

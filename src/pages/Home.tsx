@@ -364,7 +364,7 @@ const Home = () => {
             return <DepthLayer key={solution.title} depth={0.3 + index * 0.1} className="h-full">
                   <ScrollRevealBlock variant="scale" delay={index * 0.1} className="h-full">
                     <RefractiveCard className="h-full group">
-                      <div className="p-fib-21 flex flex-col h-[320px] relative overflow-hidden">
+                      <div className="p-fib-21 flex flex-col min-h-[280px] sm:min-h-[320px] relative overflow-hidden">
                         {/* Animated gradient background */}
                         <motion.div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                         
@@ -436,7 +436,7 @@ const Home = () => {
             {services.map((service, index) => {
             const Icon = service.icon;
             return <Link key={service.title} to={service.path} className="h-full">
-                  <motion.div className="glass-panel rounded-fib-xl p-fib-34 h-[200px] group cursor-pointer flex flex-col" whileHover={{
+                  <motion.div className="glass-panel rounded-fib-xl p-fib-34 min-h-[180px] sm:min-h-[200px] group cursor-pointer flex flex-col" whileHover={{
                 scale: 1.03,
                 y: -6
               }} transition={{

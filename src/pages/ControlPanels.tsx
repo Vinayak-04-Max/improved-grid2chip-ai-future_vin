@@ -107,7 +107,7 @@ const ControlPanels = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img alt="Control Panel Services" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/bd43b21f-641a-4cda-99dc-e9a6e82b768d.jpg" />
         </div>
@@ -125,9 +125,8 @@ const ControlPanels = () => {
             <Badge variant="outline" className="mb-6 backdrop-blur-sm text-primary-foreground border-primary-foreground">
               Control Systems
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">Control & Automation Panel</h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 py-0 px-0 mx-0">Gain precision control over your facility's critical systems with our
-custom-designed and expertly fabricated control panels.</p>
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">Control & Automation Panel</h1>
+            <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed mb-8">Gain precision control over your facility's critical systems with our custom-designed and expertly fabricated control panels.</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" size="lg" asChild>
                 <Link to="/contact">
@@ -168,10 +167,10 @@ custom-designed and expertly fabricated control panels.</p>
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Technical <span className="text-gradient-primary">Specifications</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Industry-leading control panel specifications
             </p>
           </motion.div>
@@ -231,7 +230,7 @@ custom-designed and expertly fabricated control panels.</p>
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Custom Control Panel <span className="text-gradient-accent">Solutions</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -259,7 +258,7 @@ custom-designed and expertly fabricated control panels.</p>
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Why Choose <span className="text-gradient-primary">Our Panels?</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -399,7 +398,7 @@ custom-designed and expertly fabricated control panels.</p>
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Our <span className="text-gradient-accent">Process</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -431,7 +430,7 @@ custom-designed and expertly fabricated control panels.</p>
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-6">
               Ready for <span className="text-gradient-primary">Precision Control?</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

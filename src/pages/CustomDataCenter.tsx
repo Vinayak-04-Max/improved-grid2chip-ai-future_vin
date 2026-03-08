@@ -140,7 +140,7 @@ const CustomDataCenter = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img alt="Custom Data Center Infrastructure" className="w-full h-full object-cover opacity-95" src="/lovable-uploads/9e2e8ad9-7991-407c-936a-835723b60b8c.webp" />
@@ -207,7 +207,7 @@ const CustomDataCenter = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Infrastructure <span className="text-gradient-primary text-secondary">Customizations</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -273,7 +273,7 @@ const CustomDataCenter = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Custom-Build <span className="text-gradient-accent">Advantages</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -289,7 +289,7 @@ const CustomDataCenter = () => {
                 const Icon = advantage.icon;
                 const isLeft = index < 3;
                 const rowIndex = isLeft ? index : index - 3;
-                return <motion.div key={advantage.title} className="flex items-start gap-4 h-[120px]" style={{
+                return <motion.div key={advantage.title} className="flex items-start gap-4 min-h-[100px]" style={{
                   gridRow: rowIndex + 1,
                   gridColumn: isLeft ? 1 : 2
                 }} initial={{
@@ -385,7 +385,7 @@ const CustomDataCenter = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Our <span className="text-gradient-primary">Build Process</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -417,7 +417,7 @@ const CustomDataCenter = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Ideal <span className="text-gradient-accent">For</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -671,7 +671,7 @@ const CustomDataCenter = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-6">
               Ready to Build Your{" "}
               <span className="text-gradient-primary">Custom Data Center?</span>
             </h2>

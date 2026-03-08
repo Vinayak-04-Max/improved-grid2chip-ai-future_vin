@@ -245,7 +245,7 @@ const AboutUs = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION - Full Width Background with Overlay
        ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative h-[85vh] min-h-[450px] sm:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img alt="About Grid2Chip" className="w-full h-full object-cover opacity-85" src="/lovable-uploads/411a664e-7ca7-4d90-8b4c-5fc9f72a146c.jpg" />
         </div>
@@ -312,7 +312,7 @@ const AboutUs = () => {
             <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Company <span className="text-gradient-primary">Overview</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Our track record speaks for itself - delivering excellence across the globe
             </p>
           </motion.div>
@@ -373,7 +373,7 @@ const AboutUs = () => {
             <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Our <span className="text-gradient-primary">Leadership Team</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Meet the visionary leaders driving innovation in critical facility infrastructure
             </p>
           </motion.div>
