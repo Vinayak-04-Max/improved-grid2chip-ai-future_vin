@@ -640,7 +640,7 @@ const CustomDataCenter = () => {
                           <Icon className={`w-6 h-6 ${style.iconColor}`} />
                         </div>
                         <div>
-                          <h3 className="text-sm font-display font-bold text-white mb-0.5">{item.title}</h3>
+                          <h3 className="text-sm font-display font-bold text-foreground mb-0.5">{item.title}</h3>
                           <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
                         </div>
                       </div>
