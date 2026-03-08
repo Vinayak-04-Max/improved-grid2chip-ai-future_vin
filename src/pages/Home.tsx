@@ -341,7 +341,7 @@ const Home = () => {
         
         <div className="fib-container relative z-10">
           <ScrollRevealBlock variant="fade" className="text-center mb-fib-89">
-            <motion.h2 className="text-fluid-h1 font-display font-bold mb-fib-21" whileInView={{
+            <motion.h2 className="text-fluid-h1 font-display font-bold mb-fib-21 text-balance" whileInView={{
             opacity: 1
           }} initial={{
             opacity: 0
