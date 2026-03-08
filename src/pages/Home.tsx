@@ -138,8 +138,8 @@ const Home = () => {
       <ScrollProgress />
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          HERO SECTION - Fully Immersive Cinematic Experience
-       ═══════════════════════════════════════════════════════════════════════════ */}
+       HERO SECTION - Fully Immersive Cinematic Experience
+      ═══════════════════════════════════════════════════════════════════════════ */}
       <section ref={heroRef} className="relative min-h-[120vh] flex items-center overflow-hidden">
       {/* Clean White Background */}
         <div className="absolute inset-0 bg-background" />
@@ -226,7 +226,7 @@ const Home = () => {
             {/* Animated Stats */}
             <ScrollRevealBlock variant="fade" delay={1}>
               <StaggerReveal className="grid grid-cols-3 gap-4 sm:gap-fib-34 w-full sm:max-w-2xl mx-auto py-fib-34" staggerDelay={0.15}>
-                {stats.map(stat => {
+                {stats.map((stat) => {
                 const Icon = stat.icon;
                 return <MagneticArea key={stat.label} intensity={0.15}>
                       <motion.div className="text-center group cursor-pointer" whileHover={{
@@ -299,8 +299,8 @@ const Home = () => {
           duration: 2,
           repeat: Infinity
         }}>
-            <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll to explore</span>
-            <motion.div className="w-fib-8 h-fib-34 rounded-full border-2 border-primary/50 flex justify-center pt-fib-8" animate={{
+            
+            <motion.div className="w-fib-8 h-fib-34 rounded-full border-primary/50 flex justify-center pt-fib-8 bg-slate-50 border-0" animate={{
             borderColor: ['hsl(var(--primary) / 0.5)', 'hsl(var(--accent) / 0.5)', 'hsl(var(--primary) / 0.5)']
           }} transition={{
             duration: 3,
@@ -319,8 +319,8 @@ const Home = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          VELOCITY TEXT MARQUEE
-       ═══════════════════════════════════════════════════════════════════════════ */}
+       VELOCITY TEXT MARQUEE
+      ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative py-fib-21 overflow-hidden border-y border-primary/10">
         <motion.div className="absolute inset-0 bg-gradient-to-r from-background via-primary/5 to-background" animate={{
         opacity: [0.5, 0.8, 0.5]
@@ -334,8 +334,8 @@ const Home = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          SOLUTIONS SECTION - Animated Cards
-       ═══════════════════════════════════════════════════════════════════════════ */}
+       SOLUTIONS SECTION - Animated Cards
+      ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative py-fib-144 overflow-hidden">
         <AnimatedBackground variant="cosmic" intensity={0.3} />
         
@@ -412,8 +412,8 @@ const Home = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          SERVICES CAROUSEL SECTION
-       ═══════════════════════════════════════════════════════════════════════════ */}
+       SERVICES CAROUSEL SECTION
+      ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative py-fib-89 overflow-hidden">
         <AnimatedBackground variant="grid" intensity={0.4} />
         
@@ -460,8 +460,8 @@ const Home = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          INDUSTRIES HEXAGON WEB SECTION
-       ═══════════════════════════════════════════════════════════════════════════ */}
+       INDUSTRIES HEXAGON WEB SECTION
+      ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <AnimatedBackground variant="aurora" intensity={0.5} />
         
@@ -483,21 +483,21 @@ const Home = () => {
 
           {/* Hexagonal Spider Web Layout */}
           <div className="flex justify-center items-center py-8">
-            <HexagonWeb 
-              items={industries.map(ind => ({
-                name: ind.name,
-                icon: <ind.icon className="w-5 h-5" />,
-                desc: ind.desc
-              }))} 
-              size={260}
-            />
+            <HexagonWeb
+            items={industries.map((ind) => ({
+              name: ind.name,
+              icon: <ind.icon className="w-5 h-5" />,
+              desc: ind.desc
+            }))}
+            size={260} />
+          
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          CTA SECTION - Cinematic Finale
-       ═══════════════════════════════════════════════════════════════════════════ */}
+       CTA SECTION - Cinematic Finale
+      ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative py-fib-144 overflow-hidden">
         {/* Dynamic Background */}
         <motion.div className="absolute inset-0" animate={{
