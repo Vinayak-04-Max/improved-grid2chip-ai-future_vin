@@ -933,7 +933,7 @@ const AboutUs = () => {
                       <Badge variant="secondary" className="w-fit">{testimonial.industry}</Badge>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <p className="text-muted-foreground italic line-clamp-4">"{testimonial.text}"</p>
+                      <p className="text-muted-foreground italic">"{testimonial.text}"</p>
                       <div className="border-t border-primary/20 pt-4">
                         <div className="font-semibold text-foreground">{testimonial.author}</div>
                         <div className="text-sm text-primary">{testimonial.role}</div>
