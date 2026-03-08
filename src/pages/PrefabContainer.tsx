@@ -575,7 +575,7 @@ const PrefabContainer = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-6">
               Ready for{" "}
               <span className="text-gradient-accent">Rapid Deployment?</span>
             </h2>
