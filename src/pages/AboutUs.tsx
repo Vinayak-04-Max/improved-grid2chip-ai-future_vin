@@ -924,7 +924,7 @@ const AboutUs = () => {
             repeat: Infinity,
             ease: "linear"
           }}>
-              {[...testimonials, ...testimonials].map((testimonial, index) => <div key={`testimonial-${index}`} className="flex-shrink-0 w-[400px]">
+              {[...testimonials, ...testimonials].map((testimonial, index) => <div key={`testimonial-${index}`} className="flex-shrink-0 w-[280px] sm:w-[350px] md:w-[400px]">
                   <Card className="bg-gradient-card border-primary/20 hover:border-primary/40 transition-all duration-300 ai-glow h-full">
                     <CardHeader>
                       <div className="flex items-center mb-4">
