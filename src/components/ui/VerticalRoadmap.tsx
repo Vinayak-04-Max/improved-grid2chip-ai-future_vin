@@ -51,9 +51,9 @@ const VerticalRoadmap = ({ steps, finalBadge, accentColor = "primary" }: Vertica
               </div>
             </div>
             
-            {/* Content Card - Fixed dimensions */}
+            {/* Content Card - Auto height */}
             <div className={`ml-20 lg:ml-0 lg:w-[calc(50%-40px)] ${isEven ? 'lg:pr-8 lg:text-right' : 'lg:pl-8 lg:ml-auto'}`}>
-              <div className={`h-[160px] w-full p-6 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border ${borderColor} transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 flex flex-col`}>
+              <div className={`w-full p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border ${borderColor} transition-all duration-300 hover:shadow-lg hover:shadow-primary/10`}>
                 <div className={`flex items-center gap-3 mb-3 ${isEven ? 'lg:justify-end' : 'lg:justify-start'}`}>
                   {Icon && (
                     <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
@@ -65,7 +65,7 @@ const VerticalRoadmap = ({ steps, finalBadge, accentColor = "primary" }: Vertica
                   </Badge>
                 </div>
                 <h3 className="text-lg font-display font-bold mb-2 text-primary">{step.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">{step.description}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
               </div>
             </div>
           </motion.div>
@@ -80,10 +80,10 @@ const VerticalRoadmap = ({ steps, finalBadge, accentColor = "primary" }: Vertica
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
         >
-          <div className="px-8 py-4 bg-gradient-to-r from-accent to-primary rounded-full shadow-lg shadow-accent/20">
+          <div className="px-6 sm:px-8 py-4 bg-gradient-to-r from-accent to-primary rounded-full shadow-lg shadow-accent/20">
             <div className="flex items-center gap-3 text-white">
               <finalBadge.icon className="w-6 h-6" />
-              <span className="font-semibold text-lg">{finalBadge.text}</span>
+              <span className="font-semibold text-base sm:text-lg">{finalBadge.text}</span>
             </div>
           </div>
         </motion.div>
