@@ -172,7 +172,7 @@ const PrefabContainer = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-4xl font-display font-bold mb-3 text-card-foreground">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold mb-3 text-card-foreground">
               Container <span className="text-gradient-accent text-primary">Features</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
