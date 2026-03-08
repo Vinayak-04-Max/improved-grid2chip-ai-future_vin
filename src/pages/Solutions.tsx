@@ -79,8 +79,10 @@ const Solutions = () => {
                 Infrastructure Solutions
               </Badge>
               
-              <h1 className="text-fluid-h1 font-display font-bold leading-tight text-balance">
-                Advanced <span className="text-g2c-blue">Data Center Solutions</span>
+              <h1 className="text-fluid-h1 font-display font-bold leading-tight">
+                <span className="block sm:inline">Advanced</span>{" "}
+                <span className="block sm:inline text-g2c-blue">Data Center</span>{" "}
+                <span className="block sm:inline text-g2c-blue">Solutions</span>
               </h1>
               
               <p className="text-fluid-body-lg text-muted-foreground leading-relaxed">
