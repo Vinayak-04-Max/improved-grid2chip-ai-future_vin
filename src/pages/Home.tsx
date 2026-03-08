@@ -468,7 +468,7 @@ const Home = () => {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <ScrollRevealBlock variant="slide" direction="up">
-              <h2 className="text-fluid-h1 font-display font-bold mb-fib-21">
+              <h2 className="text-fluid-h1 font-display font-bold mb-fib-21 text-balance">
                 Industries We <span className="text-gradient-primary">Serve</span>
               </h2>
             </ScrollRevealBlock>

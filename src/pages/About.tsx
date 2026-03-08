@@ -105,7 +105,7 @@ const About = () => {
             About Grid2Chip
           </Badge>
           
-          <h1 className="text-fluid-h1 font-display font-bold leading-tight mb-6">
+          <h1 className="text-fluid-h1 font-display font-bold leading-tight mb-6 text-balance">
             Building the <span className="text-g2c-blue">Infrastructure</span> of Tomorrow
           </h1>
           
