@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, User, Clock } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Blog = () => {
+  const [activeCategory, setActiveCategory] = useState("All Posts");
+
   const blogPosts = [
     {
       title: "The Future of AI-Ready Data Centers",
@@ -59,13 +62,20 @@ const Blog = () => {
 
   const categories = [
     "All Posts",
-    "AI Infrastructure", 
+    "AI Infrastructure",
     "BMS Technology",
     "Edge Computing",
     "Sustainability",
     "Modular Solutions",
     "Safety Systems"
   ];
+
+  const filteredPosts = activeCategory === "All Posts"
+    ? blogPosts
+    : blogPosts.filter(post => post.category === activeCategory);
+
+  const featuredPosts = filteredPosts.filter(post => post.featured);
+  const regularPosts = filteredPosts.filter(post => !post.featured);
 
   return (
     <div className="min-h-screen">
@@ -97,13 +107,14 @@ const Blog = () => {
       {/* Categories */}
       <section className="py-12 border-b border-primary/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
               <Button
                 key={category}
-                variant={category === "All Posts" ? "ai" : "outline"}
+                variant={activeCategory === category ? "ai" : "outline"}
                 size="sm"
                 className="transition-all duration-300"
+                onClick={() => setActiveCategory(category)}
               >
                 {category}
               </Button>
@@ -115,137 +126,145 @@ const Blog = () => {
       {/* Blog Posts */}
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Featured Post */}
-            {blogPosts
-              .filter(post => post.featured)
-              .map((post, index) => (
-                <Card key={index} className="lg:col-span-2 bg-gradient-card border-primary/20 ai-glow group hover:border-primary/40 transition-all duration-300">
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-4">
-                      <Badge variant="outline" className="border-primary/30 text-primary">
-                        {post.category}
-                      </Badge>
-                      <Badge variant="outline" className="text-accent border-accent/30">
-                        Featured
-                      </Badge>
-                    </div>
-                    <CardTitle className="text-2xl lg:text-3xl group-hover:text-primary transition-colors">
-                      {post.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {post.excerpt}
-                    </p>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                        <div className="flex items-center space-x-1">
-                          <User className="w-4 h-4" />
-                          <span>{post.author}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <Calendar className="w-4 h-4" />
-                          <span>{new Date(post.date).toLocaleDateString()}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <Clock className="w-4 h-4" />
-                          <span>{post.readTime}</span>
-                        </div>
-                      </div>
-                      
-                      <Button variant="ghost" className="group-hover:bg-primary/10" asChild>
-                        <Link to={`/blog/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
-                          Read More
-                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {filteredPosts.length === 0 ? (
+                <div className="text-center py-20">
+                  <p className="text-muted-foreground text-lg">No posts found in this category.</p>
+                </div>
+              ) : (
+                <>
+                  {/* Featured + first regular in top row */}
+                  {featuredPosts.length > 0 && (
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                      {featuredPosts.map((post, index) => (
+                        <Card key={post.title} className="lg:col-span-2 bg-gradient-card border-primary/20 ai-glow group hover:border-primary/40 transition-all duration-300">
+                          <CardHeader>
+                            <div className="flex items-center justify-between mb-4">
+                              <Badge variant="outline" className="border-primary/30 text-primary">
+                                {post.category}
+                              </Badge>
+                              <Badge variant="outline" className="text-accent border-accent/30">
+                                Featured
+                              </Badge>
+                            </div>
+                            <CardTitle className="text-2xl lg:text-3xl group-hover:text-primary transition-colors">
+                              {post.title}
+                            </CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                            <p className="text-muted-foreground mb-6 leading-relaxed">
+                              {post.excerpt}
+                            </p>
+                            <div className="flex flex-wrap items-center justify-between gap-4">
+                              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
+                                <div className="flex items-center space-x-1">
+                                  <User className="w-4 h-4" />
+                                  <span>{post.author}</span>
+                                </div>
+                                <div className="flex items-center space-x-1">
+                                  <Calendar className="w-4 h-4" />
+                                  <span>{new Date(post.date).toLocaleDateString()}</span>
+                                </div>
+                                <div className="flex items-center space-x-1">
+                                  <Clock className="w-4 h-4" />
+                                  <span>{post.readTime}</span>
+                                </div>
+                              </div>
+                              <Button variant="ghost" className="group-hover:bg-primary/10">
+                                Read More
+                                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                              </Button>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
 
-            {/* Regular Posts */}
-            {blogPosts
-              .filter(post => !post.featured)
-              .slice(0, 1)
-              .map((post, index) => (
-                <Card key={index} className="bg-gradient-card border-primary/20 ai-glow group hover:border-primary/40 transition-all duration-300">
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-4">
-                      <Badge variant="outline" className="border-primary/30 text-primary">
-                        {post.category}
-                      </Badge>
+                      {regularPosts.slice(0, 1).map((post) => (
+                        <Card key={post.title} className="bg-gradient-card border-primary/20 ai-glow group hover:border-primary/40 transition-all duration-300">
+                          <CardHeader>
+                            <div className="flex items-center justify-between mb-4">
+                              <Badge variant="outline" className="border-primary/30 text-primary">
+                                {post.category}
+                              </Badge>
+                            </div>
+                            <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                              {post.title}
+                            </CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                            <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                              {post.excerpt.substring(0, 120)}...
+                            </p>
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+                                <span>{post.author}</span>
+                                <span>•</span>
+                                <span>{new Date(post.date).toLocaleDateString()}</span>
+                              </div>
+                              <Button variant="ghost" size="sm" className="group-hover:bg-primary/10">
+                                Read
+                                <ArrowRight className="ml-1 h-3 w-3" />
+                              </Button>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
                     </div>
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                      {post.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                      {post.excerpt.substring(0, 120)}...
-                    </p>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-                        <span>{post.author}</span>
-                        <span>•</span>
-                        <span>{new Date(post.date).toLocaleDateString()}</span>
-                      </div>
-                      
-                      <Button variant="ghost" size="sm" className="group-hover:bg-primary/10" asChild>
-                        <Link to={`/blog/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
-                          Read
-                          <ArrowRight className="ml-1 h-3 w-3" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-          </div>
+                  )}
 
-          {/* More Posts Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {blogPosts
-              .filter(post => !post.featured)
-              .slice(1)
-              .map((post, index) => (
-                <Card key={index} className="bg-gradient-card border-primary/20 ai-glow group hover:border-primary/40 transition-all duration-300">
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-4">
-                      <Badge variant="outline" className="border-primary/30 text-primary">
-                        {post.category}
-                      </Badge>
+                  {/* Remaining posts grid */}
+                  {(featuredPosts.length > 0 ? regularPosts.slice(1) : regularPosts).length > 0 && (
+                    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ${featuredPosts.length > 0 ? 'mt-12' : ''}`}>
+                      {(featuredPosts.length > 0 ? regularPosts.slice(1) : regularPosts).map((post) => (
+                        <motion.div
+                          key={post.title}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <Card className="bg-gradient-card border-primary/20 ai-glow group hover:border-primary/40 transition-all duration-300 h-full">
+                            <CardHeader>
+                              <div className="flex items-center justify-between mb-4">
+                                <Badge variant="outline" className="border-primary/30 text-primary">
+                                  {post.category}
+                                </Badge>
+                              </div>
+                              <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                                {post.title}
+                              </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                              <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                                {post.excerpt.substring(0, 100)}...
+                              </p>
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+                                  <span>{post.author}</span>
+                                  <span>•</span>
+                                  <span>{post.readTime}</span>
+                                </div>
+                                <Button variant="ghost" size="sm" className="group-hover:bg-primary/10">
+                                  Read
+                                  <ArrowRight className="ml-1 h-3 w-3" />
+                                </Button>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </motion.div>
+                      ))}
                     </div>
-                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                      {post.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                      {post.excerpt.substring(0, 100)}...
-                    </p>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-                        <span>{post.author}</span>
-                        <span>•</span>
-                        <span>{post.readTime}</span>
-                      </div>
-                      
-                      <Button variant="ghost" size="sm" className="group-hover:bg-primary/10" asChild>
-                        <Link to={`/blog/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
-                          Read
-                          <ArrowRight className="ml-1 h-3 w-3" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-          </div>
+                  )}
+                </>
+              )}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 
