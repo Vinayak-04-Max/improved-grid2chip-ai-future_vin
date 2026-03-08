@@ -417,7 +417,7 @@ const BuildingManagement = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-4">
               Core <span className="text-gradient-accent">Benefits</span>
             </h2>
           </motion.div>
