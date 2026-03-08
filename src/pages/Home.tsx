@@ -534,9 +534,9 @@ const Home = () => {
             }} />
 
               <ScrollRevealBlock variant="scale" delay={0.2}>
-                <h2 className="text-fluid-h1 font-display font-bold mb-fib-21 relative">
+                <h2 className="text-fluid-h1 font-display font-bold mb-fib-21 relative text-balance">
                   Ready to Build Your{" "}
-                  <motion.span className="text-gradient-holographic inline-block" animate={{
+                  <motion.span className="text-gradient-holographic inline" animate={{
                   scale: [1, 1.02, 1]
                 }} transition={{
                   duration: 3,

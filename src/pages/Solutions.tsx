@@ -79,8 +79,8 @@ const Solutions = () => {
                 Infrastructure Solutions
               </Badge>
               
-              <h1 className="text-fluid-h1 font-display font-bold leading-tight">
-                <span className="text-g2c-blue">Next-Generation</span> Data Center Solutions
+              <h1 className="text-fluid-h1 font-display font-bold leading-tight text-balance">
+                Advanced <span className="text-g2c-blue">Data Center Solutions</span>
               </h1>
               
               <p className="text-fluid-body-lg text-muted-foreground leading-relaxed">
