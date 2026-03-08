@@ -284,7 +284,7 @@ const Contact = () => {
             {/* Office Locations */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-display font-bold mb-6">
+                <h2 className="text-2xl sm:text-3xl font-display font-bold mb-6">
                   Our <span className="text-g2c-green">Office Locations</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
