@@ -373,7 +373,7 @@ const AboutUs = () => {
             <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Our <span className="text-gradient-primary">Leadership Team</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Meet the visionary leaders driving innovation in critical facility infrastructure
             </p>
           </motion.div>

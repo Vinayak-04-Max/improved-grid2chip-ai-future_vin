@@ -289,7 +289,7 @@ const CustomDataCenter = () => {
                 const Icon = advantage.icon;
                 const isLeft = index < 3;
                 const rowIndex = isLeft ? index : index - 3;
-                return <motion.div key={advantage.title} className="flex items-start gap-4 h-[120px]" style={{
+                return <motion.div key={advantage.title} className="flex items-start gap-4 min-h-[100px]" style={{
                   gridRow: rowIndex + 1,
                   gridColumn: isLeft ? 1 : 2
                 }} initial={{

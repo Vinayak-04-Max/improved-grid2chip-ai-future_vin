@@ -436,7 +436,7 @@ const Home = () => {
             {services.map((service, index) => {
             const Icon = service.icon;
             return <Link key={service.title} to={service.path} className="h-full">
-                  <motion.div className="glass-panel rounded-fib-xl p-fib-34 h-[200px] group cursor-pointer flex flex-col" whileHover={{
+                  <motion.div className="glass-panel rounded-fib-xl p-fib-34 min-h-[180px] sm:min-h-[200px] group cursor-pointer flex flex-col" whileHover={{
                 scale: 1.03,
                 y: -6
               }} transition={{
