@@ -197,7 +197,7 @@ const Demo = () => {
         <div className="w-full sm:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="bg-card/50 border-primary/20">
             <CardHeader className="text-center">
-              <CardTitle className="text-3xl font-display">Schedule Your Demo</CardTitle>
+              <CardTitle className="text-2xl sm:text-3xl font-display">Schedule Your Demo</CardTitle>
               <p className="text-muted-foreground">
                 Fill out the form below and we'll contact you within 2 hours to confirm your demo session.
               </p>

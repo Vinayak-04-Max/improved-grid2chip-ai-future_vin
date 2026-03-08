@@ -102,7 +102,7 @@ const Careers = () => {
           <Card className="bg-gradient-card border-primary/20 text-center">
             <CardContent className="p-12">
               <AlertCircle className="w-16 h-16 mx-auto mb-6 text-primary" />
-              <h2 className="text-3xl font-display font-bold mb-4">
+              <h2 className="text-2xl sm:text-3xl font-display font-bold mb-4">
                 No Current Openings
               </h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

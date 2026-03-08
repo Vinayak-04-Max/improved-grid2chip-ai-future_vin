@@ -671,7 +671,7 @@ const CustomDataCenter = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-6">
               Ready to Build Your{" "}
               <span className="text-gradient-primary">Custom Data Center?</span>
             </h2>
