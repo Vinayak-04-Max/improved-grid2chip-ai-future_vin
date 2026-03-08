@@ -601,7 +601,7 @@ const AboutUs = () => {
           </motion.div>
 
           {/* Area Chart Visualization */}
-          <motion.div className="p-8 rounded-3xl bg-gradient-to-br from-card/60 to-transparent border border-primary/10" initial={{
+          <motion.div className="p-4 sm:p-8 rounded-3xl bg-gradient-to-br from-card/60 to-transparent border border-primary/10 overflow-hidden" initial={{
           opacity: 0,
           y: 30
         }} whileInView={{
@@ -610,27 +610,27 @@ const AboutUs = () => {
         }} viewport={{
           once: true
         }}>
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 sm:mb-8">
               <div className="flex items-center gap-3">
-                <TrendingUp className="w-8 h-8 text-primary" />
-                <h3 className="text-2xl font-display font-bold">Year over Year Growth</h3>
+                <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+                <h3 className="text-lg sm:text-2xl font-display font-bold">Year over Year Growth</h3>
               </div>
-              <div className="flex gap-6">
+              <div className="flex gap-4 sm:gap-6">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-primary" />
-                  <span className="text-sm text-muted-foreground">Revenue Index</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">Revenue Index</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-accent" />
-                  <span className="text-sm text-muted-foreground">Projects</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">Projects</span>
                 </div>
               </div>
             </div>
 
             {/* Chart Container */}
-            <div className="relative h-64">
+            <div className="relative h-48 sm:h-64 w-full">
               {/* Y-axis labels */}
-              <div className="absolute left-0 top-0 bottom-8 w-12 flex flex-col justify-between text-xs text-muted-foreground">
+              <div className="absolute left-0 top-0 bottom-8 w-8 sm:w-12 flex flex-col justify-between text-[10px] sm:text-xs text-muted-foreground">
                 <span>250</span>
                 <span>200</span>
                 <span>150</span>
@@ -640,18 +640,18 @@ const AboutUs = () => {
               </div>
               
               {/* Chart Area */}
-              <div className="ml-14 h-full relative">
+              <div className="ml-10 sm:ml-14 h-full relative">
                 {/* Grid Lines */}
                 <div className="absolute inset-0 flex flex-col justify-between">
                   {[...Array(6)].map((_, i) => <div key={i} className="border-b border-primary/10 w-full" />)}
                 </div>
 
                 {/* Bars */}
-                <div className="absolute inset-0 flex items-end justify-around gap-2 pb-8">
-                  {growthData.map((data, index) => <div key={data.year} className="flex flex-col items-center gap-1 flex-1">
-                      <div className="flex gap-1 items-end h-48 w-full justify-center">
+                <div className="absolute inset-0 flex items-end justify-around gap-1 sm:gap-2 pb-8">
+                  {growthData.map((data, index) => <div key={data.year} className="flex flex-col items-center gap-1 flex-1 min-w-0">
+                      <div className="flex gap-0.5 sm:gap-1 items-end h-32 sm:h-48 w-full justify-center">
                         {/* Revenue Bar */}
-                        <motion.div className="w-6 bg-gradient-to-t from-primary to-primary/60 rounded-t-lg" initial={{
+                        <motion.div className="w-3 sm:w-6 bg-gradient-to-t from-primary to-primary/60 rounded-t-md sm:rounded-t-lg" initial={{
                       height: 0
                     }} whileInView={{
                       height: `${data.revenue / 250 * 100}%`
@@ -662,7 +662,7 @@ const AboutUs = () => {
                       delay: index * 0.1
                     }} />
                         {/* Projects Bar */}
-                        <motion.div className="w-6 bg-gradient-to-t from-accent to-accent/60 rounded-t-lg" initial={{
+                        <motion.div className="w-3 sm:w-6 bg-gradient-to-t from-accent to-accent/60 rounded-t-md sm:rounded-t-lg" initial={{
                       height: 0
                     }} whileInView={{
                       height: `${data.projects / 250 * 100}%`
@@ -673,29 +673,29 @@ const AboutUs = () => {
                       delay: index * 0.1 + 0.1
                     }} />
                       </div>
-                      <span className="text-xs text-muted-foreground mt-2">{data.year}</span>
+                      <span className="text-[10px] sm:text-xs text-muted-foreground mt-1 sm:mt-2">{data.year}</span>
                     </div>)}
                 </div>
               </div>
             </div>
 
             {/* Growth Summary */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-primary/10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-primary/10">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">380%</div>
-                <div className="text-sm text-muted-foreground">Revenue Growth</div>
+                <div className="text-2xl sm:text-3xl font-bold text-primary">380%</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Revenue Growth</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">455%</div>
-                <div className="text-sm text-muted-foreground">Project Growth</div>
+                <div className="text-2xl sm:text-3xl font-bold text-accent">455%</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Project Growth</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-neon-cyan">92%</div>
-                <div className="text-sm text-muted-foreground">Innovation Index</div>
+                <div className="text-2xl sm:text-3xl font-bold text-neon-cyan">92%</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Innovation Index</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-neon-violet">5x</div>
-                <div className="text-sm text-muted-foreground">Team Expansion</div>
+                <div className="text-2xl sm:text-3xl font-bold text-neon-violet">5x</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Team Expansion</div>
               </div>
             </div>
           </motion.div>
