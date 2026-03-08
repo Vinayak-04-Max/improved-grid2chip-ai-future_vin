@@ -347,7 +347,8 @@ const Home = () => {
             opacity: 0
           }}>
               Advanced{" "}
-              <CharacterReveal text="Data Center Solutions" className="text-gradient-primary" delay={0.3} />
+              <CharacterReveal text="Data Center" className="text-gradient-primary" delay={0.3} />{" "}
+              <CharacterReveal text="Solutions" className="text-gradient-primary" delay={0.5} />
             </motion.h2>
             <ScrollRevealBlock variant="fade" delay={0.2}>
               <p className="text-fluid-body-lg text-muted-foreground w-full sm:max-w-3xl mx-auto">
