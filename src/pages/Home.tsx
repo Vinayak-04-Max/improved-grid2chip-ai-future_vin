@@ -554,7 +554,7 @@ const Home = () => {
               </ScrollRevealBlock>
 
               <ScrollRevealBlock variant="slide" direction="up" delay={0.6}>
-                <div className="flex flex-col sm:flex-row gap-fib-21 justify-center">
+                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-fib-21 justify-center">
                   <Link to="/contact">
                     <MagneticButton variant="glow" size="lg" className="group">
                       <span className="flex items-center gap-fib-8">
