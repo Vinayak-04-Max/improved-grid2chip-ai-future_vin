@@ -425,158 +425,42 @@ const CustomDataCenter = () => {
             </p>
           </motion.div>
 
-          {/* Desktop: Cross/Diamond Layout */}
+          {/* Central Hub + Cards */}
           <div className="hidden lg:grid grid-cols-3 gap-8 items-center max-w-5xl mx-auto">
-            {/* Left Card */}
-            <motion.div initial={{
-            opacity: 0,
-            x: -30
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            delay: 0.1
-          }} className="justify-self-end">
-              <div className="w-72 p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border border-neon-violet/40 hover:border-neon-violet/60 transition-all duration-300 group">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-neon-violet/25 to-neon-violet/10 border border-neon-violet/30 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                    <Landmark className="w-7 h-7 text-neon-violet" />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-bold text-foreground mb-1 text-lg">{idealFor[3].title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm">{idealFor[3].description}</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Center Column: Top Card + Hub + Bottom Card */}
-            <div className="flex flex-col items-center gap-6">
-              {/* Top Card */}
-              <motion.div initial={{
-              opacity: 0,
-              y: -30
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              delay: 0.05
-            }}>
-                <div className="w-72 p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border border-primary/40 hover:border-primary/60 transition-all duration-300 group">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/25 to-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                      <TrendingUp className="w-7 h-7 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-display font-bold text-foreground mb-1 text-lg">{idealFor[0].title}</h3>
-                      <p className="text-muted-foreground leading-relaxed text-sm">{idealFor[0].description}</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Central Hub */}
-              <motion.div className="relative w-36 h-36 py-8 lg:py-16" initial={{
-              opacity: 0,
-              scale: 0.8
-            }} whileInView={{
-              opacity: 1,
-              scale: 1
-            }} viewport={{
-              once: true
-            }}>
-                {/* Glow */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-xl" />
-                
-                {/* Spinning ring */}
-                <motion.div className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/40" animate={{
-                rotate: 360
+            {/* Left Cards */}
+            <div className="space-y-6">
+              {idealFor.slice(0, 2).map((item, index) => {
+              const Icon = item.icon;
+              const colors = index === 0 ? 'border-primary/40 hover:border-primary/60' : 'border-neon-cyan/40 hover:border-neon-cyan/60';
+              const iconColors = index === 0 ? 'from-primary/25 to-primary/10 text-primary' : 'from-neon-cyan/25 to-neon-cyan/10 text-neon-cyan';
+              return <motion.div key={index} initial={{
+                opacity: 0,
+                x: -30
+              }} whileInView={{
+                opacity: 1,
+                x: 0
+              }} viewport={{
+                once: true
               }} transition={{
-                duration: 25,
-                repeat: Infinity,
-                ease: "linear"
-              }} />
-                
-                {/* Counter ring */}
-                <motion.div className="absolute inset-3 rounded-full border-2 border-dashed border-accent/30" animate={{
-                rotate: -360
-              }} transition={{
-                duration: 18,
-                repeat: Infinity,
-                ease: "linear"
-              }} />
-                
-                {/* Center */}
-                <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-primary/30 flex items-center justify-center shadow-xl text-primary bg-primary-foreground rounded-xl">
-                  <div className="text-center text-primary bg-white/0">
-                    <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
-                      <Building2 className="w-5 h-5 text-primary" />
+                delay: index * 0.1
+              }}>
+                    <div className={`p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border ${colors} transition-all duration-300 group`}>
+                      <div className="flex items-start gap-4">
+                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${iconColors} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform`}>
+                          <Icon className="w-7 h-7" />
+                        </div>
+                        <div>
+                          <h3 className="font-display font-bold text-foreground mb-1 text-lg">{item.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed text-sm">{item.description}</p>
+                        </div>
+                      </div>
                     </div>
-                    <span className="font-display font-bold leading-tight text-primary bg-white/0 text-base">Custom<br />Solutions</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Bottom Card */}
-              <motion.div initial={{
-              opacity: 0,
-              y: 30
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              delay: 0.2
-            }}>
-                <div className="w-72 p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border border-accent/40 hover:border-accent/60 transition-all duration-300 group">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/25 to-accent/10 border border-accent/30 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                      <Building2 className="w-7 h-7 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-display font-bold text-foreground mb-1 text-lg">{idealFor[2].title}</h3>
-                      <p className="text-muted-foreground leading-relaxed text-sm">{idealFor[2].description}</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+                  </motion.div>;
+            })}
             </div>
 
-            {/* Right Card */}
-            <motion.div initial={{
-            opacity: 0,
-            x: 30
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            delay: 0.15
-          }} className="justify-self-start">
-              <div className="w-72 p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border border-neon-cyan/40 hover:border-neon-cyan/60 transition-all duration-300 group">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-neon-cyan/25 to-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                    <Cloud className="w-7 h-7 text-neon-cyan" />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-bold text-foreground mb-1 text-lg">{idealFor[1].title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm">{idealFor[1].description}</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Mobile Layout */}
-          <div className="lg:hidden">
-            {/* Central Hub Mobile */}
-            <motion.div className="mx-auto w-28 h-28 relative mb-8" initial={{
+            {/* Central Hub */}
+            <motion.div className="relative w-86 h-96 mx-auto" initial={{
             opacity: 0,
             scale: 0.8
           }} whileInView={{
@@ -585,69 +469,110 @@ const CustomDataCenter = () => {
           }} viewport={{
             once: true
           }}>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-lg" />
-              <motion.div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/40" animate={{
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-xl" />
+              <motion.div className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/40" animate={{
               rotate: 360
             }} transition={{
-              duration: 20,
+              duration: 25,
               repeat: Infinity,
               ease: "linear"
             }} />
-              <div className="absolute inset-3 rounded-full bg-gradient-to-br from-card to-card/90 border border-primary/20 flex items-center justify-center">
-                <div className="text-center">
-                  <Building2 className="w-5 h-5 text-primary mx-auto mb-0.5" />
-                  <span className="text-[8px] font-display font-bold text-foreground">Custom<br />Solutions</span>
+              <motion.div className="absolute inset-3 rounded-full border-2 border-dashed border-accent/30" animate={{
+              rotate: -360
+            }} transition={{
+              duration: 18,
+              repeat: Infinity,
+              ease: "linear"
+            }} />
+              <div className="relative w-58 h-48 py-0 mx-0 my-[75px]">
+                <div className="text-center border-primary rounded-xl bg-primary-foreground px-[10px] py-[30px] my-[120px]">
+                  <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
+                    <Building2 className="w-5 h-5 text-primary" />
+                  </div>
+                  <span className="font-display font-bold leading-tight text-primary bg-white/0 text-lg">Custom<br />Solutions</span>
                 </div>
               </div>
             </motion.div>
 
-            {/* Mobile Cards */}
-            <div className="space-y-4 max-w-md mx-auto">
-              {idealFor.map((item, index) => {
+            {/* Right Cards */}
+            <div className="space-y-6">
+              {idealFor.slice(2, 4).map((item, index) => {
               const Icon = item.icon;
-              const styles = [{
-                border: 'border-primary/40',
-                iconBg: 'from-primary/25 to-primary/10',
-                iconColor: 'text-primary'
-              }, {
-                border: 'border-neon-cyan/40',
-                iconBg: 'from-neon-cyan/25 to-neon-cyan/10',
-                iconColor: 'text-neon-cyan'
-              }, {
-                border: 'border-accent/40',
-                iconBg: 'from-accent/25 to-accent/10',
-                iconColor: 'text-accent'
-              }, {
-                border: 'border-neon-violet/40',
-                iconBg: 'from-neon-violet/25 to-neon-violet/10',
-                iconColor: 'text-neon-violet'
-              }];
-              const style = styles[index];
-              return <motion.div key={item.title} initial={{
+              const colors = index === 0 ? 'border-accent/40 hover:border-accent/60' : 'border-neon-violet/40 hover:border-neon-violet/60';
+              const iconColors = index === 0 ? 'from-accent/25 to-accent/10 text-accent' : 'from-neon-violet/25 to-neon-violet/10 text-neon-violet';
+              return <motion.div key={index} initial={{
                 opacity: 0,
-                y: 20
+                x: 30
               }} whileInView={{
                 opacity: 1,
-                y: 0
+                x: 0
               }} viewport={{
                 once: true
               }} transition={{
                 delay: index * 0.1
               }}>
-                    <div className={`p-4 rounded-xl bg-gradient-to-br from-card/95 to-card/80 border ${style.border}`}>
-                      <div className="flex items-center gap-4">
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${style.iconBg} flex items-center justify-center flex-shrink-0`}>
-                          <Icon className={`w-6 h-6 ${style.iconColor}`} />
+                    <div className={`p-5 rounded-2xl bg-gradient-to-br from-card/95 to-card/80 border ${colors} transition-all duration-300 group`}>
+                      <div className="flex items-start gap-4">
+                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${iconColors} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform`}>
+                          <Icon className="w-7 h-7" />
                         </div>
                         <div>
-                          <h3 className="text-sm font-display font-bold text-foreground mb-0.5">{item.title}</h3>
-                          <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
+                          <h3 className="font-display font-bold text-foreground mb-1 text-lg">{item.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed text-sm">{item.description}</p>
                         </div>
                       </div>
                     </div>
                   </motion.div>;
             })}
             </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="lg:hidden space-y-4 max-w-md mx-auto">
+            {idealFor.map((item, index) => {
+            const Icon = item.icon;
+            const styles = [{
+              border: 'border-primary/40',
+              iconBg: 'from-primary/25 to-primary/10',
+              iconColor: 'text-primary'
+            }, {
+              border: 'border-neon-cyan/40',
+              iconBg: 'from-neon-cyan/25 to-neon-cyan/10',
+              iconColor: 'text-neon-cyan'
+            }, {
+              border: 'border-accent/40',
+              iconBg: 'from-accent/25 to-accent/10',
+              iconColor: 'text-accent'
+            }, {
+              border: 'border-neon-violet/40',
+              iconBg: 'from-neon-violet/25 to-neon-violet/10',
+              iconColor: 'text-neon-violet'
+            }];
+            const style = styles[index];
+            return <motion.div key={item.title} initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              delay: index * 0.1
+            }}>
+                  <div className={`p-4 rounded-xl bg-gradient-to-br from-card/95 to-card/80 border ${style.border}`}>
+                    <div className="flex items-center gap-4">
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${style.iconBg} flex items-center justify-center flex-shrink-0`}>
+                        <Icon className={`w-6 h-6 ${style.iconColor}`} />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-display font-bold text-foreground mb-0.5">{item.title}</h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>;
+          })}
           </div>
         </div>
       </section>
