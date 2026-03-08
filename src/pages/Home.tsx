@@ -514,7 +514,7 @@ const Home = () => {
 
         <div className="fib-container relative z-10">
           <ScrollRevealBlock variant="morph">
-            <motion.div className="glass-panel rounded-fib-xl p-fib-89 text-center relative overflow-hidden" whileInView={{
+            <motion.div className="glass-panel rounded-fib-xl p-6 sm:p-10 lg:p-fib-89 text-center relative overflow-hidden" whileInView={{
             boxShadow: '0 0 100px hsl(var(--primary) / 0.2)'
           }}>
               {/* Animated border */}
