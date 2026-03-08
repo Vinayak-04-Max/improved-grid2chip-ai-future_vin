@@ -498,7 +498,7 @@ const Home = () => {
       {/* ═══════════════════════════════════════════════════════════════════════════
       CTA SECTION - Cinematic Finale
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative py-fib-144 overflow-hidden">
+      <section className="relative py-16 sm:py-20 lg:py-fib-144 overflow-hidden">
         {/* Dynamic Background */}
         <motion.div className="absolute inset-0" animate={{
         background: ['radial-gradient(ellipse at 20% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%)', 'radial-gradient(ellipse at 80% 50%, hsl(var(--accent) / 0.15) 0%, transparent 50%)', 'radial-gradient(ellipse at 50% 20%, hsl(var(--neon-cyan) / 0.1) 0%, transparent 50%)', 'radial-gradient(ellipse at 20% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%)']
