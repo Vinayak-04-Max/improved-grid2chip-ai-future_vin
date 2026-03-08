@@ -419,7 +419,7 @@ const Home = () => {
         
         <div className="fib-container relative z-10 mb-fib-55">
           <ScrollRevealBlock variant="fade" className="text-center">
-            <h2 className="text-fluid-h1 font-display font-bold mb-fib-21">
+            <h2 className="text-fluid-h1 font-display font-bold mb-fib-21 text-balance">
               Integrated Facility &{" "}
               <span className="text-gradient-accent">Management Services</span>
             </h2>
