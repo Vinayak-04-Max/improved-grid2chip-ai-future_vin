@@ -383,7 +383,7 @@ const PrefabContainer = () => {
             </div>
 
             {/* Central Hub */}
-            <motion.div className="relative w-36 h-36 mx-auto px-0 py-8 lg:py-16" initial={{
+            <motion.div className="relative w-86 h-96 mx-auto" initial={{
             opacity: 0,
             scale: 0.8
           }} whileInView={{
@@ -393,7 +393,7 @@ const PrefabContainer = () => {
             once: true
           }}>
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 blur-xl" />
-              <motion.div className="absolute inset-0 border-[3px] border-dashed border-accent/40 rounded-full" animate={{
+              <motion.div className="absolute inset-0 rounded-full border-[3px] border-dashed border-accent/40" animate={{
               rotate: 360
             }} transition={{
               duration: 25,
@@ -407,12 +407,12 @@ const PrefabContainer = () => {
               repeat: Infinity,
               ease: "linear"
             }} />
-              <div className="absolute inset-5 bg-gradient-to-br from-card to-card/90 border border-accent/30 flex items-center justify-center shadow-xl rounded-xl">
-                <div className="text-center">
+              <div className="relative w-58 h-48 py-0 mx-0 my-[75px]">
+                <div className="text-center border-primary rounded-xl bg-primary-foreground px-[10px] py-[30px] my-[120px]">
                   <div className="w-10 h-10 mx-auto mb-1 rounded-lg bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center">
                     <Container className="w-5 h-5 text-accent" />
                   </div>
-                  <span className="font-display font-bold leading-tight bg-white/0 text-primary text-lg">Prefab<br />Solutions</span>
+                  <span className="font-display font-bold leading-tight text-primary bg-white/0 text-lg">Prefab<br />Solutions</span>
                 </div>
               </div>
             </motion.div>
