@@ -312,7 +312,7 @@ const AboutUs = () => {
             <h2 className="text-fluid-h2 font-display font-bold mb-4">
               Company <span className="text-gradient-primary">Overview</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground w-full sm:max-w-2xl mx-auto">
               Our track record speaks for itself - delivering excellence across the globe
             </p>
           </motion.div>
