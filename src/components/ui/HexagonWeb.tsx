@@ -282,61 +282,68 @@ export const HexagonWeb: React.FC<HexagonWebProps> = ({
         />
       </motion.svg>
 
-      {/* Cards at vertices (static, not rotating) */}
-      {items.slice(0, 6).map((item, index) => {
-        const angle = hexAngles[index];
-        const cardRadius = size + 20;
-        const x = Math.cos(angle) * cardRadius + center;
-        const y = Math.sin(angle) * cardRadius + center;
-        return (
-          <motion.div
-            key={item.name}
-            className="absolute"
-            style={{
-              left: x - cardWidth / 2,
-              top: y - cardHeight / 2,
-              width: cardWidth,
-              height: cardHeight,
-            }}
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.6,
-              delay: 0.8 + index * 0.12,
-              type: 'spring',
-              stiffness: 200,
-              damping: 20,
-            }}
-          >
+      {/* Cards rotating anti-clockwise */}
+      <motion.div
+        className="absolute inset-0"
+        style={{ rotate: rotateAntiCW, transformOrigin: `${center}px ${center}px` }}
+      >
+        {items.slice(0, 6).map((item, index) => {
+          const angle = hexAngles[index];
+          const cardRadius = size + 20;
+          const x = Math.cos(angle) * cardRadius + center;
+          const y = Math.sin(angle) * cardRadius + center;
+          return (
             <motion.div
-              className="w-full h-full glass-panel rounded-xl p-4 cursor-pointer group shadow-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 flex flex-col items-center justify-center"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: '0 15px 30px -8px hsl(var(--primary) / 0.25)',
+              key={item.name}
+              className="absolute"
+              style={{
+                left: x - cardWidth / 2,
+                top: y - cardHeight / 2,
+                width: cardWidth,
+                height: cardHeight,
+              }}
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: 0.8 + index * 0.12,
+                type: 'spring',
+                stiffness: 200,
+                damping: 20,
               }}
             >
-              <span className="font-semibold text-foreground text-center leading-tight text-base">
-                {item.name}
-              </span>
-              {item.desc && (
-                <span className="text-muted-foreground text-center leading-snug mt-1 text-sm">
-                  {item.desc}
+              {/* Counter-rotate text to keep it upright */}
+              <motion.div
+                className="w-full h-full glass-panel rounded-xl p-4 cursor-pointer group shadow-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 flex flex-col items-center justify-center"
+                style={{ rotate: counterRotateCW }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: '0 15px 30px -8px hsl(var(--primary) / 0.25)',
+                }}
+              >
+                <span className="font-semibold text-foreground text-center leading-tight text-base">
+                  {item.name}
                 </span>
-              )}
+                {item.desc && (
+                  <span className="text-muted-foreground text-center leading-snug mt-1 text-sm">
+                    {item.desc}
+                  </span>
+                )}
+              </motion.div>
             </motion.div>
-          </motion.div>
-        );
-      })}
+          );
+        })}
+      </motion.div>
 
-      {/* Center label (counter-rotated to stay upright) */}
+      {/* Center G2C label - centered on the circle */}
       <motion.div
         className="absolute z-20 flex items-center justify-center"
         style={{
-          left: center - 35,
-          top: center - 35,
-          width: 70,
-          height: 70,
+          left: center - 40,
+          top: center - 40,
+          width: 80,
+          height: 80,
         }}
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
