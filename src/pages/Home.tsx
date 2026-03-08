@@ -341,7 +341,7 @@ const Home = () => {
         
         <div className="fib-container relative z-10">
           <ScrollRevealBlock variant="fade" className="text-center mb-fib-89">
-            <motion.h2 className="text-fluid-h1 font-display font-bold mb-fib-21" whileInView={{
+            <motion.h2 className="text-fluid-h1 font-display font-bold mb-fib-21 text-balance" whileInView={{
             opacity: 1
           }} initial={{
             opacity: 0
@@ -419,7 +419,7 @@ const Home = () => {
         
         <div className="fib-container relative z-10 mb-fib-55">
           <ScrollRevealBlock variant="fade" className="text-center">
-            <h2 className="text-fluid-h1 font-display font-bold mb-fib-21">
+            <h2 className="text-fluid-h1 font-display font-bold mb-fib-21 text-balance">
               Integrated Facility &{" "}
               <span className="text-gradient-accent">Management Services</span>
             </h2>
@@ -468,7 +468,7 @@ const Home = () => {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <ScrollRevealBlock variant="slide" direction="up">
-              <h2 className="text-fluid-h1 font-display font-bold mb-fib-21">
+              <h2 className="text-fluid-h1 font-display font-bold mb-fib-21 text-balance">
                 Industries We <span className="text-gradient-primary">Serve</span>
               </h2>
             </ScrollRevealBlock>
@@ -534,9 +534,9 @@ const Home = () => {
             }} />
 
               <ScrollRevealBlock variant="scale" delay={0.2}>
-                <h2 className="text-fluid-h1 font-display font-bold mb-fib-21 relative">
+                <h2 className="text-fluid-h1 font-display font-bold mb-fib-21 relative text-balance">
                   Ready to Build Your{" "}
-                  <motion.span className="text-gradient-holographic inline-block" animate={{
+                  <motion.span className="text-gradient-holographic inline" animate={{
                   scale: [1, 1.02, 1]
                 }} transition={{
                   duration: 3,

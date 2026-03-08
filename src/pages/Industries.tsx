@@ -192,7 +192,7 @@ const Industries = () => {
             Industry Solutions
           </Badge>
           
-          <h1 className="text-fluid-h1 font-display font-bold leading-tight mb-6">
+          <h1 className="text-fluid-h1 font-display font-bold leading-tight mb-6 text-balance">
             <span className="text-g2c-blue">Transforming Industries</span> with Data Center Infrastructure
           </h1>
           
